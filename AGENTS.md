@@ -8,6 +8,10 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+## Writing
+
+When editing copy, use the `no-ai-slop` / `no-ai-slop-es` skills in `.agents/skills/`.
+
 ## Documentation
 
 Full documentation: https://docs.astro.build

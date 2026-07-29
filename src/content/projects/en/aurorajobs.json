@@ -1,0 +1,31 @@
+{
+  "lang": "en",
+  "title": "AuroraJobs",
+  "slug": "aurorajobs",
+  "summary": "A full stack job board built with Ruby on Rails: job search, alerts and posting for companies. A complete product, from database to deployment.",
+  "problem": "Generalist job boards mix everything with everything. AuroraJobs explored a more focused space, with careful search and useful alerts.",
+  "audience": "People looking for a job and companies posting openings.",
+  "role": "Full Stack Developer: the complete product in Ruby on Rails, working close to product decisions.",
+  "status": "Completed project",
+  "year": "2021 — 2023",
+  "technologies": ["Ruby on Rails", "PostgreSQL", "Hotwire", "Sidekiq", "Heroku"],
+  "responsibilities": [
+    "Full product development: models, search, email alerts, company dashboard.",
+    "Design and implementation of the job search system.",
+    "Deployment, monitoring and running it in production.",
+    "Product decisions alongside the team: what to build and what to drop."
+  ],
+  "decisions": [
+    "Monolithic Rails with Hotwire: development speed over sophisticated architecture.",
+    "Search as the product's centerpiece, not an added filter.",
+    "Email alerts as the main channel to bring users back."
+  ],
+  "outcomes": [
+    "A complete product running in production.",
+    "The experience that consolidated my full stack years and how I work with product."
+  ],
+  "featured": false,
+  "priority": 4,
+  "visualTheme": "slate",
+  "category": "legacy"
+}

@@ -1,0 +1,34 @@
+{
+  "lang": "es",
+  "title": "Webel",
+  "slug": "webel",
+  "summary": "Marketplace de servicios en producción con miles de usuarios. Trabajo como Frontend Developer sobre toda la plataforma: el producto B2B, el dashboard interno, la plataforma de SEO programático y el marketplace core.",
+  "problem": "Contratar servicios profesionales (reformas, clases, cuidados, eventos) sigue siendo un proceso opaco: comparar opciones cuesta, los precios no son claros y coordinar agendas es un intercambio eterno de mensajes.",
+  "audience": "Personas que necesitan contratar un servicio, profesionales que ofrecen su trabajo y empresas que gestionan servicios para sus equipos.",
+  "role": "Frontend Developer en el equipo de producto, trabajando sobre las cuatro áreas de la plataforma con React y TypeScript.",
+  "status": "En producción, desarrollo continuo",
+  "year": "2023 — hoy",
+  "technologies": ["React", "TypeScript", "Next.js", "Design system propio", "Testing", "SEO técnico"],
+  "responsibilities": [
+    "Desarrollo y evolución del frontend del marketplace: búsqueda, fichas de servicio, contratación y seguimiento.",
+    "Construcción de Webel Business, el producto B2B, con flujos y permisos propios.",
+    "Desarrollo del dashboard interno que usa el equipo para operar la plataforma.",
+    "Implementación frontend de la plataforma de SEO programático: plantillas y páginas generadas a escala.",
+    "Mantenimiento del design system y de la calidad técnica del frontend compartido."
+  ],
+  "decisions": [
+    "Componentes compartidos entre las cuatro áreas para que cada producto nuevo cueste menos que el anterior.",
+    "Rendimiento y SEO técnico tratados como requisitos de producto, no como tareas de mantenimiento.",
+    "Separación clara entre la lógica de cada vertical (B2B, marketplace, SEO) y la base común de UI."
+  ],
+  "outcomes": [
+    "Plataforma viva en producción con desarrollo continuo durante años.",
+    "Miles de páginas de SEO programático generadas captando demanda orgánica.",
+    "Cuatro frentes de producto sostenidos por una base frontend común."
+  ],
+  "links": [{ "label": "appwebel.com", "url": "https://appwebel.com" }],
+  "featured": true,
+  "priority": 1,
+  "visualTheme": "copper",
+  "category": "webel"
+}

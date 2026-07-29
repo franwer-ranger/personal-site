@@ -1,0 +1,29 @@
+---
+import type { Locale } from '../i18n/ui';
+import { getProjects, getExperience } from '../lib/data';
+import Layout from '../layouts/Layout.astro';
+import Hero from './Hero.astro';
+import WebelFeature from './WebelFeature.astro';
+import ProjectsSection from './ProjectsSection.astro';
+import Principles from './Principles.astro';
+import Skills from './Skills.astro';
+import Experience from './Experience.astro';
+import Contact from './Contact.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const [projects, experience] = await Promise.all([getProjects(locale), getExperience(locale)]);
+---
+
+<Layout>
+  <Hero locale={locale} />
+  <WebelFeature locale={locale} />
+  <ProjectsSection locale={locale} projects={projects} />
+  <Principles locale={locale} />
+  <Skills locale={locale} />
+  <Experience locale={locale} experience={experience} />
+  <Contact locale={locale} />
+</Layout>

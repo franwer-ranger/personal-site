@@ -1,0 +1,93 @@
+---
+import { getTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+---
+
+<section class="section principles" id="principles">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <span class="section-index">03 · {t.sections.principles}</span>
+      <p class="kicker">{t.principles.kicker}</p>
+      <h2 class="display section-title">{t.principles.title}</h2>
+    </header>
+
+    <ol class="principles-list" role="list">
+      {
+        t.principles.items.map((item, i) => (
+          <li class="principle" data-reveal data-reveal-delay={String(i * 80)}>
+            <span class="principle-number display" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <div class="principle-text">
+              <h3 class="principle-title">{item.title}</h3>
+              <p class="principle-desc">{item.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .principles-list {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .principle {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: 1.5rem;
+    padding-block: 2.2rem;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+
+  .principle-number {
+    font-size: clamp(2rem, 1.4rem + 2.4vw, 3.4rem);
+    font-weight: 300;
+    color: var(--ink-faint);
+    line-height: 1;
+    font-variation-settings: 'opsz' 144;
+    transition: color 0.4s var(--ease-out);
+  }
+
+  .principle:hover .principle-number {
+    color: var(--accent);
+  }
+
+  .principle-text {
+    display: grid;
+    gap: 0.6rem;
+    max-width: 56ch;
+  }
+
+  .principle-title {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: 520;
+    letter-spacing: -0.01em;
+  }
+
+  .principle-desc {
+    color: var(--ink-soft);
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+
+  @media (max-width: 40rem) {
+    .principle {
+      grid-template-columns: 3.2rem 1fr;
+      gap: 1rem;
+      padding-block: 1.8rem;
+    }
+  }
+</style>

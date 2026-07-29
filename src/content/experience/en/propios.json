@@ -1,0 +1,15 @@
+{
+  "lang": "en",
+  "company": "Own products",
+  "role": "Product Engineering & AI",
+  "period": "2024 — present",
+  "stage": "product",
+  "summary": "Building my own products where engineering and product meet: Product OS, Maker Tracker and experiments with AI agents.",
+  "highlights": [
+    "AI-assisted development systems: specifications, agents, context engineering.",
+    "From problem to product: discovery, architecture and build.",
+    "Automating product workflows."
+  ],
+  "technologies": ["AI agents", "TypeScript", "Astro", "Automation"],
+  "order": 2
+}

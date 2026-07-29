@@ -1,0 +1,191 @@
+---
+import { getTranslations, getLocalizedPath, homePath, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+const currentPath = Astro.url.pathname;
+const otherLocale: Locale = locale === 'es' ? 'en' : 'es';
+const home = homePath(locale);
+
+const links = [
+  { href: `${home}#work`, label: t.nav.work },
+  { href: `${home}#principles`, label: t.nav.principles },
+  { href: `${home}#experience`, label: t.nav.experience },
+  { href: `${home}#contact`, label: t.nav.contact },
+];
+---
+
+<header class="site-nav" data-nav>
+  <div class="container nav-inner">
+    <a href={home} class="nav-brand" aria-label={t.nav.home}>
+      <span class="nav-mark" aria-hidden="true">FQ</span>
+      <span class="nav-role mono">Product Engineer</span>
+    </a>
+
+    <nav aria-label={t.nav.ariaLabel} class="nav-links">
+      {
+        links.map((link) => (
+          <a href={link.href} class="nav-link">
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="nav-lang">
+      <a
+        href={getLocalizedPath(currentPath, otherLocale)}
+        class="lang-switch"
+        aria-label={t.nav.switchLanguage}
+        hreflang={otherLocale}
+      >
+        <span class:list={['lang-option', { active: locale === 'es' }]}>ES</span>
+        <span class="lang-divider" aria-hidden="true"></span>
+        <span class:list={['lang-option', { active: locale === 'en' }]}>EN</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    padding-block: 1rem;
+    transition:
+      background-color 0.4s var(--ease-out),
+      box-shadow 0.4s var(--ease-out),
+      padding 0.4s var(--ease-out);
+  }
+
+  .site-nav.is-scrolled {
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 var(--line);
+    padding-block: 0.6rem;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .nav-mark {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 560;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-role {
+    color: var(--ink-faint);
+    font-size: 0.66rem;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: clamp(1rem, 0.5rem + 2vw, 2.25rem);
+  }
+
+  .nav-link {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    position: relative;
+    padding-block: 0.25rem;
+    transition: color 0.25s var(--ease-out);
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-out);
+  }
+
+  .nav-link:hover {
+    color: var(--ink);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 0.4rem 0.85rem;
+    transition:
+      border-color 0.25s var(--ease-out),
+      background-color 0.25s var(--ease-out);
+  }
+
+  .lang-switch:hover {
+    border-color: var(--ink);
+    background: var(--paper-raised);
+  }
+
+  .lang-option {
+    color: var(--ink-faint);
+    transition: color 0.25s var(--ease-out);
+  }
+
+  .lang-option.active {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .lang-divider {
+    width: 1px;
+    height: 0.85rem;
+    background: var(--line-strong);
+  }
+
+  @media (max-width: 48rem) {
+    .nav-role,
+    .nav-links {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  function initNav() {
+    const nav = document.querySelector('[data-nav]');
+    if (!nav) return;
+    const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    document.addEventListener('astro:before-swap', () => window.removeEventListener('scroll', onScroll), {
+      once: true,
+    });
+  }
+  document.addEventListener('astro:page-load', initNav);
+</script>

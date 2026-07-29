@@ -1,0 +1,29 @@
+{
+  "lang": "en",
+  "title": "Maker Tracker",
+  "slug": "maker-tracker",
+  "summary": "A personal system for managing parallel maker projects: capturing ideas, deciding what to build and tracking what's in progress without losing the thread.",
+  "problem": "Anyone building their own projects accumulates ideas faster than they can execute them. Without a system, ideas get forgotten and ongoing projects get abandoned halfway.",
+  "audience": "Makers and builders running several projects in parallel. Starting with me.",
+  "role": "Full design and development.",
+  "status": "In development",
+  "year": "2025",
+  "technologies": ["TypeScript", "React", "Automation", "Applied AI"],
+  "responsibilities": [
+    "Project data model: idea, validation, build, launch, maintenance.",
+    "Fast idea-capture flows and periodic review.",
+    "Automations for friction-free tracking."
+  ],
+  "decisions": [
+    "Optimized for few clicks: if logging something is costly, it won't get logged.",
+    "Explicit states for every project, so abandoning one is also a decision."
+  ],
+  "outcomes": [
+    "Daily use managing my own project portfolio.",
+    "Fewer lost ideas and more finished projects."
+  ],
+  "featured": false,
+  "priority": 3,
+  "visualTheme": "moss",
+  "category": "maker"
+}

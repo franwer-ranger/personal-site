@@ -1,0 +1,34 @@
+{
+  "lang": "en",
+  "title": "Webel",
+  "slug": "webel",
+  "summary": "A services marketplace in production with thousands of users. I work as a Frontend Developer across the whole platform: the B2B product, the internal dashboard, the programmatic SEO platform and the core marketplace.",
+  "problem": "Hiring professional services (home improvements, lessons, care, events) is still an opaque process: comparing options is hard, pricing is unclear and coordinating schedules means endless message threads.",
+  "audience": "People who need to hire a service, professionals offering their work, and companies managing services for their teams.",
+  "role": "Frontend Developer on the product team, working across the platform's four areas with React and TypeScript.",
+  "status": "In production, continuous development",
+  "year": "2023 — present",
+  "technologies": ["React", "TypeScript", "Next.js", "Custom design system", "Testing", "Technical SEO"],
+  "responsibilities": [
+    "Development and evolution of the marketplace frontend: search, service pages, booking and tracking.",
+    "Building Webel Business, the B2B product, with its own flows and permissions.",
+    "Development of the internal dashboard the team uses to operate the platform.",
+    "Frontend implementation of the programmatic SEO platform: templates and pages generated at scale.",
+    "Maintaining the design system and the technical quality of the shared frontend."
+  ],
+  "decisions": [
+    "Shared components across the four areas, so each new product costs less than the one before.",
+    "Performance and technical SEO treated as product requirements, not maintenance chores.",
+    "Clear separation between each vertical's logic (B2B, marketplace, SEO) and the common UI foundation."
+  ],
+  "outcomes": [
+    "A live platform in production under continuous development for years.",
+    "Thousands of programmatic SEO pages capturing organic demand.",
+    "Four product fronts sustained by a common frontend foundation."
+  ],
+  "links": [{ "label": "appwebel.com", "url": "https://appwebel.com" }],
+  "featured": true,
+  "priority": 1,
+  "visualTheme": "copper",
+  "category": "webel"
+}

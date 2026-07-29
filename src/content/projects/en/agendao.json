@@ -1,0 +1,28 @@
+{
+  "lang": "en",
+  "title": "Agendao",
+  "slug": "agendao",
+  "summary": "Booking software for local businesses: online scheduling, appointment management and reminders. A small vertical product, built to solve one concrete problem.",
+  "problem": "Many local businesses manage appointments by phone and WhatsApp: missed slots, no-shows and a schedule that lives in a notebook.",
+  "audience": "Local businesses working by appointment: hair salons, clinics, workshops.",
+  "role": "Full design and development.",
+  "status": "Paused project",
+  "year": "2023",
+  "technologies": ["Ruby on Rails", "Hotwire", "PostgreSQL"],
+  "responsibilities": [
+    "The complete product: scheduling, online booking and reminders.",
+    "Designing the flows so a business can get started in minutes."
+  ],
+  "decisions": [
+    "Deliberately small scope: do one thing well before doing many halfway.",
+    "Friction-free onboarding as a design requirement, not an extra."
+  ],
+  "outcomes": [
+    "A working product with the full booking cycle.",
+    "Lessons about vertical products that I apply in later projects."
+  ],
+  "featured": false,
+  "priority": 6,
+  "visualTheme": "sand",
+  "category": "side"
+}

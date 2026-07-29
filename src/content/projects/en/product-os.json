@@ -1,0 +1,31 @@
+{
+  "lang": "en",
+  "title": "Product OS",
+  "slug": "product-os",
+  "summary": "A product operating system: structured specifications, AI agents and context engineering to take an idea to working software. The app is the implementation of that system.",
+  "problem": "Building software with AI agents works well in demos and poorly in real projects: context gets lost, decisions go unrecorded and every session starts almost from scratch.",
+  "audience": "Myself building my own products, and in the medium term any maker working with AI agents.",
+  "role": "Full design and implementation: defining the system, the architecture and building the app.",
+  "status": "In active development",
+  "year": "2024 — present",
+  "technologies": ["AI agents", "Context engineering", "TypeScript", "Astro", "Structured specifications"],
+  "responsibilities": [
+    "Defining the specification model: how to describe a product so an agent can build it.",
+    "Designing the orchestration flows: which tasks each agent handles and in what order.",
+    "Building the application that implements the system.",
+    "Testing the system by using it to develop other real projects."
+  ],
+  "decisions": [
+    "The specification is the source of truth: code can be regenerated, intent cannot.",
+    "Explicit, versioned context instead of long conversations that degrade.",
+    "The app and the method evolve together: every real project feeds the system."
+  ],
+  "outcomes": [
+    "An AI-assisted development flow I use daily on my projects.",
+    "Several products built with the system, including this website."
+  ],
+  "featured": false,
+  "priority": 2,
+  "visualTheme": "ink",
+  "category": "product-os"
+}

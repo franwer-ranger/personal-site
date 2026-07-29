@@ -1,0 +1,222 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  experience: CollectionEntry<'experience'>[];
+}
+
+const { locale, experience } = Astro.props;
+const t = getTranslations(locale);
+---
+
+<section class="section experience" id="experience">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <span class="section-index">05 · {t.sections.experience}</span>
+      <p class="kicker">{t.experience.kicker}</p>
+      <h2 class="display section-title">{t.experience.title}</h2>
+    </header>
+
+    <ol class="timeline" role="list">
+      {
+        experience.map((entry, i) => (
+          <li class="timeline-item" data-reveal data-reveal-delay={String(i * 90)}>
+            <div class="timeline-marker" aria-hidden="true">
+              <span class:list={['timeline-dot', `dot-${entry.data.stage}`]}></span>
+              {i < experience.length - 1 && <span class="timeline-line" />}
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-head">
+                <span class="timeline-period mono">{entry.data.period}</span>
+                <span class:list={['timeline-stage', 'mono', `stage-${entry.data.stage}`]}>
+                  {t.experience.stages[entry.data.stage]}
+                </span>
+              </div>
+              <h3 class="timeline-role">
+                {entry.data.role}
+                <span class="timeline-company"> · {entry.data.company}</span>
+              </h3>
+              <p class="timeline-summary">{entry.data.summary}</p>
+              <ul class="timeline-highlights" role="list">
+                {entry.data.highlights.map((h) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+              <ul class="timeline-tech" role="list">
+                {entry.data.technologies.map((tech) => (
+                  <li class="mono">{tech}</li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="evolution-note" data-reveal>
+      <span class="evolution-arrow" aria-hidden="true">→</span>
+      {t.experience.evolutionNote}
+    </p>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    list-style: none;
+    padding: 0;
+    display: grid;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 1.4rem;
+  }
+
+  .timeline-marker {
+    display: grid;
+    justify-items: center;
+    grid-template-rows: auto 1fr;
+  }
+
+  .timeline-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    margin-top: 0.45rem;
+    background: var(--ink);
+  }
+
+  .dot-frontend {
+    background: var(--accent);
+  }
+
+  .dot-product {
+    background: transparent;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+
+  .timeline-line {
+    width: 1px;
+    flex: 1;
+    background: var(--line-strong);
+    margin-block: 0.5rem;
+  }
+
+  .timeline-content {
+    display: grid;
+    gap: 0.8rem;
+    padding-bottom: 3rem;
+    max-width: 60ch;
+  }
+
+  .timeline-item:last-child .timeline-content {
+    padding-bottom: 0;
+  }
+
+  .timeline-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .timeline-period {
+    color: var(--ink-faint);
+    font-size: 0.7rem;
+  }
+
+  .timeline-stage {
+    font-size: 0.62rem;
+    padding: 0.28rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--line-strong);
+    color: var(--ink-soft);
+  }
+
+  .stage-frontend {
+    border-color: var(--accent);
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+  }
+
+  .stage-product {
+    border-color: var(--accent);
+    color: var(--paper);
+    background: var(--accent);
+  }
+
+  .timeline-role {
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: 520;
+    letter-spacing: -0.01em;
+  }
+
+  .timeline-company {
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+
+  .timeline-summary {
+    color: var(--ink-soft);
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+
+  .timeline-highlights {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .timeline-highlights li {
+    color: var(--ink-soft);
+    font-size: 0.93rem;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+
+  .timeline-highlights li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 0.45rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .timeline-tech {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.9rem;
+  }
+
+  .timeline-tech li {
+    color: var(--ink-faint);
+    font-size: 0.64rem;
+  }
+
+  .evolution-note {
+    margin-top: 3rem;
+    padding: 1.4rem 1.6rem;
+    border: 1px dashed var(--line-strong);
+    border-radius: 4px;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    line-height: 1.6;
+    max-width: 62ch;
+  }
+
+  .evolution-arrow {
+    color: var(--accent);
+    margin-right: 0.4rem;
+  }
+</style>

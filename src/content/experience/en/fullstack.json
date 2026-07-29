@@ -1,0 +1,15 @@
+{
+  "lang": "en",
+  "company": "Earlier stage",
+  "role": "Full Stack Developer",
+  "period": "2019 — 2023",
+  "stage": "fullstack",
+  "summary": "Several years building complete products with Ruby on Rails, including AuroraJobs: from database to deployment, with product decisions along the way.",
+  "highlights": [
+    "Complete products in production with Ruby on Rails.",
+    "Search systems, alerts and admin dashboards.",
+    "First stage working close to product, not just code."
+  ],
+  "technologies": ["Ruby on Rails", "PostgreSQL", "Hotwire", "Sidekiq"],
+  "order": 3
+}

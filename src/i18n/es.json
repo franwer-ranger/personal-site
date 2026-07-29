@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "title": "Francis Quin — Product Engineer",
+    "description": "Product Engineer especializado en frontend. Construyo productos web completos: de sistemas complejos a interfaces claras."
+  },
+  "nav": {
+    "work": "Proyectos",
+    "principles": "Cómo trabajo",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "ariaLabel": "Navegación principal",
+    "switchLanguage": "Cambiar idioma",
+    "home": "Inicio"
+  },
+  "hero": {
+    "kicker": "Product Engineer · Frontend",
+    "title": "Convierto sistemas complejos en productos claros.",
+    "subtitle": "Llevo años construyendo producto web de principio a fin: primero full stack con Ruby on Rails, hoy frontend con React y TypeScript en Webel. Me muevo entre arquitectura, interfaz y producto, y cada vez más cerca de la IA aplicada a construir software.",
+    "ctaPrimary": "Ver proyectos",
+    "ctaSecondary": "Hablemos",
+    "scrollHint": "Desliza para ordenar el sistema",
+    "sceneLabel": "Visualización abstracta: una nube de nodos desordenada que se reorganiza en una estructura al hacer scroll"
+  },
+  "sections": {
+    "work": "Proyectos",
+    "principles": "Cómo trabajo",
+    "skills": "Capacidades",
+    "experience": "Experiencia",
+    "contact": "Contacto"
+  },
+  "webel": {
+    "kicker": "Trabajo actual · En producción",
+    "title": "Webel",
+    "intro": "Marketplace de servicios con miles de usuarios y un equipo de producto activo. Trabajo como Frontend Developer sobre el conjunto de la plataforma.",
+    "areasLabel": "Frentes en los que trabajo",
+    "areas": [
+      {
+        "name": "Webel Business",
+        "description": "La cara B2B de la plataforma: contratación de servicios para empresas, con sus propios flujos, permisos y ciclo de compra."
+      },
+      {
+        "name": "Dashboard interno",
+        "description": "Herramientas de operación para el equipo: gestión de usuarios, servicios, incidencias y métricas del negocio."
+      },
+      {
+        "name": "SEO programático",
+        "description": "Generación de páginas a escala para captar demanda en buscadores: plantillas, datos estructurados y rendimiento cuidado."
+      },
+      {
+        "name": "Marketplace core",
+        "description": "El producto principal: búsqueda, contratación y seguimiento de servicios entre clientes y profesionales."
+      }
+    ],
+    "cta": "Ver el caso completo",
+    "visit": "Visitar appwebel.com"
+  },
+  "projects": {
+    "kicker": "Selección de proyectos",
+    "title": "Cosas que he construido",
+    "intro": "Productos en producción, sistemas propios y experimentos. Ordenados por dónde pongo la energía ahora.",
+    "viewProject": "Ver proyecto",
+    "viewAll": "Ver todos",
+    "categories": {
+      "webel": "Producto en producción",
+      "product-os": "Sistema propio",
+      "maker": "Herramientas maker",
+      "side": "Proyecto vertical",
+      "legacy": "Proyecto anterior"
+    }
+  },
+  "principles": {
+    "kicker": "Forma de trabajar",
+    "title": "Cuatro principios, ningún dogma",
+    "items": [
+      {
+        "title": "Entender antes de construir",
+        "description": "El código es la parte barata. Antes de escribir una línea pregunto para quién es, qué problema resuelve y cómo sabremos que funciona."
+      },
+      {
+        "title": "Reducir complejidad",
+        "description": "Un sistema complejo no es una excusa para una interfaz compleja. Mi trabajo es absorber esa complejidad y devolver algo que se entienda a la primera."
+      },
+      {
+        "title": "Diseñar para evolucionar",
+        "description": "El producto de hoy no es el de dentro de un año. Construyo sistemas con piezas que se puedan cambiar sin tirar el edificio entero."
+      },
+      {
+        "title": "IA como amplificador",
+        "description": "Uso agentes y modelos para explorar más rápido, automatizar lo repetitivo y llegar antes a las decisiones que importan. La herramienta amplifica; el criterio sigue siendo mío."
+      }
+    ]
+  },
+  "skills": {
+    "kicker": "Capacidades",
+    "title": "Del servidor al píxel, y del píxel al negocio",
+    "groups": [
+      {
+        "domain": "Frontend",
+        "items": ["React", "TypeScript", "Astro", "CSS moderno", "Accesibilidad", "Rendimiento web", "Design systems"]
+      },
+      {
+        "domain": "Full stack",
+        "items": ["Ruby on Rails", "Node.js", "PostgreSQL", "APIs REST", "Testing", "CI/CD"]
+      },
+      {
+        "domain": "Producto",
+        "items": ["Descubrimiento de problemas", "Priorización", "Métricas de producto", "SEO programático", "Trabajo con diseño y negocio"]
+      },
+      {
+        "domain": "IA aplicada",
+        "items": ["Agentes y orquestación", "Context engineering", "Automatización de flujos", "Prototipado asistido por IA"]
+      }
+    ]
+  },
+  "experience": {
+    "kicker": "Trayectoria",
+    "title": "Full stack → frontend → producto",
+    "stages": {
+      "fullstack": "Full Stack",
+      "frontend": "Frontend",
+      "product": "Producto / IA"
+    },
+    "evolutionNote": "La dirección es clara: cada etapa me ha acercado más a la intersección entre ingeniería y producto. La siguiente es la ingeniería de producto potenciada por IA."
+  },
+  "contact": {
+    "kicker": "Contacto",
+    "title": "¿Construimos algo?",
+    "intro": "Me interesan los equipos que construyen producto de verdad y los proyectos donde la ingeniería y el producto se tocan. Si tienes algo así entre manos, escríbeme.",
+    "emailLabel": "Email",
+    "socialLabel": "También estoy en",
+    "cta": "Escríbeme"
+  },
+  "projectPage": {
+    "back": "Volver a proyectos",
+    "problem": "El problema",
+    "audience": "Para quién",
+    "role": "Mi papel",
+    "responsibilities": "Responsabilidades",
+    "decisions": "Decisiones clave",
+    "outcomes": "Resultados",
+    "technologies": "Tecnologías",
+    "status": "Estado",
+    "year": "Año",
+    "category": "Tipo",
+    "links": "Enlaces",
+    "nextProject": "Siguiente proyecto"
+  },
+  "footer": {
+    "built": "Diseñado y construido por Francis Quin",
+    "stack": "Astro · TypeScript · Three.js · Motion",
+    "rights": "Todos los derechos reservados"
+  },
+  "languageNames": {
+    "es": "Español",
+    "en": "English"
+  }
+}

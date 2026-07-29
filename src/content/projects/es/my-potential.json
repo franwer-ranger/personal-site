@@ -1,0 +1,29 @@
+{
+  "lang": "es",
+  "title": "My Potential",
+  "slug": "my-potential",
+  "summary": "Proyecto exploratorio sobre autoconocimiento profesional: registrar habilidades, seguir su evolución y detectar dónde está el potencial técnico y creativo de una carrera.",
+  "problem": "Las carreras técnicas se evalúan con CVs y entrevistas, dos formatos malos para captar cómo evoluciona una persona: qué aprende, qué le interesa y hacia dónde crece.",
+  "audience": "Proyecto conceptual, pensado para profesionales que quieren entender su propia trayectoria.",
+  "role": "Investigación, concepto y prototipo.",
+  "status": "Exploración",
+  "year": "2025",
+  "technologies": ["Modelado de datos", "Prototipado", "IA aplicada"],
+  "responsibilities": [
+    "Definir qué significa medir el potencial sin caer en métricas vacías.",
+    "Modelar habilidades, evidencias y evolución temporal.",
+    "Prototipar las visualizaciones de la trayectoria."
+  ],
+  "decisions": [
+    "Evidencias por encima de autodeclaraciones: lo construido pesa más que lo afirmado.",
+    "La evolución importa más que la foto fija."
+  ],
+  "outcomes": [
+    "Un marco conceptual claro y prototipos de visualización.",
+    "Ideas que alimentan cómo presento mi propio trabajo, esta web incluida."
+  ],
+  "featured": false,
+  "priority": 5,
+  "visualTheme": "plum",
+  "category": "maker"
+}

@@ -1,0 +1,29 @@
+{
+  "lang": "en",
+  "title": "My Potential",
+  "slug": "my-potential",
+  "summary": "An exploratory project on professional self-knowledge: recording skills, tracking how they evolve and spotting where a career's technical and creative potential lies.",
+  "problem": "Technical careers get assessed through CVs and interviews, two formats that poorly capture how a person evolves: what they learn, what draws them and where they're growing.",
+  "audience": "A conceptual project, aimed at professionals who want to understand their own trajectory.",
+  "role": "Research, concept and prototype.",
+  "status": "Exploration",
+  "year": "2025",
+  "technologies": ["Data modeling", "Prototyping", "Applied AI"],
+  "responsibilities": [
+    "Defining what measuring potential means without falling into empty metrics.",
+    "Modeling skills, evidence and evolution over time.",
+    "Prototyping the trajectory visualizations."
+  ],
+  "decisions": [
+    "Evidence over self-declaration: what you've built weighs more than what you claim.",
+    "Evolution matters more than the snapshot."
+  ],
+  "outcomes": [
+    "A clear conceptual framework and visualization prototypes.",
+    "Ideas that feed how I present my own work, this site included."
+  ],
+  "featured": false,
+  "priority": 5,
+  "visualTheme": "plum",
+  "category": "maker"
+}

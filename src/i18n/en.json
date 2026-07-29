@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "title": "Francis Quin — Product Engineer",
+    "description": "Product Engineer focused on frontend. I build complete web products: from complex systems to clear interfaces."
+  },
+  "nav": {
+    "work": "Work",
+    "principles": "How I work",
+    "experience": "Experience",
+    "contact": "Contact",
+    "ariaLabel": "Main navigation",
+    "switchLanguage": "Switch language",
+    "home": "Home"
+  },
+  "hero": {
+    "kicker": "Product Engineer · Frontend",
+    "title": "I turn complex systems into clear products.",
+    "subtitle": "I've spent years building web products end to end: first full stack with Ruby on Rails, now frontend with React and TypeScript at Webel. I work across architecture, interface and product, and increasingly close to AI applied to building software.",
+    "ctaPrimary": "See my work",
+    "ctaSecondary": "Get in touch",
+    "scrollHint": "Scroll to bring the system into order",
+    "sceneLabel": "Abstract visualization: a scattered cloud of nodes that reorganizes into a structured form as you scroll"
+  },
+  "sections": {
+    "work": "Work",
+    "principles": "How I work",
+    "skills": "Capabilities",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "webel": {
+    "kicker": "Current role · In production",
+    "title": "Webel",
+    "intro": "A services marketplace with thousands of users and an active product team. I work as a Frontend Developer across the whole platform.",
+    "areasLabel": "Areas I work on",
+    "areas": [
+      {
+        "name": "Webel Business",
+        "description": "The B2B side of the platform: service procurement for companies, with its own flows, permissions and purchasing cycle."
+      },
+      {
+        "name": "Internal dashboard",
+        "description": "Operations tooling for the team: user, service and incident management, plus business metrics."
+      },
+      {
+        "name": "Programmatic SEO",
+        "description": "Large-scale page generation to capture search demand: templates, structured data and carefully tuned performance."
+      },
+      {
+        "name": "Core marketplace",
+        "description": "The main product: search, booking and tracking of services between customers and professionals."
+      }
+    ],
+    "cta": "Read the full case",
+    "visit": "Visit appwebel.com"
+  },
+  "projects": {
+    "kicker": "Selected work",
+    "title": "Things I've built",
+    "intro": "Products in production, my own systems and experiments. Ordered by where my energy goes now.",
+    "viewProject": "View project",
+    "viewAll": "View all",
+    "categories": {
+      "webel": "Product in production",
+      "product-os": "Own system",
+      "maker": "Maker tooling",
+      "side": "Vertical product",
+      "legacy": "Past project"
+    }
+  },
+  "principles": {
+    "kicker": "How I work",
+    "title": "Four principles, no dogma",
+    "items": [
+      {
+        "title": "Understand before building",
+        "description": "Code is the cheap part. Before writing a line, I ask who it's for, what problem it solves and how we'll know it works."
+      },
+      {
+        "title": "Reduce complexity",
+        "description": "A complex system is no excuse for a complex interface. My job is to absorb that complexity and hand back something people grasp at first sight."
+      },
+      {
+        "title": "Design for change",
+        "description": "Today's product won't be next year's. I build systems out of pieces you can swap without tearing the whole building down."
+      },
+      {
+        "title": "AI as an amplifier",
+        "description": "I use agents and models to explore faster, automate the repetitive and reach the decisions that matter sooner. The tool amplifies; the judgment stays mine."
+      }
+    ]
+  },
+  "skills": {
+    "kicker": "Capabilities",
+    "title": "From server to pixel, and from pixel to business",
+    "groups": [
+      {
+        "domain": "Frontend",
+        "items": ["React", "TypeScript", "Astro", "Modern CSS", "Accessibility", "Web performance", "Design systems"]
+      },
+      {
+        "domain": "Full stack",
+        "items": ["Ruby on Rails", "Node.js", "PostgreSQL", "REST APIs", "Testing", "CI/CD"]
+      },
+      {
+        "domain": "Product",
+        "items": ["Problem discovery", "Prioritization", "Product metrics", "Programmatic SEO", "Working with design and business"]
+      },
+      {
+        "domain": "Applied AI",
+        "items": ["Agents and orchestration", "Context engineering", "Workflow automation", "AI-assisted prototyping"]
+      }
+    ]
+  },
+  "experience": {
+    "kicker": "Trajectory",
+    "title": "Full stack → frontend → product",
+    "stages": {
+      "fullstack": "Full Stack",
+      "frontend": "Frontend",
+      "product": "Product / AI"
+    },
+    "evolutionNote": "The direction is clear: each stage has brought me closer to where engineering meets product. The next one is AI-powered product engineering."
+  },
+  "contact": {
+    "kicker": "Contact",
+    "title": "Shall we build something?",
+    "intro": "I'm drawn to teams building real products and to projects where engineering and product overlap. If that sounds like what you're working on, write to me.",
+    "emailLabel": "Email",
+    "socialLabel": "You can also find me on",
+    "cta": "Write to me"
+  },
+  "projectPage": {
+    "back": "Back to work",
+    "problem": "The problem",
+    "audience": "Who it's for",
+    "role": "My role",
+    "responsibilities": "Responsibilities",
+    "decisions": "Key decisions",
+    "outcomes": "Outcomes",
+    "technologies": "Technologies",
+    "status": "Status",
+    "year": "Year",
+    "category": "Type",
+    "links": "Links",
+    "nextProject": "Next project"
+  },
+  "footer": {
+    "built": "Designed and built by Francis Quin",
+    "stack": "Astro · TypeScript · Three.js · Motion",
+    "rights": "All rights reserved"
+  },
+  "languageNames": {
+    "es": "Español",
+    "en": "English"
+  }
+}

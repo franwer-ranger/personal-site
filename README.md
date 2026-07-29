@@ -1,46 +1,40 @@
-# Astro Starter Kit: Basics
+# francisquin.dev
+
+Sitio personal de Francis Quin — Product Engineer especializado en frontend.
+
+## Stack
+
+- **Astro** (arquitectura de islas, salida estática)
+- **TypeScript** estricto
+- **Three.js** — escena WebGL del hero (caos → orden con el scroll), cargada en chunk diferido
+- **Motion** — animaciones de interfaz (scroll reveals)
+- **Astro Content Collections** — proyectos y experiencia, en ES y EN
+- CSS moderno con custom properties, sin framework
+
+## Desarrollo
 
 ```sh
-npm create astro@latest -- --template basics
+npm run dev        # servidor de desarrollo
+npm run build      # build de producción en ./dist
+npm run preview    # previsualizar el build
+npx astro check    # verificación de tipos
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Estructura
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+src/
+├── components/        # Secciones y piezas de UI (.astro)
+├── content/           # projects/ y experience/ en es/ y en/ (JSON)
+├── i18n/              # es.json, en.json y helpers (ui.ts)
+├── layouts/           # Layout base (nav, footer, ClientRouter)
+├── lib/               # heroScene.ts (Three.js), reveal.ts (Motion), data.ts
+├── pages/             # index, /en, /proyectos/[slug], /en/projects/[slug]
+└── styles/            # Sistema de diseño (global.css)
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Internacionalización
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Español por defecto (`/`), inglés en `/en`.
+- Textos de interfaz en `src/i18n/{es,en}.json`; contenido largo en las colecciones.
+- El selector de idioma preserva la página actual (incluidas las fichas de proyecto).

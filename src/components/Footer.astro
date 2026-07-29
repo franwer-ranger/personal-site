@@ -1,0 +1,101 @@
+---
+import { getTranslations, homePath, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+const home = homePath(locale);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="display footer-name">Francis Quin</span>
+      <span class="footer-tag">{t.footer.built}</span>
+    </div>
+    <div class="footer-meta">
+      <nav aria-label={t.nav.ariaLabel} class="footer-nav">
+        <a href={`${home}#work`}>{t.nav.work}</a>
+        <a href={`${home}#experience`}>{t.nav.experience}</a>
+        <a href={`${home}#contact`}>{t.nav.contact}</a>
+      </nav>
+      <span class="footer-stack mono">{t.footer.stack}</span>
+      <span class="footer-copy mono">© {year} · {t.footer.rights}</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding-block: 3rem;
+    background: var(--paper-raised);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .footer-name {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .footer-tag {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .footer-meta {
+    display: grid;
+    gap: 0.6rem;
+    justify-items: end;
+    text-align: right;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .footer-nav a {
+    color: var(--ink-soft);
+    transition: color 0.25s var(--ease-out);
+  }
+
+  .footer-nav a:hover {
+    color: var(--accent);
+  }
+
+  .footer-stack,
+  .footer-copy {
+    color: var(--ink-faint);
+    font-size: 0.66rem;
+    text-transform: none;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 40rem) {
+    .footer-meta {
+      justify-items: start;
+      text-align: left;
+    }
+  }
+</style>

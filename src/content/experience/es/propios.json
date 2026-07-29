@@ -1,0 +1,15 @@
+{
+  "lang": "es",
+  "company": "Proyectos propios",
+  "role": "Product Engineering & IA",
+  "period": "2024 — hoy",
+  "stage": "product",
+  "summary": "Desarrollo de productos propios donde ingeniería y producto se tocan: Product OS, Maker Tracker y experimentos con agentes de IA.",
+  "highlights": [
+    "Sistemas de desarrollo asistido por IA: especificaciones, agentes, context engineering.",
+    "Del problema al producto: descubrimiento, arquitectura y construcción.",
+    "Automatización de flujos de trabajo de producto."
+  ],
+  "technologies": ["Agentes de IA", "TypeScript", "Astro", "Automatización"],
+  "order": 2
+}

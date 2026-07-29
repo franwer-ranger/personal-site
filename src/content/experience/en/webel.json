@@ -1,0 +1,15 @@
+{
+  "lang": "en",
+  "company": "Webel",
+  "role": "Frontend Developer",
+  "period": "2023 — present",
+  "stage": "frontend",
+  "summary": "Frontend for a marketplace platform in production: B2B product, internal dashboard, programmatic SEO and core marketplace.",
+  "highlights": [
+    "React and TypeScript across four product areas.",
+    "Design system and technical quality of the shared frontend.",
+    "Daily work side by side with product and design."
+  ],
+  "technologies": ["React", "TypeScript", "Next.js", "Technical SEO"],
+  "order": 1
+}

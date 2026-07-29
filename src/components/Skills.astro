@@ -1,0 +1,84 @@
+---
+import { getTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+---
+
+<section class="section skills" id="skills">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <span class="section-index">04 · {t.sections.skills}</span>
+      <p class="kicker">{t.skills.kicker}</p>
+      <h2 class="display section-title">{t.skills.title}</h2>
+    </header>
+
+    <div class="skills-grid">
+      {
+        t.skills.groups.map((group, i) => (
+          <div class="skill-group" data-reveal data-reveal-delay={String(i * 70)}>
+            <h3 class="skill-domain mono">{group.domain}</h3>
+            <ul class="skill-items" role="list">
+              {group.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills {
+    background: var(--paper-sunken);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: 2.5rem 1.5rem;
+  }
+
+  .skill-group {
+    display: grid;
+    gap: 1.2rem;
+    align-content: start;
+    border-top: 2px solid var(--ink);
+    padding-top: 1.2rem;
+  }
+
+  .skill-domain {
+    color: var(--accent-ink);
+    font-size: 0.72rem;
+  }
+
+  .skill-items {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .skill-items li {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+
+  .skill-items li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 0.45rem;
+    height: 1px;
+    background: var(--accent);
+  }
+</style>

@@ -1,0 +1,28 @@
+{
+  "lang": "es",
+  "title": "Agendao",
+  "slug": "agendao",
+  "summary": "Software de reservas para negocios locales: agenda online, gestión de citas y recordatorios. Un producto vertical pequeño, construido para resolver un problema concreto.",
+  "problem": "Muchos negocios locales gestionan sus citas por teléfono y WhatsApp: huecos perdidos, clientes que no aparecen y una agenda que vive en un cuaderno.",
+  "audience": "Negocios locales con cita previa: peluquerías, clínicas, talleres.",
+  "role": "Diseño y desarrollo completos.",
+  "status": "Proyecto pausado",
+  "year": "2023",
+  "technologies": ["Ruby on Rails", "Hotwire", "PostgreSQL"],
+  "responsibilities": [
+    "Producto completo: agenda, reservas online y recordatorios.",
+    "Diseño de los flujos para que un negocio pueda empezar en minutos."
+  ],
+  "decisions": [
+    "Alcance pequeño a propósito: hacer una cosa bien antes que muchas a medias.",
+    "Onboarding sin fricción como requisito de diseño, no como extra."
+  ],
+  "outcomes": [
+    "Producto funcional con el ciclo de reserva completo.",
+    "Aprendizajes sobre productos verticales que aplico en proyectos posteriores."
+  ],
+  "featured": false,
+  "priority": 6,
+  "visualTheme": "sand",
+  "category": "side"
+}

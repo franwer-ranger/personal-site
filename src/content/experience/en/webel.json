@@ -1,15 +1,15 @@
 {
   "lang": "en",
   "company": "Webel",
-  "role": "Frontend Developer",
-  "period": "2023 — present",
+  "role": "Frontend Tech Lead",
+  "period": "2024 — present",
   "stage": "frontend",
-  "summary": "Frontend for a marketplace platform in production: B2B product, internal dashboard, programmatic SEO and core marketplace.",
+  "summary": "Web lead at a home-services marketplace. Responsible for the internal dashboard, company profile, marketplace and the Next.js migration.",
   "highlights": [
-    "React and TypeScript across four product areas.",
-    "Design system and technical quality of the shared frontend.",
-    "Daily work side by side with product and design."
+    "React and TypeScript across several critical products in production.",
+    "Trained and led two mid-senior developers on the web team.",
+    "Brought AI into the team's development flow: context, skills and docs for agents."
   ],
-  "technologies": ["React", "TypeScript", "Next.js", "Technical SEO"],
+  "technologies": ["React", "TypeScript", "Next.js", "TailwindCSS", "Astro"],
   "order": 1
 }

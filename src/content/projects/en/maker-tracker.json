@@ -2,7 +2,7 @@
   "lang": "en",
   "title": "Maker Tracker",
   "slug": "maker-tracker",
-  "summary": "A personal system for managing parallel maker projects: capturing ideas, deciding what to build and tracking what's in progress without losing the thread.",
+  "summary": "A personal system for running several maker projects at once: capturing ideas, deciding what to build and tracking what's in progress without losing the thread.",
   "problem": "Anyone building their own projects accumulates ideas faster than they can execute them. Without a system, ideas get forgotten and ongoing projects get abandoned halfway.",
   "audience": "Makers and builders running several projects in parallel. Starting with me.",
   "role": "Full design and development.",

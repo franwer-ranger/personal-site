@@ -1,15 +1,15 @@
 {
   "lang": "en",
-  "company": "Earlier stage",
+  "company": "AuroraJobs and earlier",
   "role": "Full Stack Developer",
-  "period": "2019 — 2023",
+  "period": "2021 — 2024",
   "stage": "fullstack",
-  "summary": "Several years building complete products with Ruby on Rails, including AuroraJobs: from database to deployment, with product decisions along the way.",
+  "summary": "Years building complete products with Ruby on Rails. At AuroraJobs I was the sole developer after initial mentoring from the CTO: from database to deployment, with product decisions along the way.",
   "highlights": [
-    "Complete products in production with Ruby on Rails.",
-    "Search systems, alerts and admin dashboards.",
-    "First stage working close to product, not just code."
+    "Full product in production: job board, dashboard, company portal and CMS.",
+    "Mentored two junior developers and ran SCRUM.",
+    "Lanzadera incubator program in 2022."
   ],
-  "technologies": ["Ruby on Rails", "PostgreSQL", "Hotwire", "Sidekiq"],
+  "technologies": ["Ruby on Rails", "MySQL", "StimulusJS", "TailwindCSS", "Kubernetes"],
   "order": 3
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Francis Quin — Product Engineer",
-    "description": "Product Engineer focused on frontend. I build complete web products: from complex systems to clear interfaces."
+    "title": "Fran Barahona — Full Stack Developer",
+    "description": "Full stack with React, TypeScript and Rails. I lead frontend at Webel and build products where engineering and AI meet."
   },
   "nav": {
     "work": "Work",
@@ -10,12 +10,13 @@
     "contact": "Contact",
     "ariaLabel": "Main navigation",
     "switchLanguage": "Switch language",
-    "home": "Home"
+    "home": "Home",
+    "brandRole": "Full Stack"
   },
   "hero": {
-    "kicker": "Product Engineer · Frontend",
-    "title": "I turn complex systems into clear products.",
-    "subtitle": "I've spent years building web products end to end: first full stack with Ruby on Rails, now frontend with React and TypeScript at Webel. I work across architecture, interface and product, and increasingly close to AI applied to building software.",
+    "kicker": "Full Stack · Frontend Lead",
+    "title": "Complex systems. Products people get.",
+    "subtitle": "I've spent about five years building web products end to end. I started full stack with Ruby on Rails; now I lead frontend at Webel with React and TypeScript. I move across architecture, interface and product, and increasingly close to AI applied to building software.",
     "ctaPrimary": "See my work",
     "ctaSecondary": "Get in touch",
     "scrollHint": "Scroll to bring the system into order",
@@ -24,40 +25,40 @@
   "sections": {
     "work": "Work",
     "principles": "How I work",
-    "skills": "Capabilities",
+    "skills": "Toolkit",
     "experience": "Experience",
     "contact": "Contact"
   },
   "webel": {
-    "kicker": "Current role · In production",
+    "kicker": "Right now · In production",
     "title": "Webel",
-    "intro": "A services marketplace with thousands of users and an active product team. I work as a Frontend Developer across the whole platform.",
-    "areasLabel": "Areas I work on",
+    "intro": "A home-services marketplace with thousands of users and an active product team. I'm the web lead: internal dashboard, company profile, marketplace and the Next.js migration.",
+    "areasLabel": "What I'm working on",
     "areas": [
       {
         "name": "Webel Business",
-        "description": "The B2B side of the platform: service procurement for companies, with its own flows, permissions and purchasing cycle."
+        "description": "The B2B side of the platform: companies hiring services, with their own flows, permissions and purchasing cycle. A meaningful share of GMV goes through here."
       },
       {
         "name": "Internal dashboard",
-        "description": "Operations tooling for the team: user, service and incident management, plus business metrics."
+        "description": "The tool the team runs operations with: users, services, incidents and business metrics. A full product on its own."
       },
       {
         "name": "Programmatic SEO",
-        "description": "Large-scale page generation to capture search demand: templates, structured data and carefully tuned performance."
+        "description": "Pages at scale to capture search demand: templates, structured data and carefully tuned performance. Part of it in Astro."
       },
       {
         "name": "Core marketplace",
-        "description": "The main product: search, booking and tracking of services between customers and professionals."
+        "description": "The main product: search, booking and tracking between customers and professionals. Includes heavy flows like payments and verification."
       }
     ],
     "cta": "Read the full case",
     "visit": "Visit appwebel.com"
   },
   "projects": {
-    "kicker": "Selected work",
-    "title": "Things I've built",
-    "intro": "Products in production, my own systems and experiments. Ordered by where my energy goes now.",
+    "kicker": "A selection",
+    "title": "Things I've been building",
+    "intro": "Products in production, my own systems and the odd experiment. Ordered by where my energy goes now.",
     "viewProject": "View project",
     "viewAll": "View all",
     "categories": {
@@ -70,37 +71,37 @@
   },
   "principles": {
     "kicker": "How I work",
-    "title": "Four principles, no dogma",
+    "title": "Four ideas that guide me (no dogma)",
     "items": [
       {
-        "title": "Understand before building",
-        "description": "Code is the cheap part. Before writing a line, I ask who it's for, what problem it solves and how we'll know it works."
+        "title": "Understand first, build second",
+        "description": "Code is the cheap part. Before writing a line I ask who it's for, what problem it solves and how we'll know it works."
       },
       {
-        "title": "Reduce complexity",
-        "description": "A complex system is no excuse for a complex interface. My job is to absorb that complexity and hand back something people grasp at first sight."
+        "title": "Complexity stays behind the curtain",
+        "description": "A complex system is no excuse for a complex interface. My job is to absorb that and hand back something people grasp at first sight."
       },
       {
-        "title": "Design for change",
-        "description": "Today's product won't be next year's. I build systems out of pieces you can swap without tearing the whole building down."
+        "title": "Pieces you can swap",
+        "description": "Today's product won't be next year's. I build out of pieces you can replace without tearing the whole building down."
       },
       {
-        "title": "AI as an amplifier",
+        "title": "AI speeds things up; judgment stays mine",
         "description": "I use agents and models to explore faster, automate the repetitive and reach the decisions that matter sooner. The tool amplifies; the judgment stays mine."
       }
     ]
   },
   "skills": {
-    "kicker": "Capabilities",
-    "title": "From server to pixel, and from pixel to business",
+    "kicker": "What I work with",
+    "title": "From server to pixel — and from pixel to business",
     "groups": [
       {
         "domain": "Frontend",
-        "items": ["React", "TypeScript", "Astro", "Modern CSS", "Accessibility", "Web performance", "Design systems"]
+        "items": ["React", "TypeScript", "Next.js", "Astro", "TailwindCSS", "Accessibility", "Web performance"]
       },
       {
         "domain": "Full stack",
-        "items": ["Ruby on Rails", "Node.js", "PostgreSQL", "REST APIs", "Testing", "CI/CD"]
+        "items": ["Ruby on Rails", "Node.js", "PostgreSQL", "MySQL", "REST APIs", "Testing", "CI/CD"]
       },
       {
         "domain": "Product",
@@ -113,31 +114,31 @@
     ]
   },
   "experience": {
-    "kicker": "Trajectory",
-    "title": "Full stack → frontend → product",
+    "kicker": "The path so far",
+    "title": "Full stack to frontend, then into product",
     "stages": {
       "fullstack": "Full Stack",
       "frontend": "Frontend",
       "product": "Product / AI"
     },
-    "evolutionNote": "The direction is clear: each stage has brought me closer to where engineering meets product. The next one is AI-powered product engineering."
+    "evolutionNote": "Each stage has brought me closer to where engineering and product meet. What's next is that same place, amplified by AI."
   },
   "contact": {
-    "kicker": "Contact",
-    "title": "Shall we build something?",
-    "intro": "I'm drawn to teams building real products and to projects where engineering and product overlap. If that sounds like what you're working on, write to me.",
+    "kicker": "Let's talk",
+    "title": "If you're building something interesting…",
+    "intro": "I'm drawn to teams that ship real products and to projects where engineering and product overlap. If that sounds like what you're working on, write to me.",
     "emailLabel": "Email",
     "socialLabel": "You can also find me on",
     "cta": "Write to me"
   },
   "projectPage": {
     "back": "Back to work",
-    "problem": "The problem",
+    "problem": "What needed solving",
     "audience": "Who it's for",
     "role": "My role",
-    "responsibilities": "Responsibilities",
-    "decisions": "Key decisions",
-    "outcomes": "Outcomes",
+    "responsibilities": "What I did",
+    "decisions": "Decisions that mattered",
+    "outcomes": "What came of it",
     "technologies": "Technologies",
     "status": "Status",
     "year": "Year",
@@ -146,7 +147,7 @@
     "nextProject": "Next project"
   },
   "footer": {
-    "built": "Designed and built by Francis Quin",
+    "built": "Designed and built by Fran",
     "stack": "Astro · TypeScript · Three.js · Motion",
     "rights": "All rights reserved"
   },

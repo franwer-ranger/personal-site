@@ -2,7 +2,7 @@
   "lang": "es",
   "title": "Product OS",
   "slug": "product-os",
-  "summary": "Un sistema operativo de producto: especificaciones estructuradas, agentes de IA y context engineering para llevar una idea a software funcional. La aplicación es la implementación de ese sistema.",
+  "summary": "Un sistema operativo de producto: especificaciones estructuradas, agentes de IA y context engineering para llevar una idea a software que funciona. La app es la implementación de ese sistema.",
   "problem": "Construir software con agentes de IA funciona bien en demos y mal en proyectos reales: el contexto se pierde, las decisiones no quedan registradas y cada sesión empieza casi de cero.",
   "audience": "Yo mismo construyendo mis productos, y a medio plazo cualquier maker que trabaje con agentes de IA.",
   "role": "Diseño e implementación completas: definición del sistema, arquitectura y desarrollo de la app.",
@@ -11,18 +11,18 @@
   "technologies": ["Agentes de IA", "Context engineering", "TypeScript", "Astro", "Especificaciones estructuradas"],
   "responsibilities": [
     "Definir el modelo de especificaciones: cómo se describe un producto para que un agente pueda construirlo.",
-    "Diseñar los flujos de orquestación: qué tareas hace cada agente y en qué orden.",
+    "Diseñar los flujos de orquestación: qué hace cada agente y en qué orden.",
     "Construir la aplicación que implementa el sistema.",
-    "Probar el sistema usándolo para desarrollar otros proyectos reales."
+    "Probarlo usándolo para desarrollar otros proyectos reales."
   ],
   "decisions": [
     "La especificación es la fuente de verdad: el código se regenera, la intención no.",
-    "Contexto explícito y versionado en lugar de conversaciones largas que se degradan.",
+    "Contexto explícito y versionado, en lugar de conversaciones largas que se degradan.",
     "La app y el método evolucionan juntos: cada proyecto real alimenta el sistema."
   ],
   "outcomes": [
     "Flujo de desarrollo asistido por IA que uso a diario en mis proyectos.",
-    "Varios productos construidos con el sistema, incluido este sitio web."
+    "Varios productos construidos con el sistema, incluida esta web."
   ],
   "featured": false,
   "priority": 2,

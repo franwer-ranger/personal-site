@@ -2,29 +2,30 @@
   "lang": "es",
   "title": "Webel",
   "slug": "webel",
-  "summary": "Marketplace de servicios en producción con miles de usuarios. Trabajo como Frontend Developer sobre toda la plataforma: el producto B2B, el dashboard interno, la plataforma de SEO programático y el marketplace core.",
-  "problem": "Contratar servicios profesionales (reformas, clases, cuidados, eventos) sigue siendo un proceso opaco: comparar opciones cuesta, los precios no son claros y coordinar agendas es un intercambio eterno de mensajes.",
-  "audience": "Personas que necesitan contratar un servicio, profesionales que ofrecen su trabajo y empresas que gestionan servicios para sus equipos.",
-  "role": "Frontend Developer en el equipo de producto, trabajando sobre las cuatro áreas de la plataforma con React y TypeScript.",
+  "summary": "Marketplace de servicios a domicilio en producción, con miles de usuarios. Soy el lead de web: dashboard interno, perfil empresa (una parte importante del GMV), marketplace y la migración a Next.js.",
+  "problem": "Contratar servicios profesionales (reformas, clases, cuidados, eventos) sigue siendo un proceso opaco: comparar opciones cuesta, los precios no son claros y coordinar agendas acaba en un intercambio eterno de mensajes.",
+  "audience": "Personas que necesitan un servicio, profesionales que ofrecen su trabajo y empresas que gestionan servicios para sus equipos.",
+  "role": "Líder técnico frontend: React y TypeScript sobre varios productos críticos, formando al equipo de web y empujando la integración de IA en el desarrollo.",
   "status": "En producción, desarrollo continuo",
-  "year": "2023 — hoy",
-  "technologies": ["React", "TypeScript", "Next.js", "Design system propio", "Testing", "SEO técnico"],
+  "year": "2024 — hoy",
+  "technologies": ["React", "TypeScript", "Next.js", "TailwindCSS", "Astro", "React Email", "Stripe"],
   "responsibilities": [
-    "Desarrollo y evolución del frontend del marketplace: búsqueda, fichas de servicio, contratación y seguimiento.",
-    "Construcción de Webel Business, el producto B2B, con flujos y permisos propios.",
-    "Desarrollo del dashboard interno que usa el equipo para operar la plataforma.",
-    "Implementación frontend de la plataforma de SEO programático: plantillas y páginas generadas a escala.",
-    "Mantenimiento del design system y de la calidad técnica del frontend compartido."
+    "Desarrollo y evolución del frontend del marketplace: búsqueda, fichas, contratación y seguimiento.",
+    "Webel Business, el producto B2B, con flujos y permisos propios.",
+    "Dashboard interno con el que opera el equipo.",
+    "Flujos de alto impacto: verificación y migración de pagos de Mangopay a Stripe.",
+    "Migración de la web principal a Next.js y SEO programático con Astro.",
+    "Formación de dos developers mid-senior y arquitectura de contexto para Cursor y Claude Code."
   ],
   "decisions": [
-    "Componentes compartidos entre las cuatro áreas para que cada producto nuevo cueste menos que el anterior.",
+    "Componentes compartidos entre productos para que cada uno nuevo cueste menos que el anterior.",
     "Rendimiento y SEO técnico tratados como requisitos de producto, no como tareas de mantenimiento.",
-    "Separación clara entre la lógica de cada vertical (B2B, marketplace, SEO) y la base común de UI."
+    "IA en el flujo de desarrollo del equipo: skills, documentación y contexto útiles de verdad, no demos."
   ],
   "outcomes": [
-    "Plataforma viva en producción con desarrollo continuo durante años.",
-    "Miles de páginas de SEO programático generadas captando demanda orgánica.",
-    "Cuatro frentes de producto sostenidos por una base frontend común."
+    "Plataforma viva en producción con varios frentes de producto activos.",
+    "Equipo de web formado y autónomo en buena parte del día a día.",
+    "Flujos críticos (pagos, verificación, B2B) entregados en colaboración con backend, iOS y Android."
   ],
   "links": [{ "label": "appwebel.com", "url": "https://appwebel.com" }],
   "featured": true,

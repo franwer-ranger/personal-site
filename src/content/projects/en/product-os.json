@@ -11,9 +11,9 @@
   "technologies": ["AI agents", "Context engineering", "TypeScript", "Astro", "Structured specifications"],
   "responsibilities": [
     "Defining the specification model: how to describe a product so an agent can build it.",
-    "Designing the orchestration flows: which tasks each agent handles and in what order.",
+    "Designing the orchestration flows: what each agent does and in what order.",
     "Building the application that implements the system.",
-    "Testing the system by using it to develop other real projects."
+    "Testing it by using it to develop other real projects."
   ],
   "decisions": [
     "The specification is the source of truth: code can be regenerated, intent cannot.",

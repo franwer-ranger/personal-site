@@ -2,26 +2,27 @@
   "lang": "es",
   "title": "AuroraJobs",
   "slug": "aurorajobs",
-  "summary": "Portal de empleo full stack construido con Ruby on Rails: búsqueda de ofertas, alertas y publicación para empresas. Un producto completo, de la base de datos al despliegue.",
-  "problem": "Los portales de empleo generalistas mezclan todo con todo. AuroraJobs exploraba un espacio más centrado, con búsqueda cuidada y alertas útiles.",
+  "summary": "Portal de empleo full stack con Ruby on Rails: búsqueda, alertas, portal para empresas y CMS. Un producto completo, construido como único developer tras el mentoring inicial del CTO.",
+  "problem": "Los portales de empleo generalistas mezclan todo con todo. AuroraJobs exploraba un espacio más centrado, con búsqueda cuidada y alertas que de verdad sirvieran.",
   "audience": "Personas buscando empleo y empresas publicando ofertas.",
-  "role": "Full Stack Developer: producto completo en Ruby on Rails, trabajando cerca de las decisiones de producto.",
+  "role": "Full Stack Developer con ownership total del ciclo: de la idea a producción, trabajando cerca de las decisiones de producto.",
   "status": "Proyecto completado",
-  "year": "2021 — 2023",
-  "technologies": ["Ruby on Rails", "PostgreSQL", "Hotwire", "Sidekiq", "Heroku"],
+  "year": "2021 — 2024",
+  "technologies": ["Ruby on Rails", "MySQL", "StimulusJS", "TailwindCSS", "Kubernetes", "RSpec"],
   "responsibilities": [
-    "Desarrollo completo del producto: modelos, búsqueda, alertas por email, panel de empresas.",
-    "Diseño e implementación del sistema de búsqueda de ofertas.",
-    "Despliegue, monitorización y operación en producción.",
+    "Desarrollo completo del producto: modelos, búsqueda, alertas, dashboard interno, portal empresas y CMS.",
+    "Mentoring de dos developers junior e implementación de SCRUM.",
+    "Despliegue y operación en producción (Kubernetes).",
     "Decisiones de producto junto con el equipo: qué construir y qué descartar."
   ],
   "decisions": [
-    "Rails monolítico con Hotwire: velocidad de desarrollo por encima de arquitectura sofisticada.",
+    "Rails monolítico con Stimulus: velocidad de desarrollo por encima de arquitectura sofisticada.",
     "Búsqueda como pieza central del producto, no como un filtro añadido.",
     "Alertas por email como canal principal de retorno de usuarios."
   ],
   "outcomes": [
-    "Producto completo funcionando en producción.",
+    "Producto completo funcionando en producción durante años.",
+    "Paso por Lanzadera en 2022 como empresa incubada.",
     "La experiencia que consolidó mi etapa full stack y mi forma de trabajar con producto."
   ],
   "featured": false,

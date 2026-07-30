@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Música</title>
+  <desc id="desc">Ilustración editorial lineal de una persona escuchando música con auriculares junto a un tocadiscos.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path opacity=".1" fill="currentColor" stroke="none" d="M54 340c77-35 154-40 231-15 61 20 126 15 196-14 36-15 71-12 105 7v79H54z"/>
+    <path d="M53 397h534M99 397v-73h188v73M350 397v-118h191v118"/>
+    <path d="M374 301h142v74H374z"/>
+    <circle cx="430" cy="338" r="25"/>
+    <circle cx="430" cy="338" r="6"/>
+    <path d="M472 319l25 13M472 319v40M497 332l-35 17"/>
+    <path d="M192 112c31 0 52 23 52 54 0 30-20 51-51 51-30 0-51-21-51-51 0-31 20-54 50-54z"/>
+    <path d="M146 165c4-40 24-59 58-52 27 5 41 24 40 54-17-3-32-13-43-28-14 15-32 24-55 26z"/>
+    <path d="M158 184c8 8 17 12 29 12M230 177c8 4 10 11 4 18"/>
+    <path d="M142 165c-18 0-25 13-25 32s7 32 25 32M244 165c18 0 25 13 25 32s-7 32-25 32"/>
+    <path d="M117 197c0-61 30-100 76-100 47 0 76 38 76 100"/>
+    <path d="M142 172v49M244 172v49"/>
+    <path d="M157 225c-41 18-63 50-67 97M230 224c38 13 62 42 70 88"/>
+    <path d="M158 226l36 35 36-37M194 261v98"/>
+    <path d="M142 267l30 47 59 20M242 267l-22 45 44 24"/>
+    <path d="M172 314c-9 0-16 7-16 16h31M264 336c-9 0-16 7-16 16h31"/>
+    <path d="M193 217v23"/>
+    <path d="M116 359h191M130 359l12-43h139l12 43"/>
+    <path d="M110 82v-28M126 76V44M286 75V45M302 85V57"/>
+    <path d="M345 106c13-18 27-18 40 0 13-18 27-18 40 0 13-18 27-18 40 0 13-18 27-18 40 0"/>
+    <path d="M344 138c13-18 27-18 40 0 13-18 27-18 40 0 13-18 27-18 40 0 13-18 27-18 40 0"/>
+    <path d="M342 180h184M364 180v42c0 18 30 18 30 0v-61M490 180v34c0 18 30 18 30 0v-63"/>
+  </g>
+</svg>

@@ -9,6 +9,7 @@ const { locale } = Astro.props;
 const t = getTranslations(locale);
 ---
 
+<div class="hero-pin" data-hero-pin>
 <section class="hero" data-hero>
   <canvas class="hero-canvas" data-hero-canvas role="img" aria-label={t.hero.sceneLabel}></canvas>
   <div class="hero-veil" aria-hidden="true"></div>
@@ -28,10 +29,23 @@ const t = getTranslations(locale);
     <span class="hero-scroll-line"><span></span></span>
   </div>
 </section>
+</div>
 
 <style>
+  /*
+   * The wrapper is taller than the hero; the hero sticks to the top while the
+   * extra height scrolls by, so the scroll gesture visibly orders the system
+   * and the resolved lattice stays on screen. Plain sticky — the scroll never
+   * stops, content just arrives ~one gesture later.
+   */
+  .hero-pin {
+    --hero-pin-extra: 85svh;
+    min-height: calc(100svh + var(--hero-pin-extra));
+  }
+
   .hero {
-    position: relative;
+    position: sticky;
+    top: 0;
     min-height: 100svh;
     display: flex;
     align-items: center;
@@ -98,6 +112,8 @@ const t = getTranslations(locale);
     display: grid;
     justify-items: center;
     gap: 0.6rem;
+    /* Fades as the system orders (--hero-order is set from the scene). */
+    opacity: calc(1 - var(--hero-order, 0) * 1.6);
   }
 
   .hero-scroll-label {
@@ -132,6 +148,10 @@ const t = getTranslations(locale);
   }
 
   @media (max-width: 48rem) {
+    .hero-pin {
+      --hero-pin-extra: 60svh;
+    }
+
     .hero-veil {
       background: linear-gradient(
         180deg,
@@ -147,6 +167,11 @@ const t = getTranslations(locale);
   }
 
   @media (prefers-reduced-motion: reduce) {
+    /* No pin: the scene renders a static ordered frame, nothing to drive. */
+    .hero-pin {
+      --hero-pin-extra: 0svh;
+    }
+
     .hero-scroll-line span {
       animation: none;
     }

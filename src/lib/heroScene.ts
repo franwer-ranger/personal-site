@@ -239,11 +239,18 @@ export function initHeroScene(canvas: HTMLCanvasElement, section: HTMLElement): 
   }
 
   // ---- Scroll + pointer wiring ----
+  // The hero sits sticky inside a taller pin wrapper: while the wrapper's
+  // extra height scrolls by, the hero stays on screen and the gesture drives
+  // the ordering. Ordering completes at 80% of that travel so the resolved
+  // lattice holds in view for a beat before the hero releases.
+  const pin = section.closest<HTMLElement>('[data-hero-pin]') ?? section;
+
   function onScroll(): void {
-    const rect = section.getBoundingClientRect();
-    const total = rect.height + window.innerHeight * 0.25;
-    const passed = Math.min(Math.max(-rect.top + window.innerHeight * 0.15, 0), total);
-    progress = passed / total;
+    const pinRect = pin.getBoundingClientRect();
+    const travel = Math.max(pinRect.height - section.offsetHeight, window.innerHeight * 0.4);
+    const passed = Math.min(Math.max(-pinRect.top, 0), travel);
+    progress = Math.min(passed / (travel * 0.8), 1);
+    section.style.setProperty('--hero-order', progress.toFixed(3));
   }
 
   function onPointerMove(event: PointerEvent): void {
@@ -267,6 +274,7 @@ export function initHeroScene(canvas: HTMLCanvasElement, section: HTMLElement): 
   } else {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
     window.addEventListener('pointermove', onPointerMove, { passive: true });
     start();
   }
@@ -279,6 +287,7 @@ export function initHeroScene(canvas: HTMLCanvasElement, section: HTMLElement): 
     stop();
     visibilityObserver.disconnect();
     window.removeEventListener('scroll', onScroll);
+    window.removeEventListener('resize', onScroll);
     window.removeEventListener('pointermove', onPointerMove);
     window.removeEventListener('resize', resize);
     geometry.dispose();

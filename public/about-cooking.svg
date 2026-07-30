@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Cocina</title>
+  <desc id="desc">Ilustración editorial lineal de una persona cocinando con una sartén, hierbas y utensilios.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path opacity=".1" fill="currentColor" stroke="none" d="M61 353c66-32 131-40 194-23 66 18 137 15 213-10 42-14 82-10 119 12v63H61z"/>
+    <path d="M55 395h532M93 395v-64h454v64"/>
+    <path d="M385 315h149l-15 55H397zM534 328h40"/>
+    <path d="M404 315c-5-15-2-29 10-42M432 315c-11-19-8-37 8-54M463 315c-8-15-5-29 9-41"/>
+    <path d="M188 123h340v83H188zM217 151h82M217 177h55"/>
+    <path d="M427 123v83M470 123v83"/>
+    <path d="M448 145v37M491 145v37"/>
+    <path d="M116 117v109M89 117v38c0 17 27 17 27 0v-38M143 117v109M135 117c0 25 16 28 16 0"/>
+    <path d="M280 108c29 0 48 22 48 51 0 30-18 50-47 50-28 0-47-20-47-49 0-30 18-52 46-52z"/>
+    <path d="M237 158c3-39 22-57 55-51 25 5 38 22 37 52-16-3-30-12-41-27-13 14-30 23-51 26z"/>
+    <path d="M249 178c7 8 16 12 27 12M317 171c8 4 10 11 4 18"/>
+    <path d="M245 214c-39 17-62 48-68 94M313 213c33 12 55 38 65 78"/>
+    <path d="M245 215l36 33 32-35M281 248v99"/>
+    <path d="M235 250l34 48 62 16M325 248l-21 48 45 19"/>
+    <path d="M267 298c-8 0-15 7-15 15h29M331 314c-8 0-15 7-15 15h29"/>
+    <path d="M281 209v23"/>
+    <path d="M189 308l-22 62h211l-20-62"/>
+    <path d="M149 282c-20-15-31-35-32-59M149 282c10-25 26-43 47-53M149 282c-6-26 0-48 18-65M149 282v47"/>
+    <path d="M125 329h51l-8 41h-35z"/>
+    <path d="M437 245c7-17 23-22 46-14-4 20-19 28-46 24M438 255c-16-14-33-14-52 1 12 18 29 21 52 9M438 245v45"/>
+    <path d="M410 290h56l-7 25h-42z"/>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Fran Barahona — Full Stack Developer",
+    "title": "Fran Barahona — Product Engineer",
     "description": "Full stack con React, TypeScript y Rails. Lidero el frontend en Webel y construyo producto donde ingeniería e IA se encuentran."
   },
   "nav": {
@@ -11,10 +11,10 @@
     "ariaLabel": "Navegación principal",
     "switchLanguage": "Cambiar idioma",
     "home": "Inicio",
-    "brandRole": "Full Stack"
+    "brandRole": "Product Engineer"
   },
   "hero": {
-    "kicker": "Full Stack · Frontend Lead",
+    "kicker": "Product Engineer · Frontend Lead · Full Stack",
     "title": "Sistemas complejos. Productos que se entienden.",
     "subtitle": "Llevo unos cinco años construyendo producto web de punta a punta. Empecé full stack con Ruby on Rails; ahora lidero el frontend en Webel con React y TypeScript. Me muevo entre arquitectura, interfaz y producto, y cada vez más cerca de la IA aplicada a construir software.",
     "ctaPrimary": "Ver proyectos",

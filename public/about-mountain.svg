@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-labelledby="title desc">
+  <title id="title">Montaña y senderismo</title>
+  <desc id="desc">Ilustración editorial lineal de una persona caminando por un sendero entre montañas.</desc>
+  <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="500" cy="92" r="34"/>
+    <path opacity=".1" fill="currentColor" stroke="none" d="M24 370l137-180 77 86 107-173 93 118 49-58 132 207z"/>
+    <path d="M22 370l139-180 78 86 106-173 94 118 48-58 132 207"/>
+    <path d="M104 265l57-75 31 35 27-28 126 173"/>
+    <path d="M271 221l74-118 48 61 20-18 74 92"/>
+    <path d="M318 146l27-43 32 41-17-8-15 13-12-9z"/>
+    <path d="M33 370c91-30 170-28 235 7 54 29 122 30 204 4 48-15 98-19 149-11"/>
+    <path d="M128 370c84-17 145-7 182 29 33 31 82 36 149 14 55-18 108-15 160 8"/>
+    <path d="M89 326l-22 44h44zM574 314l-27 56h54zM524 335l-19 35h38z"/>
+    <path d="M89 326v-31M574 314v-42M524 335v-29"/>
+    <path d="M332 239c20 0 34 16 34 36 0 19-13 33-34 33-20 0-34-15-34-34 0-20 14-35 34-35z"/>
+    <path d="M302 270c7-28 23-40 47-26 11 7 17 18 17 33-18-5-32-15-41-30-5 12-13 20-23 23z"/>
+    <path d="M316 306l-19 53 26 55M349 306l18 57-20 51"/>
+    <path d="M302 325l-36 39M358 326l35 35"/>
+    <path d="M279 354l-16 71M393 352l18 73"/>
+    <path d="M307 319c-20-2-31 10-34 36l30 10M356 320c18 2 27 13 28 35l-24 10"/>
+    <path d="M316 308c6 12 27 13 33-2"/>
+    <path d="M290 427h-41M426 427h-38"/>
+    <path d="M273 354l-10-16M384 354l11-16"/>
+    <path d="M48 105c22-15 43-14 64 1 18-18 40-18 65 0M63 130c15-10 29-10 44 0"/>
+  </g>
+</svg>

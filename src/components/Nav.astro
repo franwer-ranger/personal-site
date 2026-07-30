@@ -22,9 +22,8 @@ const links = [
 <header class="site-nav" data-nav>
   <div class="container nav-inner">
     <a href={home} class="nav-brand" aria-label={t.nav.home}>
-      <span class="nav-mark" aria-hidden="true">FB</span>
+      <img class="nav-mark" src="/silhouette.svg" alt="" width="28" height="35" aria-hidden="true" />
       <span class="nav-role mono">{t.nav.brandRole}</span>
-
     </a>
 
     <nav aria-label={t.nav.ariaLabel} class="nav-links">
@@ -80,15 +79,15 @@ const links = [
 
   .nav-brand {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 0.75rem;
   }
 
   .nav-mark {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 560;
-    letter-spacing: -0.02em;
+    width: 1.35rem;
+    height: auto;
+    color: var(--ink);
+    flex-shrink: 0;
   }
 
   .nav-role {

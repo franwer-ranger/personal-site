@@ -28,6 +28,28 @@
     "Critical flows (payments, verification, B2B) delivered alongside backend, iOS and Android."
   ],
   "links": [{ "label": "appwebel.com", "url": "https://appwebel.com" }],
+  "gallery": [
+    {
+      "src": "/webel/dashboard_service_viewer.png",
+      "alt": "The Webel back office showing a service in detail: status, weekly price breakdown with fees and VAT, frequency and the calendar of visits.",
+      "caption": "The back office, with the breakdown that's hardest to get right: fees and VAT on both sides."
+    },
+    {
+      "src": "/webel/business_calendar.png",
+      "alt": "The organisation dashboard with the weekly calendar, one row per worker and services placed in their time slots.",
+      "caption": "An organisation's calendar: one row per worker, every service in its slot."
+    },
+    {
+      "src": "/webel/business_balance_mobile.png",
+      "alt": "The balance screen on mobile, with available funds, the transfer button, pending payments and the history of paid services.",
+      "caption": "Balance on mobile: what's available, what's pending, and which service each euro came from."
+    },
+    {
+      "src": "/webel/business_chat_mobile.png",
+      "alt": "A service chat on mobile showing a date change proposal waiting for the client to accept it.",
+      "caption": "The service chat: moving a date is a proposal the client accepts, not a change on its own."
+    }
+  ],
   "featured": true,
   "priority": 1,
   "visualTheme": "copper",

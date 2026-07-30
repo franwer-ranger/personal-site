@@ -144,7 +144,15 @@
     "year": "Año",
     "category": "Tipo",
     "links": "Enlaces",
+    "gallery": "Por dentro",
     "nextProject": "Siguiente proyecto"
+  },
+  "gallery": {
+    "prev": "Captura anterior",
+    "next": "Captura siguiente",
+    "close": "Cerrar",
+    "zoom": "Ampliar",
+    "hint": "Pulsa para ampliar"
   },
   "footer": {
     "built": "Diseñado y construido por Fran",

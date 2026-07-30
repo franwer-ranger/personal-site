@@ -48,7 +48,11 @@ const { title = t.meta.title, description = t.meta.description } = Astro.props;
     <Footer locale={locale} />
     <script>
       import { initReveals } from '../lib/reveal';
-      document.addEventListener('astro:page-load', initReveals);
+      import { initGalleries } from '../lib/gallery';
+      document.addEventListener('astro:page-load', () => {
+        initReveals();
+        initGalleries();
+      });
     </script>
   </body>
 </html>

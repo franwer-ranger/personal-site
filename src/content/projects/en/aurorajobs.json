@@ -25,6 +25,38 @@
     "Lanzadera incubator program in 2022.",
     "The experience that consolidated my full stack years and how I work with product."
   ],
+  "gallery": [
+    {
+      "src": "/aurorajobs/aurorajobs_landing.png",
+      "alt": "The aurorajobs landing page, headlined “everything you need to enter the job market”, with three entry points: find work, get guidance and train.",
+      "caption": "The landing page and the three ways into the product: jobs, guidance and training."
+    },
+    {
+      "src": "/aurorajobs/aurorajobs_mobile_categories.png",
+      "alt": "The Discover tab on mobile, with the opportunity search, a featured training programme and the employers hiring young talent.",
+      "caption": "Discover: search leads, with featured employers and training underneath."
+    },
+    {
+      "src": "/aurorajobs/aurorajobs_mobile_jobs.png",
+      "alt": "A list of 1,822 openings on mobile with Easy apply and contract type filters, showing a Glovo role.",
+      "caption": "The job list: city, area, experience, contract and remote policy at a glance."
+    },
+    {
+      "src": "/aurorajobs/aurorajobs_mobile_home.png",
+      "alt": "The Learning tab on mobile, with training by category and episodes of the Toma Curro podcast.",
+      "caption": "Learning: courses by category and the podcast, inside the same app."
+    },
+    {
+      "src": "/aurorajobs/aurorajobs_hacks.png",
+      "alt": "auroraHacks, the content section, with categories by field, a featured editorial and a row of articles, events and podcasts.",
+      "caption": "auroraHacks, the content side: editorials, events and podcasts by field."
+    },
+    {
+      "src": "/aurorajobs/aurorajobs_hr.png",
+      "alt": "The employer portal showing candidates for a role, with their video interview and the discard, save or contact actions.",
+      "caption": "The employer portal: candidates per role, video interview and the decision on one screen."
+    }
+  ],
   "featured": false,
   "priority": 4,
   "visualTheme": "slate",

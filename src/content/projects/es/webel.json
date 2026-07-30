@@ -28,6 +28,28 @@
     "Flujos críticos (pagos, verificación, B2B) entregados en colaboración con backend, iOS y Android."
   ],
   "links": [{ "label": "appwebel.com", "url": "https://appwebel.com" }],
+  "gallery": [
+    {
+      "src": "/webel/dashboard_service_viewer.png",
+      "alt": "Backoffice de Webel con el detalle de un servicio: estado, desglose de precio semanal con comisiones e IVA, frecuencia y calendario de las visitas.",
+      "caption": "El backoffice, con el desglose que más cuesta cuadrar: comisiones e IVA de las dos partes."
+    },
+    {
+      "src": "/webel/business_calendar.png",
+      "alt": "Panel de organización con el calendario semanal, una fila por trabajador y los servicios colocados en su franja horaria.",
+      "caption": "El calendario de una organización: una fila por trabajador y los servicios en su hora."
+    },
+    {
+      "src": "/webel/business_balance_mobile.png",
+      "alt": "Pantalla de saldo en móvil, con el disponible, el botón de transferir, lo pendiente de cobro y el historial de servicios cobrados.",
+      "caption": "El saldo en móvil: lo disponible, lo pendiente y de qué servicio viene cada euro."
+    },
+    {
+      "src": "/webel/business_chat_mobile.png",
+      "alt": "Chat de un servicio en móvil con una propuesta de cambio de fecha pendiente de que el cliente la acepte.",
+      "caption": "El chat del servicio: cambiar una fecha es una propuesta que el cliente acepta, no un cambio a secas."
+    }
+  ],
   "featured": true,
   "priority": 1,
   "visualTheme": "copper",

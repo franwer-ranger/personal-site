@@ -22,6 +22,28 @@
     "Daily use managing my own project portfolio.",
     "Fewer lost ideas and more finished projects."
   ],
+  "gallery": [
+    {
+      "src": "/maker_tracker/maker_tracker_login.png",
+      "alt": "The Maker Tracker sign-up screen on a black background, with the line “Just Make It.” and an email and password form.",
+      "caption": "Sign-up. “Just Make It.” is the reminder of what this is for."
+    },
+    {
+      "src": "/maker_tracker/maker_tracker_empty.png",
+      "alt": "A freshly created board with three empty columns — Done, On going / Backlog and Icebox — each with its own illustration.",
+      "caption": "The empty board: Done, Backlog and Icebox. No idea lands without a column."
+    },
+    {
+      "src": "/maker_tracker/maker_tracker_doing.png",
+      "alt": "The form for creating a story in the Icebox, with name, request type, points, description and attachments.",
+      "caption": "Capturing an idea: name, type, points and little else. If it's costly, it won't get logged."
+    },
+    {
+      "src": "/maker_tracker/maker_tracker_full.png",
+      "alt": "The board in use, with a full Icebox of pointed ideas, the current iteration split into dated sprints and closed weeks under Done.",
+      "caption": "The same board months in: current iteration by sprint, and the weeks already closed."
+    }
+  ],
   "featured": false,
   "priority": 3,
   "visualTheme": "moss",

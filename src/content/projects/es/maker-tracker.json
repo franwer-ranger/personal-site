@@ -22,6 +22,28 @@
     "Uso diario para gestionar mi propia cartera de proyectos.",
     "Menos ideas perdidas y más proyectos terminados."
   ],
+  "gallery": [
+    {
+      "src": "/maker_tracker/maker_tracker_login.png",
+      "alt": "Pantalla de alta de Maker Tracker sobre fondo negro, con el lema «Just Make It.» y un formulario de email y contraseña.",
+      "caption": "El alta. «Just Make It.» es el recordatorio de para qué existe esto."
+    },
+    {
+      "src": "/maker_tracker/maker_tracker_empty.png",
+      "alt": "Tablero recién creado con las tres columnas vacías: Done, On going / Backlog e Icebox, cada una con su ilustración.",
+      "caption": "El tablero en blanco: Done, Backlog e Icebox. Ninguna idea nace sin columna."
+    },
+    {
+      "src": "/maker_tracker/maker_tracker_doing.png",
+      "alt": "Formulario para crear una historia en Icebox, con nombre, tipo de petición, puntos, descripción y adjuntos.",
+      "caption": "Capturar una idea: nombre, tipo, puntos y poco más. Si cuesta, no se apunta."
+    },
+    {
+      "src": "/maker_tracker/maker_tracker_full.png",
+      "alt": "Tablero en uso con el Icebox lleno de ideas puntuadas, la iteración actual dividida en sprints por fechas y las semanas ya cerradas en Done.",
+      "caption": "El mismo tablero con meses de uso: iteración actual por sprints y semanas cerradas."
+    }
+  ],
   "featured": false,
   "priority": 3,
   "visualTheme": "moss",

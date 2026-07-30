@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import ProjectGallery from './ProjectGallery.astro';
 import { getTranslations, projectPath, homePath, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -72,6 +73,14 @@ const { data } = project;
           <p>{data.audience}</p>
         </div>
       </section>
+
+      {
+        data.gallery && data.gallery.length > 0 && (
+          <div data-reveal>
+            <ProjectGallery locale={locale} shots={data.gallery} />
+          </div>
+        )
+      }
 
       <section class="project-block" data-reveal>
         <h2 class="block-title mono">{t.projectPage.responsibilities}</h2>

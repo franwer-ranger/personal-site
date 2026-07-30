@@ -25,6 +25,38 @@
     "Paso por Lanzadera en 2022 como empresa incubada.",
     "La experiencia que consolidó mi etapa full stack y mi forma de trabajar con producto."
   ],
+  "gallery": [
+    {
+      "src": "/aurorajobs/aurorajobs_landing.png",
+      "alt": "Portada de aurorajobs con el titular «Todo lo que necesitas para entrar en el mercado laboral» y tres accesos: encontrar empleo, orientarme mejor y formarme.",
+      "caption": "La portada, con las tres entradas al producto: empleo, orientación y formación."
+    },
+    {
+      "src": "/aurorajobs/aurorajobs_mobile_categories.png",
+      "alt": "Pestaña Descubre en móvil, con buscador de oportunidades, una formación destacada y los empleadores para talento joven.",
+      "caption": "Descubre: el buscador manda, y debajo empleadores y formaciones destacadas."
+    },
+    {
+      "src": "/aurorajobs/aurorajobs_mobile_jobs.png",
+      "alt": "Listado de 1.822 ofertas en móvil con filtros de Easy apply y modalidad de contrato, y la ficha de una oferta de Glovo.",
+      "caption": "El listado de ofertas: ciudad, área, experiencia, contrato y presencialidad de un vistazo."
+    },
+    {
+      "src": "/aurorajobs/aurorajobs_mobile_home.png",
+      "alt": "Pestaña Learning en móvil, con formaciones por categoría y los episodios del podcast Toma Curro.",
+      "caption": "Learning: formaciones por categoría y el podcast, dentro de la misma app."
+    },
+    {
+      "src": "/aurorajobs/aurorajobs_hacks.png",
+      "alt": "auroraHacks, la sección de contenidos, con categorías por área, un editorial destacado y una fila de artículos, eventos y podcasts.",
+      "caption": "auroraHacks, la pata de contenido: editoriales, eventos y podcasts por área."
+    },
+    {
+      "src": "/aurorajobs/aurorajobs_hr.png",
+      "alt": "Portal para empresas mostrando los candidatos de una oferta, con su videoentrevista y las acciones de descartar, guardar o contactar.",
+      "caption": "El portal de empresas: candidatos por oferta, videoentrevista y decisión en la misma pantalla."
+    }
+  ],
   "featured": false,
   "priority": 4,
   "visualTheme": "slate",

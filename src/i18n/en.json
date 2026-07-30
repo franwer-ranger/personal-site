@@ -144,7 +144,15 @@
     "year": "Year",
     "category": "Type",
     "links": "Links",
+    "gallery": "Inside",
     "nextProject": "Next project"
+  },
+  "gallery": {
+    "prev": "Previous screenshot",
+    "next": "Next screenshot",
+    "close": "Close",
+    "zoom": "Enlarge",
+    "hint": "Click to enlarge"
   },
   "footer": {
     "built": "Designed and built by Fran",

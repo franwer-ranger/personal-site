@@ -25,6 +25,17 @@ const projects = defineCollection({
     decisions: z.array(z.string()),
     outcomes: z.array(z.string()),
     links: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
+    gallery: z
+      .array(
+        z.object({
+          // Ruta al .png dentro de public/. El .avif y el .webp se derivan de
+          // ella, así que los tres formatos deben existir (npm run check-assets).
+          src: z.string().regex(/^\/.+\.png$/),
+          alt: z.string(),
+          caption: z.string(),
+        }),
+      )
+      .optional(),
     featured: z.boolean(),
     priority: z.number(),
     visualTheme: z.enum(['ink', 'copper', 'moss', 'slate', 'sand', 'plum']),

@@ -60,8 +60,10 @@ const t = getTranslations(locale);
     transition: color 0.4s var(--ease-out);
   }
 
-  .principle:hover .principle-number {
-    color: var(--accent);
+  @media (hover: hover) {
+    .principle:hover .principle-number {
+      color: var(--accent);
+    }
   }
 
   .principle-text {

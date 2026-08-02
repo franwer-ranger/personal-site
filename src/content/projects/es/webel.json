@@ -2,30 +2,33 @@
   "lang": "es",
   "title": "Webel",
   "slug": "webel",
-  "summary": "Marketplace de servicios a domicilio en producción, con miles de usuarios. Soy el lead de web: dashboard interno, perfil empresa (una parte importante del GMV), marketplace y la migración a Next.js.",
-  "problem": "Contratar servicios profesionales (reformas, clases, cuidados, eventos) sigue siendo un proceso opaco: comparar opciones cuesta, los precios no son claros y coordinar agendas acaba en un intercambio eterno de mensajes.",
-  "audience": "Personas que necesitan un servicio, profesionales que ofrecen su trabajo y empresas que gestionan servicios para sus equipos.",
-  "role": "Líder técnico frontend: React y TypeScript sobre varios productos críticos, formando al equipo de web y empujando la integración de IA en el desarrollo.",
+  "summary": "Marketplace de servicios a domicilio en producción, con millones de usuarios. Soy el lead de web: Organizations, marketplace, SEO programático y el dashboard interno.",
+  "problem": "Webel es el Amazon de los servicios a domicilio. El problema de fondo es la fricción y el descubrimiento: profesionales pequeños (limpiadores del hogar, profesores de inglés, manitas, cuidadores) y personas que necesitan contratar esos servicios sin depender siempre del boca a boca.",
+  "audience": "Personas que necesitan un servicio, profesionales que lo ofrecen y empresas que gestionan servicios para sus equipos.",
+  "role": "Líder técnico frontend: React y TypeScript sobre varios productos críticos, formando al equipo de web y metiendo IA en el flujo de desarrollo.",
   "status": "En producción, desarrollo continuo",
   "year": "2024 — hoy",
-  "technologies": ["React", "TypeScript", "Next.js", "TailwindCSS", "Astro", "React Email", "Stripe"],
+  "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email", "Stripe"],
   "responsibilities": [
-    "Desarrollo y evolución del frontend del marketplace: búsqueda, fichas, contratación y seguimiento.",
-    "Webel Business, el producto B2B, con flujos y permisos propios.",
+    "Webel Organizations, la plataforma B2B: empleados, servicios, calendario, leads, chat, datos fiscales, áreas de servicio, horarios y cobros.",
+    "Marketplace core: búsqueda y visualización de la oferta. Migración completa de Angular a React; hoy es un escaparate que redirige a las apps, sin login ni usuarios.",
+    "SEO programático desde cero en Astro: más de 50k plantillas, datos estructurados y rendimiento. Primer resultado orgánico en Google para «Limpieza a domicilio en Madrid».",
     "Dashboard interno con el que opera el equipo.",
-    "Flujos de alto impacto: verificación y migración de pagos de Mangopay a Stripe.",
-    "Migración de la web principal a Next.js y SEO programático con Astro.",
-    "Formación de dos developers mid-senior y arquitectura de contexto para Cursor y Claude Code."
+    "Unificación de arquitectura entre Organizations, dashboard y marketplace, y extracción del design system a una librería común de componentes.",
+    "Migración de más de 100 mails custom a React Email, con mejor visualización y bugs casi a cero.",
+    "Automatización del flujo de desarrollo con skills, agentes y documentación del DS pensada para agentes (Cursor, Codex, Claude, OpenCode)."
   ],
   "decisions": [
-    "Componentes compartidos entre productos para que cada uno nuevo cueste menos que el anterior.",
-    "Rendimiento y SEO técnico tratados como requisitos de producto, no como tareas de mantenimiento.",
-    "IA en el flujo de desarrollo del equipo: skills, documentación y contexto útiles de verdad, no demos."
+    "Unificar el stack en React en los proyectos grandes, incluida la migración de Angular a React del marketplace, para que el equipo trabaje en un solo lenguaje.",
+    "Sacar el design system a una librería de componentes compartida entre productos.",
+    "Montar el SEO programático desde cero en Astro.",
+    "Meter IA en el día a día: skills de arquitectura, network layer y gitflow, y docs del DS que se puedan tirar a cada proyecto."
   ],
   "outcomes": [
-    "Plataforma viva en producción con varios frentes de producto activos.",
-    "Equipo de web formado y autónomo en buena parte del día a día.",
-    "Flujos críticos (pagos, verificación, B2B) entregados en colaboración con backend, iOS y Android."
+    "Web pasó de ser de los peores departamentos en deuda técnica y stack antiguo a ser prácticamente el que más rápido se mueve.",
+    "Stack moderno: React en las apps, React Email en los mails, Astro en el SEO.",
+    "Bugs casi a cero e interfaces sólidas, con un responsive muy cuidado.",
+    "Propuestas de rendimiento, observabilidad y producto que han entrado en el trabajo del equipo."
   ],
   "links": [{ "label": "appwebel.com", "url": "https://appwebel.com" }],
   "gallery": [
@@ -53,5 +56,6 @@
   "featured": true,
   "priority": 1,
   "visualTheme": "copper",
-  "category": "webel"
+  "category": "webel",
+  "logo": "/webel/logo.png"
 }

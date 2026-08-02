@@ -162,8 +162,22 @@ const { data } = project;
     display: inline-block;
   }
 
-  .project-back:hover .flip {
-    transform: translateX(-4px);
+  @media (hover: hover) {
+    .project-back:hover .flip {
+      transform: translateX(-4px);
+    }
+
+    .project-link:hover {
+      border-color: var(--accent);
+    }
+
+    .project-next:hover .project-next-title {
+      color: var(--accent);
+    }
+
+    .project-next:hover .arrow {
+      transform: translateX(6px);
+    }
   }
 
   .project-head {
@@ -227,10 +241,6 @@ const { data } = project;
     color: var(--accent-ink);
     border-bottom: 1px solid var(--line-strong);
     transition: border-color 0.25s var(--ease-out);
-  }
-
-  .project-link:hover {
-    border-color: var(--accent);
   }
 
   .project-body {
@@ -339,15 +349,7 @@ const { data } = project;
     transition: color 0.3s var(--ease-out);
   }
 
-  .project-next:hover .project-next-title {
-    color: var(--accent);
-  }
-
   .project-next-title .arrow {
     transition: transform 0.3s var(--ease-out);
-  }
-
-  .project-next:hover .arrow {
-    transform: translateX(6px);
   }
 </style>

@@ -4,12 +4,12 @@
   "role": "Líder técnico frontend",
   "period": "2024 — hoy",
   "stage": "frontend",
-  "summary": "Lead de web en un marketplace de servicios a domicilio. Responsable del dashboard interno, el perfil empresa, el marketplace y la migración a Next.js.",
+  "summary": "Lead de web en un marketplace de servicios a domicilio con millones de usuarios. Responsable de Organizations, marketplace, SEO programático y el dashboard interno.",
   "highlights": [
     "React y TypeScript sobre varios productos críticos en producción.",
-    "Formé y lideré a dos developers mid-senior en el equipo de web.",
-    "Integración de IA en el flujo de desarrollo del equipo: contexto, skills y documentación para agentes."
+    "Unifiqué arquitectura y design system; migré marketplace (Angular → React), SEO a Astro y +100 mails a React Email.",
+    "Formé y lideré a dos developers mid-senior. IA en el flujo: skills, agentes y docs del DS pensadas para Cursor, Codex, Claude y OpenCode."
   ],
-  "technologies": ["React", "TypeScript", "Next.js", "TailwindCSS", "Astro"],
+  "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email"],
   "order": 1
 }

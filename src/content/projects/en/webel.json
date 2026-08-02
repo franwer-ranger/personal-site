@@ -2,30 +2,33 @@
   "lang": "en",
   "title": "Webel",
   "slug": "webel",
-  "summary": "A home-services marketplace in production, with thousands of users. I'm the web lead: internal dashboard, company profile (a meaningful share of GMV), marketplace and the Next.js migration.",
-  "problem": "Hiring professional services (home improvements, lessons, care, events) is still opaque: comparing options is hard, pricing is unclear and coordinating schedules turns into endless message threads.",
+  "summary": "A home-services marketplace in production, with millions of users. I'm the web lead: Organizations, marketplace, programmatic SEO and the internal dashboard.",
+  "problem": "Webel is the Amazon of home services. What it needs to solve is friction and discovery: small professionals (home cleaners, English tutors, handymen, caregivers) and people who need to hire those services without always relying on word of mouth.",
   "audience": "People who need a service, professionals offering their work, and companies managing services for their teams.",
-  "role": "Frontend tech lead: React and TypeScript across several critical products, growing the web team and pushing AI into the development workflow.",
+  "role": "Frontend tech lead: React and TypeScript across several critical products, growing the web team and bringing AI into the development workflow.",
   "status": "In production, continuous development",
   "year": "2024 — present",
-  "technologies": ["React", "TypeScript", "Next.js", "TailwindCSS", "Astro", "React Email", "Stripe"],
+  "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email", "Stripe"],
   "responsibilities": [
-    "Development and evolution of the marketplace frontend: search, service pages, booking and tracking.",
-    "Webel Business, the B2B product, with its own flows and permissions.",
+    "Webel Organizations, the B2B platform: employees, services, calendar, leads, chat, tax details, service areas, schedules and payouts.",
+    "Marketplace core: search and browsing the offer. Full migration from Angular to React; today it's a storefront that redirects to the apps, with no login or users.",
+    "Programmatic SEO from scratch in Astro: over 50k templates, structured data and performance. Top organic result on Google for «Limpieza a domicilio en Madrid».",
     "The internal dashboard the team runs operations with.",
-    "High-impact flows: verification and the payment migration from Mangopay to Stripe.",
-    "Migrating the main web app to Next.js and programmatic SEO with Astro.",
-    "Mentoring two mid-senior developers and building context architecture for Cursor and Claude Code."
+    "Architecture unification across Organizations, dashboard and marketplace, and extracting the design system into a shared component library.",
+    "Migrating 100+ custom emails to React Email, with better rendering and bugs near zero.",
+    "Automating the development flow with skills, agents and design-system docs built for agents (Cursor, Codex, Claude, OpenCode)."
   ],
   "decisions": [
-    "Shared components across products so each new one costs less than the last.",
-    "Performance and technical SEO treated as product requirements, not maintenance chores.",
-    "AI in the team's development flow: skills, docs and context that actually help — not demos."
+    "Unify the stack on React across the big products, including the Angular to React marketplace migration, so the team works in one language.",
+    "Extract the design system into a shared component library across products.",
+    "Build programmatic SEO from scratch in Astro.",
+    "Bring AI into day-to-day work: architecture, network-layer and gitflow skills, plus DS docs you can drop into any project."
   ],
   "outcomes": [
-    "A live platform in production with several active product fronts.",
-    "A web team that can own a good chunk of day-to-day work.",
-    "Critical flows (payments, verification, B2B) delivered alongside backend, iOS and Android."
+    "Web went from one of the worst teams for tech debt and outdated stack to pretty much the fastest-moving one.",
+    "Modern stack: React in the apps, React Email for mail, Astro for SEO.",
+    "Bugs near zero and solid interfaces, with a responsive layer that holds up.",
+    "Performance, observability and product proposals that made it into the team's work."
   ],
   "links": [{ "label": "appwebel.com", "url": "https://appwebel.com" }],
   "gallery": [
@@ -53,5 +56,6 @@
   "featured": true,
   "priority": 1,
   "visualTheme": "copper",
-  "category": "webel"
+  "category": "webel",
+  "logo": "/webel/logo.png"
 }

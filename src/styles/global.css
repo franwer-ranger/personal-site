@@ -215,21 +215,9 @@ section[id] {
     transform 0.3s var(--ease-out);
 }
 
-.button:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
 .button--ghost {
   background: transparent;
   color: var(--ink);
-}
-
-.button--ghost:hover {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
 }
 
 .link-arrow {
@@ -252,16 +240,30 @@ section[id] {
   transition: transform 0.25s var(--ease-out);
 }
 
-.link-arrow:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+@media (hover: hover) {
+  .button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .button--ghost:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+
+  .link-arrow:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .link-arrow:hover .arrow {
+    transform: translateX(4px);
+  }
 }
 
-.link-arrow:hover .arrow {
-  transform: translateX(4px);
-}
-
-/* ---------- Reveal (JS adds .is-inview) ---------- */
+/* ---------- Reveal (JS animates on desktop) ---------- */
 [data-reveal] {
   opacity: 0;
   transform: translateY(24px);
@@ -271,6 +273,13 @@ section[id] {
 .no-motion [data-reveal] {
   opacity: 1;
   transform: none;
+}
+
+@media (max-width: 48rem) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

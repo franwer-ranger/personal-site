@@ -84,9 +84,22 @@ const socials = [
     overflow-wrap: anywhere;
   }
 
-  .contact-address:hover {
-    color: var(--accent);
-    border-color: var(--accent);
+  @media (hover: hover) {
+    .contact-address:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .contact-social:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .contact-cta:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--paper);
+    }
   }
 
   .social-list {
@@ -102,20 +115,9 @@ const socials = [
     border-bottom-color: var(--coal-line);
   }
 
-  .contact-social:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
-
   .contact-cta {
     background: var(--paper);
     border-color: var(--paper);
     color: var(--ink);
-  }
-
-  .contact-cta:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--paper);
   }
 </style>

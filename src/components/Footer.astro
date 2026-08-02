@@ -82,8 +82,10 @@ const year = new Date().getFullYear();
     transition: color 0.25s var(--ease-out);
   }
 
-  .footer-nav a:hover {
-    color: var(--accent);
+  @media (hover: hover) {
+    .footer-nav a:hover {
+      color: var(--accent);
+    }
   }
 
   .footer-stack,

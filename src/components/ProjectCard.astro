@@ -65,12 +65,6 @@ const number = String(index + 1).padStart(2, '0');
       border-color 0.45s var(--ease-out);
   }
 
-  .project-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--line-strong);
-    box-shadow: 0 18px 40px -24px rgb(27 24 19 / 0.35);
-  }
-
   .card-edge {
     position: absolute;
     inset: auto 0 0 0;
@@ -81,8 +75,20 @@ const number = String(index + 1).padStart(2, '0');
     transition: transform 0.5s var(--ease-out);
   }
 
-  .project-card:hover .card-edge {
-    transform: scaleX(1);
+  @media (hover: hover) {
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--line-strong);
+      box-shadow: 0 18px 40px -24px rgb(27 24 19 / 0.35);
+    }
+
+    .project-card:hover .card-edge {
+      transform: scaleX(1);
+    }
+
+    .project-card:hover .card-cta .arrow {
+      transform: translateX(4px);
+    }
   }
 
   .card-top {
@@ -164,9 +170,5 @@ const number = String(index + 1).padStart(2, '0');
   .card-cta .arrow {
     color: var(--theme);
     transition: transform 0.3s var(--ease-out);
-  }
-
-  .project-card:hover .card-cta .arrow {
-    transform: translateX(4px);
   }
 </style>

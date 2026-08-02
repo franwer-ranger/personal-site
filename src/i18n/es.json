@@ -32,24 +32,24 @@
   "webel": {
     "kicker": "Ahora mismo · En producción",
     "title": "Webel",
-    "intro": "Marketplace de servicios a domicilio, con miles de usuarios y un equipo de producto activo. Soy el lead de web: dashboard interno, perfil empresa, marketplace y la migración a Next.js.",
+    "intro": "Marketplace de servicios a domicilio con millones de usuarios. Soy el lead de web: Organizations, marketplace, SEO programático y el dashboard interno.",
     "areasLabel": "En qué ando metido",
     "areas": [
       {
-        "name": "Webel Business",
-        "description": "La cara B2B de la plataforma: empresas que contratan servicios, con sus propios flujos, permisos y ciclo de compra. Una parte importante del GMV pasa por aquí."
-      },
-      {
-        "name": "Dashboard interno",
-        "description": "La herramienta con la que opera el equipo: usuarios, servicios, incidencias y métricas del negocio. Un producto completo por sí solo."
-      },
-      {
-        "name": "SEO programático",
-        "description": "Páginas a escala para captar demanda en buscadores: plantillas, datos estructurados y rendimiento cuidado. Parte en Astro."
+        "name": "Webel Organizations",
+        "description": "La plataforma B2B para empresas: empleados, servicios, calendario, leads, chat con clientes, datos fiscales, áreas de servicio, horarios y cobros. Un producto completo por sí solo."
       },
       {
         "name": "Marketplace core",
-        "description": "El producto principal: búsqueda, contratación y seguimiento entre clientes y profesionales. Incluye flujos gordos como pagos y verificación."
+        "description": "El producto principal: búsqueda y visualización de la oferta. Lo migramos entero a React. Hoy es un escaparate que redirige a las apps, sin login ni usuarios. En el roadmap: contratación, cuentas y el resto de funcionalidades."
+      },
+      {
+        "name": "SEO programático",
+        "description": "Más de 50k plantillas generadas desde cero en Astro, con datos estructurados y rendimiento cuidado. Primer resultado orgánico en Google para «Limpieza a domicilio en Madrid»."
+      },
+      {
+        "name": "Dashboard interno",
+        "description": "La herramienta con la que opera el equipo: usuarios, servicios, incidencias y métricas del negocio."
       }
     ],
     "cta": "Ver el caso completo",

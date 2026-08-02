@@ -23,9 +23,10 @@
     "Demos en aula con orientadores y alumnos en colegios de Madrid.",
     "Informes de orientación personalizados a partir de los tests y del catálogo educativo."
   ],
+  "links": [{ "label": "my-potential", "url": "https://mpl.sdvns.xyz/" }],
   "logo": "/my_potential/logo.png",
   "featured": false,
-  "priority": 7,
+  "priority": 5,
   "visualTheme": "plum",
   "category": "maker"
 }

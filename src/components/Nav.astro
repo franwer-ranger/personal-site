@@ -124,12 +124,19 @@ const links = [
     transition: transform 0.3s var(--ease-out);
   }
 
-  .nav-link:hover {
-    color: var(--ink);
-  }
+  @media (hover: hover) {
+    .nav-link:hover {
+      color: var(--ink);
+    }
 
-  .nav-link:hover::after {
-    transform: scaleX(1);
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .lang-switch:hover {
+      border-color: var(--ink);
+      background: var(--paper-raised);
+    }
   }
 
   .lang-switch {
@@ -145,11 +152,6 @@ const links = [
     transition:
       border-color 0.25s var(--ease-out),
       background-color 0.25s var(--ease-out);
-  }
-
-  .lang-switch:hover {
-    border-color: var(--ink);
-    background: var(--paper-raised);
   }
 
   .lang-option {

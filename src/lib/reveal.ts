@@ -8,6 +8,8 @@ import { animate, inView } from 'motion';
  */
 export function initReveals(): void {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // On narrow viewports staggered reveals fight the scroll gesture — skip them.
+  if (window.matchMedia('(max-width: 48rem)').matches) return;
 
   const elements = document.querySelectorAll<HTMLElement>('[data-reveal]:not([data-reveal-init])');
 

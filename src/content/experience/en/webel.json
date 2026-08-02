@@ -4,12 +4,12 @@
   "role": "Frontend Tech Lead",
   "period": "2024 — present",
   "stage": "frontend",
-  "summary": "Web lead at a home-services marketplace. Responsible for the internal dashboard, company profile, marketplace and the Next.js migration.",
+  "summary": "Web lead at a home-services marketplace with millions of users. Responsible for Organizations, marketplace, programmatic SEO and the internal dashboard.",
   "highlights": [
     "React and TypeScript across several critical products in production.",
-    "Trained and led two mid-senior developers on the web team.",
-    "Brought AI into the team's development flow: context, skills and docs for agents."
+    "Unified architecture and design system; migrated marketplace (Angular → React), SEO to Astro and 100+ emails to React Email.",
+    "Trained and led two mid-senior developers. AI in the flow: skills, agents and DS docs built for Cursor, Codex, Claude and OpenCode."
   ],
-  "technologies": ["React", "TypeScript", "Next.js", "TailwindCSS", "Astro"],
+  "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email"],
   "order": 1
 }

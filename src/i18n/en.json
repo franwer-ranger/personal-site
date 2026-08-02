@@ -32,24 +32,24 @@
   "webel": {
     "kicker": "Right now · In production",
     "title": "Webel",
-    "intro": "A home-services marketplace with thousands of users and an active product team. I'm the web lead: internal dashboard, company profile, marketplace and the Next.js migration.",
+    "intro": "A home-services marketplace with millions of users. I'm the web lead: Organizations, marketplace, programmatic SEO and the internal dashboard.",
     "areasLabel": "What I'm working on",
     "areas": [
       {
-        "name": "Webel Business",
-        "description": "The B2B side of the platform: companies hiring services, with their own flows, permissions and purchasing cycle. A meaningful share of GMV goes through here."
+        "name": "Webel Organizations",
+        "description": "The B2B platform for companies: employees, services, calendar, leads, client chat, tax details, service areas, schedules and payouts. A full product on its own."
       },
       {
-        "name": "Internal dashboard",
-        "description": "The tool the team runs operations with: users, services, incidents and business metrics. A full product on its own."
+        "name": "Marketplace core",
+        "description": "The main product: search and browsing the offer. We migrated the whole app to React. Today it's a storefront that redirects to the apps, with no login or users. On the roadmap: booking, accounts and the rest of the features."
       },
       {
         "name": "Programmatic SEO",
-        "description": "Pages at scale to capture search demand: templates, structured data and carefully tuned performance. Part of it in Astro."
+        "description": "Over 50k templates built from scratch in Astro, with structured data and solid performance. Top organic result on Google for «Limpieza a domicilio en Madrid»."
       },
       {
-        "name": "Core marketplace",
-        "description": "The main product: search, booking and tracking between customers and professionals. Includes heavy flows like payments and verification."
+        "name": "Internal dashboard",
+        "description": "The tool the team runs operations with: users, services, incidents and business metrics."
       }
     ],
     "cta": "Read the full case",

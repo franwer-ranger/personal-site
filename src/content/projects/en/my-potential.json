@@ -23,9 +23,10 @@
     "Live classroom demos with counselors and students in Madrid schools.",
     "Personalized career orientation reports generated from assessments and the educational catalogue."
   ],
+  "links": [{ "label": "my-potential", "url": "https://mpl.sdvns.xyz/" }],
   "logo": "/my_potential/logo.png",
   "featured": false,
-  "priority": 7,
+  "priority": 5,
   "visualTheme": "plum",
   "category": "maker"
 }

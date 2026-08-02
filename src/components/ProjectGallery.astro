@@ -188,10 +188,24 @@ const total = String(items.length).padStart(2, '0');
       opacity 0.25s var(--ease-out);
   }
 
-  .gallery-arrow:hover:not(:disabled) {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: var(--paper);
+  @media (hover: hover) {
+    .gallery-arrow:hover:not(:disabled) {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: var(--paper);
+    }
+
+    .shot-frame:hover {
+      border-color: color-mix(in srgb, var(--theme) 45%, var(--line));
+      box-shadow: 0 12px 28px -18px color-mix(in srgb, var(--ink) 55%, transparent);
+      transform: translateY(-3px);
+    }
+
+    .lightbox-close:hover,
+    .lightbox-arrow:hover:not(:disabled) {
+      background: var(--coal-text);
+      color: var(--coal);
+    }
   }
 
   .gallery-arrow:disabled {
@@ -259,12 +273,6 @@ const total = String(items.length).padStart(2, '0');
   .shot-frame img {
     width: 100%;
     height: auto;
-  }
-
-  .shot-frame:hover {
-    border-color: color-mix(in srgb, var(--theme) 45%, var(--line));
-    box-shadow: 0 12px 28px -18px color-mix(in srgb, var(--ink) 55%, transparent);
-    transform: translateY(-3px);
   }
 
   .shot-caption {
@@ -387,12 +395,6 @@ const total = String(items.length).padStart(2, '0');
     width: 2.5rem;
     height: 2.5rem;
     font-size: 0.85rem;
-  }
-
-  .lightbox-close:hover,
-  .lightbox-arrow:hover:not(:disabled) {
-    background: var(--coal-text);
-    color: var(--coal);
   }
 
   .lightbox-arrow:disabled {

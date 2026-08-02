@@ -1,4 +1,5 @@
 ---
+import ProjectLogo from './ProjectLogo.astro';
 import { getTranslations, projectPath, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -14,7 +15,10 @@ const t = getTranslations(locale);
     <header class="section-head" data-reveal>
       <span class="section-index">01 · {t.sections.work}</span>
       <p class="kicker">{t.webel.kicker}</p>
-      <h2 class="display section-title">{t.webel.title}</h2>
+      <div class="webel-brand">
+        <ProjectLogo src="/webel/logo.png" size="md" />
+        <h2 class="display section-title">{t.webel.title}</h2>
+      </div>
       <p class="section-intro">{t.webel.intro}</p>
     </header>
 
@@ -48,6 +52,16 @@ const t = getTranslations(locale);
 <style>
   .webel {
     overflow: clip;
+  }
+
+  .webel-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .webel-brand .section-title {
+    margin: 0;
   }
 
   .webel-grid {
@@ -88,8 +102,21 @@ const t = getTranslations(locale);
     transition: width 0.6s var(--ease-out);
   }
 
-  .webel-area:hover::before {
-    width: 100%;
+  @media (hover: hover) {
+    .webel-area:hover::before {
+      width: 100%;
+    }
+
+    .webel-actions .button:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--paper);
+    }
+
+    .webel-visit:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
   }
 
   .area-index {
@@ -124,19 +151,8 @@ const t = getTranslations(locale);
     color: var(--ink);
   }
 
-  .webel-actions .button:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--paper);
-  }
-
   .webel-visit {
     color: var(--coal-text);
     border-bottom-color: var(--coal-line);
-  }
-
-  .webel-visit:hover {
-    color: var(--accent);
-    border-color: var(--accent);
   }
 </style>

@@ -2,28 +2,30 @@
   "lang": "es",
   "title": "My Potential",
   "slug": "my-potential",
-  "summary": "Exploración sobre autoconocimiento profesional: registrar habilidades, seguir cómo evolucionan y detectar dónde está el potencial técnico y creativo de una carrera.",
-  "problem": "Las carreras técnicas se evalúan con CVs y entrevistas, dos formatos flojos para captar cómo evoluciona una persona: qué aprende, qué le interesa y hacia dónde crece.",
-  "audience": "Proyecto conceptual, pensado para profesionales que quieren entender su propia trayectoria.",
-  "role": "Investigación, concepto y prototipo.",
-  "status": "Exploración",
+  "summary": "Plataforma de IA que ayuda a estudiantes de secundaria en Madrid a encontrar una salida profesional: tests de psicología validados y datos educativos reales, unidos con un pipeline RAG.",
+  "problem": "La orientación profesional de adolescentes suele quedarse entre un test genérico y el criterio del orientador. Ninguno de los dos conecta el perfil psicológico con el catálogo real de grados y FP en España.",
+  "audience": "Estudiantes de secundaria en Madrid, orientadores y colegios que hacen orientación en clase.",
+  "role": "Diseño y desarrollo completos del producto.",
+  "status": "Demos activas",
   "year": "2025",
-  "technologies": ["Modelado de datos", "Prototipado", "IA aplicada"],
+  "technologies": ["Ruby on Rails", "Hotwire", "OpenAI", "Qdrant", "MySQL", "TailwindCSS", "Docker", "Kamal"],
   "responsibilities": [
-    "Definir qué significa medir el potencial sin caer en métricas vacías.",
-    "Modelar habilidades, evidencias y evolución temporal.",
-    "Prototipar las visualizaciones de la trayectoria."
+    "Construí el producto entero: motor de tests de psicología (Holland RIASEC, Big Five, Preferencias Personales), catálogo curado de grados universitarios y FP en España, y un pipeline de IA que genera informes de orientación personalizados.",
+    "Demos activas con varios colegios de Madrid: orientadores y alumnos usándolo en clase.",
+    "Arquitectura privacy-by-design para GDPR con menores: no se recoge ni se guarda nombre ni email del estudiante."
   ],
   "decisions": [
-    "Evidencias por encima de autodeclaraciones: lo construido pesa más que lo afirmado.",
-    "La evolución importa más que la foto fija."
+    "Tests de psicología más un catálogo educativo curado, no un chatbot que inventa carreras.",
+    "Sin PII del estudiante: orientación para menores sin guardar nombre ni email.",
+    "Rails y Hotwire para el producto; RAG con Qdrant y OpenAI para los informes."
   ],
   "outcomes": [
-    "Un marco conceptual claro y prototipos de visualización.",
-    "Ideas que alimentan cómo presento mi propio trabajo, esta web incluida."
+    "Demos en aula con orientadores y alumnos en colegios de Madrid.",
+    "Informes de orientación personalizados a partir de los tests y del catálogo educativo."
   ],
+  "logo": "/my_potential/logo.png",
   "featured": false,
-  "priority": 5,
+  "priority": 7,
   "visualTheme": "plum",
   "category": "maker"
 }

@@ -2,28 +2,30 @@
   "lang": "en",
   "title": "My Potential",
   "slug": "my-potential",
-  "summary": "An exploration of professional self-knowledge: recording skills, tracking how they evolve and spotting where a career's technical and creative potential lies.",
-  "problem": "Technical careers get assessed through CVs and interviews — two weak formats for capturing how a person evolves: what they learn, what draws them and where they're growing.",
-  "audience": "A conceptual project, aimed at professionals who want to understand their own trajectory.",
-  "role": "Research, concept and prototype.",
-  "status": "Exploration",
+  "summary": "An AI platform that helps Madrid high school students find a career path: validated psychology assessments plus real educational data, connected through a RAG pipeline.",
+  "problem": "Career orientation for teenagers often sits between a generic test and a counselor's gut feeling. Neither connects a psychological profile with the real catalogue of Spanish degrees and vocational programs.",
+  "audience": "Madrid high school students, counselors and schools running orientation in the classroom.",
+  "role": "Full product design and engineering.",
+  "status": "Active demos",
   "year": "2025",
-  "technologies": ["Data modeling", "Prototyping", "Applied AI"],
+  "technologies": ["Ruby on Rails", "Hotwire", "OpenAI", "Qdrant", "MySQL", "TailwindCSS", "Docker", "Kamal"],
   "responsibilities": [
-    "Defining what measuring potential means without falling into empty metrics.",
-    "Modeling skills, evidence and evolution over time.",
-    "Prototyping the trajectory visualizations."
+    "Built the full product: psychology test engine (Holland RIASEC, Big Five, Personal Preferences), curated catalogue of Spanish university degrees and vocational programs, and an AI pipeline that writes personalized orientation reports.",
+    "Ran active demos with several Madrid schools: counselors and students using the platform in class.",
+    "Designed a privacy-by-design architecture for GDPR with minors: no student name or email collected or stored."
   ],
   "decisions": [
-    "Evidence over self-declaration: what you've built weighs more than what you claim.",
-    "Evolution matters more than the snapshot."
+    "Psychology assessments plus curated educational data, not a chatbot guessing careers.",
+    "No student PII: orientation for minors without storing name or email.",
+    "Rails and Hotwire for the product surface; RAG with Qdrant and OpenAI for the reports."
   ],
   "outcomes": [
-    "A clear conceptual framework and visualization prototypes.",
-    "Ideas that feed how I present my own work, this site included."
+    "Live classroom demos with counselors and students in Madrid schools.",
+    "Personalized career orientation reports generated from assessments and the educational catalogue."
   ],
+  "logo": "/my_potential/logo.png",
   "featured": false,
-  "priority": 5,
+  "priority": 7,
   "visualTheme": "plum",
   "category": "maker"
 }

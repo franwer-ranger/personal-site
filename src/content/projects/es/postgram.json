@@ -1,0 +1,68 @@
+{
+  "lang": "es",
+  "title": "Postgram",
+  "slug": "postgram",
+  "summary": "Postales virtuales ancladas a un lugar físico. Quien envía lo hace desde un sitio concreto; quien recibe solo puede abrirlas si está ahí. Una red social que te obliga a moverte.",
+  "problem": "Las redes viven en el móvil y en la instantaneidad: abres, scrolleas, cierras. Postgram parte de lo contrario: el mensaje solo se revela si vas al lugar donde lo dejaron.",
+  "audience": "Amigos y gente cercana. Empezando por mí.",
+  "role": "Diseño y desarrollo completos.",
+  "status": "Prototipo",
+  "year": "2024",
+  "technologies": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Geolocalización"],
+  "responsibilities": [
+    "Flujo completo de crear una postal: foto, mensaje y ubicación.",
+    "Desbloqueo por proximidad: el receptor solo ve el contenido cuando está en el sitio.",
+    "Onboarding que explica la mecánica sin rodeos."
+  ],
+  "decisions": [
+    "El lugar no es un metadato: es la condición para ver el mensaje.",
+    "App simple a propósito. Si añade fricción física, es porque esa fricción es el producto.",
+    "Rails para montar el ciclo completo sin inventar infraestructura de más."
+  ],
+  "outcomes": [
+    "Prototipo funcional con el ciclo de crear, recibir y abrir una postal.",
+    "Una prueba de que mezclar red social y mundo físico puede funcionar sin complicar la interfaz."
+  ],
+  "logo": "/postgram/logo.png",
+  "gallery": [
+    {
+      "src": "/postgram/make_postgram.png",
+      "alt": "Pantalla de creación de Postgram con una foto, el mensaje «We had an amazing day together!» y el botón Continuar.",
+      "caption": "Crear una postal: una foto, un mensaje y poco más."
+    },
+    {
+      "src": "/postgram/confirm_location.png",
+      "alt": "Pantalla de confirmación de ubicación en Puerta Bonita, con un mapa oscuro marcado por el asterisco de Postgram y el botón Finish.",
+      "caption": "La ubicación no es un tag: es donde se desbloquea el momento."
+    },
+    {
+      "src": "/postgram/open_cover.png",
+      "alt": "Tarjeta que anuncia «Fran has a Postgram for you!» sobre un fondo desenfocado, con el botón Go for it!",
+      "caption": "Te llega el aviso. El contenido, todavía no."
+    },
+    {
+      "src": "/postgram/opening.png",
+      "alt": "Pantalla de proximidad con mapa, el texto «You are 20 ms away» y la ubicación Puerta Bonita, Madrid, con enlaces para direcciones y refrescar.",
+      "caption": "A 20 metros. Hay que estar ahí de verdad para abrirla."
+    },
+    {
+      "src": "/postgram/cover_1.png",
+      "alt": "Slide de onboarding de Postgram sobre un cielo azul: «Share moments that travel between the real world and the virtual world.»",
+      "caption": "La idea de partida: momentos que viajan entre lo físico y lo digital."
+    },
+    {
+      "src": "/postgram/cover_2.png",
+      "alt": "Slide de onboarding con icono de brújula: dejar recuerdos en forma de fotos y notas para que los amigos los descubran en el mismo sitio.",
+      "caption": "Dejas el recuerdo en un sitio. Tus amigos lo encuentran allí."
+    },
+    {
+      "src": "/postgram/cover_3.png",
+      "alt": "Slide de onboarding: el Postgram se revela a tus amigos solo cuando están al lugar donde lo publicaste.",
+      "caption": "Sin estar en el lugar, no hay revelación."
+    }
+  ],
+  "featured": false,
+  "priority": 5,
+  "visualTheme": "slate",
+  "category": "maker"
+}

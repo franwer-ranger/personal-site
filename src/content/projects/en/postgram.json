@@ -1,0 +1,68 @@
+{
+  "lang": "en",
+  "title": "Postgram",
+  "slug": "postgram",
+  "summary": "Virtual postcards pinned to a physical place. The sender leaves them from a specific spot; the recipient can only open them by being there. A social network that makes you move.",
+  "problem": "Social feeds live on the phone and in the instant: open, scroll, close. Postgram starts from the opposite idea — the message only unlocks if you go to the place where it was left.",
+  "audience": "Friends and people close to me. Starting with myself.",
+  "role": "Full design and development.",
+  "status": "Prototype",
+  "year": "2024",
+  "technologies": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Geolocation"],
+  "responsibilities": [
+    "Full flow to create a postcard: photo, message and location.",
+    "Proximity unlock: the recipient only sees the content when they're on the spot.",
+    "Onboarding that explains the mechanic without fuss."
+  ],
+  "decisions": [
+    "Location isn't metadata — it's the condition for seeing the message.",
+    "Deliberately simple app. If it adds physical friction, that friction is the product.",
+    "Rails to ship the full cycle without inventing extra infrastructure."
+  ],
+  "outcomes": [
+    "A working prototype with the create, receive and open cycle.",
+    "Proof that mixing social and the physical world can work without a complicated interface."
+  ],
+  "logo": "/postgram/logo.png",
+  "gallery": [
+    {
+      "src": "/postgram/make_postgram.png",
+      "alt": "Postgram create screen with a photo, the message “We had an amazing day together!” and a Continue button.",
+      "caption": "Create a postcard: a photo, a message, and little else."
+    },
+    {
+      "src": "/postgram/confirm_location.png",
+      "alt": "Location confirmation at Puerta Bonita, with a dark map marked by the Postgram asterisk and a Finish button.",
+      "caption": "Location isn't a tag — it's where the moment unlocks."
+    },
+    {
+      "src": "/postgram/open_cover.png",
+      "alt": "Card announcing “Fran has a Postgram for you!” over a blurred background, with a Go for it! button.",
+      "caption": "You get the ping. The content, not yet."
+    },
+    {
+      "src": "/postgram/opening.png",
+      "alt": "Proximity screen with a map, the line “You are 20 ms away” and the location Puerta Bonita, Madrid, with get-directions and refresh.",
+      "caption": "Twenty metres out. You have to actually be there to open it."
+    },
+    {
+      "src": "/postgram/cover_1.png",
+      "alt": "Postgram onboarding slide over a blue sky: “Share moments that travel between the real world and the virtual world.”",
+      "caption": "The starting idea: moments that travel between physical and digital."
+    },
+    {
+      "src": "/postgram/cover_2.png",
+      "alt": "Onboarding slide with a compass icon: leave memories as photos and notes for friends to discover in the same spot.",
+      "caption": "You leave the memory somewhere. Friends find it there."
+    },
+    {
+      "src": "/postgram/cover_3.png",
+      "alt": "Onboarding slide: the Postgram only reveals itself to friends once they are at the place where you posted it.",
+      "caption": "No place, no reveal."
+    }
+  ],
+  "featured": false,
+  "priority": 5,
+  "visualTheme": "slate",
+  "category": "maker"
+}

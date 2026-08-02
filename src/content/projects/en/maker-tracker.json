@@ -44,6 +44,7 @@
       "caption": "The same board months in: current iteration by sprint, and the weeks already closed."
     }
   ],
+  "logo": "/maker_tracker/logo.png",
   "featured": false,
   "priority": 3,
   "visualTheme": "moss",

@@ -2,28 +2,27 @@
   "lang": "en",
   "title": "AuroraJobs",
   "slug": "aurorajobs",
-  "summary": "A full stack job board with Ruby on Rails: search, alerts, company portal and CMS. A complete product, built as the sole developer after initial mentoring from the CTO.",
-  "problem": "Generalist job boards mix everything with everything. AuroraJobs explored a more focused space, with careful search and alerts that actually helped.",
-  "audience": "People looking for a job and companies posting openings.",
-  "role": "Full Stack Developer with full ownership of the cycle: from idea to production, working close to product decisions.",
+  "summary": "A recruitment platform that helps university students make their first career moves and connects them with companies hiring junior talent. Multiple funding rounds, 20K+ users, continuous shipping over 5+ years.",
+  "problem": "University students taking their first career steps and companies looking for junior talent rarely meet in a place built for that stage. Generalist job boards treat both as an afterthought.",
+  "audience": "University students, companies hiring junior talent, and university career centers.",
+  "role": "Led engineering. Small product team: product owner/designer, two developers, and me.",
   "status": "Completed project",
   "year": "2021 — 2024",
-  "technologies": ["Ruby on Rails", "MySQL", "StimulusJS", "TailwindCSS", "Kubernetes", "RSpec"],
+  "technologies": ["Ruby on Rails", "JavaScript", "Stimulus", "MySQL", "Redis", "Sidekiq", "Kubernetes", "Docker", "TailwindCSS", "CI/CD"],
   "responsibilities": [
-    "Full product development: models, search, alerts, internal dashboard, company portal and CMS.",
-    "Mentoring two junior developers and running SCRUM.",
-    "Deployment and running it in production (Kubernetes).",
-    "Product decisions alongside the team: what to build and what to drop."
+    "Built the product from zero: student profiles, skills and interests assessment, company job posts, matching engine, application flows, and analytics dashboards for university career centers.",
+    "Designed and ran the production infrastructure: Kubernetes cluster, CI/CD pipelines, monitoring and deploy strategies through multiple product iterations.",
+    "Set a lightweight working rhythm (product owner/designer, two developers, and me on engineering) that went from idea to production in weeks."
   ],
   "decisions": [
-    "Monolithic Rails with Stimulus: development speed over sophisticated architecture.",
-    "Search as the product's centerpiece, not an added filter.",
-    "Email alerts as the main channel to bring users back."
+    "Rails monolith for speed across profiles, matching, applications and dashboards.",
+    "Small team with pairing and review: ship in weeks, not quarters.",
+    "Own the full production stack so product overhauls don't break reliability."
   ],
   "outcomes": [
-    "A complete product running in production for years.",
-    "Lanzadera incubator program in 2022.",
-    "The experience that consolidated my full stack years and how I work with product."
+    "Multiple funding rounds and a base of 20K+ users.",
+    "Continuous delivery to production for 5+ years.",
+    "Lanzadera incubator program in 2022."
   ],
   "gallery": [
     {
@@ -57,8 +56,9 @@
       "caption": "The employer portal: candidates per role, video interview and the decision on one screen."
     }
   ],
+  "logo": "/aurorajobs/logo.png",
   "featured": false,
-  "priority": 4,
+  "priority": 6,
   "visualTheme": "slate",
   "category": "legacy"
 }

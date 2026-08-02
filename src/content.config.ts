@@ -25,6 +25,9 @@ const projects = defineCollection({
     decisions: z.array(z.string()),
     outcomes: z.array(z.string()),
     links: z.array(z.object({ label: z.string(), url: z.string() })).optional(),
+    // Icono de la app (opcional). Misma regla de formatos que la galería:
+    // .png + .avif + .webp en public/ (npm run check-assets).
+    logo: z.string().regex(/^\/.+\.png$/).optional(),
     gallery: z
       .array(
         z.object({

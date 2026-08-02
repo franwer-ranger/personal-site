@@ -1,0 +1,39 @@
+{
+  "lang": "en",
+  "title": "Fountly",
+  "slug": "fountly",
+  "summary": "A map of drinking water fountains worldwide. OpenStreetMap as the base; in Madrid, City Council data with the real status of each fountain. Built for personal use — and for anyone walking around thirsty.",
+  "problem": "In Madrid at 38°C, not knowing where the nearest fountain is is a real problem. Searching «drinking fountain» in Maps doesn't always help, and the official data lives in a GeoJSON nobody opens on their phone.",
+  "audience": "Me, friends and family. And anyone who walks and wants free water.",
+  "role": "Full design and development.",
+  "status": "In use",
+  "year": "2026",
+  "technologies": ["MapLibre GL JS", "Vite", "OpenStreetMap", "MapTiler"],
+  "responsibilities": [
+    "A world map that loads fountains on demand as you pan.",
+    "An OpenStreetMap (Overpass) adapter and, in Madrid, the City Council's official dataset.",
+    "Mobile UI: search, clustering, detail sheet and «Get directions»."
+  ],
+  "decisions": [
+    "OpenStreetMap as the global base; official datasets come in as verified exceptions with priority in their region.",
+    "Viewport loading and cell caching: don't fetch the same area twice when you come back.",
+    "Deliberately personal scope: useful for real before it becomes a product."
+  ],
+  "outcomes": [
+    "Live at fountly.app, used on walks around Madrid.",
+    "In Madrid, the real status of each fountain: working, temporary or out of service."
+  ],
+  "links": [{ "label": "fountly.app", "url": "https://fountly.app/" }],
+  "logo": "/fountly/logo.png",
+  "gallery": [
+    {
+      "src": "/fountly/map.png",
+      "alt": "Fountly on mobile: a map of Cuatro Caminos with fountain markers and the detail sheet for a fountain at Glorieta Cuatro Caminos, 1, with get-directions and share buttons.",
+      "caption": "Madrid in August: find a fountain, open it, get directions."
+    }
+  ],
+  "featured": false,
+  "priority": 4,
+  "visualTheme": "slate",
+  "category": "maker"
+}

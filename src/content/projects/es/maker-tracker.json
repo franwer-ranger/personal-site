@@ -44,6 +44,7 @@
       "caption": "El mismo tablero con meses de uso: iteración actual por sprints y semanas cerradas."
     }
   ],
+  "logo": "/maker_tracker/logo.png",
   "featured": false,
   "priority": 3,
   "visualTheme": "moss",

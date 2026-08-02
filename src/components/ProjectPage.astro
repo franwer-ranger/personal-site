@@ -2,6 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import ProjectGallery from './ProjectGallery.astro';
+import ProjectLogo from './ProjectLogo.astro';
 import { getTranslations, projectPath, homePath, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -26,8 +27,22 @@ const { data } = project;
         </a>
 
         <div class="project-head" data-reveal data-reveal-delay="60">
-          <span class="mono project-category">{t.projects.categories[data.category]}</span>
-          <h1 class="display project-title">{data.title}</h1>
+          {
+            data.logo ? (
+              <div class="project-brand">
+                <ProjectLogo src={data.logo} size="md" />
+                <div class="project-brand-text">
+                  <span class="mono project-category">{t.projects.categories[data.category]}</span>
+                  <h1 class="display project-title">{data.title}</h1>
+                </div>
+              </div>
+            ) : (
+              <>
+                <span class="mono project-category">{t.projects.categories[data.category]}</span>
+                <h1 class="display project-title">{data.title}</h1>
+              </>
+            )
+          }
           <p class="project-summary">{data.summary}</p>
         </div>
 
@@ -155,6 +170,19 @@ const { data } = project;
     display: grid;
     gap: 1.1rem;
     max-width: 46rem;
+  }
+
+  .project-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .project-brand-text {
+    display: grid;
+    gap: 0.55rem;
+    min-width: 0;
   }
 
   .project-category {

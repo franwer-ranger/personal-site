@@ -2,28 +2,27 @@
   "lang": "es",
   "title": "AuroraJobs",
   "slug": "aurorajobs",
-  "summary": "Portal de empleo full stack con Ruby on Rails: búsqueda, alertas, portal para empresas y CMS. Un producto completo, construido como único developer tras el mentoring inicial del CTO.",
-  "problem": "Los portales de empleo generalistas mezclan todo con todo. AuroraJobs exploraba un espacio más centrado, con búsqueda cuidada y alertas que de verdad sirvieran.",
-  "audience": "Personas buscando empleo y empresas publicando ofertas.",
-  "role": "Full Stack Developer con ownership total del ciclo: de la idea a producción, trabajando cerca de las decisiones de producto.",
+  "summary": "Plataforma de reclutamiento que ayuda a universitarios a dar sus primeros pasos laborales y los conecta con empresas que buscan talento junior. Varias rondas de financiación, más de 20K usuarios y entregas continuas durante más de 5 años.",
+  "problem": "Los universitarios que dan sus primeros pasos y las empresas que buscan talento junior rara vez se encuentran en un sitio pensado para esa etapa. Los portales generalistas tratan a ambos como un añadido.",
+  "audience": "Universitarios, empresas que contratan junior y servicios de orientación de las universidades.",
+  "role": "Lideré la ingeniería. Equipo pequeño de producto: product owner/diseñador, dos developers y yo.",
   "status": "Proyecto completado",
   "year": "2021 — 2024",
-  "technologies": ["Ruby on Rails", "MySQL", "StimulusJS", "TailwindCSS", "Kubernetes", "RSpec"],
+  "technologies": ["Ruby on Rails", "JavaScript", "Stimulus", "MySQL", "Redis", "Sidekiq", "Kubernetes", "Docker", "TailwindCSS", "CI/CD"],
   "responsibilities": [
-    "Desarrollo completo del producto: modelos, búsqueda, alertas, dashboard interno, portal empresas y CMS.",
-    "Mentoring de dos developers junior e implementación de SCRUM.",
-    "Despliegue y operación en producción (Kubernetes).",
-    "Decisiones de producto junto con el equipo: qué construir y qué descartar."
+    "Construí el producto desde cero: perfiles de estudiante, evaluación de skills e intereses, ofertas de empresa, motor de matching, flujos de candidatura y dashboards de analítica para los servicios de orientación universitaria.",
+    "Diseñé y operé la infraestructura de producción: cluster Kubernetes, pipelines de CI/CD, monitorización y estrategias de despliegue a lo largo de varias iteraciones de producto.",
+    "Monté un ritmo de trabajo ligero (product owner/diseñador, dos developers y yo en ingeniería) que iba de la idea a producción en semanas."
   ],
   "decisions": [
-    "Rails monolítico con Stimulus: velocidad de desarrollo por encima de arquitectura sofisticada.",
-    "Búsqueda como pieza central del producto, no como un filtro añadido.",
-    "Alertas por email como canal principal de retorno de usuarios."
+    "Monolito Rails para avanzar rápido en perfiles, matching, candidaturas y dashboards.",
+    "Equipo pequeño con pairing y review: sacar en semanas, no en trimestres.",
+    "Controlar el stack de producción entero para que los rediseños de producto no rompan la fiabilidad."
   ],
   "outcomes": [
-    "Producto completo funcionando en producción durante años.",
-    "Paso por Lanzadera en 2022 como empresa incubada.",
-    "La experiencia que consolidó mi etapa full stack y mi forma de trabajar con producto."
+    "Varias rondas de financiación y una base de más de 20K usuarios.",
+    "Entrega continua a producción durante más de 5 años.",
+    "Paso por Lanzadera en 2022 como empresa incubada."
   ],
   "gallery": [
     {
@@ -57,8 +56,9 @@
       "caption": "El portal de empresas: candidatos por oferta, videoentrevista y decisión en la misma pantalla."
     }
   ],
+  "logo": "/aurorajobs/logo.png",
   "featured": false,
-  "priority": 4,
+  "priority": 6,
   "visualTheme": "slate",
   "category": "legacy"
 }

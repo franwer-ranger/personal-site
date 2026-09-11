@@ -1,50 +1,95 @@
 {
   "lang": "es",
+  "kind": "professional",
   "title": "Webel",
   "slug": "webel",
-  "summary": "Marketplace de servicios a domicilio en producción. Soy responsable de sus superficies web B2C y B2B, el dashboard interno, SEO, emails y la librería de componentes compartida.",
-  "problem": "Webel conecta a personas que necesitan un servicio con profesionales que lo ofrecen. La web tiene que presentar esa oferta, dar soporte a la operativa y mantener coherencia entre productos con necesidades distintas.",
-  "audience": "Personas que necesitan un servicio, profesionales que lo ofrecen y empresas que gestionan servicios para sus equipos.",
-  "role": "Responsable del ecosistema web. Trabajo en arquitectura e implementación y reviso el resultado con Producto y el resto de Ingeniería.",
-  "status": "En producción, desarrollo continuo",
-  "year": "2024 — hoy",
-  "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email", "Stripe"],
-  "responsibilities": [
-    "Webel Organizations, la plataforma B2B: empleados, servicios, calendario, leads, chat, datos fiscales, áreas de servicio, horarios y cobros.",
-    "Marketplace core: búsqueda y visualización de la oferta. Migración completa de Angular a React; hoy es un escaparate que redirige a las apps, sin login ni usuarios.",
-    "Superficie de SEO en Astro, con datos estructurados y una arquitectura orientada a contenido estático.",
-    "Dashboard interno con el que opera el equipo.",
-    "Unificación de arquitectura entre Organizations, dashboard y marketplace, y extracción del design system a una librería común de componentes.",
-    "Migración del desarrollo de emails a React Email.",
-    "Skills reutilizables y documentación del design system preparada para trabajar con agentes de IA."
-  ],
+  "company": "Webel",
+  "period": "2024 — hoy",
+  "role": "Responsable del ecosistema web",
+  "scope": "App B2C, plataforma B2B, dashboard interno, SEO, emails y la librería de componentes que comparten los tres productos.",
+  "status": "En producción",
+  "summary": "Marketplace de servicios a domicilio. Soy responsable de todo el web: la app B2C que usan miles de personas al día, la plataforma B2B de los perfiles de empresa, el dashboard interno, el SEO, los emails y la librería de componentes compartida.",
+  "problemLine": "Tres aplicaciones web con usuarios distintos, cada una de una época distinta del producto y con poco en común.",
+  "context": "Webel conecta a quien necesita un servicio en casa con el profesional que lo hace. Esa operación pasa por tres aplicaciones con usuarios y ritmos distintos —clientes, profesionales y el equipo interno—, más la superficie de SEO y los emails que las acompañan. Venían de épocas distintas del producto y compartían poco entre ellas.",
+  "audience": "Clientes que contratan un servicio, profesionales y empresas que lo prestan, y el equipo interno que opera el marketplace.",
+  "responsibility": {
+    "summary": "Llevo el área web entera. Decido la arquitectura, escribo la implementación y me quedo con el mantenimiento. Los requisitos llegan de Producto; las decisiones técnicas las cierro yo.",
+    "fronts": [
+      {
+        "title": "Las tres aplicaciones",
+        "description": "La app B2C, que usan miles de personas al día. La plataforma B2B desde la que los perfiles de empresa gestionan empleados, servicios, calendario, leads, chat, áreas de servicio, datos fiscales y cobros: esos perfiles generan cerca del 25 % del GMV de Webel, más de 500.000 € al año. Y el dashboard interno con el que el equipo opera el marketplace completo."
+      },
+      {
+        "title": "Un solo stack",
+        "description": "Migré el marketplace B2C de Angular a React, extraje el design system a una librería de componentes que hoy consumen B2C, B2B y dashboard, llevé los emails a React Email y monté la superficie de SEO en Astro."
+      },
+      {
+        "title": "Trabajo con agentes",
+        "description": "Escribo las especificaciones y las skills con las que trabajan los agentes, y mantengo al día la documentación del design system para poder revisar lo que producen. El código, las pruebas y la decisión final los reviso yo."
+      }
+    ],
+    "inventory": [
+      "SEO programático y datos estructurados.",
+      "Emails transaccionales.",
+      "Flujos de DAC7, reclamaciones y captación de leads.",
+      "Rediseños responsive de aplicaciones que solo funcionaban en escritorio."
+    ],
+    "teamBoundary": "Producto define los requisitos y prioriza. Entro en el alcance y propongo alternativas cuando veo una más simple, pero la decisión de producto no es mía. La UI la trabajo con Diseño. Dentro de web reviso el trabajo y las pull requests de otro developer."
+  },
   "decisions": [
-    "Unificar el stack en React en los proyectos grandes, incluida la migración de Angular a React del marketplace, para que el equipo trabaje en un solo lenguaje.",
-    "Sacar el design system a una librería de componentes compartida entre productos.",
-    "Montar el SEO programático desde cero en Astro.",
-    "Codificar decisiones recurrentes en skills y documentación para que el trabajo delegado a agentes llegue con el contexto técnico necesario."
+    {
+      "title": "Unificar el stack en React",
+      "situation": "El marketplace B2C estaba en Angular y el resto del web ya era React. Cualquier criterio nuevo había que tomarlo dos veces, y la parte antigua se tocaba lo justo.",
+      "decision": "Migrar el marketplace a React en lugar de mantener dos plataformas en paralelo.",
+      "rationale": "El coste de la migración era acotado y se podía estimar. El de sostener dos frameworks crecía con cada funcionalidad nueva.",
+      "change": "Las aplicaciones grandes comparten lenguaje, criterios y personas. El marketplace quedó como escaparate público que dirige a las apps."
+    },
+    {
+      "title": "Sacar el design system a una librería compartida",
+      "situation": "B2C, B2B y dashboard repetían botones, formularios y tablas con tres versiones ligeramente distintas de cada cosa.",
+      "decision": "Extraer las bases de UI a una librería de componentes propia y consumirla desde los tres productos.",
+      "rationale": "Un arreglo de accesibilidad o un cambio de marca tenía que hacerse una vez, no tres.",
+      "change": "Los tres productos parten de los mismos componentes. Hice la extracción y el refactor, y esa librería es hoy la base de lo que se construye."
+    },
+    {
+      "title": "Llevar el SEO a Astro y no a React",
+      "situation": "La superficie de SEO es contenido: muchas páginas generadas y poca interacción. Montarla con el mismo React que el resto era la opción cómoda.",
+      "decision": "Construirla en Astro, con HTML estático y datos estructurados.",
+      "rationale": "En páginas de contenido, mandar un runtime de React al navegador es coste sin contrapartida. Astro sirve HTML y solo hidrata lo que lo necesita.",
+      "change": "El SEO dejó de arrastrar los tiempos de build y el peso del resto del web, y el contenido se publica sin tocar las aplicaciones."
+    }
   ],
-  "outcomes": [
-    "React compartido por las aplicaciones principales, React Email para emails y Astro para la superficie de SEO.",
-    "Una librería común para reutilizar componentes y mantener el design system entre productos.",
-    "Un flujo con agentes apoyado en especificaciones, skills, revisión de código y validación final."
+  "results": [
+    {
+      "statement": "Las aplicaciones principales comparten React, la misma librería de componentes y los mismos criterios de revisión.",
+      "evidence": "B2C, B2B y dashboard consumen hoy esa librería."
+    },
+    {
+      "statement": "Los emails se desarrollan y se revisan como componentes, no como plantillas sueltas.",
+      "evidence": "Migración del desarrollo de emails a React Email."
+    },
+    {
+      "statement": "Lo que delego a agentes llega con especificación y criterios, así que se revisa como cualquier otra pull request.",
+      "evidence": "Especificaciones con criterios de aceptación, skills reutilizables y documentación del design system."
+    }
   ],
-  "kind": "professional",
+  "confidentialityNote": "Las cifras de plantillas de SEO, volumen de emails y usuarios totales son internas y no se publican aquí.",
   "prominence": "featured",
   "signal": "architecture",
-  "contribution": "Responsabilidad sobre las superficies web, sus migraciones y la arquitectura compartida.",
+  "contribution": "Responsabilidad sobre todo el web: las tres aplicaciones, su arquitectura compartida y las migraciones.",
   "proof": [
-    "Migración de Angular a React en la aplicación B2C.",
-    "Librería React compartida entre productos.",
-    "Skills y documentación del design system preparadas para agentes."
+    "La app B2C la usan miles de personas al día.",
+    "Los perfiles de empresa que trabajan sobre la plataforma B2B generan cerca del 25 % del GMV.",
+    "Extraje el design system a una librería compartida por los tres productos."
   ],
-  "confidentialityNote": "Las cifras de usuarios, GMV, plantillas SEO y volumen de emails no se publican hasta validarlas.",
+  "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email", "Stripe"],
   "links": [{ "label": "appwebel.com", "url": "https://appwebel.com" }],
+  "logo": "/webel/logo.png",
   "gallery": [
     {
       "src": "/webel/dashboard_service_viewer.png",
       "alt": "Backoffice de Webel con el detalle de un servicio: estado, desglose de precio semanal con comisiones e IVA, frecuencia y calendario de las visitas.",
-      "caption": "El backoffice, con el desglose que más cuesta cuadrar: comisiones e IVA de las dos partes."
+      "caption": "El dashboard interno, con el desglose que más cuesta cuadrar: comisiones e IVA de las dos partes."
     },
     {
       "src": "/webel/business_calendar.png",
@@ -63,6 +108,5 @@
     }
   ],
   "priority": 1,
-  "visualTheme": "copper",
-  "logo": "/webel/logo.png"
+  "visualTheme": "ink"
 }

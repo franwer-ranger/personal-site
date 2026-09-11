@@ -1,68 +1,112 @@
 {
   "lang": "en",
+  "kind": "professional",
   "title": "Webel",
   "slug": "webel",
-  "summary": "A live home-services marketplace. I am responsible for its B2C and B2B web surfaces, internal dashboard, SEO, email, and shared component library.",
-  "problem": "Webel connects people who need a service with professionals who provide it. The web platform has to present that supply, support operations, and stay coherent across products with different needs.",
-  "audience": "People who need a service, professionals offering their work, and companies managing services for their teams.",
-  "role": "Responsible for the web platform. I work across architecture and implementation, then review outcomes with Product and the wider engineering team.",
-  "status": "In production, continuous development",
-  "year": "2024 — present",
-  "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email", "Stripe"],
-  "responsibilities": [
-    "Webel Organizations, the B2B platform: employees, services, calendar, leads, chat, tax details, service areas, schedules and payouts.",
-    "Marketplace core: search and browsing the offer. Full migration from Angular to React; today it's a storefront that redirects to the apps, with no login or users.",
-    "SEO surface in Astro, with structured data and an architecture suited to static content.",
-    "The internal dashboard the team runs operations with.",
-    "Architecture unification across Organizations, dashboard and marketplace, and extracting the design system into a shared component library.",
-    "Moved email development to React Email.",
-    "Created reusable skills and agent-ready design-system documentation for AI-assisted engineering."
-  ],
+  "company": "Webel",
+  "period": "2024 — present",
+  "role": "Responsible for the web platform",
+  "scope": "B2C app, B2B platform, internal dashboard, SEO, email, and the component library the three products share.",
+  "status": "Live",
+  "summary": "Home-services marketplace. I am responsible for the whole web platform: the B2C app that thousands of people use every day, the B2B platform behind company profiles, the internal dashboard, SEO, email, and the shared component library.",
+  "problemLine": "Three web applications with different users, each from a different era of the product and with little in common.",
+  "context": "Webel connects people who need a service at home with the professionals who provide it. That operation runs through three applications with different users and different rhythms — customers, professionals, and the internal team — plus the SEO surface and the emails around them. Each one came from a different era of the product and shared very little with the others.",
+  "audience": "Customers booking a service, professionals and companies delivering it, and the internal team running the marketplace.",
+  "responsibility": {
+    "summary": "I own the web area. I decide the architecture, write the implementation, and keep maintaining it afterwards. Requirements come from Product; the technical calls are mine.",
+    "fronts": [
+      {
+        "title": "The three applications",
+        "description": "The B2C app, used by thousands of people a day. The B2B platform where company profiles manage staff, services, calendars, leads, chat, service areas, tax details, and payouts: those profiles generate close to 25% of Webel's GMV, over €500k a year. And the internal dashboard the team uses to run the whole marketplace."
+      },
+      {
+        "title": "One stack",
+        "description": "I migrated the B2C marketplace from Angular to React, extracted the design system into a component library that B2C, B2B, and the dashboard now consume, moved email development to React Email, and built the SEO surface in Astro."
+      },
+      {
+        "title": "Working with agents",
+        "description": "I write the specifications and skills the agents work from, and keep the design-system documentation current so I can review what they produce. The code, the tests, and the final call are mine."
+      }
+    ],
+    "inventory": [
+      "Programmatic SEO and structured data.",
+      "Transactional email.",
+      "DAC7 flows, claims handling, and lead capture.",
+      "Responsive redesigns of applications that only worked on desktop."
+    ],
+    "teamBoundary": "Product sets and prioritises the requirements. I get involved in scope and propose simpler alternatives when I see one, but the product call is not mine. I work the UI through with Design. Inside web, I review another developer's work and pull requests."
+  },
   "decisions": [
-    "Unify the stack on React across the big products, including the Angular to React marketplace migration, so the team works in one language.",
-    "Extract the design system into a shared component library across products.",
-    "Build programmatic SEO from scratch in Astro.",
-    "Encode recurring decisions in skills and documentation so delegated agent work starts with the technical context it needs."
+    {
+      "title": "Settle on React across the stack",
+      "situation": "The B2C marketplace ran on Angular while the rest of web was already React. Every new convention had to be decided twice, and the older codebase got touched as little as possible.",
+      "decision": "Migrate the marketplace to React instead of keeping two platforms alive in parallel.",
+      "rationale": "The migration had a bounded, estimable cost. Carrying two frameworks got more expensive with every feature.",
+      "change": "The large applications share a language, conventions, and people. The marketplace became the public storefront that points to the apps."
+    },
+    {
+      "title": "Pull the design system into a shared library",
+      "situation": "B2C, B2B, and the dashboard each carried their own slightly different buttons, forms, and tables.",
+      "decision": "Extract the UI foundations into our own component library and consume it from all three products.",
+      "rationale": "An accessibility fix or a brand change should happen once, not three times.",
+      "change": "All three products start from the same components. I did the extraction and the refactor, and that library is now the base for new work."
+    },
+    {
+      "title": "Build SEO in Astro rather than React",
+      "situation": "The SEO surface is content: many generated pages, very little interaction. Building it in the same React as everything else was the convenient option.",
+      "decision": "Build it in Astro, with static HTML and structured data.",
+      "rationale": "On content pages, shipping a React runtime to the browser is cost with nothing in return. Astro serves HTML and only hydrates what needs it.",
+      "change": "SEO stopped dragging along the build times and page weight of the rest of web, and content ships without touching the applications."
+    }
   ],
-  "outcomes": [
-    "React across the main applications, React Email for email, and Astro for the SEO surface.",
-    "A shared library for reusing components and keeping the design system consistent across products.",
-    "An agent workflow based on specifications, reusable skills, code review, and final validation."
+  "results": [
+    {
+      "statement": "The main applications share React, the same component library, and the same review standards.",
+      "evidence": "B2C, B2B, and the dashboard all consume that library today."
+    },
+    {
+      "statement": "Emails are built and reviewed as components rather than as standalone templates.",
+      "evidence": "Email development moved to React Email."
+    },
+    {
+      "statement": "What I delegate to agents arrives with a specification and criteria, so it gets reviewed like any other pull request.",
+      "evidence": "Specifications with acceptance criteria, reusable skills, and design-system documentation."
+    }
   ],
-  "kind": "professional",
+  "confidentialityNote": "SEO template counts, email volumes, and total user numbers are internal and are not published here.",
   "prominence": "featured",
   "signal": "architecture",
-  "contribution": "Ownership of the web surfaces, their migrations, and the shared architecture.",
+  "contribution": "Ownership of the whole web platform: the three applications, their shared architecture, and the migrations.",
   "proof": [
-    "Angular-to-React migration for the B2C application.",
-    "Shared React library across products.",
-    "Agent-ready skills and design-system documentation."
+    "The B2C app is used by thousands of people every day.",
+    "The company profiles working on the B2B platform generate close to 25% of GMV.",
+    "I extracted the design system into a library shared by all three products."
   ],
-  "confidentialityNote": "User, GMV, SEO-template, and email-volume figures remain private until validated.",
+  "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email", "Stripe"],
   "links": [{ "label": "appwebel.com", "url": "https://appwebel.com" }],
+  "logo": "/webel/logo.png",
   "gallery": [
     {
       "src": "/webel/dashboard_service_viewer.png",
-      "alt": "The Webel back office showing a service in detail: status, weekly price breakdown with fees and VAT, frequency and the calendar of visits.",
-      "caption": "The back office, with the breakdown that's hardest to get right: fees and VAT on both sides."
+      "alt": "Webel back office showing a service in detail: status, weekly price breakdown with commissions and VAT, frequency, and the visit calendar.",
+      "caption": "The internal dashboard, with the breakdown that is hardest to get right: commissions and VAT on both sides."
     },
     {
       "src": "/webel/business_calendar.png",
-      "alt": "The organisation dashboard with the weekly calendar, one row per worker and services placed in their time slots.",
-      "caption": "An organisation's calendar: one row per worker, every service in its slot."
+      "alt": "Organisation panel with the weekly calendar, one row per worker and services placed in their time slot.",
+      "caption": "An organisation's calendar: one row per worker, each service in its slot."
     },
     {
       "src": "/webel/business_balance_mobile.png",
-      "alt": "The balance screen on mobile, with available funds, the transfer button, pending payments and the history of paid services.",
+      "alt": "Mobile balance screen showing available funds, the transfer button, pending payments, and the history of paid services.",
       "caption": "Balance on mobile: what's available, what's pending, and which service each euro came from."
     },
     {
       "src": "/webel/business_chat_mobile.png",
-      "alt": "A service chat on mobile showing a date change proposal waiting for the client to accept it.",
-      "caption": "The service chat: moving a date is a proposal the client accepts, not a change on its own."
+      "alt": "Mobile service chat showing a proposed date change waiting for the customer to accept it.",
+      "caption": "The service chat: moving a date is a proposal the customer accepts, not a change that just happens."
     }
   ],
   "priority": 1,
-  "visualTheme": "copper",
-  "logo": "/webel/logo.png"
+  "visualTheme": "ink"
 }

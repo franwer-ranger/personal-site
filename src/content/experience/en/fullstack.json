@@ -5,12 +5,13 @@
   "period": "2021 — 2024",
   "kind": "professional",
   "stage": "fullstack",
-  "summary": "I built the application in a Ruby on Rails monolith and worked with Product and the CTO from feature definition through delivery.",
+  "slug": "aurorajobs",
+  "summary": "I was responsible for the application end to end, in a Ruby on Rails monolith, working with the CTO and Product from defining each feature through to delivery.",
   "highlights": [
-    "Worked across backend, frontend, data modelling, business logic, testing, and deployments.",
-    "Contributed to scope, technical feasibility, architecture, and product decisions.",
-    "Gradually took on more autonomy, code review, and team coordination support."
+    "Ranked candidate panels for employers, dynamic filters and forms for students, and an internal dashboard to configure both.",
+    "Backend, frontend, data modelling, testing, deployments, and the product's infrastructure.",
+    "I mentored, coordinated, and managed a team of two developers: one junior and one mid."
   ],
   "technologies": ["Ruby on Rails", "MySQL", "StimulusJS", "TailwindCSS", "Kubernetes"],
-  "order": 3
+  "order": 2
 }

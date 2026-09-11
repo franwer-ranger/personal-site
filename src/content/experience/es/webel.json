@@ -5,11 +5,12 @@
   "period": "2024 — hoy",
   "kind": "professional",
   "stage": "frontend",
-  "summary": "Trabajo sobre las superficies web B2C y B2B, el dashboard interno, SEO, emails transaccionales y la librería de componentes compartida.",
+  "slug": "webel",
+  "summary": "Soy responsable de todo el web de Webel: la app B2C, la plataforma B2B de los perfiles de empresa, el dashboard interno, el SEO, los emails y la librería de componentes que comparten los tres productos.",
   "highlights": [
-    "Migré la aplicación B2C de Angular a React y la superficie de SEO a Astro.",
-    "Extraje una librería React compartida y llevé el desarrollo de emails a React Email.",
-    "Preparé skills reutilizables y documentación del design system para trabajar con agentes de IA."
+    "La app B2C la usan miles de personas al día. Migré su marketplace de Angular a React.",
+    "Los perfiles de empresa que trabajan sobre la plataforma B2B generan cerca del 25 % del GMV, más de 500.000 € al año.",
+    "Extraje el design system a una librería compartida por B2C, B2B y dashboard, y llevé los emails a React Email."
   ],
   "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email"],
   "order": 1

@@ -1,0 +1,187 @@
+---
+import type { ProfessionalCase } from '../lib/data';
+import { getTranslations, projectPath, fill, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  cases: ProfessionalCase[];
+}
+
+const { locale, cases } = Astro.props;
+const t = getTranslations(locale);
+const formatImage = (src: string, format: 'avif' | 'webp') => src.replace(/\.png$/, `.${format}`);
+---
+
+<section class="section selected-work" id="work" aria-labelledby="selected-work-title">
+  <div class="container">
+    <header class="section-head">
+      <p class="kicker">{t.selectedWork.kicker}</p>
+      <h2 class="section-title" id="selected-work-title">{t.selectedWork.title}</h2>
+      <p class="section-intro">{t.selectedWork.intro}</p>
+    </header>
+
+    <div class="work-list">
+      {
+        cases.map((project, index) => {
+          const image = project.data.gallery?.[0];
+          return (
+            <article class:list={['work-teaser', { 'work-teaser--reverse': index % 2 === 1 }]}>
+              {image && (
+                <picture class="work-image">
+                  <source srcset={formatImage(image.src, 'avif')} type="image/avif" />
+                  <source srcset={formatImage(image.src, 'webp')} type="image/webp" />
+                  <img src={image.src} alt={image.alt} width="1440" height="900" loading="lazy" />
+                </picture>
+              )}
+              <div class="work-copy">
+                <div class="work-meta">
+                  <span class="mono">0{index + 1}</span>
+                  <span class="mono">{project.data.period}</span>
+                </div>
+                <h3>{project.data.title}</h3>
+                <dl class="work-details">
+                  <div>
+                    <dt>{t.selectedWork.problem}</dt>
+                    <dd>{project.data.problemLine}</dd>
+                  </div>
+                  <div>
+                    <dt>{t.selectedWork.contribution}</dt>
+                    <dd>{project.data.contribution}</dd>
+                  </div>
+                  <div>
+                    <dt>{t.selectedWork.proof}</dt>
+                    <dd>{project.data.proof[0]}</dd>
+                  </div>
+                </dl>
+                <a class="link-arrow" href={projectPath(locale, project.data.slug)}>
+                  {fill(t.selectedWork.caseCta, { project: project.data.title })}
+                  <span class="arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .selected-work {
+    background: var(--surface);
+  }
+
+  .section-head {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: end;
+  }
+
+  .section-head .kicker,
+  .section-head .section-title {
+    grid-column: 1 / span 6;
+  }
+
+  .section-head .section-intro {
+    grid-column: 8 / -1;
+    grid-row: 1 / span 2;
+  }
+
+  .work-list {
+    display: grid;
+    gap: clamp(3rem, 2rem + 5vw, 6.5rem);
+  }
+
+  .work-teaser {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-5);
+    align-items: center;
+  }
+
+  .work-image {
+    grid-column: 1 / span 7;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface-subtle);
+    box-shadow: var(--shadow-sm);
+    aspect-ratio: 16 / 10;
+  }
+
+  .work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .work-copy {
+    grid-column: 8 / -1;
+    display: grid;
+    justify-items: start;
+    gap: var(--space-4);
+  }
+
+  .work-teaser--reverse .work-image {
+    grid-column: 6 / -1;
+    order: 2;
+  }
+
+  .work-teaser--reverse .work-copy {
+    grid-column: 1 / span 5;
+    order: 1;
+  }
+
+  .work-meta {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: var(--text-subtle);
+  }
+
+  .work-copy h3 {
+    font-size: clamp(1.8rem, 1.4rem + 1.4vw, 2.75rem);
+    letter-spacing: -0.03em;
+  }
+
+  .work-details {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .work-details div {
+    display: grid;
+    gap: var(--space-1);
+  }
+
+  .work-details dt {
+    color: var(--accent-strong);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+  }
+
+  .work-details dd {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 52rem) {
+    .section-head,
+    .work-teaser {
+      grid-template-columns: 1fr;
+    }
+
+    .section-head .kicker,
+    .section-head .section-title,
+    .section-head .section-intro,
+    .work-image,
+    .work-copy,
+    .work-teaser--reverse .work-image,
+    .work-teaser--reverse .work-copy {
+      grid-column: 1;
+      grid-row: auto;
+      order: initial;
+    }
+  }
+</style>

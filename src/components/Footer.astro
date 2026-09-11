@@ -1,5 +1,6 @@
 ---
-import { getTranslations, homePath, type Locale } from '../i18n/ui';
+import ExternalLink from './ExternalLink.astro';
+import { getTranslations, getLocalizedPath, homePath, type Locale } from '../i18n/ui';
 
 interface Props {
   locale: Locale;
@@ -8,98 +9,143 @@ interface Props {
 const { locale } = Astro.props;
 const t = getTranslations(locale);
 const home = homePath(locale);
+const otherLocale: Locale = locale === 'es' ? 'en' : 'es';
 const year = new Date().getFullYear();
+const email = 'franbaraguz98@gmail.com';
 ---
 
 <footer class="site-footer">
-  <div class="container footer-inner">
+  <div class="container footer-grid">
     <div class="footer-brand">
-      <img class="footer-mark" src="/silhouette.svg" alt="" width="40" height="50" aria-hidden="true" />
-      <span class="footer-tag">{t.footer.built}</span>
+      <img src="/silhouette.svg" alt="" width="28" height="35" aria-hidden="true" />
+      <div>
+        <strong>Fran Barahona</strong>
+        <span>{t.nav.brandRole}</span>
+      </div>
     </div>
-    <div class="footer-meta">
-      <nav aria-label={t.nav.ariaLabel} class="footer-nav">
-        <a href={`${home}#work`}>{t.nav.work}</a>
-        <a href={`${home}#experience`}>{t.nav.experience}</a>
-        <a href={`${home}#contact`}>{t.nav.contact}</a>
-      </nav>
-      <span class="footer-stack mono">{t.footer.stack}</span>
-      <span class="footer-copy mono">© {year} · {t.footer.rights}</span>
+
+    <nav aria-label={t.nav.ariaLabel} class="footer-nav">
+      <a href={`${home}#experience`}>{t.nav.experience}</a>
+      <a href={`${home}#work`}>{t.nav.work}</a>
+      <a href={`${home}#lab`}>{t.nav.lab}</a>
+      <a href={`${home}#contact`}>{t.nav.contact}</a>
+    </nav>
+
+    <div class="footer-links">
+      <a href={`mailto:${email}`}>{email}</a>
+      <ExternalLink
+        locale={locale}
+        href="https://www.linkedin.com/in/francisco-barahona-a9b3a3218/"
+        label="LinkedIn"
+      />
+      <ExternalLink locale={locale} href="https://github.com/franwer-ranger" label="GitHub" />
+      <a href={getLocalizedPath(Astro.url.pathname, otherLocale)} hreflang={otherLocale}>
+        {t.languageNames[otherLocale]}
+      </a>
+    </div>
+
+    <div class="footer-bottom mono">
+      <span>{t.footer.built}</span>
+      <span>{t.footer.stack}</span>
+      <span>© {year} · {t.footer.rights}</span>
     </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    border-top: 1px solid var(--line);
-    padding-block: 3rem;
-    background: var(--paper-raised);
+    padding-block: var(--space-6);
+    border-top: 1px solid var(--border);
+    background: var(--surface);
   }
 
-  .footer-inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-end;
-    gap: 2rem;
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-5);
   }
 
   .footer-brand {
+    grid-column: 1 / span 4;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .footer-brand img {
+    width: 1.5rem;
+  }
+
+  .footer-brand div {
     display: grid;
-    gap: 0.55rem;
-    justify-items: start;
   }
 
-  .footer-mark {
-    width: 2.25rem;
-    height: auto;
-    color: var(--ink);
+  .footer-brand span {
+    color: var(--text-subtle);
+    font-size: 0.86rem;
   }
 
-  .footer-tag {
-    color: var(--ink-soft);
-    font-size: 0.9rem;
-  }
-
-  .footer-meta {
+  .footer-nav,
+  .footer-links {
     display: grid;
-    gap: 0.6rem;
-    justify-items: end;
-    text-align: right;
+    align-content: start;
+    gap: var(--space-2);
   }
 
   .footer-nav {
-    display: flex;
-    gap: 1.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.74rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    grid-column: 6 / span 2;
   }
 
-  .footer-nav a {
-    color: var(--ink-soft);
-    transition: color 0.25s var(--ease-out);
+  .footer-links {
+    grid-column: 9 / -1;
+  }
+
+  .footer-nav a,
+  .footer-links :global(a) {
+    color: var(--text-muted);
+  }
+
+  .footer-links a:first-child {
+    overflow-wrap: anywhere;
+    color: var(--accent-strong);
+  }
+
+  .footer-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+    color: var(--text-subtle);
+    font-size: 0.65rem;
   }
 
   @media (hover: hover) {
-    .footer-nav a:hover {
-      color: var(--accent);
+    .footer-nav a:hover,
+    .footer-links :global(a:hover) {
+      color: var(--accent-strong);
     }
   }
 
-  .footer-stack,
-  .footer-copy {
-    color: var(--ink-faint);
-    font-size: 0.66rem;
-    text-transform: none;
-    letter-spacing: 0.04em;
-  }
+  @media (max-width: 44rem) {
+    .footer-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
-  @media (max-width: 40rem) {
-    .footer-meta {
-      justify-items: start;
-      text-align: left;
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+
+    .footer-nav,
+    .footer-links {
+      grid-column: auto;
+    }
+
+    .footer-bottom {
+      grid-column: 1 / -1;
+      flex-direction: column;
     }
   }
 </style>

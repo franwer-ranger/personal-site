@@ -1,13 +1,13 @@
 ---
 import type { Locale } from '../i18n/ui';
-import { getProjects, getExperience } from '../lib/data';
+import { getProfessionalCases, getLabProjects, getExperience } from '../lib/data';
 import Layout from '../layouts/Layout.astro';
 import Hero from './Hero.astro';
-import WebelFeature from './WebelFeature.astro';
-import ProjectsSection from './ProjectsSection.astro';
-import Principles from './Principles.astro';
-import Skills from './Skills.astro';
+import ProofSnapshot from './ProofSnapshot.astro';
 import Experience from './Experience.astro';
+import SelectedWork from './SelectedWork.astro';
+import ProductAiMethod from './ProductAiMethod.astro';
+import LabProjects from './LabProjects.astro';
 import Contact from './Contact.astro';
 
 interface Props {
@@ -15,15 +15,19 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const [projects, experience] = await Promise.all([getProjects(locale), getExperience(locale)]);
+const [cases, labProjects, experience] = await Promise.all([
+  getProfessionalCases(locale),
+  getLabProjects(locale),
+  getExperience(locale),
+]);
 ---
 
 <Layout>
   <Hero locale={locale} />
-  <WebelFeature locale={locale} />
-  <ProjectsSection locale={locale} projects={projects} />
-  <Principles locale={locale} />
-  <Skills locale={locale} />
+  <ProofSnapshot locale={locale} />
   <Experience locale={locale} experience={experience} />
+  <SelectedWork locale={locale} cases={cases} />
+  <ProductAiMethod locale={locale} />
+  <LabProjects locale={locale} projects={labProjects} />
   <Contact locale={locale} />
 </Layout>

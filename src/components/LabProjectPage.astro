@@ -1,0 +1,290 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectGallery from './ProjectGallery.astro';
+import ProjectLogo from './ProjectLogo.astro';
+import ExternalLink from './ExternalLink.astro';
+import CaseNext from './CaseNext.astro';
+import type { LabProject, Project } from '../lib/data';
+import { getTranslations, sectionPath, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  project: LabProject;
+  next: Project | undefined;
+}
+
+const { locale, project, next } = Astro.props;
+const t = getTranslations(locale);
+const { data } = project;
+---
+
+<Layout
+  title={`${data.title} — ${t.projects.kinds.lab} — Fran Barahona`}
+  description={data.summary}
+  ogType="article"
+>
+  <article class="lab-page" style={`--theme: var(--theme-${data.visualTheme})`}>
+    <header class="lab-hero">
+      <div class="container lab-hero-inner">
+        <a href={sectionPath(locale, 'lab')} class="link-arrow lab-back">
+          <span class="arrow flip" aria-hidden="true">←</span>
+          {t.labPage.back}
+        </a>
+
+        <div class="lab-head">
+          <div class="lab-brand">
+            {data.logo && <ProjectLogo src={data.logo} size="md" />}
+            <div class="lab-brand-text">
+              <p class="mono lab-category">
+                {t.projects.kinds.lab} · {t.projects.signals[data.signal]}
+              </p>
+              <h1 class="display lab-title">{data.title}</h1>
+            </div>
+          </div>
+          <p class="lab-summary">{data.summary}</p>
+        </div>
+
+        <dl class="lab-overview" aria-label={t.labPage.overview}>
+          <div>
+            <dt class="mono">{t.labPage.status}</dt>
+            <dd>{data.status}</dd>
+          </div>
+          <div>
+            <dt class="mono">{t.labPage.year}</dt>
+            <dd>{data.year}</dd>
+          </div>
+          {
+            data.links && data.links.length > 0 && (
+              <div>
+                <dt class="mono">{t.labPage.links}</dt>
+                <dd>
+                  {data.links.map((link) => (
+                    <ExternalLink locale={locale} href={link.url} label={link.label} class="lab-link" />
+                  ))}
+                </dd>
+              </div>
+            )
+          }
+        </dl>
+      </div>
+    </header>
+
+    <div class="container lab-body">
+      <section class="lab-block" aria-labelledby="lab-problem">
+        <h2 class="block-title mono" id="lab-problem">{t.labPage.problem}</h2>
+        <p class="lab-lead">{data.problem}</p>
+      </section>
+
+      <section class="lab-block" aria-labelledby="lab-scope">
+        <h2 class="block-title mono" id="lab-scope">{t.labPage.scopeChoice}</h2>
+        <p>{data.scopeChoice}</p>
+      </section>
+
+      <section class="lab-block" aria-labelledby="lab-built">
+        <h2 class="block-title mono" id="lab-built">{t.labPage.built}</h2>
+        <ul class="block-list" role="list">
+          {data.built.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
+
+      <section class="lab-block" aria-labelledby="lab-status">
+        <h2 class="block-title mono" id="lab-status">{t.labPage.statusDetail}</h2>
+        <p class="lab-status-detail">{data.statusDetail}</p>
+      </section>
+
+      <section class="lab-block" aria-labelledby="lab-demonstrates">
+        <h2 class="block-title mono" id="lab-demonstrates">{t.labPage.demonstrates}</h2>
+        <ul class="block-list" role="list">
+          {data.demonstrates.map((item) => <li>{item}</li>)}
+        </ul>
+      </section>
+
+      {
+        data.gallery && data.gallery.length > 0 && (
+          <ProjectGallery locale={locale} shots={data.gallery} label={t.labPage.gallery} />
+        )
+      }
+
+      <section class="lab-block lab-meta" aria-labelledby="lab-stack">
+        <h2 class="block-title mono" id="lab-stack">{t.labPage.stack}</h2>
+        <ul class="tech-list" role="list">
+          {data.technologies.map((tech) => <li class="mono">{tech}</li>)}
+        </ul>
+      </section>
+    </div>
+
+    {next && <CaseNext locale={locale} label={t.labPage.next} next={next} />}
+  </article>
+</Layout>
+
+<style>
+  .lab-hero {
+    padding-block: clamp(7.5rem, 11vh, 9rem) var(--space-6);
+    border-bottom: 1px solid var(--border);
+    background:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px),
+      color-mix(in srgb, var(--theme) 7%, var(--canvas));
+    background-size: 3rem 3rem;
+  }
+
+  /* Misma columna de lectura que el cuerpo, para que el título, el enlace de
+     vuelta y el texto arranquen en la misma vertical. */
+  .lab-hero-inner {
+    display: grid;
+    max-width: 48rem;
+    justify-items: start;
+    gap: var(--space-5);
+    margin-inline: auto;
+  }
+
+  .lab-back .flip {
+    display: inline-block;
+  }
+
+  .lab-head {
+    display: grid;
+    max-width: 44rem;
+    gap: var(--space-4);
+  }
+
+  .lab-brand {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .lab-brand-text {
+    display: grid;
+    min-width: 0;
+    gap: var(--space-2);
+  }
+
+  .lab-category {
+    color: var(--theme);
+  }
+
+  .lab-title {
+    font-size: clamp(2.4rem, 1.7rem + 3vw, 3.6rem);
+    font-weight: 660;
+  }
+
+  .lab-summary {
+    color: var(--text-muted);
+    font-size: var(--fs-lead);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .lab-overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5);
+    padding: var(--space-4) var(--space-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+  }
+
+  .lab-overview dt {
+    margin-bottom: var(--space-1);
+    color: var(--text-subtle);
+  }
+
+  .lab-overview dd {
+    font-size: 0.95rem;
+  }
+
+  .lab-overview :global(.lab-link) {
+    color: var(--accent-strong);
+    font-weight: 580;
+    border-bottom: 1px solid var(--border-strong);
+  }
+
+  .lab-body {
+    --gallery-half: 24rem;
+    display: grid;
+    max-width: 48rem;
+    gap: clamp(2.5rem, 2rem + 2.5vw, 3.75rem);
+    padding-block: clamp(3.5rem, 2.6rem + 3.5vw, 5rem);
+    margin-inline: auto;
+  }
+
+  .lab-block {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .block-title {
+    color: var(--theme);
+  }
+
+  .lab-block p {
+    color: var(--text-muted);
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+
+  .lab-lead {
+    color: var(--text);
+    font-size: var(--fs-lead);
+    line-height: 1.5;
+  }
+
+  .lab-status-detail {
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--theme);
+  }
+
+  .block-list {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .block-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .block-list li::before {
+    content: '';
+    position: absolute;
+    top: 0.75em;
+    left: 0;
+    width: 0.5rem;
+    height: 2px;
+    background: var(--theme);
+  }
+
+  .lab-meta {
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--border);
+  }
+
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .tech-list li {
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+  }
+
+  @media (hover: hover) {
+    .lab-back:hover .flip {
+      transform: translateX(-0.25rem);
+    }
+
+    .lab-overview :global(.lab-link:hover) {
+      border-color: var(--accent);
+    }
+  }
+</style>

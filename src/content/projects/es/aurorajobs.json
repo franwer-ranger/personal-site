@@ -1,38 +1,100 @@
 {
   "lang": "es",
+  "kind": "professional",
   "title": "AuroraJobs",
   "slug": "aurorajobs",
-  "summary": "Plataforma de empleo y orientación para universitarios, empresas y servicios de carrera. Construí el producto full stack y asumí más decisiones técnicas y coordinación con el tiempo.",
-  "problem": "Los universitarios que dan sus primeros pasos y las empresas que buscan talento junior rara vez se encuentran en un sitio pensado para esa etapa. Los portales generalistas tratan a ambos como un añadido.",
-  "audience": "Universitarios, empresas que contratan junior y servicios de orientación de las universidades.",
-  "role": "Full-Stack Software Engineer. Trabajé con el CTO y Producto y, con el tiempo, apoyé la coordinación, el reparto de trabajo y las revisiones.",
-  "status": "Proyecto completado",
-  "year": "2021 — 2024",
-  "technologies": ["Ruby on Rails", "JavaScript", "Stimulus", "MySQL", "Redis", "Sidekiq", "Kubernetes", "Docker", "TailwindCSS", "CI/CD"],
-  "responsibilities": [
-    "Construí el producto desde cero: perfiles de estudiante, evaluación de skills e intereses, ofertas de empresa, motor de matching, flujos de candidatura y dashboards de analítica para los servicios de orientación universitaria.",
-    "Trabajé en los despliegues y la infraestructura del producto, además de la aplicación.",
-    "Colaboré con Producto y el CTO en alcance, viabilidad, solución técnica y entrega."
-  ],
+  "company": "AuroraJobs",
+  "period": "2021 — 2024",
+  "role": "Full-Stack Software Engineer",
+  "scope": "Toda la aplicación: producto para estudiantes, portal de empresas, dashboard interno, despliegues e infraestructura.",
+  "status": "Proyecto terminado",
+  "summary": "Plataforma de empleo y orientación para universitarios, empresas y servicios de carrera. Fui responsable de la aplicación de principio a fin, en un monolito Ruby on Rails.",
+  "problemLine": "Los universitarios que buscan su primer trabajo y las empresas que contratan perfiles junior no se encuentran en los portales generalistas.",
+  "context": "Los universitarios que buscan su primer trabajo y las empresas que contratan perfiles junior rara vez se encuentran en un sitio pensado para esa etapa: los portales generalistas tratan a ambos como un caso más. AuroraJobs montó empleo, formación y contenido alrededor de ese momento concreto.",
+  "audience": "Universitarios en sus primeros pasos, empresas que contratan perfiles junior y los servicios de orientación de las universidades.",
+  "responsibility": {
+    "summary": "La aplicación era mía de punta a punta: modelado, backend, frontend, pruebas, despliegues e infraestructura. Entré con poca experiencia y el CTO me formó hasta que pude tomar esas decisiones por mi cuenta.",
+    "fronts": [
+      {
+        "title": "Producto para estudiantes",
+        "description": "Perfil, filtros y formularios dinámicos para describir lo que buscan, listados de ofertas y el flujo de candidatura completo."
+      },
+      {
+        "title": "Producto para empresas",
+        "description": "Paneles con los candidatos de cada oferta ya priorizados, con su videoentrevista y las acciones de descartar, guardar o contactar en la misma pantalla."
+      },
+      {
+        "title": "Dashboard interno",
+        "description": "La herramienta desde la que el equipo configuraba lo anterior: filtros, formularios y criterios, sin pasar por un despliegue."
+      }
+    ],
+    "inventory": [
+      "Motor de matching entre estudiantes y ofertas.",
+      "Dashboards de analítica para los servicios de orientación de las universidades.",
+      "auroraHacks, la pata de contenido: editoriales, eventos y podcast.",
+      "Despliegues e infraestructura del producto."
+    ],
+    "teamBoundary": "Producto tenía la decisión final. Yo entraba en la ideación, discutía el alcance y proponía alternativas más simples cuando las veía. Mentoricé, coordiné y gestioné a un equipo de dos developers, un junior y un mid: reparto de trabajo, revisiones y apoyo del día a día."
+  },
   "decisions": [
-    "Monolito Rails para avanzar rápido en perfiles, matching, candidaturas y dashboards.",
-    "Pairing y revisión de código para compartir decisiones y mantener el ritmo de entrega.",
-    "Mantener aplicación, despliegues e infraestructura dentro del mismo contexto técnico."
+    {
+      "title": "Un monolito Rails en lugar de servicios",
+      "situation": "Éramos pocos y había que montar perfiles, ofertas, matching, candidaturas, contenido y analítica casi en paralelo.",
+      "decision": "Mantenerlo todo en un monolito Ruby on Rails, con Sidekiq para el trabajo asíncrono.",
+      "rationale": "Con ese tamaño de equipo, separar en servicios añadía despliegues, contratos entre partes y depuración repartida sin resolver ningún problema que tuviéramos entonces.",
+      "change": "Modelo de datos e interfaz se tocaban en el mismo cambio, y una funcionalidad completa entraba en un ciclo corto."
+    },
+    {
+      "title": "Hacer configurable lo que cambiaba cada semana",
+      "situation": "Los filtros, los formularios del estudiante y los criterios de priorización cambiaban con cada conversación de producto. Cada ajuste era una tarea de desarrollo y un despliegue.",
+      "decision": "Llevarlos al dashboard interno y dejar que el equipo los configurase desde ahí.",
+      "rationale": "Lo que cambia por criterio de negocio no debería tener que pasar por mí para cambiar.",
+      "change": "Producto ajustaba filtros y formularios sin esperar a desarrollo, y dejaron de llegarme tickets que eran decisiones de negocio disfrazadas de trabajo técnico."
+    },
+    {
+      "title": "Repartir y revisar en lugar de construirlo todo",
+      "situation": "El producto crecía más rápido de lo que yo podía escribir y entraron dos developers al equipo.",
+      "decision": "Repartir el trabajo por áreas, revisar sus pull requests y hacer pairing cuando hacía falta, en vez de quedarme con las partes difíciles.",
+      "rationale": "Si concentraba lo complicado, el equipo no llegaba a conocer el dominio y yo acababa siendo el cuello de botella.",
+      "change": "Un junior y un mid con áreas propias, y las decisiones de arquitectura discutidas en revisión en lugar de heredadas."
+    }
   ],
-  "outcomes": [
-    "Un producto en producción con portal de empleo, área de empresas, orientación, contenido y analítica.",
-    "Una base full stack que cubrió modelado de datos, lógica de negocio, interfaz, pruebas y despliegues."
+  "results": [
+    {
+      "statement": "Un producto en producción con portal de empleo, área de empresas, orientación, contenido y analítica.",
+      "evidence": "Las capturas de esta página son del producto público."
+    },
+    {
+      "statement": "Una base full stack que cubrió modelado, lógica de negocio, interfaz, pruebas, despliegues e infraestructura.",
+      "evidence": "El mismo monolito Rails de 2021 a 2024."
+    },
+    {
+      "statement": "Un equipo de dos developers con áreas propias, revisiones y apoyo continuo.",
+      "evidence": "Un junior y un mid a los que mentoricé y coordiné."
+    }
   ],
-  "kind": "professional",
+  "confidentialityNote": "Las cifras de usuarios, la financiación y el alcance exacto de la infraestructura son de la empresa y no se publican aquí.",
   "prominence": "standard",
   "signal": "fullstack",
-  "contribution": "Construcción full stack del producto y participación en sus decisiones técnicas y de alcance.",
+  "contribution": "Construcción full stack del producto completo y coordinación de un equipo de dos developers.",
   "proof": [
-    "Monolito Ruby on Rails con superficies para estudiantes, empresas y universidades.",
-    "Trabajo directo con Producto y CTO desde la definición hasta la entrega.",
-    "Revisiones de código y apoyo progresivo a la coordinación."
+    "Monolito Rails con producto para estudiantes, empresas y universidades.",
+    "Candidatos priorizados para las empresas y formularios configurables desde el dashboard interno.",
+    "Mentoricé y coordiné a un equipo de dos developers."
   ],
-  "confidentialityNote": "Las cifras de usuarios, financiación, tamaño de equipo y alcance de infraestructura no se publican hasta validarlas.",
+  "technologies": [
+    "Ruby on Rails",
+    "JavaScript",
+    "Stimulus",
+    "MySQL",
+    "Redis",
+    "Sidekiq",
+    "Kubernetes",
+    "Docker",
+    "TailwindCSS",
+    "CI/CD"
+  ],
+  "logo": "/aurorajobs/logo.png",
   "gallery": [
     {
       "src": "/aurorajobs/aurorajobs_landing.png",
@@ -47,7 +109,7 @@
     {
       "src": "/aurorajobs/aurorajobs_mobile_jobs.png",
       "alt": "Listado de 1.822 ofertas en móvil con filtros de Easy apply y modalidad de contrato, y la ficha de una oferta de Glovo.",
-      "caption": "El listado de ofertas: ciudad, área, experiencia, contrato y presencialidad de un vistazo."
+      "caption": "Los filtros del listado: ciudad, área, experiencia, contrato y presencialidad, todos configurables desde dentro."
     },
     {
       "src": "/aurorajobs/aurorajobs_mobile_home.png",
@@ -62,10 +124,9 @@
     {
       "src": "/aurorajobs/aurorajobs_hr.png",
       "alt": "Portal para empresas mostrando los candidatos de una oferta, con su videoentrevista y las acciones de descartar, guardar o contactar.",
-      "caption": "El portal de empresas: candidatos por oferta, videoentrevista y decisión en la misma pantalla."
+      "caption": "El portal de empresas: candidatos priorizados, videoentrevista y decisión en la misma pantalla."
     }
   ],
-  "logo": "/aurorajobs/logo.png",
   "priority": 2,
   "visualTheme": "slate"
 }

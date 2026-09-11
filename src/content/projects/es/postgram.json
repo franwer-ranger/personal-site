@@ -1,29 +1,23 @@
 {
   "lang": "es",
+  "kind": "lab",
   "title": "Postgram",
   "slug": "postgram",
-  "summary": "Prototipo de postales digitales ligadas a un lugar. Quien recibe una foto y un mensaje tiene que visitar ese sitio para poder abrirlos.",
-  "problem": "Queríamos probar una interacción digital que dependiera de una experiencia física. En Postgram, la ubicación forma parte del acceso al mensaje y obliga a diseñar el recorrido alrededor de la proximidad.",
-  "audience": "Personas que quieren dejar una foto y un mensaje asociados a un lugar para que alguien cercano los descubra allí.",
-  "role": "Producto e ingeniería dentro de un equipo de tres, junto al antiguo CTO y el Product Owner de AuroraJobs.",
-  "status": "Prototipo",
   "year": "2024",
-  "technologies": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Geolocalización"],
-  "responsibilities": [
-    "Flujo completo de crear una postal: foto, mensaje y ubicación.",
-    "Desbloqueo por proximidad: el receptor solo ve el contenido cuando está en el sitio.",
-    "Onboarding que explica la mecánica sin rodeos."
+  "status": "Prototipo",
+  "summary": "Prototipo de postales digitales ligadas a un lugar. Quien recibe una foto y un mensaje tiene que ir a ese sitio para poder abrirlos.",
+  "problem": "Cuanto más se mueve una relación por el móvil, menos depende del sitio donde estáis. Queríamos una mecánica en la que el lugar pesara: un mensaje que no se puede leer si no estás donde lo dejaron.",
+  "scopeChoice": "Una sola mecánica: foto, mensaje y punto en el mapa. Quien lo recibe ve el aviso, pero el contenido no se abre hasta que llega al sitio. Sin feed, sin perfiles y sin red social alrededor.",
+  "built": [
+    "El flujo de crear una postal: foto, mensaje y ubicación.",
+    "El desbloqueo por proximidad, con la distancia en pantalla mientras te acercas.",
+    "El onboarding que explica la mecánica en tres pantallas."
   ],
-  "decisions": [
-    "El lugar no es un metadato: es la condición para ver el mensaje.",
-    "Mantener un recorrido corto alrededor de una condición poco habitual: estar físicamente en el lugar.",
-    "Rails para montar el ciclo completo sin inventar infraestructura de más."
+  "statusDetail": "Prototipo funcional. Cierra el ciclo de crear, recibir y abrir una postal, pero no llegó a publicarse.",
+  "demonstrates": [
+    "Convertir una condición poco habitual —estar físicamente en un sitio— en un recorrido que se entiende sin que nadie lo explique.",
+    "Producto e ingeniería dentro de un equipo de tres, con el antiguo CTO y el Product Owner de AuroraJobs."
   ],
-  "outcomes": [
-    "Prototipo funcional con el ciclo de crear, recibir y abrir una postal.",
-    "Una mecánica completa para ligar creación, ubicación, proximidad y apertura."
-  ],
-  "kind": "lab",
   "prominence": "featured",
   "signal": "product",
   "contribution": "Producto e ingeniería para convertir una condición de ubicación en un recorrido completo.",
@@ -32,6 +26,7 @@
     "Desbloqueo por proximidad.",
     "Galería del recorrido completo."
   ],
+  "technologies": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Geolocalización"],
   "logo": "/postgram/logo.png",
   "gallery": [
     {
@@ -42,7 +37,7 @@
     {
       "src": "/postgram/confirm_location.png",
       "alt": "Pantalla de confirmación de ubicación en Puerta Bonita, con un mapa oscuro marcado por el asterisco de Postgram y el botón Finish.",
-      "caption": "La ubicación no es un tag: es donde se desbloquea el momento."
+      "caption": "La ubicación no es una etiqueta: es donde se desbloquea el momento."
     },
     {
       "src": "/postgram/open_cover.png",
@@ -66,10 +61,10 @@
     },
     {
       "src": "/postgram/cover_3.png",
-      "alt": "Slide de onboarding: el Postgram se revela a tus amigos solo cuando están al lugar donde lo publicaste.",
+      "alt": "Slide de onboarding: el Postgram se revela a tus amigos solo cuando están en el lugar donde lo publicaste.",
       "caption": "Sin estar en el lugar, no hay revelación."
     }
   ],
   "priority": 3,
-  "visualTheme": "slate"
+  "visualTheme": "plum"
 }

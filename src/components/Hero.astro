@@ -9,198 +9,194 @@ const { locale } = Astro.props;
 const t = getTranslations(locale);
 ---
 
-<div class="hero-pin" data-hero-pin>
-<section class="hero" data-hero>
-  <canvas class="hero-canvas" data-hero-canvas role="img" aria-label={t.hero.sceneLabel}></canvas>
-  <div class="hero-veil" aria-hidden="true"></div>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">{t.hero.kicker}</p>
+      <h1 class="display hero-title" id="hero-title">
+        <span>Fran Barahona</span>
+        {t.hero.title}
+      </h1>
+      <p class="hero-subtitle">{t.hero.subtitle}</p>
+      <p class="hero-context">{t.hero.context}</p>
+      <div class="hero-ctas">
+        <a href="#experience" class="button">{t.hero.ctaPrimary}</a>
+        <a href="#contact" class="button button--ghost">{t.hero.ctaSecondary}</a>
+      </div>
+    </div>
 
-  <div class="container hero-content">
-    <p class="kicker" data-reveal>{t.hero.kicker}</p>
-    <h1 class="display hero-title" data-reveal data-reveal-delay="80">{t.hero.title}</h1>
-    <p class="hero-subtitle" data-reveal data-reveal-delay="160">{t.hero.subtitle}</p>
-    <div class="hero-ctas" data-reveal data-reveal-delay="240">
-      <a href="#experience" class="button">{t.hero.ctaPrimary}</a>
-      <a href="#contact" class="button button--ghost">{t.hero.ctaSecondary}</a>
+    <div class="build-trace" aria-label={t.hero.traceLabel}>
+      <p class="mono trace-label">{t.hero.traceLabel}</p>
+      <ol class="trace-list" role="list">
+        {
+          t.hero.trace.map((step, index) => (
+            <li class="trace-step">
+              <span class="trace-number mono" aria-hidden="true">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span>{step}</span>
+            </li>
+          ))
+        }
+      </ol>
     </div>
   </div>
-
-  <div class="hero-scroll" aria-hidden="true">
-    <span class="mono hero-scroll-label">{t.hero.scrollHint}</span>
-    <span class="hero-scroll-line"><span></span></span>
-  </div>
 </section>
-</div>
 
 <style>
-  /*
-   * The wrapper is taller than the hero; the hero sticks to the top while the
-   * extra height scrolls by, so the scroll gesture visibly orders the system
-   * and the resolved lattice stays on screen. Plain sticky — the scroll never
-   * stops, content just arrives ~one gesture later.
-   */
-  .hero-pin {
-    --hero-pin-extra: 85svh;
-    min-height: calc(100svh + var(--hero-pin-extra));
-  }
-
   .hero {
-    position: sticky;
-    top: 0;
-    min-height: 100svh;
+    padding-block: clamp(7.5rem, 12vh, 9.5rem) clamp(3rem, 6vh, 4.5rem);
+    min-height: min(47rem, 82svh);
     display: flex;
     align-items: center;
-    overflow: clip;
   }
 
-  .hero-canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Keeps text legible without hiding the scene. */
-  .hero-veil {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      color-mix(in srgb, var(--paper) 82%, transparent) 0%,
-      color-mix(in srgb, var(--paper) 45%, transparent) 45%,
-      transparent 75%
-    );
-    pointer-events: none;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    padding-block: 7rem 5rem;
+  .hero-grid {
     display: grid;
-    gap: 1.6rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-5);
+    align-items: center;
+  }
+
+  .hero-copy {
+    grid-column: 1 / span 7;
+    display: grid;
     justify-items: start;
+    gap: var(--space-4);
   }
 
   .hero-title {
+    display: grid;
+    gap: var(--space-2);
+    max-width: 10ch;
+    color: var(--text);
     font-size: var(--fs-hero);
-    font-weight: 470;
-    max-width: 14ch;
-    text-wrap: balance;
+    font-weight: 680;
+  }
+
+  .hero-title span {
+    color: var(--text-muted);
+    font-size: 0.28em;
+    font-weight: 540;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
   }
 
   .hero-subtitle {
+    max-width: 49ch;
+    color: var(--text-muted);
     font-size: var(--fs-lead);
-    color: var(--ink-soft);
-    max-width: 46ch;
-    line-height: 1.6;
+    line-height: 1.48;
     text-wrap: pretty;
+  }
+
+  .hero-context {
+    color: var(--text-subtle);
+    font-size: 0.95rem;
   }
 
   .hero-ctas {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.9rem;
-    margin-top: 0.6rem;
+    gap: var(--space-3);
   }
 
-  .hero-scroll {
+  .build-trace {
+    grid-column: 9 / -1;
+    padding: clamp(1.25rem, 1rem + 1vw, 2rem);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .trace-label {
+    margin-bottom: var(--space-4);
+    color: var(--text-subtle);
+  }
+
+  .trace-list {
+    display: grid;
+  }
+
+  .trace-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2.25rem 1fr;
+    gap: var(--space-3);
+    align-items: center;
+    min-height: 3.25rem;
+    color: var(--text-muted);
+    font-weight: 570;
+  }
+
+  .trace-step:not(:last-child)::before {
+    content: '';
     position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    z-index: 0;
+    top: calc(50% + 0.7rem);
+    bottom: calc(-50% + 0.7rem);
+    left: 0.68rem;
+    width: 1px;
+    background: var(--border-strong);
+  }
+
+  .trace-number {
+    position: relative;
     z-index: 1;
     display: grid;
-    justify-items: center;
-    gap: 0.6rem;
-    /* Fades as the system orders (--hero-order is set from the scene). */
-    opacity: calc(1 - var(--hero-order, 0) * 1.6);
+    width: 1.4rem;
+    height: 1.4rem;
+    place-items: center;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--accent-strong);
+    font-size: 0.58rem;
   }
 
-  .hero-scroll-label {
-    color: var(--ink-faint);
-    font-size: 0.62rem;
+  .trace-step:last-child .trace-number {
+    border-color: var(--play);
+    background: var(--play);
+    color: var(--text);
   }
 
-  .hero-scroll-line {
-    width: 1px;
-    height: 3rem;
-    background: var(--line-strong);
-    overflow: hidden;
-    display: block;
-  }
-
-  .hero-scroll-line span {
-    display: block;
-    width: 100%;
-    height: 40%;
-    background: var(--accent);
-    animation: scroll-drip 2.2s var(--ease-out) infinite;
-  }
-
-  @keyframes scroll-drip {
-    0% {
-      transform: translateY(-110%);
-    }
-    60%,
-    100% {
-      transform: translateY(260%);
-    }
-  }
-
-  @media (max-width: 48rem) {
-    .hero-pin {
-      --hero-pin-extra: 60svh;
+  @media (max-width: 52rem) {
+    .hero {
+      min-height: auto;
+      padding-block: 7.5rem 3.25rem;
     }
 
-    .hero-veil {
-      background: linear-gradient(
-        180deg,
-        color-mix(in srgb, var(--paper) 88%, transparent) 0%,
-        color-mix(in srgb, var(--paper) 62%, transparent) 60%,
-        color-mix(in srgb, var(--paper) 35%, transparent) 100%
-      );
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
     }
 
-    .hero-content {
-      padding-block: 6.5rem 6rem;
+    .hero-copy,
+    .build-trace {
+      grid-column: 1;
+    }
+
+    .build-trace {
+      max-width: 34rem;
     }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    /* No pin: the scene renders a static ordered frame, nothing to drive. */
-    .hero-pin {
-      --hero-pin-extra: 0svh;
+  @media (max-width: 30rem) {
+    .hero-copy {
+      gap: 1.15rem;
     }
 
-    .hero-scroll-line span {
-      animation: none;
+    .hero-title {
+      font-size: clamp(2.65rem, 12vw, 3.55rem);
+    }
+
+    .hero-ctas {
+      width: 100%;
+    }
+
+    .hero-ctas .button {
+      flex: 1 1 9rem;
     }
   }
 </style>
-
-<script>
-  async function bootHero() {
-    const section = document.querySelector<HTMLElement>('[data-hero]');
-    const canvas = document.querySelector<HTMLCanvasElement>('[data-hero-canvas]');
-    if (!section || !canvas) return;
-
-    let dispose: (() => void) | undefined;
-    let swapped = false;
-    document.addEventListener(
-      'astro:before-swap',
-      () => {
-        swapped = true;
-        dispose?.();
-      },
-      { once: true },
-    );
-
-    // Three.js loads in its own chunk, deferred off the critical path.
-    const { initHeroScene } = await import('../lib/heroScene');
-    if (!swapped) dispose = initHeroScene(canvas, section);
-  }
-
-  document.addEventListener('astro:page-load', () => {
-    void bootHero();
-  });
-</script>

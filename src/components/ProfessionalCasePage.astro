@@ -1,0 +1,525 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectGallery from './ProjectGallery.astro';
+import ProjectLogo from './ProjectLogo.astro';
+import ExternalLink from './ExternalLink.astro';
+import CaseNext from './CaseNext.astro';
+import type { ProfessionalCase, Project } from '../lib/data';
+import { getTranslations, sectionPath, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  project: ProfessionalCase;
+  next: Project | undefined;
+  ogImage?: string;
+}
+
+const { locale, project, next, ogImage } = Astro.props;
+const t = getTranslations(locale);
+const { data } = project;
+
+const overview = [
+  { label: t.casePage.company, value: data.company },
+  { label: t.casePage.period, value: data.period },
+  { label: t.casePage.role, value: data.role },
+  { label: t.casePage.scope, value: data.scope },
+  { label: t.casePage.status, value: data.status },
+];
+---
+
+<Layout
+  title={`${data.title} — ${t.projects.kinds.professional} — Fran Barahona`}
+  description={data.summary}
+  ogImage={ogImage}
+  ogImageAlt={`${data.company} — ${data.role}`}
+  ogType="article"
+>
+  <article class="case" style={`--theme: var(--theme-${data.visualTheme})`}>
+    <header class="case-hero">
+      <div class="container case-hero-inner">
+        <a href={sectionPath(locale, 'work')} class="link-arrow case-back">
+          <span class="arrow flip" aria-hidden="true">←</span>
+          {t.casePage.back}
+        </a>
+
+        <div class="case-head">
+          <div class="case-brand">
+            {data.logo && <ProjectLogo src={data.logo} size="md" />}
+            <div class="case-brand-text">
+              <p class="mono case-category">
+                {t.projects.kinds.professional} · {t.projects.signals[data.signal]}
+              </p>
+              <h1 class="display case-title">{data.title}</h1>
+            </div>
+          </div>
+          <p class="case-summary">{data.summary}</p>
+        </div>
+
+        <dl class="case-overview" aria-label={t.casePage.overview}>
+          {
+            overview.map((item) => (
+              <div>
+                <dt class="mono">{item.label}</dt>
+                <dd>{item.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </header>
+
+    <div class="container case-body">
+      <section class="case-block" aria-labelledby="case-context">
+        <h2 class="block-title mono" id="case-context">{t.casePage.context}</h2>
+        <p class="case-lead">{data.context}</p>
+        <p class="case-audience">
+          <span class="mono">{t.casePage.audience}</span>
+          {data.audience}
+        </p>
+      </section>
+
+      <section class="case-block" aria-labelledby="case-responsibility">
+        <h2 class="block-title mono" id="case-responsibility">{t.casePage.responsibility}</h2>
+        <p class="case-lead">{data.responsibility.summary}</p>
+
+        <div class="fronts">
+          {
+            data.responsibility.fronts.map((front, index) => (
+              <article class="front">
+                <span class="mono front-index" aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3>{front.title}</h3>
+                <p>{front.description}</p>
+              </article>
+            ))
+          }
+        </div>
+
+        <div class="case-aside">
+          <div>
+            <h3 class="mono aside-label">{t.casePage.inventory}</h3>
+            <ul class="block-list" role="list">
+              {data.responsibility.inventory.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+          <div>
+            <h3 class="mono aside-label">{t.casePage.teamBoundary}</h3>
+            <p>{data.responsibility.teamBoundary}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-block" aria-labelledby="case-decisions">
+        <h2 class="block-title mono" id="case-decisions">{t.casePage.decisions}</h2>
+        <ol class="decisions" role="list">
+          {
+            data.decisions.map((decision, index) => (
+              <li class="decision">
+                <span class="mono decision-index" aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3>{decision.title}</h3>
+                <dl>
+                  <div>
+                    <dt class="mono">{t.casePage.situation}</dt>
+                    <dd>{decision.situation}</dd>
+                  </div>
+                  <div>
+                    <dt class="mono">{t.casePage.choice}</dt>
+                    <dd>{decision.decision}</dd>
+                  </div>
+                  <div>
+                    <dt class="mono">{t.casePage.rationale}</dt>
+                    <dd>{decision.rationale}</dd>
+                  </div>
+                  <div>
+                    <dt class="mono">{t.casePage.change}</dt>
+                    <dd>{decision.change}</dd>
+                  </div>
+                </dl>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+
+      <section class="case-block" aria-labelledby="case-results">
+        <h2 class="block-title mono" id="case-results">{t.casePage.results}</h2>
+        <ul class="results" role="list">
+          {
+            data.results.map((result) => (
+              <li>
+                <p class="result-statement">{result.statement}</p>
+                <p class="result-evidence">
+                  <span class="mono">{t.casePage.evidence}</span>
+                  {result.evidence}
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+        {
+          data.confidentialityNote && (
+            <p class="confidentiality">
+              <span class="mono">{t.casePage.confidentiality}</span>
+              {data.confidentialityNote}
+            </p>
+          )
+        }
+      </section>
+
+      {
+        data.gallery && data.gallery.length > 0 && (
+          <ProjectGallery locale={locale} shots={data.gallery} label={t.casePage.gallery} />
+        )
+      }
+
+      <section class="case-block case-meta" aria-labelledby="case-stack">
+        <div>
+          <h2 class="block-title mono" id="case-stack">{t.casePage.stack}</h2>
+          <ul class="tech-list" role="list">
+            {data.technologies.map((tech) => <li class="mono">{tech}</li>)}
+          </ul>
+        </div>
+        {
+          data.links && data.links.length > 0 && (
+            <div>
+              <h2 class="block-title mono">{t.casePage.links}</h2>
+              <ul class="link-list" role="list">
+                {data.links.map((link) => (
+                  <li>
+                    <ExternalLink locale={locale} href={link.url} label={link.label} class="case-link" />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </section>
+    </div>
+
+    {next && <CaseNext locale={locale} label={t.casePage.next} next={next} />}
+  </article>
+</Layout>
+
+<style>
+  .case-hero {
+    padding-block: clamp(7.5rem, 11vh, 9rem) var(--space-6);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--theme) 9%, var(--canvas)) 0%,
+      var(--canvas) 100%
+    );
+  }
+
+  .case-hero-inner {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-5);
+  }
+
+  .case-back .flip {
+    display: inline-block;
+  }
+
+  .case-head {
+    display: grid;
+    max-width: 46rem;
+    gap: var(--space-4);
+  }
+
+  .case-brand {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .case-brand-text {
+    display: grid;
+    min-width: 0;
+    gap: var(--space-2);
+  }
+
+  .case-category {
+    color: var(--theme);
+  }
+
+  .case-title {
+    font-size: clamp(2.6rem, 1.8rem + 3.4vw, 4.2rem);
+    font-weight: 660;
+  }
+
+  .case-summary {
+    color: var(--text-muted);
+    font-size: var(--fs-lead);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .case-overview {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+    gap: var(--space-4);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--border-strong);
+  }
+
+  .case-overview dt {
+    margin-bottom: var(--space-1);
+    color: var(--text-subtle);
+  }
+
+  .case-overview dd {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .case-body {
+    display: grid;
+    gap: clamp(3rem, 2.2rem + 3vw, 4.75rem);
+    padding-block: clamp(3.5rem, 2.6rem + 3.5vw, 5.5rem);
+  }
+
+  .case-block {
+    display: grid;
+    gap: var(--space-4);
+    max-width: 52rem;
+  }
+
+  .block-title {
+    color: var(--theme);
+  }
+
+  .case-lead {
+    max-width: 46rem;
+    font-size: var(--fs-lead);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .case-audience {
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .case-audience .mono,
+  .result-evidence .mono,
+  .confidentiality .mono {
+    display: block;
+    margin-bottom: var(--space-1);
+    color: var(--text-subtle);
+  }
+
+  /* ---------- Frentes ---------- */
+  .fronts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-2);
+  }
+
+  .front {
+    display: grid;
+    align-content: start;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--theme);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+  }
+
+  .front-index {
+    color: var(--text-subtle);
+  }
+
+  .front h3 {
+    font-size: 1.05rem;
+  }
+
+  .front p {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+
+  .case-aside {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border);
+  }
+
+  .case-aside > div {
+    display: grid;
+    align-content: start;
+    gap: var(--space-3);
+  }
+
+  .aside-label {
+    color: var(--text-subtle);
+    font-size: var(--fs-label);
+    font-weight: 500;
+  }
+
+  .case-aside p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .block-list {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .block-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .block-list li::before {
+    content: '';
+    position: absolute;
+    top: 0.7em;
+    left: 0;
+    width: 0.5rem;
+    height: 2px;
+    background: var(--theme);
+  }
+
+  /* ---------- Decisiones ---------- */
+  .decisions {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .decision {
+    display: grid;
+    gap: var(--space-3);
+    padding: clamp(1.2rem, 1rem + 1vw, 1.9rem);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .decision-index {
+    color: var(--theme);
+  }
+
+  .decision h3 {
+    font-size: var(--fs-h3);
+    line-height: 1.2;
+  }
+
+  .decision dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border);
+  }
+
+  .decision dt {
+    margin-bottom: var(--space-1);
+    color: var(--text-subtle);
+  }
+
+  .decision dd {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* ---------- Resultados ---------- */
+  .results {
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .results li {
+    display: grid;
+    gap: var(--space-2);
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--theme);
+  }
+
+  .result-statement {
+    font-weight: 580;
+    line-height: 1.5;
+  }
+
+  .result-evidence {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+
+  .confidentiality {
+    padding: var(--space-4);
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  /* ---------- Stack y enlaces ---------- */
+  .case-meta {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--border);
+  }
+
+  .case-meta > div {
+    display: grid;
+    align-content: start;
+    gap: var(--space-3);
+  }
+
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .tech-list li {
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+  }
+
+  .link-list {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-2);
+  }
+
+  .link-list :global(.case-link) {
+    border-bottom: 1px solid var(--border-strong);
+    color: var(--accent-strong);
+    font-weight: 580;
+  }
+
+  @media (hover: hover) {
+    .case-back:hover .flip {
+      transform: translateX(-0.25rem);
+    }
+
+    .link-list :global(.case-link:hover) {
+      border-color: var(--accent);
+    }
+  }
+</style>

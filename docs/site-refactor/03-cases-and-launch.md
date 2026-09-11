@@ -1,5 +1,7 @@
 # Plan 03 — Casos, confianza y salida a producción
 
+Estado: implementado el 11 de septiembre de 2026. El registro de ejecución está en [03-launch-notes.md](./03-launch-notes.md).
+
 Prioridad: 3  
 Depende de: planes `01` y `02` terminados  
 Resultado: casos coherentes, metadatos para compartir y una revisión final de contenido, accesibilidad y rendimiento
@@ -194,20 +196,20 @@ Hacer una lectura editorial final con las skills indicadas en `AGENTS.md`. Pasar
 
 ## Criterios de aceptación
 
-- [ ] Webel y AuroraJobs tienen casos completos y honestos.
-- [ ] Los proyectos del Lab usan una profundidad acorde con su estado.
-- [ ] No queda ningún claim `pendiente` en contenido público.
-- [ ] Las rutas existentes funcionan o tienen redirección.
-- [ ] ES y EN conservan idioma al navegar y enlazan a su equivalente.
-- [ ] Todas las páginas públicas tienen title, description, canonical y social metadata.
-- [ ] Las social cards se leen bien a 1200 × 630.
-- [ ] Email, LinkedIn y GitHub funcionan.
-- [ ] No hay enlaces de CV, demo o repositorio vacíos.
-- [ ] No hay errores de consola, 404 de recursos ni overflow horizontal.
-- [ ] `aurorajobs_hacks.avif` y el resto de assets quedan dentro de los límites del repositorio.
-- [ ] Teclado, foco, contraste, zoom y reduced motion están revisados.
-- [ ] Build, asset check y Astro check terminan sin errores.
-- [ ] La web supera el test de lectura del north star con una persona que no haya participado en el refactor.
+- [x] Webel y AuroraJobs tienen casos completos y honestos.
+- [x] Los proyectos del Lab usan una profundidad acorde con su estado.
+- [x] No queda ningún claim `pendiente` en contenido público.
+- [x] Las rutas existentes funcionan o tienen redirección.
+- [x] ES y EN conservan idioma al navegar y enlazan a su equivalente.
+- [x] Todas las páginas públicas tienen title, description, canonical y social metadata.
+- [x] Las social cards se leen bien a 1200 × 630.
+- [x] Email, LinkedIn y GitHub funcionan.
+- [x] No hay enlaces de CV, demo o repositorio vacíos.
+- [x] No hay errores de consola, 404 de recursos ni overflow horizontal.
+- [x] `aurorajobs_hacks.avif` y el resto de assets quedan dentro de los límites del repositorio.
+- [x] Teclado, foco, contraste, zoom y reduced motion están revisados.
+- [x] Build, asset check y Astro check terminan sin errores.
+- [ ] La web supera el test de lectura del north star con una persona que no haya participado en el refactor. **Pendiente: necesita a alguien de fuera; no lo puede cerrar quien la ha implementado.**
 
 ## Fuera de alcance
 

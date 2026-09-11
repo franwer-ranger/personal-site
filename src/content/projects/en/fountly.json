@@ -1,46 +1,41 @@
 {
   "lang": "en",
+  "kind": "lab",
   "title": "Fountly",
   "slug": "fountly",
-  "summary": "A map for finding nearby drinking fountains. It combines OpenStreetMap with local public data where available.",
-  "problem": "Finding a nearby fountain on a phone can still be difficult even when open data exists. Fountly turns those scattered sources into search and a map designed for use while walking.",
-  "audience": "People looking for a nearby drinking fountain from their phone.",
-  "role": "Full design and development.",
-  "status": "In use",
   "year": "2026",
-  "technologies": ["MapLibre GL JS", "Vite", "OpenStreetMap", "MapTiler"],
-  "responsibilities": [
-    "A world map that loads fountains on demand as you pan.",
-    "An OpenStreetMap adapter through Overpass, with support for local public data sources.",
-    "Mobile UI: search, clustering, detail sheet and «Get directions»."
+  "status": "Published",
+  "summary": "A map for finding nearby drinking fountains. It combines OpenStreetMap with local public data where that exists.",
+  "problem": "In August you go looking for a fountain and end up squinting at a map. The data exists and it's public, but it isn't where you need it: on your phone, while you're walking.",
+  "scopeChoice": "A map and little else: search, see the fountain, get directions. No accounts, no favourites, no ratings.",
+  "built": [
+    "A world map that loads fountains for the visible area, with per-cell caching so the same tile isn't fetched twice.",
+    "An OpenStreetMap adapter through Overpass, plus support for local public datasets where they exist.",
+    "Mobile interface: search, marker clustering, detail panel, and directions."
   ],
-  "decisions": [
-    "OpenStreetMap as the global base, with regional adapters for public data where available.",
-    "Viewport loading and cell caching: don't fetch the same area twice when you come back.",
-    "A narrow scope focused on search, details, and directions."
+  "statusDetail": "Published at fountly.app. I use it when I travel.",
+  "demonstrates": [
+    "Pulling several geographic data sources behind a single search.",
+    "Keeping the scope narrow: get search, detail, and directions right before adding features."
   ],
-  "outcomes": [
-    "A personal project published at fountly.app.",
-    "A mobile map with search, marker clustering, details, and directions."
-  ],
-  "kind": "lab",
   "prominence": "featured",
   "signal": "architecture",
-  "contribution": "Designed and built a focused utility that combines several sources of geographic data.",
+  "contribution": "Design and development of a narrow utility that pulls together geographic data from several sources.",
   "proof": [
-    "Published application.",
-    "Viewport-based fountain loading.",
-    "OpenStreetMap and local public-data integration."
+    "Published application at fountly.app.",
+    "Fountains loaded for the visible area.",
+    "OpenStreetMap and local public data behind one search."
   ],
+  "technologies": ["MapLibre GL JS", "Vite", "OpenStreetMap", "MapTiler"],
   "links": [{ "label": "fountly.app", "url": "https://fountly.app/" }],
   "logo": "/fountly/logo.png",
   "gallery": [
     {
       "src": "/fountly/map.png",
-      "alt": "Fountly on mobile: a map of Cuatro Caminos with fountain markers and the detail sheet for a fountain at Glorieta Cuatro Caminos, 1, with get-directions and share buttons.",
-      "caption": "Madrid in August: find a fountain, open it, get directions."
+      "alt": "Fountly on mobile: a map of Cuatro Caminos with fountain markers and the detail panel for a fountain at Glorieta Cuatro Caminos, 1, with directions and share buttons.",
+      "caption": "Madrid in August: you search for a fountain, open it, and it tells you how to get there."
     }
   ],
   "priority": 4,
-  "visualTheme": "slate"
+  "visualTheme": "moss"
 }

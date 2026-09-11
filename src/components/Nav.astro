@@ -10,184 +10,230 @@ const t = getTranslations(locale);
 const currentPath = Astro.url.pathname;
 const otherLocale: Locale = locale === 'es' ? 'en' : 'es';
 const home = homePath(locale);
-
 const links = [
-  { href: `${home}#work`, label: t.nav.work },
-  { href: `${home}#principles`, label: t.nav.principles },
   { href: `${home}#experience`, label: t.nav.experience },
-  { href: `${home}#contact`, label: t.nav.contact },
+  { href: `${home}#work`, label: t.nav.work },
+  { href: `${home}#lab`, label: t.nav.lab },
 ];
 ---
 
-<header class="site-nav" data-nav>
+<header class="site-nav">
   <div class="container nav-inner">
     <a href={home} class="nav-brand" aria-label={t.nav.home}>
       <img class="nav-mark" src="/silhouette.svg" alt="" width="28" height="35" aria-hidden="true" />
-      <span class="nav-role mono">{t.nav.brandRole}</span>
+      <span>
+        <strong>Fran Barahona</strong>
+        <small>{t.nav.brandRole}</small>
+      </span>
     </a>
 
     <nav aria-label={t.nav.ariaLabel} class="nav-links">
-      {
-        links.map((link) => (
-          <a href={link.href} class="nav-link">
-            {link.label}
-          </a>
-        ))
-      }
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
     </nav>
 
-    <div class="nav-lang">
+    <div class="nav-actions">
       <a
         href={getLocalizedPath(currentPath, otherLocale)}
-        class="lang-switch"
+        class="lang-switch mono"
         aria-label={t.nav.switchLanguage}
         hreflang={otherLocale}
       >
-        <span class:list={['lang-option', { active: locale === 'es' }]}>ES</span>
-        <span class="lang-divider" aria-hidden="true"></span>
-        <span class:list={['lang-option', { active: locale === 'en' }]}>EN</span>
+        {otherLocale.toUpperCase()}
       </a>
+      <a href={`${home}#contact`} class="nav-contact">{t.nav.contact}</a>
     </div>
+
+    <details class="mobile-menu">
+      <summary aria-label={t.nav.ariaLabel}>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span class="menu-label">{t.nav.menu}</span>
+      </summary>
+      <nav aria-label={t.nav.ariaLabel}>
+        {links.map((link) => <a href={link.href} onclick="this.closest('details')?.removeAttribute('open')">{link.label}</a>)}
+        <a href={`${home}#contact`} onclick="this.closest('details')?.removeAttribute('open')">{t.nav.contact}</a>
+        <a href={getLocalizedPath(currentPath, otherLocale)} hreflang={otherLocale} onclick="this.closest('details')?.removeAttribute('open')">
+          {t.languageNames[otherLocale]}
+        </a>
+      </nav>
+    </details>
   </div>
 </header>
 
 <style>
   .site-nav {
     position: fixed;
-    inset: 0 0 auto 0;
     z-index: 50;
-    padding-block: 1rem;
-    transition:
-      background-color 0.4s var(--ease-out),
-      box-shadow 0.4s var(--ease-out),
-      padding 0.4s var(--ease-out);
-  }
-
-  .site-nav.is-scrolled {
-    background: color-mix(in srgb, var(--paper) 88%, transparent);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 1px 0 var(--line);
-    padding-block: 0.6rem;
+    inset: 0 0 auto;
+    border-bottom: 1px solid rgb(215 220 230 / 0.85);
+    background: rgb(247 248 251 / 0.9);
+    backdrop-filter: blur(14px);
   }
 
   .nav-inner {
     display: flex;
+    min-height: 4.8rem;
     align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
+    gap: var(--space-5);
   }
 
   .nav-brand {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: var(--space-2);
+    margin-right: auto;
   }
 
   .nav-mark {
-    width: 1.35rem;
+    width: 1.3rem;
     height: auto;
-    color: var(--ink);
-    flex-shrink: 0;
   }
 
-  .nav-role {
-    color: var(--ink-faint);
-    font-size: 0.66rem;
+  .nav-brand span {
+    display: grid;
+    line-height: 1.15;
   }
 
-  .nav-links {
+  .nav-brand strong {
+    font-size: 0.88rem;
+  }
+
+  .nav-brand small {
+    color: var(--text-subtle);
+    font-size: 0.69rem;
+  }
+
+  .nav-links,
+  .nav-actions {
     display: flex;
-    gap: clamp(1rem, 0.5rem + 2vw, 2.25rem);
+    align-items: center;
+    gap: clamp(0.9rem, 0.6rem + 1.1vw, 1.6rem);
   }
 
-  .nav-link {
-    font-family: var(--font-mono);
-    font-size: 0.74rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    position: relative;
-    padding-block: 0.25rem;
-    transition: color 0.25s var(--ease-out);
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s var(--ease-out);
-  }
-
-  @media (hover: hover) {
-    .nav-link:hover {
-      color: var(--ink);
-    }
-
-    .nav-link:hover::after {
-      transform: scaleX(1);
-    }
-
-    .lang-switch:hover {
-      border-color: var(--ink);
-      background: var(--paper-raised);
-    }
+  .nav-links a,
+  .lang-switch {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.86rem;
+    font-weight: 570;
+    transition: color var(--duration-hover) var(--ease-standard);
   }
 
   .lang-switch {
+    font-size: 0.69rem;
+  }
+
+  .nav-contact {
+    min-height: 2.75rem;
     display: inline-flex;
     align-items: center;
-    gap: 0.55rem;
-    font-family: var(--font-mono);
-    font-size: 0.74rem;
-    letter-spacing: 0.08em;
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    padding: 0.4rem 0.85rem;
-    transition:
-      border-color 0.25s var(--ease-out),
-      background-color 0.25s var(--ease-out);
+    padding-inline: 0.9rem;
+    border-radius: var(--radius-sm);
+    background: var(--text);
+    color: var(--inverse-text);
+    font-size: 0.84rem;
+    font-weight: 630;
   }
 
-  .lang-option {
-    color: var(--ink-faint);
-    transition: color 0.25s var(--ease-out);
+  .mobile-menu {
+    display: none;
   }
 
-  .lang-option.active {
-    color: var(--ink);
-    font-weight: 500;
-  }
+  @media (hover: hover) {
+    .nav-links a:hover,
+    .lang-switch:hover {
+      color: var(--accent-strong);
+    }
 
-  .lang-divider {
-    width: 1px;
-    height: 0.85rem;
-    background: var(--line-strong);
+    .nav-contact:hover {
+      background: var(--accent-strong);
+    }
   }
 
   @media (max-width: 48rem) {
-    .nav-role,
-    .nav-links {
+    .nav-links,
+    .nav-actions {
       display: none;
+    }
+
+    .mobile-menu {
+      position: relative;
+      display: block;
+    }
+
+    .mobile-menu summary {
+      display: grid;
+      grid-template-columns: 1.1rem auto;
+      grid-template-rows: 1fr 1fr;
+      column-gap: 0.55rem;
+      width: max-content;
+      min-height: 2.8rem;
+      align-content: center;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu summary > span:not(.menu-label) {
+      grid-column: 1;
+      width: 1.1rem;
+      height: 1px;
+      align-self: end;
+      background: var(--text);
+      transition: transform var(--duration-panel) var(--ease-standard);
+    }
+
+    .mobile-menu summary > span:nth-child(2) {
+      align-self: start;
+    }
+
+    .menu-label {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      align-self: center;
+      font-size: 0.86rem;
+      font-weight: 620;
+    }
+
+    .mobile-menu[open] summary > span:first-child {
+      transform: translateY(0.25rem) rotate(45deg);
+    }
+
+    .mobile-menu[open] summary > span:nth-child(2) {
+      transform: translateY(-0.25rem) rotate(-45deg);
+    }
+
+    .mobile-menu nav {
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      right: 0;
+      display: grid;
+      min-width: min(18rem, calc(100vw - 2 * var(--gutter)));
+      padding: var(--space-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mobile-menu nav a {
+      display: flex;
+      min-height: 3rem;
+      align-items: center;
+      padding-inline: var(--space-3);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-weight: 580;
+    }
+
+    .mobile-menu nav a:nth-last-child(2) {
+      background: var(--accent);
+      color: #fff;
     }
   }
 </style>
-
-<script>
-  function initNav() {
-    const nav = document.querySelector('[data-nav]');
-    if (!nav) return;
-    const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 24);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    document.addEventListener('astro:before-swap', () => window.removeEventListener('scroll', onScroll), {
-      once: true,
-    });
-  }
-  document.addEventListener('astro:page-load', initNav);
-</script>

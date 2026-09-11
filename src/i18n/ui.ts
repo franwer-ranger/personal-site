@@ -45,3 +45,13 @@ export function projectPath(locale: Locale, slug: string): string {
 export function homePath(locale: Locale): string {
   return locale === 'en' ? '/en' : '/';
 }
+
+/** Rellena marcadores `{clave}` en una cadena del diccionario. */
+export function fill(template: string, values: Record<string, string>): string {
+  return template.replace(/\{(\w+)\}/g, (_, key: string) => values[key] ?? '');
+}
+
+/** Enlace a una sección de la portada del idioma actual. */
+export function sectionPath(locale: Locale, anchor: string): string {
+  return `${homePath(locale)}#${anchor}`;
+}

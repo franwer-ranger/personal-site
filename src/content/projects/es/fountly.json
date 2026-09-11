@@ -1,37 +1,32 @@
 {
   "lang": "es",
+  "kind": "lab",
   "title": "Fountly",
   "slug": "fountly",
-  "summary": "Mapa para encontrar fuentes de agua potable cercanas. Combina OpenStreetMap con datos públicos locales cuando están disponibles.",
-  "problem": "Encontrar una fuente cercana desde el móvil sigue siendo difícil, aunque existan datos abiertos. Fountly convierte esas fuentes dispersas en una búsqueda y un mapa pensados para usar mientras caminas.",
-  "audience": "Personas que quieren localizar una fuente cercana desde el móvil.",
-  "role": "Diseño y desarrollo completos.",
-  "status": "En uso",
   "year": "2026",
-  "technologies": ["MapLibre GL JS", "Vite", "OpenStreetMap", "MapTiler"],
-  "responsibilities": [
-    "Mapa mundial con carga de fuentes bajo demanda al mover el mapa.",
-    "Adaptador de OpenStreetMap mediante Overpass y soporte para fuentes de datos públicas locales.",
-    "UI móvil: buscador, clustering, panel de detalle y «Cómo llegar»."
+  "status": "Publicado",
+  "summary": "Mapa para encontrar fuentes de agua potable cercanas. Combina OpenStreetMap con datos públicos locales cuando están disponibles.",
+  "problem": "En agosto buscas una fuente y acabas mirando el mapa a ojo. Los datos existen y son públicos, pero no están donde los necesitas: en el móvil, mientras caminas.",
+  "scopeChoice": "Un mapa y poco más: buscar, ver la fuente y que te lleve. Sin cuentas, sin favoritos y sin valoraciones.",
+  "built": [
+    "Mapa mundial que carga fuentes según el área visible, con caché por celdas para no pedir dos veces lo mismo.",
+    "Adaptador de OpenStreetMap por Overpass y soporte para datos públicos locales donde existen.",
+    "Interfaz móvil: buscador, agrupación de marcadores, panel de detalle y «Cómo llegar»."
   ],
-  "decisions": [
-    "OpenStreetMap como base global y adaptadores regionales para datos públicos cuando están disponibles.",
-    "Carga por viewport y caché por celdas: no pedir dos veces lo mismo al volver a una zona.",
-    "Alcance estrecho para resolver bien la búsqueda, el detalle y las indicaciones."
+  "statusDetail": "Publicado en fountly.app. Lo uso cuando viajo.",
+  "demonstrates": [
+    "Integrar varias fuentes de datos geográficos detrás de una sola búsqueda.",
+    "Mantener el alcance estrecho: resolver bien buscar, ver y llegar antes que añadir funciones."
   ],
-  "outcomes": [
-    "Proyecto personal publicado en fountly.app.",
-    "Mapa móvil con búsqueda, agrupación de marcadores, detalle y acceso a indicaciones."
-  ],
-  "kind": "lab",
   "prominence": "featured",
   "signal": "architecture",
   "contribution": "Diseño y desarrollo de una utilidad estrecha que integra datos geográficos de varias fuentes.",
   "proof": [
-    "Aplicación publicada.",
+    "Aplicación publicada en fountly.app.",
     "Carga de fuentes según el área visible.",
     "Integración de OpenStreetMap y datos públicos locales."
   ],
+  "technologies": ["MapLibre GL JS", "Vite", "OpenStreetMap", "MapTiler"],
   "links": [{ "label": "fountly.app", "url": "https://fountly.app/" }],
   "logo": "/fountly/logo.png",
   "gallery": [
@@ -42,5 +37,5 @@
     }
   ],
   "priority": 4,
-  "visualTheme": "slate"
+  "visualTheme": "moss"
 }

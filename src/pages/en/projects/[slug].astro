@@ -1,16 +1,19 @@
 ---
-import ProjectPage from '../../../components/ProjectPage.astro';
-import { getProjects } from '../../../lib/data';
+import ProfessionalCasePage from '../../../components/ProfessionalCasePage.astro';
+import LabProjectPage from '../../../components/LabProjectPage.astro';
+import { getProjects, isLab, isProfessional, nextOfSameKind } from '../../../lib/data';
 
 export async function getStaticPaths() {
   const projects = await getProjects('en');
-  return projects.map((project, i) => ({
+  return projects.map((project) => ({
     params: { slug: project.data.slug },
-    props: { project, next: projects[(i + 1) % projects.length] },
+    props: { project, next: nextOfSameKind(projects, project) },
   }));
 }
 
 const { project, next } = Astro.props;
+const ogImage = isProfessional(project) ? `/og-${project.data.slug}-en.png` : undefined;
 ---
 
-<ProjectPage locale="en" project={project} next={next} />
+{isProfessional(project) && <ProfessionalCasePage locale="en" project={project} next={next} ogImage={ogImage} />}
+{isLab(project) && <LabProjectPage locale="en" project={project} next={next} />}

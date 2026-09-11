@@ -1,76 +1,46 @@
 {
   "meta": {
+    "siteName": "Fran Barahona",
     "title": "Fran Barahona — Product Engineer",
-    "description": "Product Engineer with a full-stack foundation. I build web software and work with AI agents through specifications, review, and quality checks."
+    "description": "Product-minded software engineer. Responsible for the web platform at Webel, with a full-stack foundation in Ruby on Rails from AuroraJobs.",
+    "ogImageAlt": "Fran Barahona, Product Engineer. Problem, specification, build, review, delivery."
   },
   "nav": {
-    "work": "Lab",
-    "principles": "Method",
+    "work": "Work",
+    "lab": "Lab",
     "experience": "Experience",
     "contact": "Contact",
     "ariaLabel": "Main navigation",
     "switchLanguage": "Switch language",
+    "skipToContent": "Skip to content",
     "home": "Home",
-    "brandRole": "Product Engineer"
+    "brandRole": "Product Engineer",
+    "menu": "Menu"
   },
   "hero": {
     "kicker": "Product-minded software engineer",
     "title": "Product Engineer",
-    "subtitle": "I build product software end to end. I have a full-stack foundation and use AI agents to turn loosely defined problems into software I can maintain and validate.",
+    "subtitle": "My responsibility is technical: whole web surfaces and the architecture under them. I work close to product and hand part of the implementation to agents; the specification and the review are mine.",
+    "context": "Responsible for the web platform at Webel. Full-stack foundation in Ruby on Rails at AuroraJobs.",
     "ctaPrimary": "See experience",
     "ctaSecondary": "Contact me",
-    "scrollHint": "Scroll to bring the system into order",
-    "sceneLabel": "Abstract visualization: a scattered cloud of nodes that reorganizes into a structured form as you scroll"
+    "traceLabel": "Build trace",
+    "trace": ["Problem", "Specification", "Build", "Review", "Delivery"]
   },
   "summary": {
     "kicker": "At a glance",
-    "title": "Product thinking, technical ownership, and a full-stack foundation",
+    "title": "Technical ownership of products in production",
     "facts": [
-      "Responsible for several Webel surfaces and their shared web architecture.",
-      "Full-stack experience building a Ruby on Rails product at AuroraJobs.",
-      "I work with agents through specifications, reusable skills, code review, and final validation."
+      "At Webel I run all of web: the B2C app thousands of people use every day, the B2B platform, the internal dashboard, SEO, email, and the shared library.",
+      "At AuroraJobs I built the whole application in Rails and mentored and coordinated a team of two developers.",
+      "I work with agents from specifications and reusable skills. The code, the tests, and the final call are mine."
     ]
-  },
-  "sections": {
-    "professionalWork": "Professional work",
-    "work": "Lab",
-    "principles": "Method",
-    "skills": "Technical foundation",
-    "experience": "Experience",
-    "contact": "Contact"
-  },
-  "webel": {
-    "kicker": "Current experience · Live product",
-    "title": "Webel",
-    "intro": "I am responsible for the web platform of this home-services marketplace: its B2C and B2B surfaces, internal dashboard, SEO, email, and shared component library.",
-    "areasLabel": "Areas I work on",
-    "areas": [
-      {
-        "name": "Webel Organizations",
-        "description": "The B2B platform for managing employees, services, calendars, leads, chat, tax details, service areas, schedules, and payouts."
-      },
-      {
-        "name": "Marketplace core",
-        "description": "The B2C application for finding and browsing services. I migrated it from Angular to React, and it continues to evolve with the rest of the product."
-      },
-      {
-        "name": "Programmatic SEO",
-        "description": "The content and acquisition surface. I moved it to Astro, which better fits its static, content-led architecture."
-      },
-      {
-        "name": "Internal dashboard",
-        "description": "The internal tool for looking up users and services, managing incidents, and tracking business data."
-      }
-    ],
-    "cta": "Read the full case",
-    "visit": "Visit appwebel.com"
   },
   "projects": {
     "kicker": "Side projects",
     "title": "Lab",
-    "intro": "Prototypes and utilities I build on my own initiative. Each tests a specific idea and states its status without presenting it as paid work.",
+    "intro": "Prototypes and utilities I build on my own initiative. Each one tests a specific idea and states where it actually stands, without posing as paid work.",
     "viewProject": "View project",
-    "viewAll": "View all",
     "kinds": {
       "professional": "Professional work",
       "lab": "Lab"
@@ -82,6 +52,15 @@
       "architecture": "Architecture"
     }
   },
+  "selectedWork": {
+    "kicker": "Selected work",
+    "title": "Two products, two kinds of ownership",
+    "intro": "Each case covers the problem, the part I owned, two or three decisions, and what changed afterwards.",
+    "problem": "Problem",
+    "contribution": "My contribution",
+    "proof": "One proof point",
+    "caseCta": "The {project} case"
+  },
   "principles": {
     "kicker": "Product, engineering, and AI",
     "title": "How I work with agents",
@@ -92,69 +71,86 @@
       },
       {
         "title": "Set up the work",
-        "description": "I split implementation into reviewable parts and give each agent the context it needs. Reusable skills and agent-ready design-system docs carry technical decisions across tasks."
+        "description": "I split implementation into reviewable parts and give each agent the context it needs. Reusable skills and design-system docs keep technical decisions from getting lost between tasks."
       },
       {
         "title": "Review and validate",
         "description": "I review the code, tests, and outcome against the specification. When a choice affects the product or architecture, I make it and update the context before work continues."
       }
-    ]
-  },
-  "skills": {
-    "kicker": "Technical foundation",
-    "title": "Technologies I use to build the product",
-    "groups": [
-      {
-        "domain": "Frontend",
-        "items": ["React", "TypeScript", "Next.js", "Astro", "TailwindCSS", "Accessibility", "Web performance"]
-      },
-      {
-        "domain": "Full stack",
-        "items": ["Ruby on Rails", "Node.js", "PostgreSQL", "MySQL", "REST APIs", "Testing", "CI/CD"]
-      },
-      {
-        "domain": "Product",
-        "items": ["Problem definition", "Scope", "Acceptance criteria", "Programmatic SEO", "Working with design and business"]
-      },
-      {
-        "domain": "Applied AI",
-        "items": ["Reusable skills", "Structured specifications", "Agent implementation", "Review and validation"]
-      }
+    ],
+    "artifactsLabel": "Artifacts I use",
+    "artifacts": [
+      "Reusable skills that capture technical decisions and quality criteria.",
+      "Specifications with scope, constraints, and acceptance criteria written before implementation."
     ]
   },
   "experience": {
     "kicker": "Professional experience",
-    "title": "Web products at Webel and AuroraJobs",
-    "stages": {
-      "fullstack": "Full Stack",
-      "frontend": "Frontend",
-      "product": "Product / AI"
-    },
-    "evolutionNote": "AuroraJobs gave me my full-stack foundation. At Webel, I have taken responsibility for several web surfaces and their shared architecture."
+    "title": "Webel and AuroraJobs",
+    "evolutionNote": "AuroraJobs gave me my full-stack foundation and a two-developer team to coordinate. At Webel I run the whole web area and the architecture its products share.",
+    "evidence": "Evidence"
   },
   "contact": {
     "kicker": "Contact",
-    "title": "I want product responsibility alongside the code",
-    "intro": "I am looking for Product Engineer or Software Engineer roles where engineering takes part in defining the problem, scope, and decisions. I can also help teams turn loosely defined ideas into software people can use.",
+    "title": "Let's talk",
+    "intro": "Write with a bit of context and I'll get back to you. Two conversations interest me right now.",
+    "tracks": [
+      {
+        "title": "Roles and hiring",
+        "description": "Product Engineer, Software Engineer, or full-stack roles where engineering gets into the problem and the scope, not just the ticket.",
+        "cta": "Write about a role",
+        "subject": "Role for Fran Barahona"
+      },
+      {
+        "title": "Projects and consulting",
+        "description": "Loosely defined ideas that need to become usable software, or products that have become hard to maintain.",
+        "cta": "Write about a project",
+        "subject": "Project with Fran Barahona"
+      }
+    ],
     "emailLabel": "Email",
-    "socialLabel": "You can also find me on",
-    "cta": "Write to me"
+    "socialLabel": "You can also find me on"
   },
-  "projectPage": {
-    "back": "Back to home",
-    "problem": "What needed solving",
-    "audience": "Who it's for",
-    "role": "My role",
-    "responsibilities": "Responsibilities",
-    "decisions": "Decisions",
-    "outcomes": "Results and deliveries",
-    "technologies": "Technologies",
+  "casePage": {
+    "back": "Back to selected work",
+    "overview": "Overview",
+    "company": "Company",
+    "period": "Period",
+    "role": "Role",
+    "scope": "Scope",
     "status": "Status",
-    "year": "Year",
-    "category": "Type",
-    "links": "Links",
+    "context": "Problem and context",
+    "audience": "Who it's for",
+    "responsibility": "What I owned",
+    "inventory": "What else it covers",
+    "teamBoundary": "Where my part ends",
+    "decisions": "Decisions",
+    "situation": "Situation",
+    "choice": "What I decided",
+    "rationale": "Why",
+    "change": "What changed",
+    "results": "Results",
+    "evidence": "Evidence",
     "gallery": "Inside",
-    "nextProject": "Next project"
+    "stack": "Stack",
+    "links": "Links",
+    "confidentiality": "About the numbers",
+    "next": "Next case"
+  },
+  "labPage": {
+    "back": "Back to the Lab",
+    "overview": "Overview",
+    "year": "Year",
+    "status": "Status",
+    "problem": "The problem I saw",
+    "scopeChoice": "Idea and scope",
+    "built": "What I built",
+    "statusDetail": "Where it stands",
+    "demonstrates": "What it shows",
+    "gallery": "Inside",
+    "stack": "Stack",
+    "links": "Links",
+    "next": "Next Lab project"
   },
   "gallery": {
     "prev": "Previous screenshot",
@@ -165,9 +161,10 @@
   },
   "footer": {
     "built": "Designed and built by Fran",
-    "stack": "Astro · TypeScript · Three.js · Motion",
+    "stack": "Astro · TypeScript",
     "rights": "All rights reserved"
   },
+  "external": "Opens on another site",
   "languageNames": {
     "es": "Español",
     "en": "English"

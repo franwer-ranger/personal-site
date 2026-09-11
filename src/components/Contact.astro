@@ -1,4 +1,5 @@
 ---
+import ExternalLink from './ExternalLink.astro';
 import { getTranslations, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -7,117 +8,177 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = getTranslations(locale);
-
 const email = 'franbaraguz98@gmail.com';
-const socials = [
-  { label: 'GitHub', url: 'https://github.com/franwer-ranger' },
-  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/francisco-barahona-a9b3a3218/' },
-];
-
+// Un solo buzón para las dos conversaciones; el asunto es lo que las separa.
+const mailto = (subject?: string) =>
+  subject ? `mailto:${email}?subject=${encodeURIComponent(subject)}` : `mailto:${email}`;
 ---
 
-<section class="section theme-dark contact" id="contact">
-  <div class="container">
-    <header class="section-head" data-reveal>
-      <span class="section-index">06 · {t.sections.contact}</span>
+<section class="section contact" id="contact" aria-labelledby="contact-title">
+  <div class="container contact-grid">
+    <header class="contact-head">
       <p class="kicker">{t.contact.kicker}</p>
-      <h2 class="display section-title contact-title">{t.contact.title}</h2>
-      <p class="section-intro">{t.contact.intro}</p>
+      <h2 class="section-title" id="contact-title">{t.contact.title}</h2>
+      <p class="contact-intro">{t.contact.intro}</p>
     </header>
 
-    <div class="contact-body" data-reveal>
-      <div class="contact-email">
-        <span class="mono contact-label">{t.contact.emailLabel}</span>
-        <a href={`mailto:${email}`} class="contact-address display">{email}</a>
-      </div>
+    <ul class="contact-tracks" role="list">
+      {
+        t.contact.tracks.map((track) => (
+          <li class="track">
+            <h3>{track.title}</h3>
+            <p>{track.description}</p>
+            <a href={mailto(track.subject)} class="button">
+              {track.cta}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
 
-      <div class="contact-socials">
-        <span class="mono contact-label">{t.contact.socialLabel}</span>
-        <ul role="list" class="social-list">
-          {
-            socials.map((social) => (
-              <li>
-                <a href={social.url} class="link-arrow contact-social" target="_blank" rel="noopener noreferrer">
-                  {social.label}
-                  <span class="arrow" aria-hidden="true">
-                    ↗
-                  </span>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
+    <div class="contact-details">
+      <div>
+        <span class="mono">{t.contact.emailLabel}</span>
+        <a href={mailto()}>{email}</a>
       </div>
-
-      <a href={`mailto:${email}`} class="button contact-cta">{t.contact.cta}</a>
+      <div>
+        <span class="mono">{t.contact.socialLabel}</span>
+        <p>
+          <ExternalLink
+            locale={locale}
+            href="https://www.linkedin.com/in/francisco-barahona-a9b3a3218/"
+            label="LinkedIn"
+          />
+          <ExternalLink locale={locale} href="https://github.com/franwer-ranger" label="GitHub" />
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .contact-title {
-    max-width: 16ch;
+  .contact {
+    background: var(--accent);
+    color: #fff;
   }
 
-  .contact-body {
+  .contact-grid {
     display: grid;
-    gap: 2.5rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+
+  .contact-head {
+    grid-column: 1 / span 5;
+    display: grid;
+    align-content: start;
+    gap: var(--space-3);
+  }
+
+  .contact .kicker,
+  .contact .section-title {
+    color: #fff;
+  }
+
+  .contact-intro {
+    color: #eff0ff;
+    font-size: var(--fs-lead);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  .contact-tracks {
+    grid-column: 6 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .track {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    align-content: start;
     justify-items: start;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border: 1px solid rgb(255 255 255 / 0.35);
+    border-radius: var(--radius-md);
+    background: rgb(255 255 255 / 0.08);
   }
 
-  .contact-label {
-    color: var(--coal-text-soft);
-    font-size: 0.68rem;
-    display: block;
-    margin-bottom: 0.7rem;
+  .track h3 {
+    font-size: 1.1rem;
   }
 
-  .contact-address {
-    font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.6rem);
-    font-weight: 480;
-    letter-spacing: -0.015em;
-    border-bottom: 1px solid var(--coal-line);
-    padding-bottom: 0.3rem;
-    transition:
-      color 0.3s var(--ease-out),
-      border-color 0.3s var(--ease-out);
+  .track p {
+    color: #eff0ff;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .contact .button {
+    border-color: #fff;
+    background: #fff;
+    color: var(--accent-strong);
+  }
+
+  .contact-details {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-5) var(--space-6);
+    padding-top: var(--space-4);
+    border-top: 1px solid rgb(255 255 255 / 0.3);
+  }
+
+  .contact-details > div {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .contact-details .mono {
+    color: #eff0ff;
+  }
+
+  .contact-details :global(a) {
+    font-weight: 620;
     overflow-wrap: anywhere;
   }
 
-  @media (hover: hover) {
-    .contact-address:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-
-    .contact-social:hover {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-
-    .contact-cta:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--paper);
-    }
-  }
-
-  .social-list {
-    list-style: none;
-    padding: 0;
+  .contact-details p {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.4rem;
+    gap: var(--space-4);
   }
 
-  .contact-social {
-    color: var(--coal-text);
-    border-bottom-color: var(--coal-line);
+  @media (hover: hover) {
+    .contact .button:hover {
+      border-color: var(--play);
+      background: var(--play);
+      color: var(--text);
+    }
+
+    .contact-details :global(a:hover) {
+      text-decoration: underline;
+      text-underline-offset: 0.2rem;
+    }
   }
 
-  .contact-cta {
-    background: var(--paper);
-    border-color: var(--paper);
-    color: var(--ink);
+  @media (max-width: 56rem) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-head,
+    .contact-tracks,
+    .contact-details {
+      grid-column: 1;
+    }
+  }
+
+  @media (max-width: 38rem) {
+    .contact-tracks {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -5,11 +5,12 @@
   "period": "2024 — present",
   "kind": "professional",
   "stage": "frontend",
-  "summary": "I work across the B2C and B2B web surfaces, internal dashboard, SEO, transactional email, and shared component library.",
+  "slug": "webel",
+  "summary": "I am responsible for all of Webel's web: the B2C app, the B2B platform behind company profiles, the internal dashboard, SEO, email, and the component library the three products share.",
   "highlights": [
-    "Migrated the B2C application from Angular to React and moved the SEO surface to Astro.",
-    "Extracted a shared React library and moved email development to React Email.",
-    "Set up reusable skills and design-system documentation that gives AI agents the right technical context."
+    "The B2C app is used by thousands of people a day. I migrated its marketplace from Angular to React.",
+    "The company profiles working on the B2B platform generate close to 25% of GMV, over €500k a year.",
+    "I extracted the design system into a library shared by B2C, B2B, and the dashboard, and moved email to React Email."
   ],
   "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email"],
   "order": 1

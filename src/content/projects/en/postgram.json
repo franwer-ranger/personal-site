@@ -1,75 +1,70 @@
 {
   "lang": "en",
+  "kind": "lab",
   "title": "Postgram",
   "slug": "postgram",
-  "summary": "A prototype for digital postcards tied to a place. Recipients have to visit that location before they can open the photo and message.",
-  "problem": "We wanted to test a digital interaction that depended on a physical experience. In Postgram, location controls access to the message, so the whole journey is designed around proximity.",
-  "audience": "People who want to leave a photo and message somewhere for a friend to discover in that place.",
-  "role": "Product and engineering in a three-person team with AuroraJobs' former CTO and Product Owner.",
-  "status": "Prototype",
   "year": "2024",
-  "technologies": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Geolocation"],
-  "responsibilities": [
-    "Full flow to create a postcard: photo, message and location.",
-    "Proximity unlock: the recipient only sees the content when they're on the spot.",
-    "Onboarding that explains the mechanic without fuss."
+  "status": "Prototype",
+  "summary": "Prototype for digital postcards tied to a place. Whoever receives the photo and the message has to go there to open them.",
+  "problem": "The more a relationship lives on the phone, the less it depends on where you are. We wanted a mechanic where the place carried weight: a message you cannot read unless you stand where it was left.",
+  "scopeChoice": "One mechanic only: photo, message, and a point on the map. The recipient sees the notice, but the content stays shut until they get there. No feed, no profiles, no social network around it.",
+  "built": [
+    "The flow for creating a postcard: photo, message, and location.",
+    "Proximity unlocking, with the distance on screen as you get closer.",
+    "The onboarding that explains the mechanic in three screens."
   ],
-  "decisions": [
-    "Make location the condition for seeing the message rather than an extra piece of metadata.",
-    "Keep the journey short around an unusual condition: being physically present.",
-    "Rails to ship the full cycle without inventing extra infrastructure."
+  "statusDetail": "Working prototype. It closes the loop of creating, receiving, and opening a postcard, but it never shipped.",
+  "demonstrates": [
+    "Turning an unusual condition — physically being somewhere — into a flow people follow without anyone explaining it.",
+    "Product and engineering inside a three-person team, with AuroraJobs' former CTO and Product Owner."
   ],
-  "outcomes": [
-    "A working prototype with the create, receive and open cycle.",
-    "A complete mechanic linking creation, location, proximity, and opening."
-  ],
-  "kind": "lab",
   "prominence": "featured",
   "signal": "product",
-  "contribution": "Product and engineering work that turned a location constraint into a complete journey.",
+  "contribution": "Product and engineering work turning a location condition into a complete flow.",
   "proof": [
-    "Working prototype covering postcard creation and opening.",
-    "Proximity-based unlock.",
-    "A gallery showing the complete journey."
+    "Working prototype covering creating and opening postcards.",
+    "Proximity unlocking.",
+    "Gallery of the full flow."
   ],
+  "technologies": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Geolocation"],
   "logo": "/postgram/logo.png",
   "gallery": [
     {
       "src": "/postgram/make_postgram.png",
-      "alt": "Postgram create screen with a photo, the message “We had an amazing day together!” and a Continue button.",
-      "caption": "Create a postcard: a photo, a message, and little else."
+      "alt": "Postgram creation screen with a photo, the message «We had an amazing day together!», and a Continue button.",
+      "caption": "Creating a postcard: a photo, a message, not much else."
     },
     {
       "src": "/postgram/confirm_location.png",
-      "alt": "Location confirmation at Puerta Bonita, with a dark map marked by the Postgram asterisk and a Finish button.",
-      "caption": "Location sets where the moment unlocks."
+      "alt": "Location confirmation screen at Puerta Bonita, with a dark map marked by the Postgram asterisk and a Finish button.",
+      "caption": "The location isn't a tag: it's where the moment unlocks."
     },
     {
       "src": "/postgram/open_cover.png",
-      "alt": "Card announcing “Fran has a Postgram for you!” over a blurred background, with a Go for it! button.",
-      "caption": "You get the ping. The content, not yet."
+      "alt": "Card announcing «Fran has a Postgram for you!» over a blurred background, with a Go for it! button.",
+      "caption": "You get the notice. The content, not yet."
     },
     {
       "src": "/postgram/opening.png",
-      "alt": "Proximity screen with a map, the line “You are 20 ms away” and the location Puerta Bonita, Madrid, with get-directions and refresh.",
-      "caption": "Twenty metres out. You have to actually be there to open it."
+      "alt": "Proximity screen with a map, the text «You are 20 ms away», and the location Puerta Bonita, Madrid, with links for directions and refresh.",
+      "caption": "Twenty metres away. You have to actually be there to open it."
     },
     {
       "src": "/postgram/cover_1.png",
-      "alt": "Postgram onboarding slide over a blue sky: “Share moments that travel between the real world and the virtual world.”",
-      "caption": "The starting idea: moments that travel between physical and digital."
+      "alt": "Postgram onboarding slide over a blue sky: «Share moments that travel between the real world and the virtual world.»",
+      "caption": "The starting idea: moments that travel between the physical and the digital."
     },
     {
       "src": "/postgram/cover_2.png",
-      "alt": "Onboarding slide with a compass icon: leave memories as photos and notes for friends to discover in the same spot.",
-      "caption": "You leave the memory somewhere. Friends find it there."
+      "alt": "Onboarding slide with a compass icon: leave memories as photos and notes for friends to find in the same place.",
+      "caption": "You leave the memory in a place. Your friends find it there."
     },
     {
       "src": "/postgram/cover_3.png",
-      "alt": "Onboarding slide: the Postgram only reveals itself to friends once they are at the place where you posted it.",
+      "alt": "Onboarding slide: the Postgram is revealed to your friends only when they are at the place where you posted it.",
       "caption": "No place, no reveal."
     }
   ],
   "priority": 3,
-  "visualTheme": "slate"
+  "visualTheme": "plum"
 }

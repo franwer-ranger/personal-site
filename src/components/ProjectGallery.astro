@@ -11,9 +11,10 @@ interface Shot {
 interface Props {
   locale: Locale;
   shots: Shot[];
+  label: string;
 }
 
-const { locale, shots } = Astro.props;
+const { locale, shots, label } = Astro.props;
 const t = getTranslations(locale);
 
 const items = await Promise.all(
@@ -35,7 +36,7 @@ const total = String(items.length).padStart(2, '0');
 
 <section class="gallery" aria-labelledby="gallery-title" data-gallery>
   <div class="gallery-head">
-    <h2 class="block-title mono" id="gallery-title">{t.projectPage.gallery}</h2>
+    <h2 class="block-title mono" id="gallery-title">{label}</h2>
 
     <div class="gallery-controls">
       <p class="gallery-hint">{t.gallery.hint}</p>
@@ -87,7 +88,7 @@ const total = String(items.length).padStart(2, '0');
     }
   </ul>
 
-  <dialog class="lightbox" aria-label={t.projectPage.gallery} data-gallery-dialog>
+  <dialog class="lightbox" aria-label={label} data-gallery-dialog>
     <div class="lightbox-inner">
       <button type="button" class="lightbox-close" aria-label={t.gallery.close} data-gallery-close>
         <span aria-hidden="true">✕</span>
@@ -128,14 +129,34 @@ const total = String(items.length).padStart(2, '0');
   <script is:inline type="application/json" data-gallery-data set:html={JSON.stringify(items)} />
 </section>
 
+<!-- El script vive aquí y no en el layout: así la portada, que no tiene
+     galería, no carga nada. Con ClientRouter el listener sobrevive a las
+     navegaciones y vuelve a inicializar la galería de cada caso. -->
+<script>
+  import { initGalleries } from '../lib/gallery';
+  document.addEventListener('astro:page-load', () => {
+    initGalleries();
+  });
+</script>
+
 <style>
   /* The strip breaks out of the 52rem reading column and bleeds to the right
      edge: it reads as a filmstrip you can keep pulling, not a boxed widget. */
   .gallery {
     width: 100vw;
     margin-left: calc(50% - 50vw);
-    --edge: max(var(--gutter), calc(50vw - 26rem));
+    /* El parent fija la mitad de su ancho de lectura para que la tira arranque
+       en la misma columna que el texto. */
+    --edge: max(var(--gutter), calc(50vw - var(--gallery-half, 38rem)));
     --shot-height: clamp(15rem, 11rem + 20vw, 26rem);
+  }
+
+  .gallery .block-title {
+    color: var(--theme);
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    font-weight: 500;
+    letter-spacing: 0.025em;
   }
 
   .gallery-head {
@@ -156,11 +177,11 @@ const total = String(items.length).padStart(2, '0');
 
   .gallery-hint {
     font-size: 0.8rem;
-    color: var(--ink-faint);
+    color: var(--text-subtle);
   }
 
   .gallery-counter {
-    color: var(--ink-faint);
+    color: var(--text-subtle);
     font-size: 0.68rem;
     font-variant-numeric: tabular-nums;
   }
@@ -175,36 +196,36 @@ const total = String(items.length).padStart(2, '0');
     height: 2.4rem;
     display: grid;
     place-items: center;
-    border: 1px solid var(--line-strong);
+    border: 1px solid var(--border-strong);
     border-radius: 999px;
     background: transparent;
-    color: var(--ink);
+    color: var(--text);
     font-size: 0.9rem;
     cursor: pointer;
     transition:
-      background-color 0.25s var(--ease-out),
-      border-color 0.25s var(--ease-out),
-      color 0.25s var(--ease-out),
-      opacity 0.25s var(--ease-out);
+      background-color 0.25s var(--ease-standard),
+      border-color 0.25s var(--ease-standard),
+      color 0.25s var(--ease-standard),
+      opacity 0.25s var(--ease-standard);
   }
 
   @media (hover: hover) {
     .gallery-arrow:hover:not(:disabled) {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: var(--paper);
+      background: var(--text);
+      border-color: var(--text);
+      color: var(--canvas);
     }
 
     .shot-frame:hover {
-      border-color: color-mix(in srgb, var(--theme) 45%, var(--line));
-      box-shadow: 0 12px 28px -18px color-mix(in srgb, var(--ink) 55%, transparent);
+      border-color: color-mix(in srgb, var(--theme) 45%, var(--border));
+      box-shadow: 0 12px 28px -18px color-mix(in srgb, var(--text) 55%, transparent);
       transform: translateY(-3px);
     }
 
     .lightbox-close:hover,
     .lightbox-arrow:hover:not(:disabled) {
-      background: var(--coal-text);
-      color: var(--coal);
+      background: var(--inverse-text);
+      color: var(--inverse);
     }
   }
 
@@ -259,15 +280,15 @@ const total = String(items.length).padStart(2, '0');
     display: block;
     width: var(--shot-width);
     padding: 0;
-    border: 1px solid var(--line);
+    border: 1px solid var(--border);
     border-radius: 3px;
-    background: var(--paper-raised);
+    background: var(--surface);
     overflow: hidden;
     cursor: zoom-in;
     transition:
-      border-color 0.35s var(--ease-out),
-      box-shadow 0.35s var(--ease-out),
-      transform 0.35s var(--ease-out);
+      border-color 0.35s var(--ease-standard),
+      box-shadow 0.35s var(--ease-standard),
+      transform 0.35s var(--ease-standard);
   }
 
   .shot-frame img {
@@ -281,7 +302,7 @@ const total = String(items.length).padStart(2, '0');
     gap: 0.6rem;
     font-size: 0.86rem;
     line-height: 1.45;
-    color: var(--ink-soft);
+    color: var(--text-muted);
     text-wrap: pretty;
     max-width: 24rem;
   }
@@ -300,12 +321,12 @@ const total = String(items.length).padStart(2, '0');
     max-height: 100dvh;
     padding: 0;
     border: 0;
-    background: color-mix(in srgb, var(--coal) 94%, transparent);
-    color: var(--coal-text);
+    background: color-mix(in srgb, var(--inverse) 94%, transparent);
+    color: var(--inverse-text);
   }
 
   .lightbox::backdrop {
-    background: color-mix(in srgb, var(--coal) 88%, transparent);
+    background: color-mix(in srgb, var(--inverse) 88%, transparent);
   }
 
   /* minmax(0, 1fr) on both axes is what actually caps the figure: a plain 1fr
@@ -356,14 +377,14 @@ const total = String(items.length).padStart(2, '0');
     justify-content: center;
     gap: 0.9rem;
     font-size: 0.9rem;
-    color: var(--coal-text-soft);
+    color: var(--inverse-muted);
     text-align: center;
     text-wrap: pretty;
   }
 
   .lightbox-counter {
     font-size: 0.62rem;
-    color: var(--coal-text-soft);
+    color: var(--inverse-muted);
     font-variant-numeric: tabular-nums;
   }
 
@@ -371,15 +392,15 @@ const total = String(items.length).padStart(2, '0');
   .lightbox-arrow {
     display: grid;
     place-items: center;
-    border: 1px solid var(--coal-line);
+    border: 1px solid var(--inverse-line);
     border-radius: 999px;
     background: transparent;
-    color: var(--coal-text);
+    color: var(--inverse-text);
     cursor: pointer;
     transition:
-      background-color 0.25s var(--ease-out),
-      color 0.25s var(--ease-out),
-      opacity 0.25s var(--ease-out);
+      background-color 0.25s var(--ease-standard),
+      color 0.25s var(--ease-standard),
+      opacity 0.25s var(--ease-standard);
   }
 
   .lightbox-arrow {

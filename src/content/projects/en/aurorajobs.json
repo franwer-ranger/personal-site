@@ -1,71 +1,132 @@
 {
   "lang": "en",
+  "kind": "professional",
   "title": "AuroraJobs",
   "slug": "aurorajobs",
-  "summary": "A jobs and career-guidance platform for university students, employers, and career services. I built the full-stack product and gradually took on more technical decisions and coordination.",
-  "problem": "University students taking their first career steps and companies looking for junior talent rarely meet in a place built for that stage. Generalist job boards treat both as an afterthought.",
-  "audience": "University students, companies hiring junior talent, and university career centers.",
-  "role": "Full-Stack Software Engineer. I worked with the CTO and Product, later supporting coordination, task distribution, and code review.",
-  "status": "Completed project",
-  "year": "2021 — 2024",
-  "technologies": ["Ruby on Rails", "JavaScript", "Stimulus", "MySQL", "Redis", "Sidekiq", "Kubernetes", "Docker", "TailwindCSS", "CI/CD"],
-  "responsibilities": [
-    "Built the product from zero: student profiles, skills and interests assessment, company job posts, matching engine, application flows, and analytics dashboards for university career centers.",
-    "Worked on deployments and product infrastructure alongside the application.",
-    "Collaborated with Product and the CTO on scope, feasibility, technical solutions, and delivery."
-  ],
+  "company": "AuroraJobs",
+  "period": "2021 — 2024",
+  "role": "Full-Stack Software Engineer",
+  "scope": "The whole application: the student product, the employer portal, the internal dashboard, deployments, and infrastructure.",
+  "status": "Finished project",
+  "summary": "Jobs and careers platform for university students, employers, and university career services. I was responsible for the application end to end, in a Ruby on Rails monolith.",
+  "problemLine": "Students looking for a first job and companies hiring junior profiles don't find each other on general job boards.",
+  "context": "Students looking for a first job and companies hiring junior profiles rarely meet somewhere built for that stage: general job boards treat both as one more case. AuroraJobs put jobs, training, and content around that specific moment.",
+  "audience": "University students taking their first steps, companies hiring junior profiles, and university career services.",
+  "responsibility": {
+    "summary": "The application was mine end to end: data modelling, backend, frontend, testing, deployments, and infrastructure. I joined with little experience and the CTO coached me until I could make those calls on my own.",
+    "fronts": [
+      {
+        "title": "The student product",
+        "description": "Profiles, dynamic filters and forms for describing what they were after, job listings, and the full application flow."
+      },
+      {
+        "title": "The employer product",
+        "description": "Panels showing each opening's candidates already ranked, with their video interview and the reject, save, or contact actions on the same screen."
+      },
+      {
+        "title": "The internal dashboard",
+        "description": "The tool the team used to configure all of the above — filters, forms, and ranking criteria — without going through a deployment."
+      }
+    ],
+    "inventory": [
+      "Matching engine between students and openings.",
+      "Analytics dashboards for university career services.",
+      "auroraHacks, the content side: editorials, events, and a podcast.",
+      "Deployments and product infrastructure."
+    ],
+    "teamBoundary": "Product made the final call. I took part in shaping ideas, argued about scope, and proposed simpler alternatives when I saw one. I mentored, coordinated, and managed a team of two developers, one junior and one mid: splitting the work, reviewing it, and supporting them day to day."
+  },
   "decisions": [
-    "Rails monolith for speed across profiles, matching, applications and dashboards.",
-    "Pairing and code review to share decisions and maintain delivery pace.",
-    "Keep the application, deployments, and infrastructure within one technical context."
+    {
+      "title": "A Rails monolith instead of services",
+      "situation": "There were few of us, and profiles, openings, matching, applications, content, and analytics all had to be built at roughly the same time.",
+      "decision": "Keep everything in a Ruby on Rails monolith, with Sidekiq for async work.",
+      "rationale": "At that team size, splitting into services would have added deployments, contracts between parts, and scattered debugging without solving any problem we actually had.",
+      "change": "Data model and interface changed together, and a complete feature fit into a short cycle."
+    },
+    {
+      "title": "Make configurable whatever changed every week",
+      "situation": "Filters, student forms, and ranking criteria shifted with every product conversation. Each tweak was a development task and a deployment.",
+      "decision": "Move them into the internal dashboard and let the team configure them there.",
+      "rationale": "What changes for business reasons should not have to go through me to change.",
+      "change": "Product adjusted filters and forms without waiting on development, and I stopped receiving tickets that were business decisions dressed as technical work."
+    },
+    {
+      "title": "Split the work and review it instead of building it all",
+      "situation": "The product was growing faster than I could write it, and two developers joined the team.",
+      "decision": "Split work by area, review their pull requests, and pair when it helped, rather than keeping the hard parts for myself.",
+      "rationale": "Hoarding the difficult work meant the team never learned the domain and I became the bottleneck.",
+      "change": "A junior and a mid owning their own areas, and architecture decisions argued in review rather than inherited."
+    }
   ],
-  "outcomes": [
-    "A live product spanning jobs, employer tools, guidance, content, and analytics.",
-    "A full-stack foundation across data modelling, business logic, interface work, testing, and deployments."
+  "results": [
+    {
+      "statement": "A live product with a job board, an employer area, careers guidance, content, and analytics.",
+      "evidence": "The screenshots on this page are from the public product."
+    },
+    {
+      "statement": "A full-stack foundation covering modelling, business logic, interface, testing, deployments, and infrastructure.",
+      "evidence": "The same Rails monolith from 2021 to 2024."
+    },
+    {
+      "statement": "A team of two developers with their own areas, reviews, and steady support.",
+      "evidence": "One junior and one mid I mentored and coordinated."
+    }
   ],
-  "kind": "professional",
+  "confidentialityNote": "User numbers, funding, and the exact scope of the infrastructure belong to the company and are not published here.",
   "prominence": "standard",
   "signal": "fullstack",
-  "contribution": "Built the full-stack product and contributed to technical and scope decisions.",
+  "contribution": "Full-stack build of the whole product, plus coordination of a two-developer team.",
   "proof": [
-    "A Ruby on Rails monolith serving students, employers, and universities.",
-    "Direct work with Product and the CTO from definition through delivery.",
-    "Code review and growing coordination support."
+    "A Rails monolith serving students, employers, and universities.",
+    "Ranked candidates for employers and forms configurable from the internal dashboard.",
+    "I mentored and coordinated a team of two developers."
   ],
-  "confidentialityNote": "User, funding, team-size, and infrastructure-scope claims remain private until validated.",
+  "technologies": [
+    "Ruby on Rails",
+    "JavaScript",
+    "Stimulus",
+    "MySQL",
+    "Redis",
+    "Sidekiq",
+    "Kubernetes",
+    "Docker",
+    "TailwindCSS",
+    "CI/CD"
+  ],
+  "logo": "/aurorajobs/logo.png",
   "gallery": [
     {
       "src": "/aurorajobs/aurorajobs_landing.png",
-      "alt": "The aurorajobs landing page, headlined “everything you need to enter the job market”, with three entry points: find work, get guidance and train.",
-      "caption": "The landing page and the three ways into the product: jobs, guidance and training."
+      "alt": "AuroraJobs home page with the headline «Todo lo que necesitas para entrar en el mercado laboral» and three entry points: find a job, get guidance, and train.",
+      "caption": "The home page, with the three ways into the product: jobs, guidance, and training."
     },
     {
       "src": "/aurorajobs/aurorajobs_mobile_categories.png",
-      "alt": "The Discover tab on mobile, with the opportunity search, a featured training programme and the employers hiring young talent.",
-      "caption": "Discover: search leads, with featured employers and training underneath."
+      "alt": "Discover tab on mobile, with an opportunity search box, a featured course, and employers hiring young talent.",
+      "caption": "Discover: search leads, with employers and featured courses underneath."
     },
     {
       "src": "/aurorajobs/aurorajobs_mobile_jobs.png",
-      "alt": "A list of 1,822 openings on mobile with Easy apply and contract type filters, showing a Glovo role.",
-      "caption": "The job list: city, area, experience, contract and remote policy at a glance."
+      "alt": "Mobile listing of 1,822 openings with Easy apply and contract-type filters, and a Glovo job detail.",
+      "caption": "The listing filters — city, field, experience, contract, on-site or remote — all configurable from inside."
     },
     {
       "src": "/aurorajobs/aurorajobs_mobile_home.png",
-      "alt": "The Learning tab on mobile, with training by category and episodes of the Toma Curro podcast.",
+      "alt": "Learning tab on mobile, with courses by category and episodes of the Toma Curro podcast.",
       "caption": "Learning: courses by category and the podcast, inside the same app."
     },
     {
       "src": "/aurorajobs/aurorajobs_hacks.png",
-      "alt": "auroraHacks, the content section, with categories by field, a featured editorial and a row of articles, events and podcasts.",
-      "caption": "auroraHacks, the content side: editorials, events and podcasts by field."
+      "alt": "auroraHacks, the content section, with categories by field, a featured editorial, and a row of articles, events, and podcasts.",
+      "caption": "auroraHacks, the content side: editorials, events, and podcasts by field."
     },
     {
       "src": "/aurorajobs/aurorajobs_hr.png",
-      "alt": "The employer portal showing candidates for a role, with their video interview and the discard, save or contact actions.",
-      "caption": "The employer portal: candidates per role, video interview and the decision on one screen."
+      "alt": "Employer portal showing an opening's candidates, with their video interview and the reject, save, or contact actions.",
+      "caption": "The employer portal: ranked candidates, video interview, and the decision on one screen."
     }
   ],
-  "logo": "/aurorajobs/logo.png",
   "priority": 2,
   "visualTheme": "slate"
 }

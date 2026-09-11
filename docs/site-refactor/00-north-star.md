@@ -14,7 +14,7 @@ Planes de ejecución:
 
 Esta web es el escaparate profesional de Fran. Debe servir para dos conversaciones:
 
-- encontrar un puesto mejor como Product Engineer, Senior Full-Stack Engineer o Software Engineer con responsabilidad de producto;
+- encontrar un puesto mejor como Product Engineer, Senior Full-Stack Engineer o Software Engineer;
 - abrir proyectos de consultoría o desarrollo en los que haga falta convertir una idea poco definida en software que se pueda usar.
 
 La visita debe dejar cuatro ideas claras sin entrar en una ficha de detalle:
@@ -46,6 +46,8 @@ La nueva versión puede reutilizar colecciones, rutas, imágenes y parte de los 
 
 ## Posicionamiento
 
+
+
 ### Formulación principal
 
 > Ingeniero de software con mentalidad de producto. Construyo productos web completos y uso agentes de IA para convertir problemas poco definidos en software sencillo, mantenible y útil.
@@ -72,6 +74,8 @@ Esta frase fija el territorio. No es el hero definitivo, pero sí el significado
 La web debe demostrar estos puntos con decisiones, artefactos y resultados. Una lista de tecnologías por sí sola no los prueba.
 
 ## Audiencias y recorrido
+
+
 
 ### Hiring manager o fundador
 
@@ -101,21 +105,25 @@ La navegación puede reducirse a `Experiencia`, `Trabajo`, `Lab` y `Contacto`. `
 
 ## Qué se ve y qué se guarda para el detalle
 
-| Contenido | Portada | Vista de detalle |
-| --- | --- | --- |
-| Rol y empresa | Sí | Sí |
-| Problema en una frase | Sí | Sí, con contexto |
-| Papel de Fran | Sí | Sí, con límites y colaboradores |
-| Una decisión importante | Sí | Sí, con alternativas y motivo |
-| Uno o dos resultados | Sí, si están validados | Sí, con fuente o contexto |
-| Lista completa de responsabilidades | No | Sí |
-| Stack completo | No; tres tecnologías como máximo si aportan | Sí |
-| Galería completa | No; una imagen fuerte | Sí |
-| Proceso, restricciones y aprendizajes | No | Sí |
+
+| Contenido                             | Portada                                     | Vista de detalle                |
+| ------------------------------------- | ------------------------------------------- | ------------------------------- |
+| Rol y empresa                         | Sí                                          | Sí                              |
+| Problema en una frase                 | Sí                                          | Sí, con contexto                |
+| Papel de Fran                         | Sí                                          | Sí, con límites y colaboradores |
+| Una decisión importante               | Sí                                          | Sí, con alternativas y motivo   |
+| Uno o dos resultados                  | Sí, si están validados                      | Sí, con fuente o contexto       |
+| Lista completa de responsabilidades   | No                                          | Sí                              |
+| Stack completo                        | No; tres tecnologías como máximo si aportan | Sí                              |
+| Galería completa                      | No; una imagen fuerte                       | Sí                              |
+| Proceso, restricciones y aprendizajes | No                                          | Sí                              |
+
 
 La portada no usará acordeones para esconder bloques largos. Los enlaces a casos aplican una separación más clara y funcionan bien con URL propia, navegación del navegador y SEO. La [divulgación progresiva](https://www.nngroup.com/articles/progressive-disclosure/) exige que la primera capa contenga lo que la mayoría necesita y que el enlace anticipe con claridad qué hay después.
 
 ## Separación entre experiencia y proyectos propios
+
+
 
 ### Experiencia profesional
 
@@ -123,6 +131,8 @@ La portada no usará acordeones para esconder bloques largos. Los enlaces a caso
 - Se ordenan por fecha y responsabilidad.
 - Pueden incluir alcance, colaboración, decisiones y resultados verificables.
 - Reciben más espacio, contraste y prioridad en navegación.
+
+
 
 ### Lab / proyectos propios
 
@@ -185,6 +195,8 @@ La pauta coincide con el criterio de [Emil Kowalski sobre animación con propós
 - Métricas grandes usadas como decoración.
 - Efectos de cursor, sonido o movimiento continuo.
 
+
+
 ## Referencias y qué tomar de cada una
 
 - [Emil Kowalski](https://emilkowal.ski/): posición profesional entendible en dos frases, selección corta y una relación coherente entre lo que dice y lo que construye. Tomar la claridad y la contención del movimiento.
@@ -192,6 +204,8 @@ La pauta coincide con el criterio de [Emil Kowalski sobre animación con propós
 - [Josh W. Comeau](https://www.joshwcomeau.com/about-josh/): los detalles interactivos demuestran oficio y personalidad porque están ligados al contenido. Tomar la idea de sorpresa puntual, no la densidad ni el tono docente.
 - [Brittany Chiang](https://brittanychiang.com/): rol, experiencia y proyectos se pueden escanear con rapidez. Tomar la jerarquía y la separación de bloques, no replicar su layout.
 - [Geist Design System](https://vercel.com/geist/introduction): usar tokens y fundamentos explícitos mantiene la interfaz coherente. Tomar la disciplina del sistema, no la marca.
+
+
 
 ## Principios de copy
 
@@ -247,3 +261,4 @@ Si la respuesta es no, no entra en la portada.
 - ES y EN conservan el mismo significado sin sonar traducidos.
 - La interfaz cumple WCAG 2.2 AA en contraste, foco, teclado y reducción de movimiento. La [especificación de contraste](https://www.w3.org/TR/WCAG22/#contrast-minimum) exige 4,5:1 para texto normal y 3:1 para texto grande.
 - El sitio compila sin errores, conserva sus rutas públicas y no necesita JavaScript para leer el contenido principal.
+

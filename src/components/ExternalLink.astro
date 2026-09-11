@@ -1,0 +1,25 @@
+---
+import { getTranslations, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  href: string;
+  label: string;
+  class?: string;
+}
+
+const { locale, href, label, class: className } = Astro.props;
+const t = getTranslations(locale);
+---
+
+<a href={href} class={className} target="_blank" rel="noopener noreferrer">
+  {label}<span class="external-mark" aria-hidden="true">↗</span><span class="visually-hidden">
+    ({t.external})</span
+  >
+</a>
+
+<style>
+  .external-mark {
+    margin-left: 0.25em;
+  }
+</style>

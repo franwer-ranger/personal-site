@@ -1,99 +1,108 @@
 {
   "meta": {
-    "title": "Fran Barahona — Full Stack Developer",
-    "description": "Full stack with React, TypeScript and Rails. I lead frontend at Webel and build products where engineering and AI meet."
+    "title": "Fran Barahona — Product Engineer",
+    "description": "Product Engineer with a full-stack foundation. I build web software and work with AI agents through specifications, review, and quality checks."
   },
   "nav": {
-    "work": "Work",
-    "principles": "How I work",
+    "work": "Lab",
+    "principles": "Method",
     "experience": "Experience",
     "contact": "Contact",
     "ariaLabel": "Main navigation",
     "switchLanguage": "Switch language",
     "home": "Home",
-    "brandRole": "Full Stack"
+    "brandRole": "Product Engineer"
   },
   "hero": {
-    "kicker": "Full Stack · Frontend Lead",
-    "title": "Progress is good. Complexity is a bridge. Simplicity is the destination.",
-    "subtitle": "I've spent about five years building web products end to end. I started full stack with Ruby on Rails; now I lead frontend at Webel with React and TypeScript. I move across architecture, interface and product, and increasingly close to AI applied to building software.",
-    "ctaPrimary": "See my work",
-    "ctaSecondary": "Get in touch",
+    "kicker": "Product-minded software engineer",
+    "title": "Product Engineer",
+    "subtitle": "I build product software end to end. I have a full-stack foundation and use AI agents to turn loosely defined problems into software I can maintain and validate.",
+    "ctaPrimary": "See experience",
+    "ctaSecondary": "Contact me",
     "scrollHint": "Scroll to bring the system into order",
     "sceneLabel": "Abstract visualization: a scattered cloud of nodes that reorganizes into a structured form as you scroll"
   },
+  "summary": {
+    "kicker": "At a glance",
+    "title": "Product thinking, technical ownership, and a full-stack foundation",
+    "facts": [
+      "Responsible for several Webel surfaces and their shared web architecture.",
+      "Full-stack experience building a Ruby on Rails product at AuroraJobs.",
+      "I work with agents through specifications, reusable skills, code review, and final validation."
+    ]
+  },
   "sections": {
-    "work": "Work",
-    "principles": "How I work",
-    "skills": "Toolkit",
+    "professionalWork": "Professional work",
+    "work": "Lab",
+    "principles": "Method",
+    "skills": "Technical foundation",
     "experience": "Experience",
     "contact": "Contact"
   },
   "webel": {
-    "kicker": "Right now · In production",
+    "kicker": "Current experience · Live product",
     "title": "Webel",
-    "intro": "A home-services marketplace with millions of users. I'm the web lead: Organizations, marketplace, programmatic SEO and the internal dashboard.",
-    "areasLabel": "What I'm working on",
+    "intro": "I am responsible for the web platform of this home-services marketplace: its B2C and B2B surfaces, internal dashboard, SEO, email, and shared component library.",
+    "areasLabel": "Areas I work on",
     "areas": [
       {
         "name": "Webel Organizations",
-        "description": "The B2B platform for companies: employees, services, calendar, leads, client chat, tax details, service areas, schedules and payouts. A full product on its own."
+        "description": "The B2B platform for managing employees, services, calendars, leads, chat, tax details, service areas, schedules, and payouts."
       },
       {
         "name": "Marketplace core",
-        "description": "The main product: search and browsing the offer. We migrated the whole app to React. Today it's a storefront that redirects to the apps, with no login or users. On the roadmap: booking, accounts and the rest of the features."
+        "description": "The B2C application for finding and browsing services. I migrated it from Angular to React, and it continues to evolve with the rest of the product."
       },
       {
         "name": "Programmatic SEO",
-        "description": "Over 50k templates built from scratch in Astro, with structured data and solid performance. Top organic result on Google for «Limpieza a domicilio en Madrid»."
+        "description": "The content and acquisition surface. I moved it to Astro, which better fits its static, content-led architecture."
       },
       {
         "name": "Internal dashboard",
-        "description": "The tool the team runs operations with: users, services, incidents and business metrics."
+        "description": "The internal tool for looking up users and services, managing incidents, and tracking business data."
       }
     ],
     "cta": "Read the full case",
     "visit": "Visit appwebel.com"
   },
   "projects": {
-    "kicker": "A selection",
-    "title": "Things I've been building",
-    "intro": "Products in production, my own systems and the odd experiment. Ordered by where my energy goes now.",
+    "kicker": "Side projects",
+    "title": "Lab",
+    "intro": "Prototypes and utilities I build on my own initiative. Each tests a specific idea and states its status without presenting it as paid work.",
     "viewProject": "View project",
     "viewAll": "View all",
-    "categories": {
-      "webel": "Product in production",
-      "product-os": "Own system",
-      "maker": "Maker tooling",
-      "side": "Vertical product",
-      "legacy": "Past project"
+    "kinds": {
+      "professional": "Professional work",
+      "lab": "Lab"
+    },
+    "signals": {
+      "product": "Product",
+      "fullstack": "Full stack",
+      "ai-workflow": "AI workflow",
+      "architecture": "Architecture"
     }
   },
   "principles": {
-    "kicker": "How I work",
-    "title": "Four ideas that guide me (no dogma)",
+    "kicker": "Product, engineering, and AI",
+    "title": "How I work with agents",
     "items": [
       {
-        "title": "Understand first, build second",
-        "description": "Code is the cheap part. Before writing a line I ask who it's for, what problem it solves and how we'll know it works."
+        "title": "Define the problem",
+        "description": "I work out who it is for, what needs to change, and the smallest solution worth building. I write down scope, constraints, and acceptance criteria."
       },
       {
-        "title": "Complexity stays behind the curtain",
-        "description": "A complex system is no excuse for a complex interface. My job is to absorb that and hand back something people grasp at first sight."
+        "title": "Set up the work",
+        "description": "I split implementation into reviewable parts and give each agent the context it needs. Reusable skills and agent-ready design-system docs carry technical decisions across tasks."
       },
       {
-        "title": "Pieces you can swap",
-        "description": "Today's product won't be next year's. I build out of pieces you can replace without tearing the whole building down."
-      },
-      {
-        "title": "AI speeds things up; judgment stays mine",
-        "description": "I use agents and models to explore faster, automate the repetitive and reach the decisions that matter sooner. The tool amplifies; the judgment stays mine."
+        "title": "Review and validate",
+        "description": "I review the code, tests, and outcome against the specification. When a choice affects the product or architecture, I make it and update the context before work continues."
       }
     ]
   },
   "skills": {
-    "kicker": "What I work with",
-    "title": "From server to pixel — and from pixel to business",
+    "kicker": "Technical foundation",
+    "title": "Technologies I use to build the product",
     "groups": [
       {
         "domain": "Frontend",
@@ -105,40 +114,40 @@
       },
       {
         "domain": "Product",
-        "items": ["Problem discovery", "Prioritization", "Product metrics", "Programmatic SEO", "Working with design and business"]
+        "items": ["Problem definition", "Scope", "Acceptance criteria", "Programmatic SEO", "Working with design and business"]
       },
       {
         "domain": "Applied AI",
-        "items": ["Agents and orchestration", "Context engineering", "Workflow automation", "AI-assisted prototyping"]
+        "items": ["Reusable skills", "Structured specifications", "Agent implementation", "Review and validation"]
       }
     ]
   },
   "experience": {
-    "kicker": "The path so far",
-    "title": "Full stack to frontend, then into product",
+    "kicker": "Professional experience",
+    "title": "Web products at Webel and AuroraJobs",
     "stages": {
       "fullstack": "Full Stack",
       "frontend": "Frontend",
       "product": "Product / AI"
     },
-    "evolutionNote": "Each stage has brought me closer to where engineering and product meet. What's next is that same place, amplified by AI."
+    "evolutionNote": "AuroraJobs gave me my full-stack foundation. At Webel, I have taken responsibility for several web surfaces and their shared architecture."
   },
   "contact": {
-    "kicker": "Let's talk",
-    "title": "If you're building something interesting…",
-    "intro": "I'm drawn to teams that ship real products and to projects where engineering and product overlap. If that sounds like what you're working on, write to me.",
+    "kicker": "Contact",
+    "title": "I want product responsibility alongside the code",
+    "intro": "I am looking for Product Engineer or Software Engineer roles where engineering takes part in defining the problem, scope, and decisions. I can also help teams turn loosely defined ideas into software people can use.",
     "emailLabel": "Email",
     "socialLabel": "You can also find me on",
     "cta": "Write to me"
   },
   "projectPage": {
-    "back": "Back to work",
+    "back": "Back to home",
     "problem": "What needed solving",
     "audience": "Who it's for",
     "role": "My role",
-    "responsibilities": "What I did",
-    "decisions": "Decisions that mattered",
-    "outcomes": "What came of it",
+    "responsibilities": "Responsibilities",
+    "decisions": "Decisions",
+    "outcomes": "Results and deliveries",
     "technologies": "Technologies",
     "status": "Status",
     "year": "Year",

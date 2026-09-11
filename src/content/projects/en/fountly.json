@@ -2,26 +2,35 @@
   "lang": "en",
   "title": "Fountly",
   "slug": "fountly",
-  "summary": "A map of drinking water fountains worldwide. OpenStreetMap as the base; in Madrid, City Council data with the real status of each fountain. Built for personal use — and for anyone walking around thirsty.",
-  "problem": "In Madrid at 38°C, not knowing where the nearest fountain is is a real problem. Searching «drinking fountain» in Maps doesn't always help, and the official data lives in a GeoJSON nobody opens on their phone.",
-  "audience": "Me, friends and family. And anyone who walks and wants free water.",
+  "summary": "A map for finding nearby drinking fountains. It combines OpenStreetMap with local public data where available.",
+  "problem": "Finding a nearby fountain on a phone can still be difficult even when open data exists. Fountly turns those scattered sources into search and a map designed for use while walking.",
+  "audience": "People looking for a nearby drinking fountain from their phone.",
   "role": "Full design and development.",
   "status": "In use",
   "year": "2026",
   "technologies": ["MapLibre GL JS", "Vite", "OpenStreetMap", "MapTiler"],
   "responsibilities": [
     "A world map that loads fountains on demand as you pan.",
-    "An OpenStreetMap (Overpass) adapter and, in Madrid, the City Council's official dataset.",
+    "An OpenStreetMap adapter through Overpass, with support for local public data sources.",
     "Mobile UI: search, clustering, detail sheet and «Get directions»."
   ],
   "decisions": [
-    "OpenStreetMap as the global base; official datasets come in as verified exceptions with priority in their region.",
+    "OpenStreetMap as the global base, with regional adapters for public data where available.",
     "Viewport loading and cell caching: don't fetch the same area twice when you come back.",
-    "Deliberately personal scope: useful for real before it becomes a product."
+    "A narrow scope focused on search, details, and directions."
   ],
   "outcomes": [
-    "Live at fountly.app, used on walks around Madrid.",
-    "In Madrid, the real status of each fountain: working, temporary or out of service."
+    "A personal project published at fountly.app.",
+    "A mobile map with search, marker clustering, details, and directions."
+  ],
+  "kind": "lab",
+  "prominence": "featured",
+  "signal": "architecture",
+  "contribution": "Designed and built a focused utility that combines several sources of geographic data.",
+  "proof": [
+    "Published application.",
+    "Viewport-based fountain loading.",
+    "OpenStreetMap and local public-data integration."
   ],
   "links": [{ "label": "fountly.app", "url": "https://fountly.app/" }],
   "logo": "/fountly/logo.png",
@@ -32,8 +41,6 @@
       "caption": "Madrid in August: find a fountain, open it, get directions."
     }
   ],
-  "featured": false,
-  "priority": 6,
-  "visualTheme": "slate",
-  "category": "maker"
+  "priority": 4,
+  "visualTheme": "slate"
 }

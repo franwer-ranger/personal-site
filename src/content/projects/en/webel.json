@@ -2,34 +2,43 @@
   "lang": "en",
   "title": "Webel",
   "slug": "webel",
-  "summary": "A home-services marketplace in production, with millions of users. I'm the web lead: Organizations, marketplace, programmatic SEO and the internal dashboard.",
-  "problem": "Webel is the Amazon of home services. What it needs to solve is friction and discovery: small professionals (home cleaners, English tutors, handymen, caregivers) and people who need to hire those services without always relying on word of mouth.",
+  "summary": "A live home-services marketplace. I am responsible for its B2C and B2B web surfaces, internal dashboard, SEO, email, and shared component library.",
+  "problem": "Webel connects people who need a service with professionals who provide it. The web platform has to present that supply, support operations, and stay coherent across products with different needs.",
   "audience": "People who need a service, professionals offering their work, and companies managing services for their teams.",
-  "role": "Frontend tech lead: React and TypeScript across several critical products, growing the web team and bringing AI into the development workflow.",
+  "role": "Responsible for the web platform. I work across architecture and implementation, then review outcomes with Product and the wider engineering team.",
   "status": "In production, continuous development",
   "year": "2024 — present",
   "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email", "Stripe"],
   "responsibilities": [
     "Webel Organizations, the B2B platform: employees, services, calendar, leads, chat, tax details, service areas, schedules and payouts.",
     "Marketplace core: search and browsing the offer. Full migration from Angular to React; today it's a storefront that redirects to the apps, with no login or users.",
-    "Programmatic SEO from scratch in Astro: over 50k templates, structured data and performance. Top organic result on Google for «Limpieza a domicilio en Madrid».",
+    "SEO surface in Astro, with structured data and an architecture suited to static content.",
     "The internal dashboard the team runs operations with.",
     "Architecture unification across Organizations, dashboard and marketplace, and extracting the design system into a shared component library.",
-    "Migrating 100+ custom emails to React Email, with better rendering and bugs near zero.",
-    "Automating the development flow with skills, agents and design-system docs built for agents (Cursor, Codex, Claude, OpenCode)."
+    "Moved email development to React Email.",
+    "Created reusable skills and agent-ready design-system documentation for AI-assisted engineering."
   ],
   "decisions": [
     "Unify the stack on React across the big products, including the Angular to React marketplace migration, so the team works in one language.",
     "Extract the design system into a shared component library across products.",
     "Build programmatic SEO from scratch in Astro.",
-    "Bring AI into day-to-day work: architecture, network-layer and gitflow skills, plus DS docs you can drop into any project."
+    "Encode recurring decisions in skills and documentation so delegated agent work starts with the technical context it needs."
   ],
   "outcomes": [
-    "Web went from one of the worst teams for tech debt and outdated stack to pretty much the fastest-moving one.",
-    "Modern stack: React in the apps, React Email for mail, Astro for SEO.",
-    "Bugs near zero and solid interfaces, with a responsive layer that holds up.",
-    "Performance, observability and product proposals that made it into the team's work."
+    "React across the main applications, React Email for email, and Astro for the SEO surface.",
+    "A shared library for reusing components and keeping the design system consistent across products.",
+    "An agent workflow based on specifications, reusable skills, code review, and final validation."
   ],
+  "kind": "professional",
+  "prominence": "featured",
+  "signal": "architecture",
+  "contribution": "Ownership of the web surfaces, their migrations, and the shared architecture.",
+  "proof": [
+    "Angular-to-React migration for the B2C application.",
+    "Shared React library across products.",
+    "Agent-ready skills and design-system documentation."
+  ],
+  "confidentialityNote": "User, GMV, SEO-template, and email-volume figures remain private until validated.",
   "links": [{ "label": "appwebel.com", "url": "https://appwebel.com" }],
   "gallery": [
     {
@@ -53,9 +62,7 @@
       "caption": "The service chat: moving a date is a proposal the client accepts, not a change on its own."
     }
   ],
-  "featured": true,
   "priority": 1,
   "visualTheme": "copper",
-  "category": "webel",
   "logo": "/webel/logo.png"
 }

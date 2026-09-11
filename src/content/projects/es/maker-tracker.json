@@ -6,7 +6,7 @@
   "problem": "Quien construye proyectos propios acumula ideas más rápido de lo que puede ejecutarlas. Sin un sistema, las ideas se olvidan y los proyectos en marcha se abandonan a mitad.",
   "audience": "Makers y builders con varios proyectos en paralelo. Empezando por mí.",
   "role": "Diseño y desarrollo completos.",
-  "status": "En desarrollo",
+  "status": "Archivado hasta validar su estado",
   "year": "2025",
   "technologies": ["TypeScript", "React", "Automatización", "IA aplicada"],
   "responsibilities": [
@@ -19,9 +19,14 @@
     "Estados explícitos para cada proyecto, para que abandonar también sea una decisión."
   ],
   "outcomes": [
-    "Uso diario para gestionar mi propia cartera de proyectos.",
-    "Menos ideas perdidas y más proyectos terminados."
+    "Prototipo con flujos de captura, priorización y seguimiento.",
+    "Resultados de uso pendientes de validar antes de volver a publicarlo."
   ],
+  "kind": "lab",
+  "prominence": "archive",
+  "signal": "ai-workflow",
+  "contribution": "Diseño y desarrollo de un sistema personal para organizar proyectos propios.",
+  "proof": ["Tablero con estados explícitos.", "Flujo de captura de historias.", "Galería del prototipo."],
   "gallery": [
     {
       "src": "/maker_tracker/maker_tracker_login.png",
@@ -45,8 +50,6 @@
     }
   ],
   "logo": "/maker_tracker/logo.png",
-  "featured": false,
   "priority": 3,
-  "visualTheme": "moss",
-  "category": "maker"
+  "visualTheme": "moss"
 }

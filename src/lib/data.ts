@@ -2,7 +2,10 @@ import { getCollection } from 'astro:content';
 import type { Locale } from '../i18n/ui';
 
 export async function getProjects(locale: Locale) {
-  const all = await getCollection('projects', ({ data }) => data.lang === locale);
+  const all = await getCollection(
+    'projects',
+    ({ data }) => data.lang === locale && data.prominence !== 'archive',
+  );
   return all.sort((a, b) => a.data.priority - b.data.priority);
 }
 
@@ -12,6 +15,9 @@ export async function getProject(locale: Locale, slug: string) {
 }
 
 export async function getExperience(locale: Locale) {
-  const all = await getCollection('experience', ({ data }) => data.lang === locale);
+  const all = await getCollection(
+    'experience',
+    ({ data }) => data.lang === locale && data.kind === 'professional',
+  );
   return all.sort((a, b) => a.data.order - b.data.order);
 }

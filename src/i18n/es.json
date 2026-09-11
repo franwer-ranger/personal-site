@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "Fran Barahona — Product Engineer",
-    "description": "Full stack con React, TypeScript y Rails. Lidero el frontend en Webel y construyo producto donde ingeniería e IA se encuentran."
+    "description": "Product Engineer con base full stack. Construyo software web y trabajo con agentes de IA mediante especificaciones, revisión y controles de calidad."
   },
   "nav": {
-    "work": "Proyectos",
-    "principles": "Cómo trabajo",
+    "work": "Lab",
+    "principles": "Método",
     "experience": "Experiencia",
     "contact": "Contacto",
     "ariaLabel": "Navegación principal",
@@ -14,86 +14,95 @@
     "brandRole": "Product Engineer"
   },
   "hero": {
-    "kicker": "Product Engineer · Frontend Lead · Full Stack",
-    "title": "La complejidad es un puente. La simplicidad, el destino.",
-    "subtitle": "Llevo unos cinco años construyendo producto web de punta a punta. Empecé full stack con Ruby on Rails; ahora lidero el frontend en Webel con React y TypeScript. Me muevo entre arquitectura, interfaz y producto, y cada vez más cerca de la IA aplicada a construir software.",
-    "ctaPrimary": "Ver proyectos",
-    "ctaSecondary": "Hablemos",
+    "kicker": "Software Engineer con mentalidad de producto",
+    "title": "Product Engineer",
+    "subtitle": "Construyo software de producto de punta a punta. Mi base es full stack y uso agentes de IA para pasar de un problema poco definido a una solución que pueda mantener y validar.",
+    "ctaPrimary": "Ver experiencia",
+    "ctaSecondary": "Contactar",
     "scrollHint": "Desliza para ordenar el sistema",
     "sceneLabel": "Visualización abstracta: una nube de nodos desordenada que se reorganiza en una estructura al hacer scroll"
   },
+  "summary": {
+    "kicker": "En breve",
+    "title": "Producto, responsabilidad técnica y una base full stack",
+    "facts": [
+      "Responsable de varias superficies web y de su arquitectura compartida en Webel.",
+      "Experiencia full stack construyendo un producto con Ruby on Rails en AuroraJobs.",
+      "Trabajo con agentes mediante especificaciones, skills reutilizables, revisión de código y validación final."
+    ]
+  },
   "sections": {
-    "work": "Proyectos",
-    "principles": "Cómo trabajo",
-    "skills": "Herramientas",
+    "professionalWork": "Trabajo profesional",
+    "work": "Lab",
+    "principles": "Método",
+    "skills": "Base técnica",
     "experience": "Experiencia",
     "contact": "Contacto"
   },
   "webel": {
-    "kicker": "Ahora mismo · En producción",
+    "kicker": "Experiencia actual · Producto en producción",
     "title": "Webel",
-    "intro": "Marketplace de servicios a domicilio con millones de usuarios. Soy el lead de web: Organizations, marketplace, SEO programático y el dashboard interno.",
-    "areasLabel": "En qué ando metido",
+    "intro": "Soy responsable del ecosistema web de este marketplace de servicios a domicilio: las superficies B2C y B2B, el dashboard interno, SEO, emails y la librería de componentes compartida.",
+    "areasLabel": "Superficies de trabajo",
     "areas": [
       {
         "name": "Webel Organizations",
-        "description": "La plataforma B2B para empresas: empleados, servicios, calendario, leads, chat con clientes, datos fiscales, áreas de servicio, horarios y cobros. Un producto completo por sí solo."
+        "description": "La plataforma B2B para gestionar empleados, servicios, calendario, leads, chat, datos fiscales, áreas de servicio, horarios y cobros."
       },
       {
         "name": "Marketplace core",
-        "description": "El producto principal: búsqueda y visualización de la oferta. Lo migramos entero a React. Hoy es un escaparate que redirige a las apps, sin login ni usuarios. En el roadmap: contratación, cuentas y el resto de funcionalidades."
+        "description": "La aplicación B2C para buscar y consultar la oferta. La migré de Angular a React y sigue evolucionando junto al resto del producto."
       },
       {
         "name": "SEO programático",
-        "description": "Más de 50k plantillas generadas desde cero en Astro, con datos estructurados y rendimiento cuidado. Primer resultado orgánico en Google para «Limpieza a domicilio en Madrid»."
+        "description": "La superficie de contenido y captación. La llevé a Astro para trabajar con una arquitectura más adecuada para contenido estático."
       },
       {
         "name": "Dashboard interno",
-        "description": "La herramienta con la que opera el equipo: usuarios, servicios, incidencias y métricas del negocio."
+        "description": "La herramienta interna para consultar usuarios y servicios, gestionar incidencias y seguir datos del negocio."
       }
     ],
     "cta": "Ver el caso completo",
     "visit": "Visitar appwebel.com"
   },
   "projects": {
-    "kicker": "Una selección",
-    "title": "Lo que he ido construyendo",
-    "intro": "Productos en producción, sistemas propios y algún experimento. Ordenados por dónde pongo la energía ahora.",
+    "kicker": "Proyectos propios",
+    "title": "Lab",
+    "intro": "Prototipos y utilidades que construyo por iniciativa propia. Cada uno prueba una idea concreta y muestra su estado sin presentarse como experiencia laboral.",
     "viewProject": "Ver proyecto",
     "viewAll": "Ver todos",
-    "categories": {
-      "webel": "Producto en producción",
-      "product-os": "Sistema propio",
-      "maker": "Herramientas maker",
-      "side": "Proyecto vertical",
-      "legacy": "Proyecto anterior"
+    "kinds": {
+      "professional": "Trabajo profesional",
+      "lab": "Lab"
+    },
+    "signals": {
+      "product": "Producto",
+      "fullstack": "Full stack",
+      "ai-workflow": "Flujo con IA",
+      "architecture": "Arquitectura"
     }
   },
   "principles": {
-    "kicker": "Forma de trabajar",
-    "title": "Cuatro ideas que me guían (sin dogma)",
+    "kicker": "Producto, ingeniería e IA",
+    "title": "Cómo trabajo con agentes",
     "items": [
       {
-        "title": "Primero entender, luego construir",
-        "description": "El código es la parte barata. Antes de escribir una línea pregunto para quién es, qué problema resuelve y cómo sabremos que funciona."
+        "title": "Acotar el problema",
+        "description": "Aclaro para quién es, qué tiene que cambiar y cuál es la solución más pequeña que merece la pena construir. Dejo por escrito el alcance, las restricciones y los criterios de aceptación."
       },
       {
-        "title": "La complejidad se queda detrás",
-        "description": "Que el sistema sea complejo no justifica una interfaz compleja. Mi trabajo es absorber eso y devolver algo que se entienda a la primera."
+        "title": "Preparar el trabajo",
+        "description": "Divido la implementación en partes revisables y doy a cada agente el contexto que necesita. Uso skills reutilizables y documentación del design system para mantener las decisiones técnicas entre tareas."
       },
       {
-        "title": "Piezas que se puedan cambiar",
-        "description": "El producto de hoy no es el de dentro de un año. Construyo con piezas que se puedan sustituir sin tirar el edificio entero."
-      },
-      {
-        "title": "La IA acelera; el criterio es mío",
-        "description": "Uso agentes y modelos para explorar más rápido, automatizar lo repetitivo y llegar antes a las decisiones que importan. La herramienta amplifica; el juicio sigue siendo mío."
+        "title": "Revisar y validar",
+        "description": "Reviso el código, las pruebas y el resultado contra la especificación. Si una decisión afecta al producto o a la arquitectura, la tomo yo y actualizo el contexto antes de seguir."
       }
     ]
   },
   "skills": {
-    "kicker": "Con qué trabajo",
-    "title": "Del servidor al píxel — y del píxel al negocio",
+    "kicker": "Base técnica",
+    "title": "Tecnologías que uso para construir el producto",
     "groups": [
       {
         "domain": "Frontend",
@@ -105,40 +114,40 @@
       },
       {
         "domain": "Producto",
-        "items": ["Descubrimiento de problemas", "Priorización", "Métricas de producto", "SEO programático", "Trabajo con diseño y negocio"]
+        "items": ["Definición de problemas", "Alcance", "Criterios de aceptación", "SEO programático", "Trabajo con diseño y negocio"]
       },
       {
         "domain": "IA aplicada",
-        "items": ["Agentes y orquestación", "Context engineering", "Automatización de flujos", "Prototipado asistido por IA"]
+        "items": ["Skills reutilizables", "Especificaciones estructuradas", "Implementación con agentes", "Revisión y validación"]
       }
     ]
   },
   "experience": {
-    "kicker": "El recorrido",
-    "title": "De full stack a frontend, y de ahí a producto",
+    "kicker": "Experiencia profesional",
+    "title": "Producto web en Webel y AuroraJobs",
     "stages": {
       "fullstack": "Full Stack",
       "frontend": "Frontend",
       "product": "Producto / IA"
     },
-    "evolutionNote": "Cada etapa me ha acercado más a donde se tocan ingeniería y producto. Lo que viene es eso mismo, potenciado con IA."
+    "evolutionNote": "En AuroraJobs construí la base full stack. En Webel he asumido la responsabilidad de varias superficies web y de su arquitectura compartida."
   },
   "contact": {
-    "kicker": "Hablemos",
-    "title": "Si estás construyendo algo interesante…",
-    "intro": "Me interesan los equipos que hacen producto de verdad y los proyectos donde ingeniería y producto se cruzan. Si tienes algo así entre manos, escríbeme.",
+    "kicker": "Contacto",
+    "title": "Busco responsabilidad de producto, además de código",
+    "intro": "Me interesan los puestos de Product Engineer o Software Engineer donde ingeniería participe en el problema, el alcance y las decisiones. También puedo ayudar en proyectos que necesiten convertir una idea poco definida en software que se pueda usar.",
     "emailLabel": "Email",
     "socialLabel": "También estoy en",
     "cta": "Escríbeme"
   },
   "projectPage": {
-    "back": "Volver a proyectos",
+    "back": "Volver a la portada",
     "problem": "Qué había que resolver",
     "audience": "Para quién",
     "role": "Mi papel",
-    "responsibilities": "Qué hice",
-    "decisions": "Decisiones que importaron",
-    "outcomes": "Qué salió",
+    "responsibilities": "Responsabilidades",
+    "decisions": "Decisiones",
+    "outcomes": "Resultados y entregas",
     "technologies": "Tecnologías",
     "status": "Estado",
     "year": "Año",

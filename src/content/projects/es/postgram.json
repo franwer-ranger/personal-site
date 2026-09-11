@@ -2,10 +2,10 @@
   "lang": "es",
   "title": "Postgram",
   "slug": "postgram",
-  "summary": "Postales virtuales ancladas a un lugar físico. Quien envía lo hace desde un sitio concreto; quien recibe solo puede abrirlas si está ahí. Una red social que te obliga a moverte.",
-  "problem": "Las redes viven en el móvil y en la instantaneidad: abres, scrolleas, cierras. Postgram parte de lo contrario: el mensaje solo se revela si vas al lugar donde lo dejaron.",
-  "audience": "Amigos y gente cercana. Empezando por mí.",
-  "role": "Diseño y desarrollo completos.",
+  "summary": "Prototipo de postales digitales ligadas a un lugar. Quien recibe una foto y un mensaje tiene que visitar ese sitio para poder abrirlos.",
+  "problem": "Queríamos probar una interacción digital que dependiera de una experiencia física. En Postgram, la ubicación forma parte del acceso al mensaje y obliga a diseñar el recorrido alrededor de la proximidad.",
+  "audience": "Personas que quieren dejar una foto y un mensaje asociados a un lugar para que alguien cercano los descubra allí.",
+  "role": "Producto e ingeniería dentro de un equipo de tres, junto al antiguo CTO y el Product Owner de AuroraJobs.",
   "status": "Prototipo",
   "year": "2024",
   "technologies": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Geolocalización"],
@@ -16,12 +16,21 @@
   ],
   "decisions": [
     "El lugar no es un metadato: es la condición para ver el mensaje.",
-    "App simple a propósito. Si añade fricción física, es porque esa fricción es el producto.",
+    "Mantener un recorrido corto alrededor de una condición poco habitual: estar físicamente en el lugar.",
     "Rails para montar el ciclo completo sin inventar infraestructura de más."
   ],
   "outcomes": [
     "Prototipo funcional con el ciclo de crear, recibir y abrir una postal.",
-    "Una prueba de que mezclar red social y mundo físico puede funcionar sin complicar la interfaz."
+    "Una mecánica completa para ligar creación, ubicación, proximidad y apertura."
+  ],
+  "kind": "lab",
+  "prominence": "featured",
+  "signal": "product",
+  "contribution": "Producto e ingeniería para convertir una condición de ubicación en un recorrido completo.",
+  "proof": [
+    "Prototipo funcional con creación y apertura de postales.",
+    "Desbloqueo por proximidad.",
+    "Galería del recorrido completo."
   ],
   "logo": "/postgram/logo.png",
   "gallery": [
@@ -61,8 +70,6 @@
       "caption": "Sin estar en el lugar, no hay revelación."
     }
   ],
-  "featured": false,
-  "priority": 4,
-  "visualTheme": "slate",
-  "category": "maker"
+  "priority": 3,
+  "visualTheme": "slate"
 }

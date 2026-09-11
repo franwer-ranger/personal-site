@@ -6,7 +6,7 @@
   "problem": "Anyone building their own projects accumulates ideas faster than they can execute them. Without a system, ideas get forgotten and ongoing projects get abandoned halfway.",
   "audience": "Makers and builders running several projects in parallel. Starting with me.",
   "role": "Full design and development.",
-  "status": "In development",
+  "status": "Archived until its status is validated",
   "year": "2025",
   "technologies": ["TypeScript", "React", "Automation", "Applied AI"],
   "responsibilities": [
@@ -19,9 +19,14 @@
     "Explicit states for every project, so abandoning one is also a decision."
   ],
   "outcomes": [
-    "Daily use managing my own project portfolio.",
-    "Fewer lost ideas and more finished projects."
+    "A prototype covering capture, prioritisation, and tracking.",
+    "Usage outcomes need validation before it returns to the public site."
   ],
+  "kind": "lab",
+  "prominence": "archive",
+  "signal": "ai-workflow",
+  "contribution": "Designed and built a personal system for organising side projects.",
+  "proof": ["A board with explicit states.", "A story-capture flow.", "A gallery of the prototype."],
   "gallery": [
     {
       "src": "/maker_tracker/maker_tracker_login.png",
@@ -45,8 +50,6 @@
     }
   ],
   "logo": "/maker_tracker/logo.png",
-  "featured": false,
   "priority": 3,
-  "visualTheme": "moss",
-  "category": "maker"
+  "visualTheme": "moss"
 }

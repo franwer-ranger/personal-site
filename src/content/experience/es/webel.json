@@ -1,14 +1,15 @@
 {
   "lang": "es",
   "company": "Webel",
-  "role": "Líder técnico frontend",
+  "role": "Responsable del ecosistema web",
   "period": "2024 — hoy",
+  "kind": "professional",
   "stage": "frontend",
-  "summary": "Lead de web en un marketplace de servicios a domicilio con millones de usuarios. Responsable de Organizations, marketplace, SEO programático y el dashboard interno.",
+  "summary": "Trabajo sobre las superficies web B2C y B2B, el dashboard interno, SEO, emails transaccionales y la librería de componentes compartida.",
   "highlights": [
-    "React y TypeScript sobre varios productos críticos en producción.",
-    "Unifiqué arquitectura y design system; migré marketplace (Angular → React), SEO a Astro y +100 mails a React Email.",
-    "Formé y lideré a dos developers mid-senior. IA en el flujo: skills, agentes y docs del DS pensadas para Cursor, Codex, Claude y OpenCode."
+    "Migré la aplicación B2C de Angular a React y la superficie de SEO a Astro.",
+    "Extraje una librería React compartida y llevé el desarrollo de emails a React Email.",
+    "Preparé skills reutilizables y documentación del design system para trabajar con agentes de IA."
   ],
   "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email"],
   "order": 1

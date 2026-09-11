@@ -2,11 +2,11 @@
   "lang": "es",
   "title": "My Potential",
   "slug": "my-potential",
-  "summary": "Plataforma de IA que ayuda a estudiantes de secundaria en Madrid a encontrar una salida profesional: tests de psicología validados y datos educativos reales, unidos con un pipeline RAG.",
+  "summary": "Prototipo de orientación académica que combina cuestionarios, un catálogo educativo y generación de informes. Su estado y el trabajo con menores deben validarse antes de volver a publicarlo.",
   "problem": "La orientación profesional de adolescentes suele quedarse entre un test genérico y el criterio del orientador. Ninguno de los dos conecta el perfil psicológico con el catálogo real de grados y FP en España.",
   "audience": "Estudiantes de secundaria en Madrid, orientadores y colegios que hacen orientación en clase.",
   "role": "Diseño y desarrollo completos del producto.",
-  "status": "Demos activas",
+  "status": "Archivado hasta completar la validación",
   "year": "2025",
   "technologies": ["Ruby on Rails", "Hotwire", "OpenAI", "Qdrant", "MySQL", "TailwindCSS", "Docker", "Kamal"],
   "responsibilities": [
@@ -20,13 +20,17 @@
     "Rails y Hotwire para el producto; RAG con Qdrant y OpenAI para los informes."
   ],
   "outcomes": [
-    "Demos en aula con orientadores y alumnos en colegios de Madrid.",
-    "Informes de orientación personalizados a partir de los tests y del catálogo educativo."
+    "Prototipo capaz de generar informes a partir de cuestionarios y un catálogo educativo.",
+    "Demos, alcance de privacidad y validación de cuestionarios pendientes de confirmar."
   ],
+  "kind": "lab",
+  "prominence": "archive",
+  "signal": "ai-workflow",
+  "contribution": "Diseño y desarrollo del prototipo y de su flujo de generación de informes.",
+  "proof": ["Motor de cuestionarios.", "Catálogo educativo.", "Pipeline de generación de informes."],
+  "confidentialityNote": "No publicar claims sobre menores, colegios, privacidad o validación psicológica sin revisión.",
   "links": [{ "label": "my-potential", "url": "https://mpl.sdvns.xyz/" }],
   "logo": "/my_potential/logo.png",
-  "featured": false,
   "priority": 5,
-  "visualTheme": "plum",
-  "category": "maker"
+  "visualTheme": "plum"
 }

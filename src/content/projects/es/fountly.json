@@ -2,26 +2,35 @@
   "lang": "es",
   "title": "Fountly",
   "slug": "fountly",
-  "summary": "Mapa de fuentes de agua potable en todo el mundo. OpenStreetMap como base; en Madrid, datos del Ayuntamiento con el estado real de cada fuente. Hecha para uso personal — y para quien pasea con sed.",
-  "problem": "En Madrid a 38 grados, no saber dónde hay una fuente cercana es un problema real. Buscar «fuente de agua» en Maps no siempre ayuda, y los datos oficiales viven en un GeoJSON que nadie abre desde el móvil.",
-  "audience": "Yo, amigos y familia. Y cualquiera que pasee y quiera agua gratis.",
+  "summary": "Mapa para encontrar fuentes de agua potable cercanas. Combina OpenStreetMap con datos públicos locales cuando están disponibles.",
+  "problem": "Encontrar una fuente cercana desde el móvil sigue siendo difícil, aunque existan datos abiertos. Fountly convierte esas fuentes dispersas en una búsqueda y un mapa pensados para usar mientras caminas.",
+  "audience": "Personas que quieren localizar una fuente cercana desde el móvil.",
   "role": "Diseño y desarrollo completos.",
   "status": "En uso",
   "year": "2026",
   "technologies": ["MapLibre GL JS", "Vite", "OpenStreetMap", "MapTiler"],
   "responsibilities": [
     "Mapa mundial con carga de fuentes bajo demanda al mover el mapa.",
-    "Adapter de OpenStreetMap (Overpass) y, en Madrid, del dataset oficial del Ayuntamiento.",
+    "Adaptador de OpenStreetMap mediante Overpass y soporte para fuentes de datos públicas locales.",
     "UI móvil: buscador, clustering, panel de detalle y «Cómo llegar»."
   ],
   "decisions": [
-    "OpenStreetMap como base global; los datasets oficiales entran como excepciones verificadas con prioridad en su región.",
+    "OpenStreetMap como base global y adaptadores regionales para datos públicos cuando están disponibles.",
     "Carga por viewport y caché por celdas: no pedir dos veces lo mismo al volver a una zona.",
-    "Alcance personal a propósito: útil de verdad antes que producto."
+    "Alcance estrecho para resolver bien la búsqueda, el detalle y las indicaciones."
   ],
   "outcomes": [
-    "App en producción en fountly.app, usada en paseos por Madrid.",
-    "En Madrid, el estado real de cada fuente: operativa, temporal o fuera de servicio."
+    "Proyecto personal publicado en fountly.app.",
+    "Mapa móvil con búsqueda, agrupación de marcadores, detalle y acceso a indicaciones."
+  ],
+  "kind": "lab",
+  "prominence": "featured",
+  "signal": "architecture",
+  "contribution": "Diseño y desarrollo de una utilidad estrecha que integra datos geográficos de varias fuentes.",
+  "proof": [
+    "Aplicación publicada.",
+    "Carga de fuentes según el área visible.",
+    "Integración de OpenStreetMap y datos públicos locales."
   ],
   "links": [{ "label": "fountly.app", "url": "https://fountly.app/" }],
   "logo": "/fountly/logo.png",
@@ -32,8 +41,6 @@
       "caption": "Madrid en agosto: buscas una fuente, la abres y te dice cómo llegar."
     }
   ],
-  "featured": false,
-  "priority": 6,
-  "visualTheme": "slate",
-  "category": "maker"
+  "priority": 4,
+  "visualTheme": "slate"
 }

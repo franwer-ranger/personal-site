@@ -10,7 +10,9 @@ interface Props {
 
 const { locale, projects } = Astro.props;
 const t = getTranslations(locale);
-const rest = projects.filter((p) => !p.data.featured);
+const selectedLab = projects.filter(
+  (project) => project.data.kind === 'lab' && project.data.prominence === 'featured',
+);
 ---
 
 <section class="section projects" id="work">
@@ -23,7 +25,7 @@ const rest = projects.filter((p) => !p.data.featured);
     </header>
 
     <div class="projects-grid">
-      {rest.map((project, i) => <ProjectCard project={project} locale={locale} index={i} />)}
+      {selectedLab.map((project, i) => <ProjectCard project={project} locale={locale} index={i} />)}
     </div>
   </div>
 </section>

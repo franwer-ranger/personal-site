@@ -2,28 +2,37 @@
   "lang": "es",
   "title": "AuroraJobs",
   "slug": "aurorajobs",
-  "summary": "Plataforma de reclutamiento que ayuda a universitarios a dar sus primeros pasos laborales y los conecta con empresas que buscan talento junior. Varias rondas de financiación, más de 20K usuarios y entregas continuas durante más de 5 años.",
+  "summary": "Plataforma de empleo y orientación para universitarios, empresas y servicios de carrera. Construí el producto full stack y asumí más decisiones técnicas y coordinación con el tiempo.",
   "problem": "Los universitarios que dan sus primeros pasos y las empresas que buscan talento junior rara vez se encuentran en un sitio pensado para esa etapa. Los portales generalistas tratan a ambos como un añadido.",
   "audience": "Universitarios, empresas que contratan junior y servicios de orientación de las universidades.",
-  "role": "Lideré la ingeniería. Equipo pequeño de producto: product owner/diseñador, dos developers y yo.",
+  "role": "Full-Stack Software Engineer. Trabajé con el CTO y Producto y, con el tiempo, apoyé la coordinación, el reparto de trabajo y las revisiones.",
   "status": "Proyecto completado",
   "year": "2021 — 2024",
   "technologies": ["Ruby on Rails", "JavaScript", "Stimulus", "MySQL", "Redis", "Sidekiq", "Kubernetes", "Docker", "TailwindCSS", "CI/CD"],
   "responsibilities": [
     "Construí el producto desde cero: perfiles de estudiante, evaluación de skills e intereses, ofertas de empresa, motor de matching, flujos de candidatura y dashboards de analítica para los servicios de orientación universitaria.",
-    "Diseñé y operé la infraestructura de producción: cluster Kubernetes, pipelines de CI/CD, monitorización y estrategias de despliegue a lo largo de varias iteraciones de producto.",
-    "Monté un ritmo de trabajo ligero (product owner/diseñador, dos developers y yo en ingeniería) que iba de la idea a producción en semanas."
+    "Trabajé en los despliegues y la infraestructura del producto, además de la aplicación.",
+    "Colaboré con Producto y el CTO en alcance, viabilidad, solución técnica y entrega."
   ],
   "decisions": [
     "Monolito Rails para avanzar rápido en perfiles, matching, candidaturas y dashboards.",
-    "Equipo pequeño con pairing y review: sacar en semanas, no en trimestres.",
-    "Controlar el stack de producción entero para que los rediseños de producto no rompan la fiabilidad."
+    "Pairing y revisión de código para compartir decisiones y mantener el ritmo de entrega.",
+    "Mantener aplicación, despliegues e infraestructura dentro del mismo contexto técnico."
   ],
   "outcomes": [
-    "Varias rondas de financiación y una base de más de 20K usuarios.",
-    "Entrega continua a producción durante más de 5 años.",
-    "Paso por Lanzadera en 2022 como empresa incubada."
+    "Un producto en producción con portal de empleo, área de empresas, orientación, contenido y analítica.",
+    "Una base full stack que cubrió modelado de datos, lógica de negocio, interfaz, pruebas y despliegues."
   ],
+  "kind": "professional",
+  "prominence": "standard",
+  "signal": "fullstack",
+  "contribution": "Construcción full stack del producto y participación en sus decisiones técnicas y de alcance.",
+  "proof": [
+    "Monolito Ruby on Rails con superficies para estudiantes, empresas y universidades.",
+    "Trabajo directo con Producto y CTO desde la definición hasta la entrega.",
+    "Revisiones de código y apoyo progresivo a la coordinación."
+  ],
+  "confidentialityNote": "Las cifras de usuarios, financiación, tamaño de equipo y alcance de infraestructura no se publican hasta validarlas.",
   "gallery": [
     {
       "src": "/aurorajobs/aurorajobs_landing.png",
@@ -57,8 +66,6 @@
     }
   ],
   "logo": "/aurorajobs/logo.png",
-  "featured": false,
   "priority": 2,
-  "visualTheme": "slate",
-  "category": "legacy"
+  "visualTheme": "slate"
 }

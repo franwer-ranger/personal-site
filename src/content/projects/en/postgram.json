@@ -2,10 +2,10 @@
   "lang": "en",
   "title": "Postgram",
   "slug": "postgram",
-  "summary": "Virtual postcards pinned to a physical place. The sender leaves them from a specific spot; the recipient can only open them by being there. A social network that makes you move.",
-  "problem": "Social feeds live on the phone and in the instant: open, scroll, close. Postgram starts from the opposite idea — the message only unlocks if you go to the place where it was left.",
-  "audience": "Friends and people close to me. Starting with myself.",
-  "role": "Full design and development.",
+  "summary": "A prototype for digital postcards tied to a place. Recipients have to visit that location before they can open the photo and message.",
+  "problem": "We wanted to test a digital interaction that depended on a physical experience. In Postgram, location controls access to the message, so the whole journey is designed around proximity.",
+  "audience": "People who want to leave a photo and message somewhere for a friend to discover in that place.",
+  "role": "Product and engineering in a three-person team with AuroraJobs' former CTO and Product Owner.",
   "status": "Prototype",
   "year": "2024",
   "technologies": ["Ruby on Rails", "Hotwire", "PostgreSQL", "Geolocation"],
@@ -15,13 +15,22 @@
     "Onboarding that explains the mechanic without fuss."
   ],
   "decisions": [
-    "Location isn't metadata — it's the condition for seeing the message.",
-    "Deliberately simple app. If it adds physical friction, that friction is the product.",
+    "Make location the condition for seeing the message rather than an extra piece of metadata.",
+    "Keep the journey short around an unusual condition: being physically present.",
     "Rails to ship the full cycle without inventing extra infrastructure."
   ],
   "outcomes": [
     "A working prototype with the create, receive and open cycle.",
-    "Proof that mixing social and the physical world can work without a complicated interface."
+    "A complete mechanic linking creation, location, proximity, and opening."
+  ],
+  "kind": "lab",
+  "prominence": "featured",
+  "signal": "product",
+  "contribution": "Product and engineering work that turned a location constraint into a complete journey.",
+  "proof": [
+    "Working prototype covering postcard creation and opening.",
+    "Proximity-based unlock.",
+    "A gallery showing the complete journey."
   ],
   "logo": "/postgram/logo.png",
   "gallery": [
@@ -33,7 +42,7 @@
     {
       "src": "/postgram/confirm_location.png",
       "alt": "Location confirmation at Puerta Bonita, with a dark map marked by the Postgram asterisk and a Finish button.",
-      "caption": "Location isn't a tag — it's where the moment unlocks."
+      "caption": "Location sets where the moment unlocks."
     },
     {
       "src": "/postgram/open_cover.png",
@@ -61,8 +70,6 @@
       "caption": "No place, no reveal."
     }
   ],
-  "featured": false,
-  "priority": 4,
-  "visualTheme": "slate",
-  "category": "maker"
+  "priority": 3,
+  "visualTheme": "slate"
 }

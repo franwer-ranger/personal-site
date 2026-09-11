@@ -2,28 +2,37 @@
   "lang": "en",
   "title": "AuroraJobs",
   "slug": "aurorajobs",
-  "summary": "A recruitment platform that helps university students make their first career moves and connects them with companies hiring junior talent. Multiple funding rounds, 20K+ users, continuous shipping over 5+ years.",
+  "summary": "A jobs and career-guidance platform for university students, employers, and career services. I built the full-stack product and gradually took on more technical decisions and coordination.",
   "problem": "University students taking their first career steps and companies looking for junior talent rarely meet in a place built for that stage. Generalist job boards treat both as an afterthought.",
   "audience": "University students, companies hiring junior talent, and university career centers.",
-  "role": "Led engineering. Small product team: product owner/designer, two developers, and me.",
+  "role": "Full-Stack Software Engineer. I worked with the CTO and Product, later supporting coordination, task distribution, and code review.",
   "status": "Completed project",
   "year": "2021 — 2024",
   "technologies": ["Ruby on Rails", "JavaScript", "Stimulus", "MySQL", "Redis", "Sidekiq", "Kubernetes", "Docker", "TailwindCSS", "CI/CD"],
   "responsibilities": [
     "Built the product from zero: student profiles, skills and interests assessment, company job posts, matching engine, application flows, and analytics dashboards for university career centers.",
-    "Designed and ran the production infrastructure: Kubernetes cluster, CI/CD pipelines, monitoring and deploy strategies through multiple product iterations.",
-    "Set a lightweight working rhythm (product owner/designer, two developers, and me on engineering) that went from idea to production in weeks."
+    "Worked on deployments and product infrastructure alongside the application.",
+    "Collaborated with Product and the CTO on scope, feasibility, technical solutions, and delivery."
   ],
   "decisions": [
     "Rails monolith for speed across profiles, matching, applications and dashboards.",
-    "Small team with pairing and review: ship in weeks, not quarters.",
-    "Own the full production stack so product overhauls don't break reliability."
+    "Pairing and code review to share decisions and maintain delivery pace.",
+    "Keep the application, deployments, and infrastructure within one technical context."
   ],
   "outcomes": [
-    "Multiple funding rounds and a base of 20K+ users.",
-    "Continuous delivery to production for 5+ years.",
-    "Lanzadera incubator program in 2022."
+    "A live product spanning jobs, employer tools, guidance, content, and analytics.",
+    "A full-stack foundation across data modelling, business logic, interface work, testing, and deployments."
   ],
+  "kind": "professional",
+  "prominence": "standard",
+  "signal": "fullstack",
+  "contribution": "Built the full-stack product and contributed to technical and scope decisions.",
+  "proof": [
+    "A Ruby on Rails monolith serving students, employers, and universities.",
+    "Direct work with Product and the CTO from definition through delivery.",
+    "Code review and growing coordination support."
+  ],
+  "confidentialityNote": "User, funding, team-size, and infrastructure-scope claims remain private until validated.",
   "gallery": [
     {
       "src": "/aurorajobs/aurorajobs_landing.png",
@@ -57,8 +66,6 @@
     }
   ],
   "logo": "/aurorajobs/logo.png",
-  "featured": false,
   "priority": 2,
-  "visualTheme": "slate",
-  "category": "legacy"
+  "visualTheme": "slate"
 }

@@ -14,6 +14,7 @@ interface Props {
 const { locale, project, next } = Astro.props;
 const t = getTranslations(locale);
 const { data } = project;
+const backAnchor = data.kind === 'professional' ? 'experience' : 'work';
 ---
 
 <Layout title={`${data.title} — Fran Barahona`} description={data.summary}>
@@ -21,7 +22,7 @@ const { data } = project;
   <article class="project-page" style={`--theme: var(--theme-${data.visualTheme})`}>
     <header class="project-hero">
       <div class="container project-hero-inner">
-        <a href={`${homePath(locale)}#work`} class="link-arrow project-back" data-reveal>
+        <a href={`${homePath(locale)}#${backAnchor}`} class="link-arrow project-back" data-reveal>
           <span class="arrow flip" aria-hidden="true">←</span>
           {t.projectPage.back}
         </a>
@@ -32,13 +33,13 @@ const { data } = project;
               <div class="project-brand">
                 <ProjectLogo src={data.logo} size="md" />
                 <div class="project-brand-text">
-                  <span class="mono project-category">{t.projects.categories[data.category]}</span>
+                  <span class="mono project-category">{t.projects.kinds[data.kind]} · {t.projects.signals[data.signal]}</span>
                   <h1 class="display project-title">{data.title}</h1>
                 </div>
               </div>
             ) : (
               <>
-                <span class="mono project-category">{t.projects.categories[data.category]}</span>
+                <span class="mono project-category">{t.projects.kinds[data.kind]} · {t.projects.signals[data.signal]}</span>
                 <h1 class="display project-title">{data.title}</h1>
               </>
             )

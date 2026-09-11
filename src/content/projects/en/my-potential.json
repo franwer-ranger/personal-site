@@ -2,11 +2,11 @@
   "lang": "en",
   "title": "My Potential",
   "slug": "my-potential",
-  "summary": "An AI platform that helps Madrid high school students find a career path: validated psychology assessments plus real educational data, connected through a RAG pipeline.",
+  "summary": "A career-guidance prototype combining questionnaires, an education catalogue, and generated reports. Its status and work involving minors need validation before it returns to the public site.",
   "problem": "Career orientation for teenagers often sits between a generic test and a counselor's gut feeling. Neither connects a psychological profile with the real catalogue of Spanish degrees and vocational programs.",
   "audience": "Madrid high school students, counselors and schools running orientation in the classroom.",
   "role": "Full product design and engineering.",
-  "status": "Active demos",
+  "status": "Archived pending validation",
   "year": "2025",
   "technologies": ["Ruby on Rails", "Hotwire", "OpenAI", "Qdrant", "MySQL", "TailwindCSS", "Docker", "Kamal"],
   "responsibilities": [
@@ -20,13 +20,17 @@
     "Rails and Hotwire for the product surface; RAG with Qdrant and OpenAI for the reports."
   ],
   "outcomes": [
-    "Live classroom demos with counselors and students in Madrid schools.",
-    "Personalized career orientation reports generated from assessments and the educational catalogue."
+    "A prototype that can generate reports from questionnaires and an education catalogue.",
+    "Demos, privacy scope, and questionnaire validation remain unconfirmed."
   ],
+  "kind": "lab",
+  "prominence": "archive",
+  "signal": "ai-workflow",
+  "contribution": "Designed and built the prototype and its report-generation workflow.",
+  "proof": ["Questionnaire engine.", "Education catalogue.", "Report-generation pipeline."],
+  "confidentialityNote": "Do not publish claims about minors, schools, privacy, or psychological validation without review.",
   "links": [{ "label": "my-potential", "url": "https://mpl.sdvns.xyz/" }],
   "logo": "/my_potential/logo.png",
-  "featured": false,
   "priority": 5,
-  "visualTheme": "plum",
-  "category": "maker"
+  "visualTheme": "plum"
 }

@@ -1,14 +1,15 @@
 {
   "lang": "en",
   "company": "Webel",
-  "role": "Frontend Tech Lead",
+  "role": "Responsible for the web platform",
   "period": "2024 — present",
+  "kind": "professional",
   "stage": "frontend",
-  "summary": "Web lead at a home-services marketplace with millions of users. Responsible for Organizations, marketplace, programmatic SEO and the internal dashboard.",
+  "summary": "I work across the B2C and B2B web surfaces, internal dashboard, SEO, transactional email, and shared component library.",
   "highlights": [
-    "React and TypeScript across several critical products in production.",
-    "Unified architecture and design system; migrated marketplace (Angular → React), SEO to Astro and 100+ emails to React Email.",
-    "Trained and led two mid-senior developers. AI in the flow: skills, agents and DS docs built for Cursor, Codex, Claude and OpenCode."
+    "Migrated the B2C application from Angular to React and moved the SEO surface to Astro.",
+    "Extracted a shared React library and moved email development to React Email.",
+    "Set up reusable skills and design-system documentation that gives AI agents the right technical context."
   ],
   "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email"],
   "order": 1

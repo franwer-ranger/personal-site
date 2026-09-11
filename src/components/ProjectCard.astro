@@ -27,7 +27,7 @@ const number = String(index + 1).padStart(2, '0');
       {data.logo && <ProjectLogo src={data.logo} size="sm" />}
       <span class="card-number mono">{number}</span>
     </div>
-    <span class="card-category mono">{t.projects.categories[data.category]}</span>
+    <span class="card-category mono">{t.projects.kinds[data.kind]} · {t.projects.signals[data.signal]}</span>
   </div>
 
   <div class="card-body">

@@ -1,14 +1,15 @@
 {
   "lang": "es",
-  "company": "AuroraJobs y antes",
-  "role": "Full Stack Developer",
+  "company": "AuroraJobs",
+  "role": "Full-Stack Software Engineer",
   "period": "2021 — 2024",
+  "kind": "professional",
   "stage": "fullstack",
-  "summary": "Años construyendo productos completos con Ruby on Rails. En AuroraJobs fui el único developer tras el mentoring inicial del CTO: de la base de datos al despliegue, con decisiones de producto por el camino.",
+  "summary": "Construí la aplicación en un monolito Ruby on Rails y trabajé con Producto y el CTO desde la definición de las funcionalidades hasta su entrega.",
   "highlights": [
-    "Producto completo en producción: portal de empleo, dashboard, portal empresas y CMS.",
-    "Mentoricé a dos developers junior e implementamos SCRUM.",
-    "Paso por Lanzadera en 2022 como empresa incubada."
+    "Trabajé en backend, frontend, modelado de datos, lógica de negocio, pruebas y despliegues.",
+    "Participé en el alcance, la viabilidad técnica, la arquitectura y las decisiones de producto.",
+    "Con el tiempo asumí más autonomía, revisiones de código y apoyo a la coordinación del equipo."
   ],
   "technologies": ["Ruby on Rails", "MySQL", "StimulusJS", "TailwindCSS", "Kubernetes"],
   "order": 3

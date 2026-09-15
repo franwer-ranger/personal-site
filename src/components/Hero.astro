@@ -1,5 +1,7 @@
 ---
 import { getTranslations, type Locale } from '../i18n/ui';
+import { profile } from '../config/profile';
+import ExternalLink from './ExternalLink.astro';
 
 interface Props {
   locale: Locale;
@@ -7,6 +9,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = getTranslations(locale);
+const cv = profile.cv[locale];
 ---
 
 <section class="hero" aria-labelledby="hero-title">
@@ -20,9 +23,14 @@ const t = getTranslations(locale);
       <p class="hero-subtitle">{t.hero.subtitle}</p>
       <p class="hero-context">{t.hero.context}</p>
       <div class="hero-ctas">
-        <a href="#experience" class="button">{t.hero.ctaPrimary}</a>
-        <a href="#contact" class="button button--ghost">{t.hero.ctaSecondary}</a>
+        <a href="#work" class="button">{t.hero.ctaPrimary}</a>
+        {cv && <a href={cv} class="button button--ghost" download>{t.hero.ctaSecondary}</a>}
       </div>
+      <nav class="hero-links" aria-label={t.hero.secondaryLinksLabel}>
+        <a href="#contact">{t.nav.contact}</a>
+        <ExternalLink locale={locale} href={profile.linkedin} label="LinkedIn" />
+        <ExternalLink locale={locale} href={profile.github} label="GitHub" />
+      </nav>
     </div>
 
     <div class="build-trace" aria-label={t.hero.traceLabel}>
@@ -91,14 +99,37 @@ const t = getTranslations(locale);
   }
 
   .hero-context {
-    color: var(--text-subtle);
-    font-size: 0.95rem;
+    max-width: 54ch;
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.55;
+    text-wrap: pretty;
   }
 
   .hero-ctas {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-3);
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-4);
+    color: var(--text-subtle);
+    font-size: 0.88rem;
+    font-weight: 580;
+  }
+
+  .hero-links :global(a) {
+    border-bottom: 1px solid var(--border-strong);
+  }
+
+  @media (hover: hover) {
+    .hero-links :global(a:hover) {
+      border-color: var(--accent);
+      color: var(--accent-strong);
+    }
   }
 
   .build-trace {

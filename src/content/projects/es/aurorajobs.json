@@ -4,7 +4,7 @@
   "title": "AuroraJobs",
   "slug": "aurorajobs",
   "company": "AuroraJobs",
-  "period": "2021 — 2024",
+  "period": "Principios de 2021 — mediados de 2024",
   "role": "Full-Stack Software Engineer",
   "scope": "Toda la aplicación: producto para estudiantes, portal de empresas, dashboard interno, despliegues e infraestructura.",
   "status": "Proyecto terminado",
@@ -13,7 +13,7 @@
   "context": "Los universitarios que buscan su primer trabajo y las empresas que contratan perfiles junior rara vez se encuentran en un sitio pensado para esa etapa: los portales generalistas tratan a ambos como un caso más. AuroraJobs montó empleo, formación y contenido alrededor de ese momento concreto.",
   "audience": "Universitarios en sus primeros pasos, empresas que contratan perfiles junior y los servicios de orientación de las universidades.",
   "responsibility": {
-    "summary": "La aplicación era mía de punta a punta: modelado, backend, frontend, pruebas, despliegues e infraestructura. Entré con poca experiencia y el CTO me formó hasta que pude tomar esas decisiones por mi cuenta.",
+    "summary": "Construí la aplicación de punta a punta y lideré el desarrollo de producto: modelado, backend, frontend, pruebas y despliegues, además del reparto de trabajo, las pull requests y el mentoring de los otros dos developers.",
     "fronts": [
       {
         "title": "Producto para estudiantes",
@@ -34,7 +34,7 @@
       "auroraHacks, la pata de contenido: editoriales, eventos y podcast.",
       "Despliegues e infraestructura del producto."
     ],
-    "teamBoundary": "Producto tenía la decisión final. Yo entraba en la ideación, discutía el alcance y proponía alternativas más simples cuando las veía. Mentoricé, coordiné y gestioné a un equipo de dos developers, un junior y un mid: reparto de trabajo, revisiones y apoyo del día a día."
+    "teamBoundary": "El equipo de tecnología lo formábamos el CTO, dos developers y yo. El CTO llevaba principalmente infraestructura y tareas administrativas; yo lideraba el desarrollo de producto, repartía el trabajo, revisaba las pull requests y mentoricé a los otros dos developers. Producto mantenía la decisión final sobre alcance y prioridades."
   },
   "decisions": [
     {
@@ -56,31 +56,35 @@
       "situation": "El producto crecía más rápido de lo que yo podía escribir y entraron dos developers al equipo.",
       "decision": "Repartir el trabajo por áreas, revisar sus pull requests y hacer pairing cuando hacía falta, en vez de quedarme con las partes difíciles.",
       "rationale": "Si concentraba lo complicado, el equipo no llegaba a conocer el dominio y yo acababa siendo el cuello de botella.",
-      "change": "Un junior y un mid con áreas propias, y las decisiones de arquitectura discutidas en revisión en lugar de heredadas."
+      "change": "Los tres developers podíamos avanzar en paralelo, con áreas propias y decisiones de arquitectura discutidas en revisión. El producto dejó de depender de una sola persona para las partes difíciles."
     }
   ],
   "results": [
     {
-      "statement": "Un producto en producción con portal de empleo, área de empresas, orientación, contenido y analítica.",
-      "evidence": "Las capturas de esta página son del producto público."
+      "statement": "Producto podía cambiar filtros y formularios sin abrir una tarea de desarrollo ni esperar a un despliegue.",
+      "evidence": "El dashboard interno guardaba la configuración que consumían el producto de estudiantes y el portal de empresas."
     },
     {
-      "statement": "Una base full stack que cubrió modelado, lógica de negocio, interfaz, pruebas, despliegues e infraestructura.",
-      "evidence": "El mismo monolito Rails de 2021 a 2024."
+      "statement": "El monolito acortó los ciclos de producto porque modelado, backend e interfaz podían cambiar en la misma entrega.",
+      "evidence": "El mismo Rails cubría desde los datos y la lógica de negocio hasta la interfaz y producción."
     },
     {
-      "statement": "Un equipo de dos developers con áreas propias, revisiones y apoyo continuo.",
-      "evidence": "Un junior y un mid a los que mentoricé y coordiné."
+      "statement": "Los tres developers trabajábamos en paralelo y el producto dependía menos de una sola persona.",
+      "evidence": "Reparto por áreas, pull requests, pairing y decisiones de arquitectura compartidas en revisión."
+    },
+    {
+      "statement": "Lideré técnicamente el desarrollo y entregué funcionalidades completas desde el modelado hasta producción.",
+      "evidence": "Repartía el trabajo, revisaba las pull requests y mentoricé a los otros dos developers mientras seguía implementando."
     }
   ],
   "confidentialityNote": "Las cifras de usuarios, la financiación y el alcance exacto de la infraestructura son de la empresa y no se publican aquí.",
   "prominence": "standard",
   "signal": "fullstack",
-  "contribution": "Construcción full stack del producto completo y coordinación de un equipo de dos developers.",
+  "contribution": "Construcción full stack del producto completo y liderazgo técnico del desarrollo dentro de un equipo de cuatro personas.",
   "proof": [
-    "Monolito Rails con producto para estudiantes, empresas y universidades.",
-    "Candidatos priorizados para las empresas y formularios configurables desde el dashboard interno.",
-    "Mentoricé y coordiné a un equipo de dos developers."
+    "Producto podía cambiar filtros y formularios sin abrir una tarea de desarrollo.",
+    "El monolito permitía entregar modelado, backend e interfaz en el mismo ciclo.",
+    "Los tres developers trabajábamos en paralelo con reparto, revisiones y mentoring."
   ],
   "technologies": [
     "Ruby on Rails",

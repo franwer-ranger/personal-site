@@ -1,15 +1,15 @@
 {
   "lang": "en",
   "company": "Webel",
-  "role": "Responsible for the web platform",
-  "period": "2024 — present",
+  "role": "Lead Frontend Engineer",
+  "period": "Late 2024 — present",
   "kind": "professional",
   "stage": "frontend",
   "slug": "webel",
-  "summary": "I am responsible for all of Webel's web: the B2C app, the B2B platform behind company profiles, the internal dashboard, SEO, email, and the component library the three products share.",
+  "summary": "I am responsible for Webel's web department: the B2C app, B2B platform, internal dashboard, SEO, email, and the shared component library.",
   "highlights": [
     "The B2C app is used by thousands of people a day. I migrated its marketplace from Angular to React.",
-    "The company profiles working on the B2B platform generate close to 25% of GMV, over €500k a year.",
+    "The B2B platform covers teams, services, calendars, leads, chat, service areas, tax details, and payouts.",
     "I extracted the design system into a library shared by B2C, B2B, and the dashboard, and moved email to React Email."
   ],
   "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email"],

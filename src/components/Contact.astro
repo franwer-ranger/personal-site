@@ -1,6 +1,7 @@
 ---
 import ExternalLink from './ExternalLink.astro';
 import { getTranslations, type Locale } from '../i18n/ui';
+import { profile } from '../config/profile';
 
 interface Props {
   locale: Locale;
@@ -8,7 +9,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = getTranslations(locale);
-const email = 'franbaraguz98@gmail.com';
+const email = profile.email;
 // Un solo buzón para las dos conversaciones; el asunto es lo que las separa.
 const mailto = (subject?: string) =>
   subject ? `mailto:${email}?subject=${encodeURIComponent(subject)}` : `mailto:${email}`;
@@ -24,11 +25,11 @@ const mailto = (subject?: string) =>
 
     <ul class="contact-tracks" role="list">
       {
-        t.contact.tracks.map((track) => (
-          <li class="track">
+        t.contact.tracks.map((track, index) => (
+          <li class:list={['track', { 'track--primary': index === 0 }]}>
             <h3>{track.title}</h3>
             <p>{track.description}</p>
-            <a href={mailto(track.subject)} class="button">
+            <a href={mailto(track.subject)} class:list={['button', { 'button--quiet': index !== 0 }]}>
               {track.cta}
             </a>
           </li>
@@ -46,10 +47,10 @@ const mailto = (subject?: string) =>
         <p>
           <ExternalLink
             locale={locale}
-            href="https://www.linkedin.com/in/francisco-barahona-a9b3a3218/"
+            href={profile.linkedin}
             label="LinkedIn"
           />
-          <ExternalLink locale={locale} href="https://github.com/franwer-ranger" label="GitHub" />
+          <ExternalLink locale={locale} href={profile.github} label="GitHub" />
         </p>
       </div>
     </div>
@@ -103,7 +104,12 @@ const mailto = (subject?: string) =>
     padding: var(--space-4);
     border: 1px solid rgb(255 255 255 / 0.35);
     border-radius: var(--radius-md);
-    background: rgb(255 255 255 / 0.08);
+    background: rgb(255 255 255 / 0.04);
+  }
+
+  .track--primary {
+    border-color: rgb(255 255 255 / 0.72);
+    background: rgb(255 255 255 / 0.12);
   }
 
   .track h3 {
@@ -120,6 +126,16 @@ const mailto = (subject?: string) =>
     border-color: #fff;
     background: #fff;
     color: var(--accent-strong);
+  }
+
+  .contact .button--quiet {
+    min-height: auto;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid rgb(255 255 255 / 0.55);
+    border-radius: 0;
+    background: transparent;
+    color: #fff;
   }
 
   .contact-details {
@@ -156,6 +172,12 @@ const mailto = (subject?: string) =>
       border-color: var(--play);
       background: var(--play);
       color: var(--text);
+    }
+
+    .contact .button--quiet:hover {
+      border-color: #fff;
+      background: transparent;
+      color: #fff;
     }
 
     .contact-details :global(a:hover) {

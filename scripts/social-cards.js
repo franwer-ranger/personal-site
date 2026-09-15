@@ -28,8 +28,8 @@ const SANS = "'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif"
 const MONO = "'IBM Plex Mono', 'SF Mono', Menlo, Consolas, monospace"
 
 const TRACE = {
-	es: ['Problema', 'Especificación', 'Construcción', 'Revisión', 'Entrega'],
-	en: ['Problem', 'Specification', 'Build', 'Review', 'Delivery'],
+	es: ['Problema', 'Especificación', 'Contexto', 'Implementación', 'Revisión'],
+	en: ['Problem', 'Specification', 'Context', 'Implementation', 'Review'],
 }
 
 const CARDS = [
@@ -39,14 +39,14 @@ const CARDS = [
 		kicker: 'FRAN BARAHONA · PRODUCT ENGINEER',
 		title: 'Product Engineer',
 		subtitle:
-			'Superficies web completas, la arquitectura que hay debajo y trabajo con agentes de IA.',
+			'Casi seis años construyendo producto con React, TypeScript, Rails y agentes de IA.',
 	},
 	{
 		name: 'og-default-en',
 		locale: 'en',
 		kicker: 'FRAN BARAHONA · PRODUCT ENGINEER',
 		title: 'Product Engineer',
-		subtitle: 'Whole web surfaces, the architecture under them, and engineering work with AI agents.',
+		subtitle: 'Nearly six years building products with React, TypeScript, Rails, and AI agents.',
 	},
 	{
 		name: 'og-webel-es',
@@ -54,7 +54,7 @@ const CARDS = [
 		kicker: 'CASO · FRAN BARAHONA',
 		title: 'Webel',
 		subtitle:
-			'Responsable del ecosistema web: app B2C, plataforma B2B, dashboard interno, SEO, emails y librería compartida.',
+			'Responsable del departamento web: app B2C, plataforma B2B, dashboard, SEO, emails y librería compartida.',
 	},
 	{
 		name: 'og-webel-en',
@@ -62,7 +62,7 @@ const CARDS = [
 		kicker: 'CASE · FRAN BARAHONA',
 		title: 'Webel',
 		subtitle:
-			'Responsible for the web platform: B2C app, B2B platform, internal dashboard, SEO, email, and the shared library.',
+			'Responsible for the web department: B2C app, B2B platform, dashboard, SEO, email, and the shared library.',
 	},
 	{
 		name: 'og-aurorajobs-es',
@@ -70,7 +70,7 @@ const CARDS = [
 		kicker: 'CASO · FRAN BARAHONA',
 		title: 'AuroraJobs',
 		subtitle:
-			'Responsable de la aplicación de punta a punta en un monolito Ruby on Rails, entre 2021 y 2024.',
+			'Desarrollo full stack y liderazgo técnico del producto en Ruby on Rails.',
 	},
 	{
 		name: 'og-aurorajobs-en',
@@ -78,7 +78,21 @@ const CARDS = [
 		kicker: 'CASE · FRAN BARAHONA',
 		title: 'AuroraJobs',
 		subtitle:
-			'Responsible for the application end to end in a Ruby on Rails monolith, from 2021 to 2024.',
+			'Full-stack engineering and technical leadership of a Ruby on Rails product.',
+	},
+	{
+		name: 'og-my-potential-es',
+		locale: 'es',
+		kicker: 'LAB · FRAN BARAHONA',
+		title: 'My Potential',
+		subtitle: 'Orientación académica con Rails, Hotwire, OpenAI, Qdrant y un pipeline de RAG.',
+	},
+	{
+		name: 'og-my-potential-en',
+		locale: 'en',
+		kicker: 'LAB · FRAN BARAHONA',
+		title: 'My Potential',
+		subtitle: 'Academic guidance built with Rails, Hotwire, OpenAI, Qdrant, and a RAG pipeline.',
 	},
 ]
 

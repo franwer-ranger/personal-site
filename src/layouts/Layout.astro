@@ -7,6 +7,7 @@ import { ClientRouter } from 'astro:transitions';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { getTranslations, getLocalizedPath, isLocale, locales, type Locale } from '../i18n/ui';
+import { profile } from '../config/profile';
 
 interface Props {
   title?: string;
@@ -15,6 +16,7 @@ interface Props {
   ogImage?: string;
   ogImageAlt?: string;
   ogType?: 'website' | 'article';
+  structuredData?: Record<string, unknown>;
 }
 
 const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : 'es';
@@ -25,6 +27,7 @@ const {
   ogImage = `/og-default-${locale}.png`,
   ogImageAlt = t.meta.ogImageAlt,
   ogType = 'website',
+  structuredData,
 } = Astro.props;
 
 // `Astro.site` está fijado en astro.config.mjs; el fallback evita que un build
@@ -40,6 +43,27 @@ const alternates = locales.map((target) => ({
 const defaultAlternate = alternates.find((alternate) => alternate.hreflang === 'es')!;
 const ogImageUrl = new URL(ogImage, site);
 const ogLocales = { es: 'es_ES', en: 'en_GB' } as const;
+const personId = new URL('/#person', site).href;
+const person = {
+  '@type': 'Person',
+  '@id': personId,
+  name: profile.name,
+  url: new URL('/', site).href,
+  jobTitle: 'Product Engineer',
+  description: t.meta.description,
+  sameAs: [profile.linkedin, profile.github],
+  knowsAbout: ['Product Engineering', 'React', 'TypeScript', 'Ruby on Rails', 'Full-stack development', 'AI-assisted software development'],
+};
+const pageEntity = structuredData ?? {
+  '@type': 'ProfilePage',
+  '@id': `${canonical.href}#profile`,
+  url: canonical.href,
+  name: title,
+  description,
+  inLanguage: locale,
+  mainEntity: { '@id': personId },
+};
+const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': [person, pageEntity] }).replace(/</g, '\\u003c');
 ---
 
 <!doctype html>
@@ -49,6 +73,7 @@ const ogLocales = { es: 'es_ES', en: 'en_GB' } as const;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={t.meta.keywords} />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#f7f8fb" />
     <meta name="color-scheme" content="light" />
@@ -81,6 +106,8 @@ const ogLocales = { es: 'es_ES', en: 'en_GB' } as const;
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <script is:inline type="application/ld+json" set:html={jsonLd} />
 
     <ClientRouter />
     <script is:inline>document.documentElement.classList.replace('no-js', 'js');</script>

@@ -1,0 +1,48 @@
+---
+import { profile } from '../config/profile';
+import type { Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const recommendation = profile.recommendation;
+---
+
+{
+  recommendation && (
+    <section class="section recommendation" aria-label={locale === 'es' ? 'Recomendación' : 'Recommendation'}>
+      <figure class="container recommendation-inner">
+        <blockquote>{recommendation.quote[locale]}</blockquote>
+        <figcaption>
+          <strong>{recommendation.author}</strong>
+          <span>{recommendation.relationship[locale]}</span>
+        </figcaption>
+      </figure>
+    </section>
+  )
+}
+
+<style>
+  .recommendation {
+    background: var(--surface);
+  }
+
+  .recommendation-inner {
+    display: grid;
+    max-width: 52rem;
+    gap: var(--space-4);
+  }
+
+  blockquote {
+    font-size: var(--fs-lead);
+    line-height: 1.55;
+  }
+
+  figcaption {
+    display: grid;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+</style>

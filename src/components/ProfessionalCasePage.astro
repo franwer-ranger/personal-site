@@ -25,6 +25,16 @@ const overview = [
   { label: t.casePage.scope, value: data.scope },
   { label: t.casePage.status, value: data.status },
 ];
+const structuredData = {
+  '@type': 'CreativeWork',
+  '@id': `${Astro.url.href}#case`,
+  url: Astro.url.href,
+  name: data.title,
+  description: data.summary,
+  inLanguage: locale,
+  creator: { '@id': new URL('/#person', Astro.site).href },
+  about: data.technologies,
+};
 ---
 
 <Layout
@@ -33,6 +43,7 @@ const overview = [
   ogImage={ogImage}
   ogImageAlt={`${data.company} — ${data.role}`}
   ogType="article"
+  structuredData={structuredData}
 >
   <article class="case" style={`--theme: var(--theme-${data.visualTheme})`}>
     <header class="case-hero">

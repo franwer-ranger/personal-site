@@ -1,5 +1,6 @@
 ---
 import ExternalLink from './ExternalLink.astro';
+import { profile } from '../config/profile';
 import { getTranslations, getLocalizedPath, homePath, type Locale } from '../i18n/ui';
 
 interface Props {
@@ -11,7 +12,7 @@ const t = getTranslations(locale);
 const home = homePath(locale);
 const otherLocale: Locale = locale === 'es' ? 'en' : 'es';
 const year = new Date().getFullYear();
-const email = 'franbaraguz98@gmail.com';
+const email = profile.email;
 ---
 
 <footer class="site-footer">
@@ -35,10 +36,10 @@ const email = 'franbaraguz98@gmail.com';
       <a href={`mailto:${email}`}>{email}</a>
       <ExternalLink
         locale={locale}
-        href="https://www.linkedin.com/in/francisco-barahona-a9b3a3218/"
+        href={profile.linkedin}
         label="LinkedIn"
       />
-      <ExternalLink locale={locale} href="https://github.com/franwer-ranger" label="GitHub" />
+      <ExternalLink locale={locale} href={profile.github} label="GitHub" />
       <a href={getLocalizedPath(Astro.url.pathname, otherLocale)} hreflang={otherLocale}>
         {t.languageNames[otherLocale]}
       </a>

@@ -37,7 +37,7 @@
     {
       "src": "/postgram/confirm_location.png",
       "alt": "Location confirmation screen at Puerta Bonita, with a dark map marked by the Postgram asterisk and a Finish button.",
-      "caption": "The location isn't a tag: it's where the moment unlocks."
+      "caption": "The location determines where the moment unlocks."
     },
     {
       "src": "/postgram/open_cover.png",
@@ -65,6 +65,6 @@
       "caption": "No place, no reveal."
     }
   ],
-  "priority": 3,
+  "priority": 4,
   "visualTheme": "plum"
 }

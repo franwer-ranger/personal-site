@@ -33,7 +33,15 @@ const t = getTranslations(locale);
     <aside class="artifacts" aria-labelledby="artifacts-title">
       <p class="mono" id="artifacts-title">{t.principles.artifactsLabel}</p>
       <ul role="list">
-        {t.principles.artifacts.map((artifact) => <li>{artifact}</li>)}
+        {
+          t.principles.artifacts.map((artifact) => (
+            <li>
+              <p class="artifact-type mono">{artifact.type}</p>
+              <h3>{artifact.title}</h3>
+              <code>{artifact.excerpt}</code>
+            </li>
+          ))
+        }
       </ul>
     </aside>
   </div>
@@ -119,7 +127,6 @@ const t = getTranslations(locale);
   .artifacts {
     grid-column: 5 / -1;
     display: grid;
-    grid-template-columns: 11rem 1fr;
     gap: var(--space-4);
     padding: var(--space-5);
     border: 1px solid rgb(247 248 251 / 0.18);
@@ -133,19 +140,41 @@ const t = getTranslations(locale);
 
   .artifacts ul {
     display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-3);
     padding: 0;
     list-style: none;
   }
 
   .artifacts li {
-    color: var(--inverse-muted);
+    display: grid;
+    align-content: start;
+    gap: var(--space-2);
+    min-width: 0;
+    padding: var(--space-3);
+    border: 1px solid var(--inverse-line);
+    border-radius: var(--radius-sm);
+    background: rgb(247 248 251 / 0.035);
   }
 
-  .artifacts li::before {
-    content: '↳';
-    margin-right: var(--space-2);
-    color: var(--play);
+  .artifacts li:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .artifact-type {
+    color: #aab1ff;
+  }
+
+  .artifacts h3 {
+    font-size: 0.96rem;
+  }
+
+  .artifacts code {
+    overflow-wrap: anywhere;
+    color: var(--inverse-muted);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    line-height: 1.55;
   }
 
   @media (max-width: 52rem) {
@@ -161,8 +190,12 @@ const t = getTranslations(locale);
   }
 
   @media (max-width: 36rem) {
-    .artifacts {
+    .artifacts ul {
       grid-template-columns: 1fr;
+    }
+
+    .artifacts li:last-child {
+      grid-column: 1;
     }
   }
 </style>

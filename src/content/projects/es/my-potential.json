@@ -1,0 +1,37 @@
+{
+  "lang": "es",
+  "kind": "lab",
+  "title": "My Potential",
+  "slug": "my-potential",
+  "year": "2025",
+  "status": "Prototipo funcional",
+  "summary": "Producto de orientación académica que conecta cuestionarios con un catálogo de grados universitarios y FP, y genera un informe personalizado mediante IA y RAG.",
+  "problem": "Elegir qué estudiar obliga a cruzar intereses y preferencias con una oferta educativa extensa. Los cuestionarios aislados dan un perfil; los catálogos enumeran opciones. My Potential conecta ambas partes para preparar una conversación de orientación más concreta.",
+  "scopeChoice": "Construí un recorrido completo: cuestionarios, catálogo educativo estructurado, selección de opciones relacionadas y generación del informe. Rails y Hotwire sostienen el producto; OpenAI y Qdrant se encargan de la generación y la recuperación de contexto.",
+  "built": [
+    "Un motor de cuestionarios sobre intereses, rasgos y preferencias, sin presentar sus resultados como un diagnóstico.",
+    "Un catálogo de grados universitarios y ciclos de FP en España, preparado para relacionar cada opción con las respuestas.",
+    "Un pipeline que recupera contexto del catálogo con Qdrant y usa OpenAI para redactar el informe a partir de las respuestas y las opciones seleccionadas.",
+    "El producto full stack en Ruby on Rails y Hotwire, con su base de datos y despliegue mediante Docker y Kamal.",
+    "Un flujo de privacidad que no pide ni guarda el nombre o el email del estudiante."
+  ],
+  "statusDetail": "Es un prototipo funcional capaz de completar los cuestionarios y generar el informe. La demo está publicada; las capturas y cualquier afirmación sobre validación de los cuestionarios quedan fuera hasta poder confirmarlas.",
+  "demonstrates": [
+    "Diseño y construcción de un producto completo, desde el modelado de cuestionarios y oferta educativa hasta el informe final.",
+    "Uso de RAG para apoyar la generación en un catálogo controlado, en lugar de pedir al modelo que proponga opciones sin contexto.",
+    "Decisiones de privacidad aplicadas al flujo y al modelo de datos cuando el producto puede usarse con menores."
+  ],
+  "prominence": "featured",
+  "signal": "ai-workflow",
+  "contribution": "Diseño y desarrollo full stack del producto, el catálogo y el pipeline de informes con IA y RAG.",
+  "proof": [
+    "Pipeline completo desde los cuestionarios hasta el informe.",
+    "Catálogo educativo usado como contexto recuperable con Qdrant.",
+    "Flujo diseñado sin nombres ni emails de estudiantes."
+  ],
+  "technologies": ["Ruby on Rails", "Hotwire", "OpenAI", "Qdrant", "MySQL", "TailwindCSS", "Docker", "Kamal"],
+  "links": [{ "label": "mpl.sdvns.xyz", "url": "https://mpl.sdvns.xyz/" }],
+  "logo": "/my_potential/logo.png",
+  "priority": 3,
+  "visualTheme": "plum"
+}

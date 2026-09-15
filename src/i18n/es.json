@@ -2,8 +2,9 @@
   "meta": {
     "siteName": "Fran Barahona",
     "title": "Fran Barahona — Product Engineer",
-    "description": "Ingeniero de software con mentalidad de producto. Responsable del ecosistema web en Webel y base full stack con Ruby on Rails en AuroraJobs.",
-    "ogImageAlt": "Fran Barahona, Product Engineer. Problema, especificación, construcción, revisión y entrega."
+    "description": "Product Engineer con casi seis años de experiencia. React, TypeScript y Ruby on Rails; producto full stack y desarrollo con agentes de IA.",
+    "keywords": "Product Engineering, React, TypeScript, Ruby on Rails, desarrollo full stack, agentes de IA",
+    "ogImageAlt": "Fran Barahona, Product Engineer. Problema, especificación, contexto, implementación, pruebas y revisión."
   },
   "nav": {
     "work": "Trabajo",
@@ -18,28 +19,29 @@
     "menu": "Menú"
   },
   "hero": {
-    "kicker": "Ingeniero de software con mentalidad de producto",
+    "kicker": "Producto, full stack e IA aplicada",
     "title": "Product Engineer",
-    "subtitle": "Mi responsabilidad es técnica: superficies web completas y la arquitectura que hay debajo. Trabajo pegado a producto y delego parte de la implementación en agentes; la especificación y la revisión son mías.",
-    "context": "Responsable del ecosistema web en Webel. Base full stack con Ruby on Rails en AuroraJobs.",
-    "ctaPrimary": "Ver experiencia",
-    "ctaSecondary": "Contactar",
-    "traceLabel": "Trace de construcción",
-    "trace": ["Problema", "Especificación", "Construcción", "Revisión", "Entrega"]
+    "subtitle": "Construyo productos web de principio a fin. En Webel llevo todo el departamento web; antes construí en Rails un producto completo para estudiantes, empresas y universidades. Trabajo con React, TypeScript y Ruby on Rails, cerca de Producto y con responsabilidad sobre arquitectura, entrega y mantenimiento.",
+    "context": "Programo con agentes de forma intensiva. Los encuadro con especificaciones, contexto, skills reutilizables, pruebas y revisiones. La arquitectura, el código que se entrega y el resultado final siguen siendo responsabilidad mía.",
+    "ctaPrimary": "Ver casos",
+    "ctaSecondary": "Descargar CV",
+    "secondaryLinksLabel": "Contacto y perfiles profesionales",
+    "traceLabel": "Flujo de desarrollo con IA",
+    "trace": ["Problema", "Especificación", "Contexto y reglas", "Implementación", "Pruebas y revisión"]
   },
   "summary": {
-    "kicker": "En breve",
-    "title": "Responsabilidad técnica sobre producto en producción",
+    "kicker": "En resumen",
+    "title": "Producto completo sin alejarme del código",
     "facts": [
-      "En Webel llevo todo el web: la app B2C que usan miles de personas al día, la plataforma B2B, el dashboard interno, el SEO, los emails y la librería compartida.",
-      "En AuroraJobs construí la aplicación entera en Rails y mentoricé y coordiné a un equipo de dos developers.",
-      "Trabajo con agentes a partir de especificaciones y skills reutilizables. El código, las pruebas y la decisión final los reviso yo."
+      "Llevo casi seis años construyendo producto en startups y scale-ups, desde el modelado de datos hasta la interfaz y la producción.",
+      "En Webel soy responsable de todo el departamento web. En AuroraJobs lideré el desarrollo de producto dentro de un equipo de cuatro personas y construí su aplicación full stack en Rails.",
+      "Uso agentes a diario para implementar más y entregar con mayor frecuencia. Les doy contexto y reglas, y reviso el código, las pruebas y las decisiones de arquitectura."
     ]
   },
   "projects": {
     "kicker": "Proyectos propios",
     "title": "Lab",
-    "intro": "Prototipos y utilidades que construyo por iniciativa propia. Cada uno prueba una idea concreta y cuenta su estado sin presentarse como experiencia laboral.",
+    "intro": "Productos y prototipos que construyo por iniciativa propia. My Potential reúne producto, full stack, IA aplicada, RAG y decisiones de privacidad en un mismo caso.",
     "viewProject": "Ver proyecto",
     "kinds": {
       "professional": "Trabajo profesional",
@@ -54,56 +56,87 @@
   },
   "selectedWork": {
     "kicker": "Trabajo seleccionado",
-    "title": "Dos productos, dos tipos de responsabilidad",
-    "intro": "Cada caso cuenta el problema, qué parte llevé yo, dos o tres decisiones y qué cambió después.",
+    "title": "Responsabilidad técnica sobre producto en producción",
+    "intro": "Webel enseña cómo mantengo y evoluciono varias aplicaciones conectadas. AuroraJobs, cómo construí y lideré el desarrollo de un producto full stack.",
     "problem": "Problema",
     "contribution": "Mi contribución",
     "proof": "Una prueba",
     "caseCta": "El caso de {project}"
   },
   "principles": {
-    "kicker": "Producto, ingeniería e IA",
-    "title": "Cómo trabajo con agentes",
+    "kicker": "Flujo de desarrollo con IA",
+    "title": "Los agentes trabajan dentro de un sistema",
     "items": [
       {
-        "title": "Acotar el problema",
-        "description": "Aclaro para quién es, qué tiene que cambiar y cuál es la solución más pequeña que merece la pena construir. Dejo por escrito el alcance, las restricciones y los criterios de aceptación."
+        "title": "Definir el problema",
+        "description": "Aclaro para quién es, qué debe cambiar y qué queda fuera. Si la petición todavía mezcla varias decisiones, paro antes de escribir código."
       },
       {
-        "title": "Preparar el trabajo",
-        "description": "Divido la implementación en partes revisables y doy a cada agente el contexto que necesita. Uso skills reutilizables y documentación del design system para que las decisiones técnicas no se pierdan entre tareas."
+        "title": "Preparar la especificación",
+        "description": "Escribo el alcance, las restricciones y los criterios de aceptación. Divido la implementación en partes que pueda probar y revisar por separado."
       },
       {
-        "title": "Revisar y validar",
-        "description": "Reviso el código, las pruebas y el resultado contra la especificación. Si una decisión afecta al producto o a la arquitectura, la tomo yo y actualizo el contexto antes de seguir."
+        "title": "Dar contexto y reglas",
+        "description": "El agente recibe la arquitectura existente, convenciones del repositorio, documentación del design system y skills reutilizables. No tiene que reconstruir esas decisiones en cada tarea."
+      },
+      {
+        "title": "Implementar con límites",
+        "description": "El trabajo avanza por cambios pequeños. Si aparece una decisión de producto, se rompe una restricción o el enfoque se desvía, detengo el agente, corrijo el contexto y vuelvo a acotar."
+      },
+      {
+        "title": "Probar y revisar",
+        "description": "Ejecuto las validaciones automáticas y reviso el diff, la arquitectura y el resultado en el navegador. El agente ayuda a implementar; yo decido qué código se entrega."
       }
     ],
-    "artifactsLabel": "Artefactos que uso",
+    "artifactsLabel": "Ejemplos sanitizados",
     "artifacts": [
-      "Skills reutilizables que recogen decisiones técnicas y criterios de calidad.",
-      "Especificaciones con alcance, restricciones y criterios de aceptación antes de implementar."
+      {
+        "type": "Especificación",
+        "title": "Alcance",
+        "excerpt": "Cambiar el flujo existente sin duplicar estado ni alterar las rutas públicas."
+      },
+      {
+        "type": "Criterio de aceptación",
+        "title": "Comportamiento",
+        "excerpt": "El caso funciona en ambos idiomas, con teclado y sin enlaces a recursos pendientes."
+      },
+      {
+        "type": "Skill",
+        "title": "Regla reutilizable",
+        "excerpt": "Conserva las convenciones del repositorio y comprueba cada salida contra la especificación."
+      },
+      {
+        "type": "Checklist de revisión",
+        "title": "Antes de entregar",
+        "excerpt": "Tipos, pruebas, responsive, accesibilidad, enlaces, metadatos y revisión visual."
+      },
+      {
+        "type": "Validación automática",
+        "title": "Comandos",
+        "excerpt": "npm run check-assets && npm run build"
+      }
     ]
   },
   "experience": {
     "kicker": "Experiencia profesional",
     "title": "Webel y AuroraJobs",
-    "evolutionNote": "En AuroraJobs construí la base full stack y coordiné a dos developers. En Webel llevo el área web entera y la arquitectura que comparten sus productos.",
+    "evolutionNote": "Una cronología breve del alcance, el stack y la responsabilidad. Los problemas, decisiones y resultados viven en cada caso.",
     "evidence": "Pruebas"
   },
   "contact": {
     "kicker": "Contacto",
     "title": "Hablemos",
-    "intro": "Escríbeme con algo de contexto y te contesto. Hay dos conversaciones que me interesan ahora mismo.",
+    "intro": "Si estás valorando mi perfil para un equipo de producto, cuéntame el contexto del puesto y el problema que queréis resolver.",
     "tracks": [
       {
         "title": "Ofertas y procesos",
-        "description": "Puestos de Product Engineer, Software Engineer o full stack donde ingeniería entre en el problema y el alcance, no solo en el ticket.",
+        "description": "Puestos de Product Engineer, Software Engineer o full stack donde ingeniería participe en definir el problema y el alcance, además de implementar.",
         "cta": "Escribir sobre un puesto",
         "subject": "Oferta para Fran Barahona"
       },
       {
         "title": "Proyectos y consultoría",
-        "description": "Ideas todavía poco definidas que hay que convertir en software usable, o productos que se han vuelto difíciles de mantener.",
+        "description": "También puedo hablar de proyectos que haya que aterrizar o de productos que se hayan vuelto difíciles de mantener.",
         "cta": "Escribir sobre un proyecto",
         "subject": "Proyecto con Fran Barahona"
       }

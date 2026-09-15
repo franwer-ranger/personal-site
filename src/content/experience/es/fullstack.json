@@ -2,16 +2,16 @@
   "lang": "es",
   "company": "AuroraJobs",
   "role": "Full-Stack Software Engineer",
-  "period": "2021 — 2024",
+  "period": "Principios de 2021 — mediados de 2024",
   "kind": "professional",
   "stage": "fullstack",
   "slug": "aurorajobs",
-  "summary": "Fui responsable de la aplicación de principio a fin, en un monolito Ruby on Rails, y trabajé con el CTO y con Producto desde la definición de cada funcionalidad hasta su entrega.",
+  "summary": "Construí la aplicación full stack en Rails y lideré el desarrollo de producto: reparto de trabajo, pull requests y mentoring dentro de un equipo de cuatro personas.",
   "highlights": [
     "Paneles de candidatos priorizados para las empresas, filtros y formularios dinámicos para los estudiantes y un dashboard interno para configurar ambos.",
     "Backend, frontend, modelado de datos, pruebas, despliegues e infraestructura del producto.",
-    "Mentoricé, coordiné y gestioné a un equipo de dos developers: un junior y un mid."
+    "Lideré el desarrollo de producto, repartí el trabajo, revisé las pull requests y mentoricé a los otros dos developers."
   ],
-  "technologies": ["Ruby on Rails", "MySQL", "StimulusJS", "TailwindCSS", "Kubernetes"],
+  "technologies": ["Ruby on Rails", "MySQL", "Javascript", "TailwindCSS", "Kubernetes"],
   "order": 2
 }

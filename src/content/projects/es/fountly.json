@@ -27,7 +27,10 @@
     "Integración de OpenStreetMap y datos públicos locales."
   ],
   "technologies": ["MapLibre GL JS", "Vite", "OpenStreetMap", "MapTiler"],
-  "links": [{ "label": "fountly.app", "url": "https://fountly.app/" }],
+  "links": [
+    { "label": "fountly.app", "url": "https://fountly.app/" },
+    { "label": "GitHub", "url": "https://github.com/franwer-ranger/Water" }
+  ],
   "logo": "/fountly/logo.png",
   "gallery": [
     {
@@ -36,6 +39,6 @@
       "caption": "Madrid en agosto: buscas una fuente, la abres y te dice cómo llegar."
     }
   ],
-  "priority": 4,
+  "priority": 5,
   "visualTheme": "moss"
 }

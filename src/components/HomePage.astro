@@ -9,6 +9,7 @@ import SelectedWork from './SelectedWork.astro';
 import ProductAiMethod from './ProductAiMethod.astro';
 import LabProjects from './LabProjects.astro';
 import Contact from './Contact.astro';
+import Recommendation from './Recommendation.astro';
 
 interface Props {
   locale: Locale;
@@ -26,8 +27,9 @@ const [cases, labProjects, experience] = await Promise.all([
   <Hero locale={locale} />
   <ProofSnapshot locale={locale} />
   <Experience locale={locale} experience={experience} />
-  <SelectedWork locale={locale} cases={cases} />
-  <ProductAiMethod locale={locale} />
+  <!-- <SelectedWork locale={locale} cases={cases} />
+  <ProductAiMethod locale={locale} /> -->
   <LabProjects locale={locale} projects={labProjects} />
+  <Recommendation locale={locale} />
   <Contact locale={locale} />
 </Layout>

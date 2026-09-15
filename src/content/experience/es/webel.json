@@ -1,15 +1,15 @@
 {
   "lang": "es",
   "company": "Webel",
-  "role": "Responsable del ecosistema web",
-  "period": "2024 — hoy",
+  "role": "Lead Frontend Engineer",
+  "period": "Finales de 2024 — actualidad",
   "kind": "professional",
   "stage": "frontend",
   "slug": "webel",
-  "summary": "Soy responsable de todo el web de Webel: la app B2C, la plataforma B2B de los perfiles de empresa, el dashboard interno, el SEO, los emails y la librería de componentes que comparten los tres productos.",
+  "summary": "Llevo todo el departamento web de Webel: la app B2C, la plataforma B2B, el dashboard interno, SEO, emails y la librería compartida.",
   "highlights": [
     "La app B2C la usan miles de personas al día. Migré su marketplace de Angular a React.",
-    "Los perfiles de empresa que trabajan sobre la plataforma B2B generan cerca del 25 % del GMV, más de 500.000 € al año.",
+    "La plataforma B2B permite gestionar equipos, servicios, calendarios, leads, chat, áreas de servicio, datos fiscales y cobros.",
     "Extraje el design system a una librería compartida por B2C, B2B y dashboard, y llevé los emails a React Email."
   ],
   "technologies": ["React", "TypeScript", "TailwindCSS", "Astro", "React Email"],

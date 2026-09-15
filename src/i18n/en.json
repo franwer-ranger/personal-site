@@ -2,8 +2,9 @@
   "meta": {
     "siteName": "Fran Barahona",
     "title": "Fran Barahona — Product Engineer",
-    "description": "Product-minded software engineer. Responsible for the web platform at Webel, with a full-stack foundation in Ruby on Rails from AuroraJobs.",
-    "ogImageAlt": "Fran Barahona, Product Engineer. Problem, specification, build, review, delivery."
+    "description": "Product Engineer with nearly six years of experience across React, TypeScript, Ruby on Rails, full-stack product work, and AI-assisted development.",
+    "keywords": "Product Engineering, React, TypeScript, Ruby on Rails, full-stack development, AI agents",
+    "ogImageAlt": "Fran Barahona, Product Engineer. Problem, specification, context, implementation, tests, and review."
   },
   "nav": {
     "work": "Work",
@@ -18,28 +19,29 @@
     "menu": "Menu"
   },
   "hero": {
-    "kicker": "Product-minded software engineer",
+    "kicker": "Product, full stack, and applied AI",
     "title": "Product Engineer",
-    "subtitle": "My responsibility is technical: whole web surfaces and the architecture under them. I work close to product and hand part of the implementation to agents; the specification and the review are mine.",
-    "context": "Responsible for the web platform at Webel. Full-stack foundation in Ruby on Rails at AuroraJobs.",
-    "ctaPrimary": "See experience",
-    "ctaSecondary": "Contact me",
-    "traceLabel": "Build trace",
-    "trace": ["Problem", "Specification", "Build", "Review", "Delivery"]
+    "subtitle": "I build web products end to end. At Webel I am responsible for the web department; before that, I built a complete Rails product for students, employers, and universities. I work with React, TypeScript, and Ruby on Rails, close to Product and accountable for architecture, delivery, and maintenance.",
+    "context": "I code with agents extensively. I frame their work with specifications, project context, reusable skills, tests, and reviews. Architecture, shipped code, and the final outcome remain my responsibility.",
+    "ctaPrimary": "View cases",
+    "ctaSecondary": "Download CV",
+    "secondaryLinksLabel": "Contact and professional profiles",
+    "traceLabel": "AI-assisted development flow",
+    "trace": ["Problem", "Specification", "Context and rules", "Implementation", "Tests and review"]
   },
   "summary": {
     "kicker": "At a glance",
-    "title": "Technical ownership of products in production",
+    "title": "End-to-end product work while staying close to the code",
     "facts": [
-      "At Webel I run all of web: the B2C app thousands of people use every day, the B2B platform, the internal dashboard, SEO, email, and the shared library.",
-      "At AuroraJobs I built the whole application in Rails and mentored and coordinated a team of two developers.",
-      "I work with agents from specifications and reusable skills. The code, the tests, and the final call are mine."
+      "I have spent nearly six years building products at startups and scale-ups, from data modelling and backend work through to interfaces and production.",
+      "I am responsible for Webel's web department. At AuroraJobs I led product development within a four-person tech team and built its full-stack Rails application.",
+      "I use agents every day to implement more and ship more often. I provide context and constraints, then review the code, tests, and architecture decisions."
     ]
   },
   "projects": {
     "kicker": "Side projects",
     "title": "Lab",
-    "intro": "Prototypes and utilities I build on my own initiative. Each one tests a specific idea and states where it actually stands, without posing as paid work.",
+    "intro": "Products and prototypes I build on my own initiative. My Potential brings product work, full-stack engineering, applied AI, RAG, and privacy decisions into one case.",
     "viewProject": "View project",
     "kinds": {
       "professional": "Professional work",
@@ -54,56 +56,87 @@
   },
   "selectedWork": {
     "kicker": "Selected work",
-    "title": "Two products, two kinds of ownership",
-    "intro": "Each case covers the problem, the part I owned, two or three decisions, and what changed afterwards.",
+    "title": "Technical ownership of products in production",
+    "intro": "Webel shows how I maintain and evolve several connected applications. AuroraJobs shows how I built and led development of a full-stack product.",
     "problem": "Problem",
     "contribution": "My contribution",
     "proof": "One proof point",
     "caseCta": "The {project} case"
   },
   "principles": {
-    "kicker": "Product, engineering, and AI",
-    "title": "How I work with agents",
+    "kicker": "AI-assisted development flow",
+    "title": "Agents work inside a system",
     "items": [
       {
         "title": "Define the problem",
-        "description": "I work out who it is for, what needs to change, and the smallest solution worth building. I write down scope, constraints, and acceptance criteria."
+        "description": "I establish who it is for, what must change, and what stays out of scope. If the request still bundles several decisions together, I stop before writing code."
       },
       {
-        "title": "Set up the work",
-        "description": "I split implementation into reviewable parts and give each agent the context it needs. Reusable skills and design-system docs keep technical decisions from getting lost between tasks."
+        "title": "Write the specification",
+        "description": "I document scope, constraints, and acceptance criteria. The implementation is split into parts I can test and review independently."
       },
       {
-        "title": "Review and validate",
-        "description": "I review the code, tests, and outcome against the specification. When a choice affects the product or architecture, I make it and update the context before work continues."
+        "title": "Provide context and rules",
+        "description": "The agent gets the existing architecture, repository conventions, design-system documentation, and reusable skills. Those decisions do not need to be reconstructed for every task."
+      },
+      {
+        "title": "Implement within boundaries",
+        "description": "Work moves through small changes. If a product decision appears, a constraint breaks, or the approach drifts, I stop the agent, correct the context, and narrow the task again."
+      },
+      {
+        "title": "Test and review",
+        "description": "I run automated checks and review the diff, architecture, and browser output. The agent helps with implementation; I decide what ships."
       }
     ],
-    "artifactsLabel": "Artifacts I use",
+    "artifactsLabel": "Sanitised examples",
     "artifacts": [
-      "Reusable skills that capture technical decisions and quality criteria.",
-      "Specifications with scope, constraints, and acceptance criteria written before implementation."
+      {
+        "type": "Specification",
+        "title": "Scope",
+        "excerpt": "Change the existing flow without duplicating state or altering public routes."
+      },
+      {
+        "type": "Acceptance criterion",
+        "title": "Behaviour",
+        "excerpt": "The case works in both languages, by keyboard, and without links to pending resources."
+      },
+      {
+        "type": "Skill",
+        "title": "Reusable rule",
+        "excerpt": "Keep the repository conventions and check every output against the specification."
+      },
+      {
+        "type": "Review checklist",
+        "title": "Before shipping",
+        "excerpt": "Types, tests, responsive layout, accessibility, links, metadata, and visual review."
+      },
+      {
+        "type": "Automated check",
+        "title": "Commands",
+        "excerpt": "npm run check-assets && npm run build"
+      }
     ]
   },
   "experience": {
     "kicker": "Professional experience",
     "title": "Webel and AuroraJobs",
-    "evolutionNote": "AuroraJobs gave me my full-stack foundation and a two-developer team to coordinate. At Webel I run the whole web area and the architecture its products share.",
+    "evolutionNote": "A compact timeline of scope, stack, and responsibility. Each case holds the underlying problems, decisions, and outcomes.",
     "evidence": "Evidence"
   },
   "contact": {
     "kicker": "Contact",
     "title": "Let's talk",
-    "intro": "Write with a bit of context and I'll get back to you. Two conversations interest me right now.",
+    "intro": "If you are considering my profile for a product team, tell me about the role and the problem you need that person to solve.",
     "tracks": [
       {
         "title": "Roles and hiring",
-        "description": "Product Engineer, Software Engineer, or full-stack roles where engineering gets into the problem and the scope, not just the ticket.",
+        "description": "Product Engineer, Software Engineer, or full-stack roles where engineers help define the problem and scope as well as implement the solution.",
         "cta": "Write about a role",
         "subject": "Role for Fran Barahona"
       },
       {
         "title": "Projects and consulting",
-        "description": "Loosely defined ideas that need to become usable software, or products that have become hard to maintain.",
+        "description": "I can also discuss projects that need shaping or products that have become difficult to maintain.",
         "cta": "Write about a project",
         "subject": "Project with Fran Barahona"
       }

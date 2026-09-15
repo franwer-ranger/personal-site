@@ -11,17 +11,32 @@ interface Props {
   locale: Locale;
   project: LabProject;
   next: Project | undefined;
+  ogImage?: string;
 }
 
-const { locale, project, next } = Astro.props;
+const { locale, project, next, ogImage } = Astro.props;
 const t = getTranslations(locale);
 const { data } = project;
+const structuredData = {
+  '@type': 'SoftwareApplication',
+  '@id': `${Astro.url.href}#project`,
+  url: Astro.url.href,
+  name: data.title,
+  description: data.summary,
+  inLanguage: locale,
+  applicationCategory: 'WebApplication',
+  author: { '@id': new URL('/#person', Astro.site).href },
+  keywords: data.technologies.join(', '),
+};
 ---
 
 <Layout
   title={`${data.title} — ${t.projects.kinds.lab} — Fran Barahona`}
   description={data.summary}
+  ogImage={ogImage}
+  ogImageAlt={`${data.title} — ${data.summary}`}
   ogType="article"
+  structuredData={structuredData}
 >
   <article class="lab-page" style={`--theme: var(--theme-${data.visualTheme})`}>
     <header class="lab-hero">

@@ -1,0 +1,37 @@
+{
+  "lang": "en",
+  "kind": "lab",
+  "title": "My Potential",
+  "slug": "my-potential",
+  "year": "2025",
+  "status": "Working prototype",
+  "summary": "An academic-guidance product that connects questionnaires to a catalogue of university degrees and vocational programmes, then generates a tailored report with AI and RAG.",
+  "problem": "Choosing what to study means matching interests and preferences against a large education catalogue. Questionnaires produce a profile; catalogues list options. My Potential connects the two so the resulting guidance conversation can be more specific.",
+  "scopeChoice": "I built the complete flow: questionnaires, a structured education catalogue, selection of related options, and report generation. Rails and Hotwire run the product; OpenAI and Qdrant handle generation and context retrieval.",
+  "built": [
+    "A questionnaire engine covering interests, traits, and preferences without presenting the results as a diagnosis.",
+    "A catalogue of Spanish university degrees and vocational programmes, structured so each option can be related to a student's answers.",
+    "A pipeline that retrieves catalogue context through Qdrant and uses OpenAI to draft the report from the answers and selected options.",
+    "The full-stack product in Ruby on Rails and Hotwire, including its database and deployment with Docker and Kamal.",
+    "A privacy flow that does not ask for or store a student's name or email address."
+  ],
+  "statusDetail": "The prototype can run the questionnaires and generate a report. The demo is public; screenshots and any claims about questionnaire validation remain out of scope until they can be confirmed.",
+  "demonstrates": [
+    "Design and engineering of a complete product, from questionnaire and education data models through to the final report.",
+    "RAG grounded in a controlled catalogue rather than asking the model to suggest options without source context.",
+    "Privacy decisions applied to both the flow and data model when the product may be used by minors."
+  ],
+  "prominence": "featured",
+  "signal": "ai-workflow",
+  "contribution": "Full-stack product design and engineering, including the catalogue and AI/RAG report pipeline.",
+  "proof": [
+    "A complete pipeline from questionnaires to the generated report.",
+    "An education catalogue used as retrievable context through Qdrant.",
+    "A flow designed without student names or email addresses."
+  ],
+  "technologies": ["Ruby on Rails", "Hotwire", "OpenAI", "Qdrant", "MySQL", "TailwindCSS", "Docker", "Kamal"],
+  "links": [{ "label": "mpl.sdvns.xyz", "url": "https://mpl.sdvns.xyz/" }],
+  "logo": "/my_potential/logo.png",
+  "priority": 3,
+  "visualTheme": "plum"
+}

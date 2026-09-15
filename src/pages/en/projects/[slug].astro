@@ -12,8 +12,10 @@ export async function getStaticPaths() {
 }
 
 const { project, next } = Astro.props;
-const ogImage = isProfessional(project) ? `/og-${project.data.slug}-en.png` : undefined;
+const ogImage = isProfessional(project) || project.data.slug === 'my-potential'
+  ? `/og-${project.data.slug}-en.png`
+  : undefined;
 ---
 
 {isProfessional(project) && <ProfessionalCasePage locale="en" project={project} next={next} ogImage={ogImage} />}
-{isLab(project) && <LabProjectPage locale="en" project={project} next={next} />}
+{isLab(project) && <LabProjectPage locale="en" project={project} next={next} ogImage={ogImage} />}

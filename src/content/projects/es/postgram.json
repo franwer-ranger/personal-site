@@ -37,7 +37,7 @@
     {
       "src": "/postgram/confirm_location.png",
       "alt": "Pantalla de confirmación de ubicación en Puerta Bonita, con un mapa oscuro marcado por el asterisco de Postgram y el botón Finish.",
-      "caption": "La ubicación no es una etiqueta: es donde se desbloquea el momento."
+      "caption": "La ubicación determina dónde se desbloquea el momento."
     },
     {
       "src": "/postgram/open_cover.png",
@@ -65,6 +65,6 @@
       "caption": "Sin estar en el lugar, no hay revelación."
     }
   ],
-  "priority": 3,
+  "priority": 4,
   "visualTheme": "plum"
 }

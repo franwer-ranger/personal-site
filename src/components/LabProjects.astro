@@ -64,6 +64,10 @@ const t = getTranslations(locale);
     gap: var(--space-4);
   }
 
+  .lab-grid :global(.lab-card:first-child) {
+    grid-column: 1 / -1;
+  }
+
   @media (max-width: 52rem) {
     .lab-layout {
       grid-template-columns: 1fr;
@@ -78,6 +82,10 @@ const t = getTranslations(locale);
   @media (max-width: 42rem) {
     .lab-grid {
       grid-template-columns: 1fr;
+    }
+
+    .lab-grid :global(.lab-card:first-child) {
+      grid-column: 1;
     }
   }
 </style>

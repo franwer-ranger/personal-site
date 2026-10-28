@@ -1,7 +1,7 @@
 ---
 import ExternalLink from './ExternalLink.astro';
 import { profile } from '../config/profile';
-import { getTranslations, getLocalizedPath, homePath, type Locale } from '../i18n/ui';
+import { getTranslations, getLocalizedPath, sectionPath, type Locale } from '../i18n/ui';
 
 interface Props {
   locale: Locale;
@@ -9,7 +9,6 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = getTranslations(locale);
-const home = homePath(locale);
 const otherLocale: Locale = locale === 'es' ? 'en' : 'es';
 const year = new Date().getFullYear();
 const email = profile.email;
@@ -26,10 +25,10 @@ const email = profile.email;
     </div>
 
     <nav aria-label={t.nav.ariaLabel} class="footer-nav">
-      <a href={`${home}#experience`}>{t.nav.experience}</a>
-      <!-- <a href={`${home}#work`}>{t.nav.work}</a> -->
-      <a href={`${home}#lab`}>{t.nav.lab}</a>
-      <a href={`${home}#contact`}>{t.nav.contact}</a>
+      <a href={sectionPath(locale, 'experience')}>{t.nav.experience}</a>
+      <!-- <a href={sectionPath(locale, 'work')}>{t.nav.work}</a> -->
+      <a href={sectionPath(locale, 'lab')}>{t.nav.lab}</a>
+      <a href={sectionPath(locale, 'contact')}>{t.nav.contact}</a>
     </nav>
 
     <div class="footer-links">

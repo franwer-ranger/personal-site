@@ -1,5 +1,5 @@
 ---
-import { getTranslations, getLocalizedPath, homePath, type Locale } from '../i18n/ui';
+import { getTranslations, getLocalizedPath, homePath, sectionPath, type Locale } from '../i18n/ui';
 
 interface Props {
   locale: Locale;
@@ -11,9 +11,9 @@ const currentPath = Astro.url.pathname;
 const otherLocale: Locale = locale === 'es' ? 'en' : 'es';
 const home = homePath(locale);
 const links = [
-  { href: `${home}#experience`, label: t.nav.experience },
-  // { href: `${home}#work`, label: t.nav.work },
-  { href: `${home}#lab`, label: t.nav.lab },
+  { href: sectionPath(locale, 'experience'), label: t.nav.experience },
+  // { href: sectionPath(locale, 'work'), label: t.nav.work },
+  { href: sectionPath(locale, 'lab'), label: t.nav.lab },
 ];
 ---
 
@@ -40,7 +40,7 @@ const links = [
       >
         {otherLocale.toUpperCase()}
       </a>
-      <a href={`${home}#contact`} class="nav-contact">{t.nav.contact}</a>
+      <a href={sectionPath(locale, 'contact')} class="nav-contact">{t.nav.contact}</a>
     </div>
 
     <details class="mobile-menu">
@@ -51,7 +51,7 @@ const links = [
       </summary>
       <nav aria-label={t.nav.ariaLabel}>
         {links.map((link) => <a href={link.href} onclick="this.closest('details')?.removeAttribute('open')">{link.label}</a>)}
-        <a href={`${home}#contact`} onclick="this.closest('details')?.removeAttribute('open')">{t.nav.contact}</a>
+        <a href={sectionPath(locale, 'contact')} onclick="this.closest('details')?.removeAttribute('open')">{t.nav.contact}</a>
         <a href={getLocalizedPath(currentPath, otherLocale)} hreflang={otherLocale} onclick="this.closest('details')?.removeAttribute('open')">
           {t.languageNames[otherLocale]}
         </a>

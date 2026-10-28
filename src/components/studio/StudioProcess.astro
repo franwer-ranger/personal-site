@@ -1,0 +1,71 @@
+---
+import { getTranslations, type Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale).studio.process;
+---
+
+<section id="como-trabajo" class="section page process" aria-labelledby="process-title">
+  <div class="section-head">
+    <p class="kicker">{t.kicker}</p>
+    <h2 id="process-title" class="title">{t.title}</h2>
+  </div>
+  <ol class="steps" role="list">
+    {
+      t.steps.map((step, index) => (
+        <li class="step">
+          <span class="number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+          <h3>{step.title}</h3>
+          <p class="lead">{step.text}</p>
+        </li>
+      ))
+    }
+  </ol>
+</section>
+
+<style>
+  .process {
+    display: grid;
+    gap: var(--spacing-12);
+  }
+
+  .steps {
+    display: grid;
+    gap: var(--spacing-4);
+  }
+
+  .step {
+    display: grid;
+    align-content: start;
+    gap: var(--spacing-4);
+    padding: var(--spacing-8);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+  }
+
+  .number {
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-5);
+  }
+
+  h3 {
+    color: var(--color-ink);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-8);
+    text-wrap: balance;
+  }
+
+  @media (min-width: 1024px) {
+    .steps {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

@@ -1,0 +1,102 @@
+---
+import { getTranslations, getLocalizedPath, isLocale, locales, type Locale } from '../i18n/ui';
+import { profile } from '../config/profile';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  /** Ruta absoluta dentro de public/, 1200 × 630. */
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogType?: 'website' | 'article';
+  structuredData?: Record<string, unknown>;
+  themeColor?: string;
+}
+
+const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : 'es';
+const t = getTranslations(locale);
+const {
+  title = t.meta.title,
+  description = t.meta.description,
+  ogImage = `/og-default-${locale}.png`,
+  ogImageAlt = t.meta.ogImageAlt,
+  ogType = 'website',
+  structuredData,
+  themeColor = '#f7f8fb',
+} = Astro.props;
+
+// `Astro.site` está fijado en astro.config.mjs; el fallback evita que un build
+// suelto publique canonicals de localhost.
+const site = Astro.site ?? new URL('https://franbarahona.dev');
+// Sin barra final salvo la raíz, que es como enlaza el propio sitio.
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const canonical = new URL(path, site);
+const alternates = locales.map((target) => ({
+  hreflang: target,
+  href: new URL(getLocalizedPath(path, target), site).href,
+}));
+const defaultAlternate = alternates.find((alternate) => alternate.hreflang === 'es')!;
+const ogImageUrl = new URL(ogImage, site);
+const ogLocales = { es: 'es_ES', en: 'en_GB' } as const;
+const personId = new URL('/#person', site).href;
+const person = {
+  '@type': 'Person',
+  '@id': personId,
+  name: profile.name,
+  url: new URL('/', site).href,
+  jobTitle: 'Product Engineer',
+  description: t.meta.description,
+  sameAs: [profile.linkedin, profile.github],
+  knowsAbout: ['Product Engineering', 'React', 'TypeScript', 'Ruby on Rails', 'Full-stack development', 'AI-assisted software development'],
+};
+const pageEntity = structuredData ?? {
+  '@type': 'ProfilePage',
+  '@id': `${canonical.href}#profile`,
+  url: canonical.href,
+  name: title,
+  description,
+  inLanguage: locale,
+  mainEntity: { '@id': personId },
+};
+const jsonLd = JSON.stringify({ '@context': 'https://schema.org', '@graph': [person, pageEntity] }).replace(/</g, '\\u003c');
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content={t.meta.keywords} />
+<meta name="generator" content={Astro.generator} />
+<meta name="theme-color" content={themeColor} />
+<meta name="color-scheme" content="light" />
+
+<link rel="canonical" href={canonical.href} />
+{alternates.map((alternate) => <link rel="alternate" hreflang={alternate.hreflang} href={alternate.href} />)}
+<link rel="alternate" hreflang="x-default" href={defaultAlternate.href} />
+
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content={t.meta.siteName} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical.href} />
+<meta property="og:image" content={ogImageUrl.href} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={ogImageAlt} />
+<meta property="og:locale" content={ogLocales[locale]} />
+<meta property="og:locale:alternate" content={ogLocales[locale === 'es' ? 'en' : 'es']} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl.href} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
+
+<link rel="icon" href="/favicon.ico" sizes="48x48" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+<script is:inline type="application/ld+json" set:html={jsonLd} />

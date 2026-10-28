@@ -197,6 +197,191 @@
     "stack": "Astro · TypeScript",
     "rights": "Todos los derechos reservados"
   },
+  "studio": {
+    "meta": {
+      "title": "Fran Barahona — Webs, apps y automatizaciones para negocios pequeños",
+      "description": "Hago webs, apps y automatizaciones para negocios pequeños. Me explicas cómo trabajas hoy y te propongo qué cambiar, con precio y plazo por escrito."
+    },
+    "nav": {
+      "ariaLabel": "Navegación principal",
+      "skipToContent": "Saltar al contenido",
+      "home": "Inicio",
+      "links": {
+        "services": "Servicios",
+        "process": "Cómo trabajo",
+        "products": "Productos",
+        "faq": "Preguntas"
+      },
+      "cta": "Cuéntame tu caso"
+    },
+    "contactSubject": "Mi caso",
+    "hero": {
+      "chip": "Software a medida para negocios pequeños",
+      "title": [
+        "Menos tareas repetidas,",
+        "sin saber de tecnología"
+      ],
+      "lead": "Hago webs, apps y automatizaciones. Me explicas cómo trabajas hoy y te propongo qué cambiar, con precio y plazo por escrito.",
+      "proof": "Casi seis años haciendo software para empresas · Ahora llevo la web de Webel"
+    },
+    "visual": {
+      "label": "Capturas de Relay, la guardería de perros y Agendao",
+      "relayAlt": "Relay, una app de Mac para dirigir agentes de programación",
+      "guarderiaAlt": "App de la guardería de perros con una ficha de reserva",
+      "bookingBusiness": "Agendao · Peluquería Marta",
+      "bookingTitle": "Elige hora para el jueves"
+    },
+    "services": {
+      "kicker": "Servicios",
+      "title": [
+        "De hacerlo a mano",
+        "a que salga solo"
+      ],
+      "beforeLabel": "Hoy",
+      "before": [
+        "Confirmas las citas una a una por WhatsApp.",
+        "Copias los pedidos del correo a un Excel.",
+        "Tu web dice cosas que ya no son verdad."
+      ],
+      "afterLabel": "Después",
+      "after": [
+        "Tus clientes reservan solos y reciben un recordatorio.",
+        "Cada pedido entra directo en tu hoja, sin copiar nada.",
+        "Cambias la web tú, o me escribes y lo cambio yo."
+      ]
+    },
+    "tagline": {
+      "lead": "Si lo repites cada semana, seguramente se pueda automatizar.",
+      "tail": "Y te lo explico sin tecnicismos."
+    },
+    "benefits": [
+      {
+        "icon": "clock",
+        "title": "Recuperas horas",
+        "text": "Citas, recordatorios y facturas que salen solas en vez de una a una."
+      },
+      {
+        "icon": "chat",
+        "title": "Hablas con quien lo hace",
+        "text": "Sin comerciales ni intermediarios. Me escribes y te contesto yo."
+      },
+      {
+        "icon": "eye",
+        "title": "Lo ves avanzar",
+        "text": "Te enseño lo que llevo hecho y lo puedes probar desde la primera semana."
+      }
+    ],
+    "process": {
+      "kicker": "Cómo trabajo",
+      "title": "Tres pasos, sin sorpresas",
+      "steps": [
+        {
+          "title": "Me cuentas cómo trabajas hoy",
+          "text": "Una llamada o un café. Qué haces, qué te quita tiempo y qué has probado ya."
+        },
+        {
+          "title": "Te propongo una solución",
+          "text": "Qué haría, en cuánto tiempo y por cuánto. Por escrito y sin letra pequeña."
+        },
+        {
+          "title": "Lo construyo y lo dejo funcionando",
+          "text": "Lo pruebas mientras avanza. Cuando está listo, sigo ahí si algo falla."
+        }
+      ]
+    },
+    "proof": {
+      "kicker": "Experiencia",
+      "title": "Ya lo he hecho para otros",
+      "intro": "Casi seis años haciendo software en startups. Ahora hago lo mismo para negocios como el tuyo.",
+      "clients": [
+        {
+          "name": "Webel",
+          "label": "Marketplace de servicios a domicilio · Ahora",
+          "text": "Llevo todo el departamento web: la app para clientes, la plataforma para empresas, el panel interno, el SEO y los emails."
+        },
+        {
+          "name": "AuroraJobs",
+          "label": "Empleo para universitarios · Antes",
+          "text": "Construí la aplicación completa para estudiantes, empresas y universidades, desde la base de datos hasta la pantalla."
+        }
+      ]
+    },
+    "products": {
+      "kicker": "Productos",
+      "title": "También hago mis propios productos",
+      "items": [
+        {
+          "name": "Agendao",
+          "text": "Reservas online para peluquerías y salones.",
+          "action": "Lista de espera",
+          "kind": "waitlist"
+        },
+        {
+          "name": "Relay",
+          "text": "App de Mac para dirigir agentes de programación. Pago único.",
+          "action": "Lista de espera",
+          "kind": "waitlist"
+        },
+        {
+          "name": "Guardería de perros",
+          "text": "Encuentra y reserva guardería para tu perro en Madrid.",
+          "action": "Próximamente",
+          "kind": "status"
+        },
+        {
+          "name": "Postgram",
+          "text": "Postales que solo se abren en el sitio donde se hicieron.",
+          "action": "App en camino",
+          "kind": "status"
+        },
+        {
+          "name": "Open source",
+          "text": "Maker Tracker y Fountly. También he echado una mano en My Potential, de Romer y Chris.",
+          "action": "Ver en GitHub",
+          "kind": "github"
+        }
+      ],
+      "waitlistSubject": "Lista de espera de {product}"
+    },
+    "faq": {
+      "kicker": "Preguntas",
+      "title": "Lo que me suelen preguntar",
+      "items": [
+        {
+          "q": "¿Tengo que saber de tecnología?",
+          "a": "No. Me lo explicas como a alguien que empieza a trabajar contigo y yo me encargo del resto."
+        },
+        {
+          "q": "¿Cuánto cuesta?",
+          "a": "Depende del trabajo. Te doy un precio cerrado por escrito antes de empezar."
+        },
+        {
+          "q": "¿Cuánto se tarda?",
+          "a": "Una automatización sencilla, semanas. Una app, algo más. El plazo va en la propuesta."
+        },
+        {
+          "q": "¿Y si luego algo falla?",
+          "a": "Me escribes y lo miro. Si quieres tenerlo siempre cubierto, hay mantenimiento mensual."
+        },
+        {
+          "q": "¿Puedo seguir usando mis programas de siempre?",
+          "a": "Casi siempre sí. Si hace falta algo nuevo, te explico por qué antes de cambiar nada."
+        },
+        {
+          "q": "¿Trabajas con negocios fuera de Madrid?",
+          "a": "Sí. Casi todo se puede hacer por videollamada."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Cuéntame qué te quita tiempo",
+      "text": "La primera conversación es gratis y sin compromiso."
+    },
+    "footer": {
+      "cv": "CV",
+      "social": "Perfiles y CV"
+    }
+  },
   "external": "Se abre en otra web",
   "languageNames": {
     "es": "Español",

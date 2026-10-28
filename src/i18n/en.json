@@ -197,6 +197,191 @@
     "stack": "Astro · TypeScript",
     "rights": "All rights reserved"
   },
+  "studio": {
+    "meta": {
+      "title": "Fran Barahona — Websites, apps and automations for small businesses",
+      "description": "I build websites, apps and automations for small businesses. You tell me how you work today and I suggest what to change, with a price and timeline in writing."
+    },
+    "nav": {
+      "ariaLabel": "Main navigation",
+      "skipToContent": "Skip to content",
+      "home": "Home",
+      "links": {
+        "services": "Services",
+        "process": "How I work",
+        "products": "Products",
+        "faq": "FAQ"
+      },
+      "cta": "Tell me what you need"
+    },
+    "contactSubject": "My project",
+    "hero": {
+      "chip": "Custom software for small businesses",
+      "title": [
+        "Fewer repetitive tasks,",
+        "no tech skills needed"
+      ],
+      "lead": "I build websites, apps and automations. You tell me how you work today and I suggest what to change, with a price and timeline in writing.",
+      "proof": "Almost six years building software for companies · I currently run the web side at Webel"
+    },
+    "visual": {
+      "label": "Screens from Relay, the dog daycare app and Agendao",
+      "relayAlt": "Relay, a Mac app for directing coding agents",
+      "guarderiaAlt": "Dog daycare app showing a booking page",
+      "bookingBusiness": "Agendao · Marta's Hair Salon",
+      "bookingTitle": "Pick a time on Thursday"
+    },
+    "services": {
+      "kicker": "Services",
+      "title": [
+        "From doing it by hand",
+        "to it running itself"
+      ],
+      "beforeLabel": "Today",
+      "before": [
+        "You confirm appointments one by one on WhatsApp.",
+        "You copy orders from your inbox into a spreadsheet.",
+        "Your website says things that are no longer true."
+      ],
+      "afterLabel": "After",
+      "after": [
+        "Customers book on their own and get a reminder.",
+        "Every order goes straight into your sheet. No copying.",
+        "You update the site yourself, or message me and I'll do it."
+      ]
+    },
+    "tagline": {
+      "lead": "If you do it every week, it can probably be automated.",
+      "tail": "And I'll explain it without the jargon."
+    },
+    "benefits": [
+      {
+        "icon": "clock",
+        "title": "Get hours back",
+        "text": "Appointments, reminders and invoices go out on their own instead of one at a time."
+      },
+      {
+        "icon": "chat",
+        "title": "Talk to the person doing the work",
+        "text": "No salespeople or middlemen. You write to me and I answer."
+      },
+      {
+        "icon": "eye",
+        "title": "Watch it take shape",
+        "text": "I show you what I've built so far, and you can try it from the first week."
+      }
+    ],
+    "process": {
+      "kicker": "How I work",
+      "title": "Three steps, no surprises",
+      "steps": [
+        {
+          "title": "You tell me how you work today",
+          "text": "A call or a coffee. What you do, what eats your time and what you've already tried."
+        },
+        {
+          "title": "I propose a solution",
+          "text": "What I'd build, how long it takes and what it costs. In writing, with no fine print."
+        },
+        {
+          "title": "I build it and get it running",
+          "text": "You try it as it comes together. Once it's live, I'm still around if something breaks."
+        }
+      ]
+    },
+    "proof": {
+      "kicker": "Experience",
+      "title": "I've done this for others",
+      "intro": "Almost six years building software at startups. Now I do the same for businesses like yours.",
+      "clients": [
+        {
+          "name": "Webel",
+          "label": "Home services marketplace · Now",
+          "text": "I run the whole web department: the customer app, the business platform, the internal dashboard, SEO and emails."
+        },
+        {
+          "name": "AuroraJobs",
+          "label": "Jobs for university students · Before",
+          "text": "I built the full application for students, companies and universities, from the database to the screen."
+        }
+      ]
+    },
+    "products": {
+      "kicker": "Products",
+      "title": "I also build my own products",
+      "items": [
+        {
+          "name": "Agendao",
+          "text": "Online booking for hair and beauty salons.",
+          "action": "Join the waitlist",
+          "kind": "waitlist"
+        },
+        {
+          "name": "Relay",
+          "text": "Mac app for directing coding agents. One-time purchase.",
+          "action": "Join the waitlist",
+          "kind": "waitlist"
+        },
+        {
+          "name": "Guardería de perros",
+          "text": "Find and book dog daycare in Madrid.",
+          "action": "Coming soon",
+          "kind": "status"
+        },
+        {
+          "name": "Postgram",
+          "text": "Postcards that only open in the place they were made.",
+          "action": "App on the way",
+          "kind": "status"
+        },
+        {
+          "name": "Open source",
+          "text": "Maker Tracker and Fountly. I also helped out on My Potential, by Romer and Chris.",
+          "action": "See on GitHub",
+          "kind": "github"
+        }
+      ],
+      "waitlistSubject": "{product} waitlist"
+    },
+    "faq": {
+      "kicker": "FAQ",
+      "title": "What people usually ask me",
+      "items": [
+        {
+          "q": "Do I need to know about tech?",
+          "a": "No. Explain it to me the way you would to someone starting at your business, and I'll handle the rest."
+        },
+        {
+          "q": "How much does it cost?",
+          "a": "It depends on the job. You get a fixed price in writing before I start."
+        },
+        {
+          "q": "How long does it take?",
+          "a": "A simple automation takes weeks. An app takes a bit longer. The timeline is in the proposal."
+        },
+        {
+          "q": "What if something breaks later?",
+          "a": "Message me and I'll look at it. If you want it covered at all times, there's a monthly maintenance plan."
+        },
+        {
+          "q": "Can I keep using the tools I already have?",
+          "a": "Almost always. If you need something new, I'll explain why before changing anything."
+        },
+        {
+          "q": "Do you work with businesses outside Madrid?",
+          "a": "Yes. Almost everything can be done over video call."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Tell me what eats up your time",
+      "text": "The first conversation is free, with no commitment."
+    },
+    "footer": {
+      "cv": "CV",
+      "social": "Profiles and CV"
+    }
+  },
   "external": "Opens on another site",
   "languageNames": {
     "es": "Español",

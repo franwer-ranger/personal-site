@@ -1,0 +1,64 @@
+---
+import { getTranslations, type Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale).studio.faq;
+---
+
+<section id="preguntas" class="section page faq" aria-labelledby="faq-title">
+  <div class="section-head">
+    <p class="kicker">{t.kicker}</p>
+    <h2 id="faq-title" class="title">{t.title}</h2>
+  </div>
+  <dl class="items">
+    {
+      t.items.map((item) => (
+        <div class="item">
+          <dt>{item.q}</dt>
+          <dd class="lead">{item.a}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</section>
+
+<style>
+  .faq {
+    display: grid;
+    gap: var(--spacing-8);
+  }
+
+  .item {
+    display: grid;
+    gap: var(--spacing-2);
+    padding-block: var(--spacing-6);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .item:last-child {
+    border-bottom: 0;
+  }
+
+  dt {
+    color: var(--color-ink);
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-7);
+  }
+
+  @media (min-width: 1024px) {
+    .faq {
+      grid-template-columns: 400px 1fr;
+      align-items: start;
+      gap: var(--spacing-16);
+    }
+
+    .items {
+      margin-top: calc(-1 * var(--spacing-6));
+    }
+  }
+</style>

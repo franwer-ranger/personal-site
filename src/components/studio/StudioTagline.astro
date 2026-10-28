@@ -1,0 +1,68 @@
+---
+import { getTranslations, type Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale).studio.tagline;
+const lead = t.lead.split(' ');
+const tail = t.tail.split(' ');
+const total = lead.length + tail.length;
+---
+
+<!-- Con scroll-driven animations, cada palabra se enciende al bajar. Sin ellas
+     (o con movimiento reducido) se queda como en Paper: la segunda frase atenuada. -->
+<section class="band" aria-label={`${t.lead} ${t.tail}`}>
+  <p class="section page tagline" aria-hidden="true" style={`--total: ${total}`}>
+    {lead.map((word, i) => <span class="word" style={`--i: ${i}`}>{word} </span>)}
+    {tail.map((word, i) => <span class="word dim" style={`--i: ${lead.length + i}`}>{word} </span>)}
+  </p>
+</section>
+
+<style>
+  .tagline {
+    max-width: var(--container-statement);
+    color: var(--color-ink);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-tighter);
+    line-height: var(--leading-10);
+    text-align: center;
+    text-wrap: balance;
+    view-timeline-name: --tagline;
+  }
+
+  .dim {
+    color: color-mix(in srgb, var(--color-ink) var(--opacity-dim), transparent);
+  }
+
+  @media (min-width: 768px) {
+    .tagline {
+      font-size: var(--text-5xl);
+      line-height: var(--leading-12);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .word {
+        animation: light-up linear both;
+        animation-timeline: --tagline;
+        animation-range:
+          cover calc(25% + var(--i) / var(--total) * 30%)
+          cover calc(28% + var(--i) / var(--total) * 30%);
+      }
+    }
+  }
+
+  @keyframes light-up {
+    from {
+      color: color-mix(in srgb, var(--color-ink) var(--opacity-dim), transparent);
+    }
+    to {
+      color: var(--color-ink);
+    }
+  }
+</style>

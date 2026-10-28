@@ -1,0 +1,56 @@
+---
+import ExternalLink from '../ExternalLink.astro';
+import { profile } from '../../config/profile';
+import { aboutPath, getLocalizedPath, getTranslations, type Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const all = getTranslations(locale);
+const t = all.studio;
+const otherLocale: Locale = locale === 'es' ? 'en' : 'es';
+const year = new Date().getFullYear();
+---
+
+<footer class="page footer">
+  <p>© {year} Fran Barahona</p>
+  <nav aria-label={t.footer.social}>
+    <ExternalLink locale={locale} href={profile.linkedin} label="LinkedIn" />
+    <ExternalLink locale={locale} href={profile.github} label="GitHub" />
+    <a href={aboutPath(locale)}>{t.footer.cv}</a>
+    <a href={getLocalizedPath(Astro.url.pathname, otherLocale)} hreflang={otherLocale}>
+      {all.languageNames[otherLocale]}
+    </a>
+  </nav>
+</footer>
+
+<style>
+  .footer {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    gap: var(--spacing-4) var(--spacing-6);
+    padding-block: var(--spacing-12);
+    color: var(--color-text-subtle);
+    font-size: var(--text-sm);
+    line-height: var(--leading-5);
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2) var(--spacing-6);
+  }
+
+  nav :global(a) {
+    color: var(--color-text-muted);
+  }
+
+  @media (hover: hover) {
+    nav :global(a:hover) {
+      color: var(--color-ink);
+    }
+  }
+</style>

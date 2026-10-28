@@ -1,0 +1,68 @@
+---
+import { getTranslations, type Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale).studio.benefits;
+---
+
+<section class="page benefits" aria-label={t.map((item) => item.title).join(', ')}>
+  {
+    t.map((item) => (
+      <div class="benefit">
+        <svg width="32" height="32" viewBox="0 0 256 256" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+          {item.icon === 'clock' && (
+            <>
+              <circle cx="128" cy="128" r="96" />
+              <polyline points="128,72 128,128 168,152" />
+            </>
+          )}
+          {item.icon === 'chat' && <path d="M216 48H40a8 8 0 0 0-8 8v160l40-32h144a8 8 0 0 0 8-8V56a8 8 0 0 0-8-8Z" />}
+          {item.icon === 'eye' && (
+            <>
+              <path d="M128 56c-80 0-112 72-112 72s32 72 112 72 112-72 112-72-32-72-112-72Z" />
+              <circle cx="128" cy="128" r="40" />
+            </>
+          )}
+        </svg>
+        <h3>{item.title}</h3>
+        <p class="lead">{item.text}</p>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  .benefits {
+    display: grid;
+    gap: var(--spacing-10);
+    padding-block: var(--section-space) var(--spacing-8);
+  }
+
+  .benefit {
+    display: grid;
+    gap: var(--spacing-4);
+  }
+
+  svg {
+    color: var(--color-primary);
+  }
+
+  h3 {
+    color: var(--color-ink);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-8);
+  }
+
+  @media (min-width: 1024px) {
+    .benefits {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-12);
+      padding-bottom: var(--spacing-12);
+    }
+  }
+</style>

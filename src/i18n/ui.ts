@@ -18,10 +18,14 @@ export function getTranslations(locale: string | undefined): Translations {
 
 /**
  * Given the current path and the target locale, returns the equivalent
- * localized path. Handles the home page and project detail routes.
+ * localized path. Handles the home page, the CV page and project detail routes.
  */
 export function getLocalizedPath(currentPath: string, target: Locale): string {
   const clean = currentPath.replace(/\/+$/, '') || '/';
+
+  if (clean === aboutPath('es') || clean === aboutPath('en')) {
+    return aboutPath(target);
+  }
 
   // Project detail pages
   for (const [esPrefix, enPrefix] of [[ '/proyectos', '/en/projects' ]] as const) {
@@ -51,7 +55,12 @@ export function fill(template: string, values: Record<string, string>): string {
   return template.replace(/\{(\w+)\}/g, (_, key: string) => values[key] ?? '');
 }
 
-/** Enlace a una sección de la portada del idioma actual. */
+/** El CV: experiencia, Lab y contacto para quien quiere contratarme. */
+export function aboutPath(locale: Locale): string {
+  return locale === 'en' ? '/en/about' : '/sobre-mi';
+}
+
+/** Enlace a una sección del CV del idioma actual. */
 export function sectionPath(locale: Locale, anchor: string): string {
-  return `${homePath(locale)}#${anchor}`;
+  return `${aboutPath(locale)}#${anchor}`;
 }

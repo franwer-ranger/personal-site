@@ -1,0 +1,29 @@
+---
+import '@fontsource-variable/geist';
+import '@fontsource-variable/geist-mono';
+import '../styles/studio.css';
+import SeoHead, { type Props as SeoProps } from '../components/SeoHead.astro';
+import StudioNav from '../components/studio/StudioNav.astro';
+import StudioFooter from '../components/studio/StudioFooter.astro';
+import { getTranslations, isLocale, type Locale } from '../i18n/ui';
+
+type Props = SeoProps;
+
+const locale: Locale = isLocale(Astro.currentLocale) ? Astro.currentLocale : 'es';
+const t = getTranslations(locale).studio;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <SeoHead themeColor="#ffffff" {...Astro.props} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t.nav.skipToContent}</a>
+    <StudioNav locale={locale} />
+    <main id="main">
+      <slot />
+    </main>
+    <StudioFooter locale={locale} />
+  </body>
+</html>

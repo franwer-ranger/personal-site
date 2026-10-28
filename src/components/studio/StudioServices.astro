@@ -1,0 +1,103 @@
+---
+import { getTranslations, type Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale).studio.services;
+---
+
+<section id="servicios" class="section page services" aria-labelledby="services-title">
+  <div class="section-head centered">
+    <p class="kicker">{t.kicker}</p>
+    <h2 id="services-title" class="title">{t.title[0]}<br />{t.title[1]}</h2>
+  </div>
+  <div class="compare">
+    <div class="panel before">
+      <h3>{t.beforeLabel}</h3>
+      <ul role="list">{t.before.map((item) => <li>{item}</li>)}</ul>
+    </div>
+    <div class="panel after">
+      <h3>{t.afterLabel}</h3>
+      <ul role="list">{t.after.map((item) => <li>{item}</li>)}</ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    display: grid;
+    gap: var(--spacing-12);
+  }
+
+  .centered {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .compare {
+    display: grid;
+    gap: var(--spacing-4);
+  }
+
+  .panel {
+    display: grid;
+    align-content: start;
+    gap: var(--spacing-6);
+    padding: var(--spacing-8);
+    border-radius: var(--radius-xl);
+  }
+
+  .panel ul {
+    display: grid;
+    gap: var(--spacing-6);
+  }
+
+  h3 {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-5);
+  }
+
+  li {
+    font-size: var(--text-xl);
+    line-height: var(--leading-7);
+  }
+
+  .before {
+    background: var(--color-muted);
+  }
+
+  .before h3 {
+    color: var(--color-text-subtle);
+  }
+
+  .before li {
+    color: var(--color-text);
+  }
+
+  .after {
+    background: var(--color-primary);
+  }
+
+  .after h3 {
+    color: var(--color-primary-soft);
+  }
+
+  .after li {
+    color: var(--color-on-primary);
+    font-weight: var(--font-weight-medium);
+  }
+
+  @media (min-width: 768px) {
+    .compare {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .panel {
+      padding: var(--spacing-10);
+    }
+  }
+</style>

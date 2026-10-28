@@ -1,0 +1,272 @@
+---
+import { Image } from 'astro:assets';
+import relay from '../../assets/studio/relay.png';
+import guarderia from '../../assets/studio/guarderia.png';
+import { getTranslations, type Locale } from '../../i18n/ui';
+import { mailtoHref } from '../../lib/contact';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale).studio;
+const slots = ['10:00', '11:30', '12:15', '17:00'];
+---
+
+<section class="hero page" aria-labelledby="hero-title">
+  <p class="chip"><span class="dot" aria-hidden="true"></span>{t.hero.chip}</p>
+  <h1 id="hero-title">{t.hero.title[0]}<br />{t.hero.title[1]}</h1>
+  <p class="hero-lead">{t.hero.lead}</p>
+  <div class="hero-actions">
+    <a href={mailtoHref(t.contactSubject)} class="button">{t.nav.cta}</a>
+    <p class="proof">{t.hero.proof}</p>
+  </div>
+</section>
+
+<figure class="visual page" aria-label={t.visual.label}>
+  <Image
+    class="relay"
+    src={relay}
+    alt={t.visual.relayAlt}
+    widths={[480, 960, 1376]}
+    sizes="(min-width: 1024px) 688px, 480px"
+    loading="eager"
+  />
+  <div class="phone">
+    <Image src={guarderia} alt={t.visual.guarderiaAlt} widths={[320, 640]} sizes="(min-width: 1024px) 384px, 305px" />
+  </div>
+  <div class="booking" aria-hidden="true">
+    <p class="booking-business">{t.visual.bookingBusiness}</p>
+    <p class="booking-title">{t.visual.bookingTitle}</p>
+    <ul class="slots" role="list">
+      {slots.map((slot, index) => <li class:list={{ selected: index === 1 }}>{slot}</li>)}
+    </ul>
+  </div>
+</figure>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-6);
+    padding-block: var(--spacing-16) var(--spacing-12);
+    text-align: center;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-1) var(--spacing-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-5);
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: var(--radius-full);
+    background: var(--color-success);
+  }
+
+  h1 {
+    max-width: var(--container-prose);
+    background: linear-gradient(90deg, #000000, #666666);
+    background-clip: text;
+    color: transparent;
+    font-size: var(--text-4xl);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--tracking-tightest);
+    line-height: var(--leading-10);
+  }
+
+  .hero-lead {
+    max-width: var(--container-prose);
+    color: var(--color-text-muted);
+    font-size: var(--text-lg);
+    line-height: var(--leading-7);
+  }
+
+  .hero-actions {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding-top: var(--spacing-2);
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    padding-block: var(--spacing-4);
+  }
+
+  .proof {
+    color: var(--color-text-subtle);
+    font-size: var(--text-sm);
+    line-height: var(--leading-5);
+  }
+
+  /* Composición: en móvil se monta sobre un escenario de 342 × 420 centrado;
+     Relay se sale por la derecha y el contenedor lo recorta. */
+  .visual {
+    --stage-left: max(0px, (100% - 342px) / 2);
+
+    position: relative;
+    height: 420px;
+    overflow: clip;
+    border-radius: var(--radius-xl);
+    background: var(--color-muted);
+  }
+
+  .visual > * {
+    position: absolute;
+  }
+
+  .relay {
+    top: 32px;
+    left: calc(var(--stage-left) + 120px);
+    width: 480px;
+    max-width: none;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .phone {
+    top: 88px;
+    left: calc(var(--stage-left) + 150px);
+    width: 200px;
+    aspect-ratio: 200 / 412;
+    overflow: clip;
+    border-radius: 32px;
+    box-shadow: 0 32px 64px -24px rgb(0 0 0 / 0.35);
+  }
+
+  /* El PNG lleva margen alrededor del marco del móvil; se recorta con estos
+     desplazamientos, sacados de Paper. */
+  .phone img {
+    position: absolute;
+    top: -9.7%;
+    left: -26%;
+    width: 152.5%;
+    max-width: none;
+    height: auto;
+  }
+
+  .booking {
+    top: 236px;
+    left: calc(var(--stage-left) + 16px);
+    display: grid;
+    width: 264px;
+    gap: var(--spacing-3);
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    background: var(--color-bg);
+    box-shadow: var(--shadow-lift);
+    text-align: left;
+  }
+
+  .booking-business {
+    color: var(--color-text-subtle);
+    font-size: var(--text-sm);
+    line-height: var(--leading-5);
+  }
+
+  .booking-title {
+    color: var(--color-ink);
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-7);
+  }
+
+  .slots {
+    display: flex;
+    gap: var(--spacing-2);
+  }
+
+  .slots li {
+    padding: var(--spacing-2) var(--spacing-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-ink);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-5);
+  }
+
+  .slots li.selected {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+  }
+
+  .slots li:last-child {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      padding-block: var(--spacing-24) var(--spacing-16);
+    }
+
+    h1 {
+      font-size: var(--text-6xl);
+      line-height: var(--leading-15);
+    }
+
+    .hero-lead {
+      font-size: var(--text-xl);
+      line-height: var(--leading-7);
+    }
+
+    .hero-actions .button {
+      width: auto;
+      padding-block: var(--spacing-3);
+    }
+  }
+
+  /* Escritorio: posiciones en porcentaje sobre el lienzo de 1248 × 560. */
+  @media (min-width: 1024px) {
+    .visual {
+      height: auto;
+      aspect-ratio: 1248 / 560;
+    }
+
+    .relay {
+      top: 11.43%;
+      left: 22.44%;
+      width: 55.13%;
+    }
+
+    .phone {
+      top: 20%;
+      left: 73.72%;
+      width: 20.19%;
+      aspect-ratio: 252 / 520;
+      border-radius: 40px;
+    }
+
+    .booking {
+      top: 50%;
+      left: 5.13%;
+      width: 320px;
+      padding: var(--spacing-6);
+    }
+
+    .booking-title {
+      font-size: var(--text-xl);
+    }
+
+    .slots li:last-child {
+      display: block;
+    }
+  }
+</style>

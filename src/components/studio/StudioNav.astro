@@ -1,0 +1,105 @@
+---
+import { getTranslations, homePath, type Locale } from '../../i18n/ui';
+import { mailtoHref } from '../../lib/contact';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale).studio;
+const links = [
+  { href: '#servicios', label: t.nav.links.services },
+  { href: '#como-trabajo', label: t.nav.links.process },
+  { href: '#productos', label: t.nav.links.products },
+  { href: '#preguntas', label: t.nav.links.faq },
+];
+---
+
+<header class="nav-wrap">
+  <div class="nav">
+    <a href={homePath(locale)} class="brand" aria-label={`Fran Barahona · ${t.nav.home}`}>
+      <img src="/brand-icon.svg" alt="" width="32" height="32" />
+      <span>Fran Barahona</span>
+    </a>
+    <nav aria-label={t.nav.ariaLabel} class="links">
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+    <a href={mailtoHref(t.contactSubject)} class="button button-sm">{t.nav.cta}</a>
+  </div>
+</header>
+
+<style>
+  .nav-wrap {
+    position: sticky;
+    z-index: 50;
+    top: var(--spacing-4);
+    display: flex;
+    justify-content: center;
+    padding-inline: var(--spacing-4);
+    margin-top: var(--spacing-4);
+  }
+
+  .nav {
+    display: flex;
+    width: 100%;
+    max-width: 358px;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-8);
+    padding: var(--spacing-2) var(--spacing-2) var(--spacing-2) var(--spacing-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: rgb(255 255 255 / var(--opacity-glass));
+    box-shadow: var(--shadow-float);
+    backdrop-filter: blur(16px);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--color-ink);
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-6);
+  }
+
+  .brand img {
+    border-radius: var(--radius-sm);
+  }
+
+  .links {
+    display: none;
+    gap: var(--spacing-6);
+  }
+
+  .links a {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-5);
+    transition: color var(--duration-hover) var(--ease-standard);
+  }
+
+  @media (hover: hover) {
+    .links a:hover {
+      color: var(--color-ink);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .nav-wrap {
+      margin-top: var(--spacing-6);
+    }
+
+    .nav {
+      width: auto;
+      max-width: none;
+    }
+
+    .links {
+      display: flex;
+    }
+  }
+</style>

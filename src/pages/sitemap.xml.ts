@@ -1,18 +1,21 @@
 import type { APIRoute } from 'astro';
 import { getProjects } from '../lib/data';
-import { homePath, projectPath, locales, type Locale } from '../i18n/ui';
+import { aboutPath, homePath, projectPath, locales, type Locale } from '../i18n/ui';
 
 type PathsByLocale = Record<Locale, string>;
 
 /**
- * Sitemap escrito a mano en lugar de con una integración: son diez URLs y así
+ * Sitemap escrito a mano en lugar de con una integración: son pocas URLs y así
  * cada entrada puede declarar sus alternates hreflang, que es lo que importa en
  * un sitio bilingüe.
  */
 export const GET: APIRoute = async ({ site }) => {
   const base = site ?? new URL('https://franbarahona.dev');
 
-  const entries: PathsByLocale[] = [{ es: homePath('es'), en: homePath('en') }];
+  const entries: PathsByLocale[] = [
+    { es: homePath('es'), en: homePath('en') },
+    { es: aboutPath('es'), en: aboutPath('en') },
+  ];
 
   // Las dos locales comparten slug, así que basta con recorrer una.
   for (const project of await getProjects('es')) {

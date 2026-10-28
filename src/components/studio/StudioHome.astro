@@ -1,0 +1,46 @@
+---
+import StudioLayout from '../../layouts/StudioLayout.astro';
+import StudioHero from './StudioHero.astro';
+import StudioServices from './StudioServices.astro';
+import StudioTagline from './StudioTagline.astro';
+import StudioBenefits from './StudioBenefits.astro';
+import StudioProcess from './StudioProcess.astro';
+import StudioProof from './StudioProof.astro';
+import StudioProducts from './StudioProducts.astro';
+import StudioFaq from './StudioFaq.astro';
+import StudioCta from './StudioCta.astro';
+import { getTranslations, type Locale } from '../../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale).studio;
+const site = Astro.site ?? new URL('https://franbarahona.dev');
+const url = new URL(Astro.url.pathname, site).href;
+---
+
+<StudioLayout
+  title={t.meta.title}
+  description={t.meta.description}
+  structuredData={{
+    '@type': 'WebPage',
+    '@id': `${url}#webpage`,
+    url,
+    name: t.meta.title,
+    description: t.meta.description,
+    inLanguage: locale,
+    about: { '@id': new URL('/#person', site).href },
+  }}
+>
+  <StudioHero locale={locale} />
+  <StudioServices locale={locale} />
+  <StudioTagline locale={locale} />
+  <StudioBenefits locale={locale} />
+  <StudioProcess locale={locale} />
+  <StudioProof locale={locale} />
+  <StudioProducts locale={locale} />
+  <StudioFaq locale={locale} />
+  <StudioCta locale={locale} />
+</StudioLayout>

@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/bricolage-grotesque';
 import { Image } from 'astro:assets';
 import relay from '../../assets/studio/relay.png';
 import guarderia from '../../assets/studio/guarderia.png';
@@ -11,20 +12,21 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = getTranslations(locale).studio;
-const slots = ['10:00', '11:30', '12:15', '17:00'];
+const slots = ['10:00', '13:00', '17:30', '19:00'];
+const picked = 2;
 ---
 
 <section class="hero page" aria-labelledby="hero-title">
-  <p class="chip"><span class="dot" aria-hidden="true"></span>{t.hero.chip}</p>
-  <h1 id="hero-title">{t.hero.title[0]}<br />{t.hero.title[1]}</h1>
-  <p class="hero-lead">{t.hero.lead}</p>
-  <div class="hero-actions">
+  <p class="chip enter"><span class="dot" aria-hidden="true"></span>{t.hero.chip}</p>
+  <h1 id="hero-title" class="enter" style="--i: 1">{t.hero.title[0]}<br />{t.hero.title[1]}</h1>
+  <p class="hero-lead enter" style="--i: 2">{t.hero.lead}</p>
+  <div class="hero-actions enter" style="--i: 3">
     <a href={mailtoHref(t.contactSubject)} class="button">{t.nav.cta}</a>
     <p class="proof">{t.hero.proof}</p>
   </div>
 </section>
 
-<figure class="visual page" aria-label={t.visual.label}>
+<figure class="visual page enter" style="--i: 4" aria-label={t.visual.label}>
   <Image
     class="relay"
     src={relay}
@@ -36,12 +38,23 @@ const slots = ['10:00', '11:30', '12:15', '17:00'];
   <div class="phone">
     <Image src={guarderia} alt={t.visual.guarderiaAlt} widths={[320, 640]} sizes="(min-width: 1024px) 384px, 305px" />
   </div>
+  <!-- Tarjeta con la marca de Agendao (file "Agendao" en Paper, 01 · Marca). -->
   <div class="booking" aria-hidden="true">
-    <p class="booking-business">{t.visual.bookingBusiness}</p>
-    <p class="booking-title">{t.visual.bookingTitle}</p>
+    <div class="salon">
+      <span class="avatar">{t.visual.salonInitials}</span>
+      <span class="salon-text">
+        <span class="salon-name">{t.visual.salon}</span>
+        <span class="salon-place">{t.visual.salonPlace}</span>
+      </span>
+    </div>
+    <div class="service">
+      <span class="service-name">{t.visual.service}</span>
+      <span class="service-price">{t.visual.price}</span>
+    </div>
     <ul class="slots" role="list">
-      {slots.map((slot, index) => <li class:list={{ selected: index === 1 }}>{slot}</li>)}
+      {slots.map((slot, index) => <li class:list={{ picked: index === picked }}>{slot}</li>)}
     </ul>
+    <span class="sticker">{t.visual.sticker}</span>
   </div>
 </figure>
 
@@ -162,29 +175,82 @@ const slots = ['10:00', '11:30', '12:15', '17:00'];
   }
 
   .booking {
-    top: 236px;
+    --agendao-pink: #ff2e74;
+    --agendao-yellow: #ffd23f;
+    --agendao-gray: #f2f2f2;
+    --agendao-muted: #5c5c5c;
+    --agendao-display: 'Bricolage Grotesque Variable', var(--font-sans);
+
+    top: 200px;
     left: calc(var(--stage-left) + 16px);
     display: grid;
     width: 264px;
     gap: var(--spacing-3);
-    padding: 20px;
-    border-radius: var(--radius-lg);
+    padding: var(--spacing-4);
+    border: 2px solid var(--color-ink);
+    border-radius: var(--radius-xl);
     background: var(--color-bg);
-    box-shadow: var(--shadow-lift);
+    box-shadow: 6px 6px 0 var(--color-ink);
+    color: var(--color-ink);
     text-align: left;
   }
 
-  .booking-business {
-    color: var(--color-text-subtle);
+  .salon {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+  }
+
+  .avatar {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: var(--radius-full);
+    background: var(--agendao-yellow);
+    font-family: var(--agendao-display);
     font-size: var(--text-sm);
+    font-weight: 800;
+  }
+
+  .salon-text {
+    display: grid;
+    gap: 2px;
+  }
+
+  .salon-name {
+    font-size: 15px;
+    font-weight: var(--font-weight-semibold);
     line-height: var(--leading-5);
   }
 
-  .booking-title {
-    color: var(--color-ink);
+  .salon-place {
+    color: var(--agendao-muted);
+    font-size: 13px;
+    line-height: var(--leading-4);
+  }
+
+  .service {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: var(--spacing-3) var(--spacing-4);
+    border-radius: var(--radius-lg);
+    background: var(--agendao-gray);
+  }
+
+  .service-name {
+    font-family: var(--agendao-display);
     font-size: var(--text-lg);
+    font-weight: 800;
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-6);
+  }
+
+  .service-price {
+    font-size: 15px;
     font-weight: var(--font-weight-semibold);
-    line-height: var(--leading-7);
   }
 
   .slots {
@@ -193,23 +259,38 @@ const slots = ['10:00', '11:30', '12:15', '17:00'];
   }
 
   .slots li {
-    padding: var(--spacing-2) var(--spacing-3);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    color: var(--color-ink);
+    flex: 1;
+    padding-block: 10px;
+    border-radius: var(--radius-full);
+    background: var(--agendao-gray);
     font-size: var(--text-sm);
     font-weight: var(--font-weight-medium);
-    line-height: var(--leading-5);
+    line-height: 18px;
+    text-align: center;
   }
 
-  .slots li.selected {
-    border-color: var(--color-primary);
-    background: var(--color-primary);
-    color: var(--color-on-primary);
+  .slots li.picked {
+    background: var(--agendao-pink);
+    color: #fff;
+    font-weight: var(--font-weight-bold);
   }
 
   .slots li:last-child {
     display: none;
+  }
+
+  .sticker {
+    position: absolute;
+    top: -16px;
+    right: -8px;
+    padding: 6px var(--spacing-3);
+    border-radius: var(--radius-full);
+    background: var(--agendao-yellow);
+    font-family: var(--agendao-display);
+    font-size: 13px;
+    font-weight: 800;
+    line-height: var(--leading-4);
+    rotate: 6deg;
   }
 
   @media (min-width: 768px) {
@@ -255,18 +336,89 @@ const slots = ['10:00', '11:30', '12:15', '17:00'];
     }
 
     .booking {
-      top: 50%;
+      top: 47%;
       left: 5.13%;
       width: 320px;
-      padding: var(--spacing-6);
+      gap: var(--spacing-4);
+      padding: 20px;
     }
 
-    .booking-title {
+    .service-name {
       font-size: var(--text-xl);
+      line-height: 26px;
     }
 
     .slots li:last-child {
       display: block;
+    }
+
+    .sticker {
+      right: -14px;
+    }
+  }
+
+  /* Al bajar: cada pieza se mueve a su ritmo y en Agendao se elige hora. */
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .visual {
+        view-timeline: --visual;
+      }
+
+      .relay,
+      .phone,
+      .booking {
+        animation: drift linear both;
+        animation-timeline: --visual;
+        animation-range: cover 0% cover 100%;
+      }
+
+      .relay {
+        --drift: 12px;
+      }
+
+      .phone {
+        --drift: 32px;
+      }
+
+      .booking {
+        --drift: 20px;
+      }
+
+      .slots li.picked {
+        animation: pick linear both;
+        animation-timeline: --visual;
+        animation-range: cover 28% cover 34%;
+      }
+
+      .sticker {
+        animation: pop linear both;
+        animation-timeline: --visual;
+        animation-range: cover 33% cover 38%;
+      }
+    }
+  }
+
+  @keyframes drift {
+    from {
+      translate: 0 var(--drift);
+    }
+    to {
+      translate: 0 calc(-1 * var(--drift));
+    }
+  }
+
+  @keyframes pick {
+    from {
+      background: var(--agendao-gray);
+      color: var(--color-ink);
+    }
+  }
+
+  @keyframes pop {
+    from {
+      opacity: 0;
+      scale: 0.4;
+      rotate: -12deg;
     }
   }
 </style>

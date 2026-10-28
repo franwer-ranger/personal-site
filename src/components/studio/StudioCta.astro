@@ -10,7 +10,7 @@ const { locale } = Astro.props;
 const t = getTranslations(locale).studio;
 ---
 
-<section class="page cta" aria-labelledby="cta-title">
+<section class="page cta reveal" aria-labelledby="cta-title">
   <h2 id="cta-title">{t.cta.title}</h2>
   <p>{t.cta.text}</p>
   <a href={mailtoHref(t.contactSubject)} class="button">{t.nav.cta}</a>

@@ -177,3 +177,30 @@ ol[role='list'] {
     animation-duration: 0.01ms !important;
   }
 }
+
+/*
+ * Movimiento. Todo va con scroll-driven animations: si el navegador no las
+ * soporta o el usuario pide menos movimiento, la página se queda quieta y
+ * en su estado final. --i escalona elementos hermanos.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  .enter {
+    animation: rise 700ms var(--ease-standard) both;
+    animation-delay: calc(var(--i, 0) * 90ms);
+  }
+
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry calc(var(--i, 0) * 6%) entry calc(70% + var(--i, 0) * 6%);
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+}

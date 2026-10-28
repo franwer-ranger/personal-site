@@ -1,0 +1,111 @@
+---
+/* Iconos sacados de los files de Paper de cada producto (Postgram, de
+   public/postgram/logo.svg). El de open source es propio de esta web. */
+interface Props {
+  logo: string;
+}
+
+const { logo } = Astro.props;
+---
+
+<span class:list={['logo', `logo-${logo}`]} aria-hidden="true">
+  {
+    logo === 'agendao' && (
+      <svg viewBox="-18 -20 124 124">
+        <g transform="rotate(-8 44 42)">
+          <rect x="8" y="16" width="72" height="62" rx="18" fill="#fff" />
+          <rect x="24" y="6" width="9" height="20" rx="4.5" fill="#0a0a0a" />
+          <rect x="55" y="6" width="9" height="20" rx="4.5" fill="#0a0a0a" />
+          <path d="M29 48 L40 59 L60 37" fill="none" stroke="#0a0a0a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+      </svg>
+    )
+  }
+  {
+    logo === 'relay' && (
+      <svg viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="relay-dot" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffc45c" />
+            <stop offset="1" stop-color="#ff8a00" />
+          </linearGradient>
+        </defs>
+        <path d="M50 50H70" stroke="rgb(255 255 255 / 34%)" stroke-width="6" />
+        <path d="M22 50H50" stroke="#fff" stroke-width="6" />
+        <circle cx="22" cy="50" r="8" fill="#fff" />
+        <circle cx="50" cy="50" r="14" fill="url(#relay-dot)" />
+        <ellipse cx="50" cy="43.5" rx="8" ry="4" fill="#fff" opacity="0.35" />
+        <circle cx="78" cy="50" r="6" fill="none" stroke="#fff" stroke-width="4" />
+      </svg>
+    )
+  }
+  {
+    logo === 'guarderia' && (
+      <svg viewBox="0 0 100 100">
+        <path d="M26 48L50 28L74 48V71Q74 76 69 76H31Q26 76 26 71Z" fill="#fff" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M41 54C41 49.5 59 49.5 59 54C59 58 54 61.5 50 61.5C46 61.5 41 58 41 54Z" fill="#2d6a4f" />
+        <path d="M50 61.5V65.5M41 65Q45.5 69.5 50 65.5Q54.5 69.5 59 65" fill="none" stroke="#2d6a4f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    )
+  }
+  {
+    logo === 'postgram' && (
+      <svg viewBox="-11 -11 50 50">
+        <path
+          d="M15.72 27.84H12.18C12.84 23.64 13.26 20.22 13.44 15.18C9.96 18.84 7.86 21.54 5.34 25.02L2.82 22.5C6.24 19.98 9 17.88 12.66 14.4C7.68 14.58 4.2 15.06 0 15.72V12.12C4.2 12.84 7.62 13.26 12.66 13.44C9 9.96 6.3 7.86 2.82 5.34L5.34 2.82C7.86 6.3 9.96 9.06 13.44 12.66C13.26 7.68 12.84 4.2 12.18 0H15.72C15 4.2 14.58 7.62 14.4 12.66C17.88 9.06 20.04 6.24 22.5 2.82L25.02 5.34C21.6 7.86 18.84 9.96 15.18 13.44C20.22 13.32 23.64 12.84 27.84 12.12L27.9 15.66C23.7 15 20.22 14.58 15.18 14.46C18.84 17.88 21.6 19.98 25.02 22.5L22.5 25.02C20.04 21.6 17.88 18.84 14.4 15.18C14.58 20.22 15 23.64 15.72 27.84Z"
+          fill="#fff"
+        />
+      </svg>
+    )
+  }
+  {
+    logo === 'opensource' && (
+      <svg viewBox="0 0 100 100" fill="none" stroke="#fff">
+        <path d="M36 37V63" stroke-width="7" stroke-linecap="round" />
+        <path d="M64 37C64 54 36 50 36 63" stroke-width="7" stroke-linecap="round" />
+        <circle cx="36" cy="29" r="8" stroke-width="6" />
+        <circle cx="64" cy="29" r="8" stroke-width="6" />
+        <circle cx="36" cy="72" r="10" fill="var(--color-primary)" stroke-width="6" />
+      </svg>
+    )
+  }
+</span>
+
+<style>
+  .logo {
+    display: block;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    overflow: clip;
+    border-radius: 10px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo-agendao {
+    background: #ff2e74;
+  }
+
+  .logo-relay {
+    background:
+      radial-gradient(circle at 50% 50%, rgb(255 159 10 / 0.22), transparent 45%),
+      linear-gradient(180deg, #3a3a40, #0e0e12);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.22);
+  }
+
+  .logo-guarderia {
+    background: #2d6a4f;
+  }
+
+  .logo-postgram {
+    background: #5489f1;
+  }
+
+  .logo-opensource {
+    background: var(--color-ink);
+  }
+</style>

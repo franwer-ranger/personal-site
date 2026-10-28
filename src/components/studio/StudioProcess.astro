@@ -10,14 +10,14 @@ const t = getTranslations(locale).studio.process;
 ---
 
 <section id="como-trabajo" class="section page process" aria-labelledby="process-title">
-  <div class="section-head">
+  <div class="section-head reveal">
     <p class="kicker">{t.kicker}</p>
     <h2 id="process-title" class="title">{t.title}</h2>
   </div>
   <ol class="steps" role="list">
     {
       t.steps.map((step, index) => (
-        <li class="step">
+        <li class="step reveal" style={`--i: ${index}`}>
           <span class="number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
           <h3>{step.title}</h3>
           <p class="lead">{step.text}</p>

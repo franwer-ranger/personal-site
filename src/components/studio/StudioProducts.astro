@@ -2,6 +2,7 @@
 import { profile } from '../../config/profile';
 import { fill, getTranslations, type Locale } from '../../i18n/ui';
 import { mailtoHref } from '../../lib/contact';
+import StudioProductLogo from './StudioProductLogo.astro';
 
 interface Props {
   locale: Locale;
@@ -18,7 +19,7 @@ function actionHref(item: (typeof t.items)[number]): string | null {
 ---
 
 <section id="productos" class="page products" aria-labelledby="products-title">
-  <div class="section-head">
+  <div class="section-head reveal">
     <p class="kicker">{t.kicker}</p>
     <h2 id="products-title" class="products-title">{t.title}</h2>
   </div>
@@ -27,8 +28,11 @@ function actionHref(item: (typeof t.items)[number]): string | null {
       t.items.map((item) => {
         const href = actionHref(item);
         return (
-          <li class="row">
-            <h3>{item.name}</h3>
+          <li class="row reveal">
+            <div class="name">
+              <StudioProductLogo logo={item.logo} />
+              <h3>{item.name}</h3>
+            </div>
             <p class="lead">{item.text}</p>
             {href ? (
               <a
@@ -74,6 +78,13 @@ function actionHref(item: (typeof t.items)[number]): string | null {
     border-bottom: 1px solid var(--color-border);
   }
 
+  .name {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding-bottom: var(--spacing-2);
+  }
+
   h3 {
     color: var(--color-ink);
     font-size: var(--text-xl);
@@ -104,10 +115,15 @@ function actionHref(item: (typeof t.items)[number]): string | null {
     }
 
     .row {
-      grid-template-columns: minmax(180px, 280px) 1fr 160px;
+      grid-template-columns: minmax(240px, 312px) 1fr 128px;
       align-items: center;
       gap: var(--spacing-6);
       padding-block: var(--spacing-6);
+    }
+
+    .name {
+      gap: var(--spacing-4);
+      padding-bottom: 0;
     }
 
     h3 {
@@ -118,6 +134,37 @@ function actionHref(item: (typeof t.items)[number]): string | null {
     .action {
       padding-top: 0;
       text-align: right;
+    }
+  }
+
+  /* El logo entra con un pequeño salto, como un icono al instalarse. */
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .row {
+        view-timeline: --row;
+      }
+
+      .name :global(.logo) {
+        animation: pop-in linear both;
+        animation-timeline: --row;
+        animation-range: entry 20% entry 90%;
+      }
+    }
+  }
+
+  @keyframes pop-in {
+    0% {
+      opacity: 0;
+      scale: 0.6;
+      rotate: -10deg;
+    }
+    70% {
+      scale: 1.08;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+      rotate: 0deg;
     }
   }
 </style>

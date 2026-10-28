@@ -10,12 +10,12 @@ const t = getTranslations(locale).studio.services;
 ---
 
 <section id="servicios" class="section page services" aria-labelledby="services-title">
-  <div class="section-head centered">
+  <div class="section-head centered reveal">
     <p class="kicker">{t.kicker}</p>
     <h2 id="services-title" class="title">{t.title[0]}<br />{t.title[1]}</h2>
   </div>
   <div class="compare">
-    <div class="panel before">
+    <div class="panel before reveal">
       <h3>{t.beforeLabel}</h3>
       <ul role="list">{t.before.map((item) => <li>{item}</li>)}</ul>
     </div>
@@ -98,6 +98,54 @@ const t = getTranslations(locale).studio.services;
 
     .panel {
       padding: var(--spacing-10);
+    }
+  }
+
+  /* "Después" empieza con la pinta de "Hoy" y se vuelve cobalto al entrar. */
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .after {
+        view-timeline: --after;
+      }
+
+      .after,
+      .after h3,
+      .after li {
+        animation-timeline: --after;
+        animation-range: entry 40% cover 45%;
+        animation-fill-mode: both;
+        animation-timing-function: linear;
+      }
+
+      .after {
+        animation-name: switch-on;
+      }
+
+      .after h3 {
+        animation-name: switch-on-label;
+      }
+
+      .after li {
+        animation-name: switch-on-text;
+      }
+    }
+  }
+
+  @keyframes switch-on {
+    from {
+      background: var(--color-muted);
+    }
+  }
+
+  @keyframes switch-on-label {
+    from {
+      color: var(--color-text-subtle);
+    }
+  }
+
+  @keyframes switch-on-text {
+    from {
+      color: var(--color-text);
     }
   }
 </style>

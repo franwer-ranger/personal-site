@@ -13,7 +13,7 @@ const recommendation = profile.recommendation;
 
 <section class="band">
   <div class="section page proof" aria-labelledby="proof-title">
-    <div class="proof-head">
+    <div class="proof-head reveal">
       <div class="section-head">
         <p class="kicker">{t.kicker}</p>
         <h2 id="proof-title" class="title">{t.title}</h2>
@@ -22,8 +22,8 @@ const recommendation = profile.recommendation;
     </div>
     <div class="cards">
       {
-        t.clients.map((client) => (
-          <article class="card">
+        t.clients.map((client, index) => (
+          <article class="card reveal" style={`--i: ${index}`}>
             <h3>{client.name}</h3>
             <p class="meta">{client.label}</p>
             <p class="lead text">{client.text}</p>
@@ -32,7 +32,7 @@ const recommendation = profile.recommendation;
       }
       {
         recommendation && (
-          <figure class="card quote">
+          <figure class="card quote reveal" style={`--i: ${t.clients.length}`}>
             <blockquote class="lead text">{recommendation.quote[locale]}</blockquote>
             <figcaption class="meta">
               {recommendation.author} · {recommendation.relationship[locale]}

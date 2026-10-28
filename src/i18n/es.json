@@ -228,8 +228,12 @@
       "label": "Capturas de Relay, la guardería de perros y Agendao",
       "relayAlt": "Relay, una app de Mac para dirigir agentes de programación",
       "guarderiaAlt": "App de la guardería de perros con una ficha de reserva",
-      "bookingBusiness": "Agendao · Peluquería Marta",
-      "bookingTitle": "Elige hora para el jueves"
+      "salon": "Lola Martín Estudio",
+      "salonInitials": "LM",
+      "salonPlace": "Chamberí, Madrid",
+      "service": "Corte + color",
+      "price": "48 €",
+      "sticker": "¡Hecho!"
     },
     "services": {
       "kicker": "Servicios",
@@ -311,30 +315,35 @@
       "title": "También hago mis propios productos",
       "items": [
         {
+          "logo": "agendao",
           "name": "Agendao",
           "text": "Reservas online para peluquerías y salones.",
           "action": "Lista de espera",
           "kind": "waitlist"
         },
         {
+          "logo": "relay",
           "name": "Relay",
           "text": "App de Mac para dirigir agentes de programación. Pago único.",
           "action": "Lista de espera",
           "kind": "waitlist"
         },
         {
+          "logo": "guarderia",
           "name": "Guardería de perros",
           "text": "Encuentra y reserva guardería para tu perro en Madrid.",
           "action": "Próximamente",
           "kind": "status"
         },
         {
+          "logo": "postgram",
           "name": "Postgram",
           "text": "Postales que solo se abren en el sitio donde se hicieron.",
           "action": "App en camino",
           "kind": "status"
         },
         {
+          "logo": "opensource",
           "name": "Open source",
           "text": "Maker Tracker y Fountly. También he echado una mano en My Potential, de Romer y Chris.",
           "action": "Ver en GitHub",

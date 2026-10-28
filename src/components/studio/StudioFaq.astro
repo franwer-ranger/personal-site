@@ -10,14 +10,14 @@ const t = getTranslations(locale).studio.faq;
 ---
 
 <section id="preguntas" class="section page faq" aria-labelledby="faq-title">
-  <div class="section-head">
+  <div class="section-head reveal">
     <p class="kicker">{t.kicker}</p>
     <h2 id="faq-title" class="title">{t.title}</h2>
   </div>
   <dl class="items">
     {
       t.items.map((item) => (
-        <div class="item">
+        <div class="item reveal">
           <dt>{item.q}</dt>
           <dd class="lead">{item.a}</dd>
         </div>

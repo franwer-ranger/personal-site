@@ -228,8 +228,12 @@
       "label": "Screens from Relay, the dog daycare app and Agendao",
       "relayAlt": "Relay, a Mac app for directing coding agents",
       "guarderiaAlt": "Dog daycare app showing a booking page",
-      "bookingBusiness": "Agendao · Marta's Hair Salon",
-      "bookingTitle": "Pick a time on Thursday"
+      "salon": "Lola Martín Studio",
+      "salonInitials": "LM",
+      "salonPlace": "Chamberí, Madrid",
+      "service": "Cut + colour",
+      "price": "€48",
+      "sticker": "Booked!"
     },
     "services": {
       "kicker": "Services",
@@ -311,30 +315,35 @@
       "title": "I also build my own products",
       "items": [
         {
+          "logo": "agendao",
           "name": "Agendao",
           "text": "Online booking for hair and beauty salons.",
           "action": "Join the waitlist",
           "kind": "waitlist"
         },
         {
+          "logo": "relay",
           "name": "Relay",
           "text": "Mac app for directing coding agents. One-time purchase.",
           "action": "Join the waitlist",
           "kind": "waitlist"
         },
         {
+          "logo": "guarderia",
           "name": "Guardería de perros",
           "text": "Find and book dog daycare in Madrid.",
           "action": "Coming soon",
           "kind": "status"
         },
         {
+          "logo": "postgram",
           "name": "Postgram",
           "text": "Postcards that only open in the place they were made.",
           "action": "App on the way",
           "kind": "status"
         },
         {
+          "logo": "opensource",
           "name": "Open source",
           "text": "Maker Tracker and Fountly. I also helped out on My Potential, by Romer and Chris.",
           "action": "See on GitHub",
